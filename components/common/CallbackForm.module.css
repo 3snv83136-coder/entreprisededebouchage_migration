@@ -61,6 +61,12 @@
   white-space: nowrap;
 }
 
+@media (max-width: 768px) {
+  .trigger {
+    display: none;
+  }
+}
+
 /* ── Panel ── */
 .panel {
   position: fixed;

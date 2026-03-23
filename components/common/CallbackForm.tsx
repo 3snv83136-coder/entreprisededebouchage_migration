@@ -1,5 +1,5 @@
 'use client';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import styles from './CallbackForm.module.css';
 
 export default function CallbackForm() {
@@ -15,6 +15,12 @@ export default function CallbackForm() {
     setSent(true);
     setTimeout(() => { setSent(false); setOpen(false); setName(''); setPhone(''); }, 3000);
   }
+
+  useEffect(() => {
+    const onOpen = () => setOpen(true);
+    window.addEventListener('edd:open-callback', onOpen);
+    return () => window.removeEventListener('edd:open-callback', onOpen);
+  }, []);
 
   return (
     <>

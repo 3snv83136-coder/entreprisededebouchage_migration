@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { PHONE_RAW, NAV_BRAND_TITLE } from '@/lib/config';
+import NavbarCallbackButton from './NavbarCallbackButton';
 import styles from './Navbar.module.css';
 
 /** Deux lignes : tout sauf le dernier mot, puis dernier mot (lisibilité + césure propre). */
@@ -39,6 +40,7 @@ export default function Navbar() {
       <a href={`tel:${PHONE_RAW}`} className={styles.cta}>
         📞 Appeler maintenant
       </a>
+      <NavbarCallbackButton />
     </nav>
   );
 }

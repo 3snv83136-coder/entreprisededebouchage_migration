@@ -71,9 +71,42 @@
   background: var(--orange-light);
 }
 
+.ctaRappel {
+  display: none;
+}
+
 @media (max-width: 768px) {
   .cta {
     display: none;
+  }
+
+  .ctaRappel {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin: 0;
+    padding: 10px 14px;
+    min-height: 44px;
+    border: 2px solid var(--orange);
+    border-radius: 50px;
+    background: transparent;
+    color: var(--orange-light);
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background 0.2s, color 0.2s, border-color 0.2s;
+  }
+
+  .ctaRappel:hover,
+  .ctaRappel:focus-visible {
+    background: rgba(251, 117, 0, 0.15);
+    color: #fff;
+    border-color: var(--orange-light);
+    outline: none;
   }
 }
 
