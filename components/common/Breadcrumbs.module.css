@@ -2,6 +2,8 @@
   padding: 16px 24px;
   font-size: 14px;
   color: var(--slate);
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .breadcrumbs a {
@@ -32,7 +34,9 @@
     padding: 12px 16px;
     font-size: 13px;
     overflow-x: auto;
+    overflow-y: hidden;
     white-space: nowrap;
     -webkit-overflow-scrolling: touch;
+    overscroll-behavior-x: contain;
   }
 }

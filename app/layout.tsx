@@ -32,6 +32,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: '/',
   },
+  icons: {
+    icon: '/logo-edd.png',
+    apple: '/logo-edd.png',
+  },
 };
 
 export default function RootLayout({
@@ -52,7 +56,7 @@ export default function RootLayout({
       <body style={{ fontFamily: 'var(--font-body), sans-serif' }}>
         <Topbar />
         <Navbar />
-        <main>{children}</main>
+        <main className="site-main">{children}</main>
         <Footer />
         <StickyCta />
         <CallbackForm />

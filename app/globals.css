@@ -22,6 +22,8 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
+  /* évite le décalage lié à 100vw + barre de défilement verticale */
 }
 
 body {
@@ -29,9 +31,19 @@ body {
   color: var(--white);
   line-height: 1.6;
   overflow-x: hidden;
+  width: 100%;
+  max-width: 100%;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  max-width: 100vw;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+.site-main {
+  display: block;
+  min-width: 0;
+  max-width: 100%;
+  overflow-x: clip;
 }
 
 a {

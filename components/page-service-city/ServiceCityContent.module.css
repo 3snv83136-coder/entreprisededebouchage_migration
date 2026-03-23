@@ -76,6 +76,25 @@
 
 .generatedContent {
   max-width: 720px;
+  min-width: 0;
+}
+
+.generatedContent img,
+.generatedContent video {
+  max-width: 100%;
+  height: auto;
+}
+
+.generatedContent table {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.generatedContent pre {
+  max-width: 100%;
+  overflow-x: auto;
 }
 
 .generatedContent h1 {
