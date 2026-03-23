@@ -1,0 +1,113 @@
+.hero {
+  position: relative;
+  min-height: 50vh;
+  display: flex;
+  align-items: center;
+  padding: 80px 24px 60px;
+  overflow: hidden;
+}
+
+.heroBg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 50%, rgba(251, 117, 0, 0.1) 0%, transparent 65%),
+    linear-gradient(180deg, var(--navy) 0%, #0a0e14 100%);
+}
+
+.heroInner {
+  position: relative;
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.badge {
+  display: inline-block;
+  background: rgba(251, 117, 0, 0.12);
+  border: 1px solid rgba(251, 117, 0, 0.3);
+  color: var(--orange-light);
+  font-size: 14px;
+  font-weight: 600;
+  padding: 8px 20px;
+  border-radius: 50px;
+  margin-bottom: 24px;
+}
+
+.title {
+  font-size: clamp(36px, 8vw, 72px);
+  line-height: 1;
+  letter-spacing: 0.04em;
+  color: var(--white);
+  margin-bottom: 8px;
+}
+
+.sub {
+  font-size: clamp(16px, 2.5vw, 22px);
+  color: var(--slate);
+  margin-bottom: 32px;
+}
+
+.section {
+  padding: clamp(60px, 8vw, 80px) 24px;
+}
+
+.textBlock {
+  max-width: 720px;
+  margin-top: 24px;
+}
+
+.textBlock p {
+  font-size: 16px;
+  color: var(--slate);
+  line-height: 1.8;
+  margin-bottom: 16px;
+}
+
+.textBlock strong {
+  color: var(--white);
+}
+
+.problemList {
+  list-style: none;
+  padding: 0;
+  margin-top: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.problemList li {
+  background: var(--navy-light);
+  border: 1px solid rgba(251, 117, 0, 0.2);
+  color: var(--orange-light);
+  padding: 10px 20px;
+  border-radius: 50px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.villeTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 28px;
+}
+
+.villeTag {
+  background: var(--navy-light);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: var(--white);
+  font-size: 14px;
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: 50px;
+  transition: all 0.2s;
+  text-decoration: none;
+}
+
+.villeTag:hover {
+  background: rgba(251, 117, 0, 0.15);
+  border-color: rgba(251, 117, 0, 0.4);
+  color: var(--orange-light);
+}

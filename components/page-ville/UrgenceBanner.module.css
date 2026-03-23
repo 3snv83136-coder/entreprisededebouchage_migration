@@ -1,0 +1,49 @@
+.urgence {
+  background: var(--orange);
+  padding: 0;
+}
+
+.inner {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 40px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.text h2 {
+  font-size: clamp(28px, 5vw, 44px);
+  color: var(--navy);
+  letter-spacing: 0.04em;
+  line-height: 1;
+}
+
+.text p {
+  font-size: 15px;
+  color: rgba(13, 17, 23, 0.7);
+  margin-top: 6px;
+  font-weight: 500;
+}
+
+.phone {
+  font-size: clamp(32px, 6vw, 52px);
+  color: var(--navy);
+  text-decoration: none;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+  transition: opacity 0.2s;
+}
+
+.phone:hover {
+  opacity: 0.75;
+}
+
+@media (max-width: 768px) {
+  .inner {
+    flex-direction: column;
+    text-align: center;
+  }
+}

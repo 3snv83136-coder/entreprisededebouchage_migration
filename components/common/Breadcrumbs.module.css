@@ -1,0 +1,38 @@
+.breadcrumbs {
+  padding: 16px 24px;
+  font-size: 14px;
+  color: var(--slate);
+}
+
+.breadcrumbs a {
+  color: var(--slate);
+  text-decoration: none;
+  transition: color 0.2s;
+  padding: 8px 0;
+  display: inline-block;
+  min-height: 44px;
+  line-height: 28px;
+}
+
+.breadcrumbs a:hover {
+  color: var(--orange);
+}
+
+.separator {
+  margin: 0 8px;
+  opacity: 0.5;
+}
+
+.current {
+  color: var(--white);
+}
+
+@media (max-width: 480px) {
+  .breadcrumbs {
+    padding: 12px 16px;
+    font-size: 13px;
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+  }
+}

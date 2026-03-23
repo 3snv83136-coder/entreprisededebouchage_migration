@@ -1,66 +1,116 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+import Link from 'next/link';
+import { getAllVilles } from '@/lib/data/villes';
+import { getAllServices } from '@/lib/data/services';
+import VilleSearch from '@/components/common/VilleSearch';
+import VilleSearchInline from '@/components/common/VilleSearchInline';
+import styles from './page.module.css';
 
 export default function Home() {
+  const villes = getAllVilles();
+  const services = getAllServices();
+
+  // Serialize for client component
+  const villesData = villes.map((v) => ({
+    ville: v.ville,
+    slug: v.slug,
+    code_postal: v.code_postal,
+    population: v.population,
+  }));
+
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className={styles.intro}>
-          <h1>To get started, edit the page.tsx file.</h1>
-          <p>
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <>
+      <section className={styles.hero}>
+        <div className={styles.heroBg} />
+        <div className={styles.heroInner}>
+          <div className={styles.badge}>
+            <span className={styles.badgeDot} />
+            Disponible maintenant — Var (83)
+          </div>
+          <h1 className={styles.title}>
+            Débouchage<br />
+            <em>dans le Var</em>
+            24h/7j
+          </h1>
+          <p className={styles.sub}>
+            Entreprise de débouchage depuis 19 ans. Intervention en moins d&apos;une
+            heure à Toulon et dans tout le Var. Devis gratuit, prix fixe.
           </p>
-        </div>
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
+
+          <a href="tel:0627699134" className="btn-primary">
+            📞 Urgence
           </a>
-          <a
-            className={styles.secondary}
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+
+          {/* Tarifs */}
+          <div className={styles.pricing}>
+            <div className={styles.pricingCard}>
+              <h3 className={styles.pricingTitle}>Débouchage Manuel</h3>
+              <p className={styles.pricingDesc}>Évier, WC, Douche</p>
+              <div className={styles.pricingPrice}>99<span>€</span></div>
+            </div>
+            <div className={`${styles.pricingCard} ${styles.pricingCardPopular}`}>
+              <div className={styles.pricingBadge}>Le + demandé</div>
+              <h3 className={styles.pricingTitle}>Haute Pression</h3>
+              <p className={styles.pricingDesc}>Hydrocurage technique</p>
+              <div className={styles.pricingPrice}>199<span>€</span></div>
+            </div>
+            <div className={styles.pricingCard}>
+              <h3 className={styles.pricingTitle}>Inspection Caméra</h3>
+              <p className={styles.pricingDesc}>Diagnostic vidéo complet</p>
+              <div className={styles.pricingPrice}>110<span>€</span></div>
+            </div>
+          </div>
+          <p className={styles.pricingNote}>Déplacement inclus &amp; Devis gratuit</p>
+
+          <div className={styles.searchSection}>
+            <p className={styles.searchLabel}>Trouvez votre ville</p>
+            <VilleSearch villes={villesData} />
+          </div>
+
+          <div className={styles.stats}>
+            <div><strong>4.9/5</strong><span>489 avis</span></div>
+            <div><strong>19 ans</strong><span>d&apos;expérience</span></div>
+            <div><strong>&lt;1h</strong><span>d&apos;intervention</span></div>
+          </div>
         </div>
-      </main>
-    </div>
+      </section>
+
+      <section className={styles.section} style={{ background: 'var(--navy-mid)' }}>
+        <div className="container">
+          <div className="section-label">Nos prestations</div>
+          <h2 className="section-title">Services</h2>
+          <div className={styles.serviceGrid}>
+            {services.map((s, i) => (
+              <Link
+                key={s.slug}
+                href={`/${s.slug}/`}
+                className={styles.serviceCard}
+                style={{ '--card-index': i } as React.CSSProperties}
+              >
+                <div>
+                  <strong>{s.label}</strong>
+                  <p className={styles.serviceDesc}>{s.description.slice(0, 80)}…</p>
+                </div>
+                <span className={styles.serviceArrow}>→</span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className={styles.section}>
+        <div className="container">
+          <div className="section-label">153 communes couvertes</div>
+          <h2 className="section-title">Toutes les villes du Var</h2>
+          <p className="section-desc" style={{ marginBottom: '24px' }}>
+            On intervient dans les 153 communes du département. Trouvez la vôtre :
+          </p>
+          <VilleSearchInline
+            villes={villesData}
+            placeholder="Rechercher parmi 153 communes..."
+            topCount={6}
+          />
+        </div>
+      </section>
+    </>
   );
 }

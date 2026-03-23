@@ -1,0 +1,154 @@
+ville,departement,code_postal,population,tier
+Toulon,Var,83000,169736,1
+La Seyne-sur-Mer,Var,83500,64651,1
+Hyères,Var,83400,55792,1
+Fréjus,Var,83370,53187,1
+Draguignan,Var,83300,40063,1
+Saint-Raphaël,Var,83530,35247,1
+Six-Fours-les-Plages,Var,83140,33272,1
+La Garde,Var,83130,25262,1
+La Valette-du-Var,Var,83160,23792,1
+La Crau,Var,83260,17945,1
+Brignoles,Var,83170,17509,1
+Sanary-sur-Mer,Var,83110,16745,1
+Saint-Maximin-la-Sainte-Baume,Var,83470,16389,2
+Sainte-Maxime,Var,83120,14268,2
+Roquebrune-sur-Argens,Var,83380,14066,2
+Ollioules,Var,83190,13585,2
+Cogolin,Var,83310,12045,2
+Saint-Cyr-sur-Mer,Var,83270,11759,2
+Vidauban,Var,83550,11565,2
+Cuers,Var,83390,11208,2
+Solliès-Pont,Var,83210,11063,2
+Le Luc,Var,83340,10964,2
+La Londe-les-Maures,Var,83250,10242,2
+Le Pradet,Var,83220,10037,2
+Carqueiranne,Var,83320,9852,2
+Le Beausset,Var,83330,9654,2
+Le Muy,Var,83490,9258,2
+Lorgues,Var,83510,8980,2
+La Farlède,Var,83210,8774,2
+Bandol,Var,83150,8377,2
+Bormes-les-Mimosas,Var,83230,7988,2
+Puget-sur-Argens,Var,83480,7854,2
+Cavalaire-sur-Mer,Var,83240,7277,2
+Les Arcs,Var,83460,7113,2
+Montauroux,Var,83440,6351,2
+Pierrefeu-du-Var,Var,83390,6069,2
+Trans-en-Provence,Var,83720,5781,2
+Saint-Mandrier-sur-Mer,Var,83430,5770,2
+Le Lavandou,Var,83980,5770,2
+Solliès-Toucas,Var,83210,5754,2
+Fayence,Var,83440,5743,2
+Saint-Zacharie,Var,83640,5549,2
+La Cadière-d'Azur,Var,83740,5545,2
+Garéoult,Var,83136,5358,2
+Pourrières,Var,83910,5128,2
+Tourves,Var,83170,4994,2
+Rocbaron,Var,83136,4938,2
+Nans-les-Pins,Var,83860,4459,2
+Grimaud,Var,83310,4432,2
+Le Cannet-des-Maures,Var,83340,4336,2
+Flayosc,Var,83780,4323,2
+Gonfaron,Var,83590,4319,2
+Saint-Tropez,Var,83990,4305,2
+Le Val,Var,83143,4299,2
+Rians,Var,83560,4270,2
+Puget-Ville,Var,83390,4242,2
+Vinon-sur-Verdon,Var,83560,4238,2
+Pignans,Var,83790,4013,2
+Salernes,Var,83690,3886,2
+Le Castellet,Var,83330,3881,2
+Le Revest-les-Eaux,Var,83200,3821,2
+La Croix-Valmer,Var,83420,3801,2
+Flassans-sur-Issole,Var,83340,3516,2
+Carcès,Var,83570,3494,2
+Carnoules,Var,83660,3469,2
+Callian,Var,83440,3167,2
+Besse-sur-Issole,Var,83890,3056,2
+Barjols,Var,83670,3018,2
+Tourrettes,Var,83440,2899,2
+La Motte,Var,83920,2881,2
+Forcalqueiret,Var,83136,2874,2
+Signes,Var,83870,2813,2
+Bagnols-en-Forêt,Var,83600,2754,2
+Les Adrets-de-l'Estérel,Var,83600,2754,2
+Bras,Var,83149,2737,2
+Le Plan-de-la-Tour,Var,83120,2717,2
+Néoules,Var,83136,2702,2
+Seillans,Var,83440,2636,2
+Régusse,Var,83630,2620,2
+Figanières,Var,83830,2604,2
+La Roquebrussanne,Var,83136,2579,2
+Gassin,Var,83580,2558,2
+Seillons-Source-d'Argens,Var,83470,2494,2
+Le Thoronet,Var,83340,2457,2
+Belgentier,Var,83210,2438,2
+Saint-Julien,Var,83560,2419,2
+Solliès-Ville,Var,83210,2423,2
+Évenos,Var,83330,2328,2
+Cotignac,Var,83570,2208,2
+Aups,Var,83630,2186,2
+Méounes-lès-Montrieux,Var,83136,2168,2
+Plan-d'Aups-Sainte-Baume,Var,83640,2123,2
+Ramatuelle,Var,83350,2079,2
+Cabasse,Var,83340,1934,2
+Sainte-Anastasie-sur-Issole,Var,83136,1926,2
+Collobrières,Var,83610,1931,2
+La Garde-Freinet,Var,83680,1887,2
+Callas,Var,83830,1889,2
+Camps-la-Source,Var,83170,1881,2
+Taradeau,Var,83460,1812,2
+Ginasservis,Var,83560,1787,2
+Saint-Paul-en-Forêt,Var,83440,1724,2
+Rougiers,Var,83170,1658,2
+Tanneron,Var,83440,1624,2
+La Verdière,Var,83560,1603,2
+Pourcieux,Var,83470,1569,2
+Montferrat,Var,83131,1555,2
+La Celle,Var,83170,1463,2
+Villecroze,Var,83690,1448,2
+La Môle,Var,83310,1419,2
+Tavernes,Var,83670,1406,2
+Bargemon,Var,83830,1375,2
+Brue-Auriac,Var,83119,1347,2
+Montfort-sur-Argens,Var,83570,1340,2
+Varages,Var,83670,1175,2
+Entrecasteaux,Var,83570,1126,2
+Vins-sur-Caramy,Var,83170,1009,2
+Ampus,Var,83111,945,2
+Correns,Var,83570,912,2
+Mazaugues,Var,83136,906,2
+Mons,Var,83440,841,2
+Pontevès,Var,83670,776,2
+Sillans-la-Cascade,Var,83690,762,2
+Saint-Antonin-du-Var,Var,83510,748,2
+Rayol-Canadel-sur-Mer,Var,83820,718,2
+Claviers,Var,83830,681,2
+Les Mayons,Var,83340,650,2
+Ollières,Var,83470,642,2
+Tourtour,Var,83690,591,2
+Montmeyan,Var,83670,566,2
+Châteaudouble,Var,83300,475,2
+Fox-Amphoux,Var,83670,466,2
+Comps-sur-Artuby,Var,83840,388,2
+Esparron,Var,83560,357,2
+Artignosc-sur-Verdon,Var,83630,336,2
+Bauduen,Var,83630,320,2
+Moissac-Bellevue,Var,83630,302,2
+La Roque-Esclapon,Var,83840,285,2
+Aiguines,Var,83630,283,2
+Les Salles-sur-Verdon,Var,83630,260,2
+Artigues,Var,83560,248,2
+Saint-Martin-de-Pallières,Var,83560,248,2
+Baudinard-sur-Verdon,Var,83630,225,2
+La Martre,Var,83840,218,2
+Bargème,Var,83840,215,2
+La Bastide,Var,83840,205,2
+Trigance,Var,83840,191,2
+Châteauvert,Var,83670,158,2
+Châteauvieux,Var,83840,88,2
+Riboux,Var,83136,52,2
+Le Bourguet,Var,83840,36,2
+Brenon,Var,83840,39,2
+Vérignon,Var,83630,15,2

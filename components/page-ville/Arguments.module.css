@@ -1,0 +1,56 @@
+.arguments {
+  background: var(--navy-mid);
+  padding: clamp(60px, 10vw, 100px) 24px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  margin-top: 48px;
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.card {
+  background: var(--navy-light);
+  padding: 40px 32px;
+  transition: background 0.2s;
+}
+
+.card:hover {
+  background: rgba(251, 117, 0, 0.08);
+}
+
+.num {
+  font-size: 72px;
+  color: rgba(251, 117, 0, 0.15);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.icon {
+  font-size: 32px;
+  margin-bottom: 16px;
+  display: block;
+}
+
+.card h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 15px;
+  color: var(--slate);
+  line-height: 1.65;
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 2px;
+  }
+}

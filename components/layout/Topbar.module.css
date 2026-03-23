@@ -1,0 +1,29 @@
+.topbar {
+  background: var(--orange);
+  text-align: center;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--navy);
+}
+
+.topbar a {
+  color: var(--navy);
+  text-decoration: none;
+  font-weight: 700;
+  padding: 4px 0;
+  display: inline-block;
+  min-height: 44px;
+  line-height: 36px;
+}
+
+@media (max-width: 480px) {
+  .topbar {
+    font-size: 13px;
+    padding: 8px 12px;
+    line-height: 1.4;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}

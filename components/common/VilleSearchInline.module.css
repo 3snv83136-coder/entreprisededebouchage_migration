@@ -1,0 +1,133 @@
+.wrap {
+  position: relative;
+  max-width: 400px;
+}
+
+.field {
+  position: relative;
+}
+
+.ico {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  color: var(--slate);
+  pointer-events: none;
+}
+
+.input {
+  width: 100%;
+  padding: 14px 40px 14px 42px;
+  background: var(--navy-light);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  color: var(--white);
+  font-size: 15px;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.input::placeholder {
+  color: var(--slate);
+}
+
+.input:focus {
+  border-color: var(--orange);
+  box-shadow: 0 0 0 3px rgba(251, 117, 0, 0.12);
+}
+
+.clear {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: var(--slate);
+  font-size: 20px;
+  cursor: pointer;
+  line-height: 1;
+  padding: 2px 6px;
+}
+
+.clear:hover {
+  color: var(--white);
+}
+
+.list {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  right: 0;
+  background: var(--navy-light);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 6px;
+  list-style: none;
+  z-index: 50;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+  animation: fadeIn 0.12s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.hint {
+  padding: 6px 12px;
+  font-size: 11px;
+  color: var(--slate);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.1s;
+}
+
+.item:hover,
+.item.active {
+  background: rgba(251, 117, 0, 0.1);
+}
+
+.name {
+  color: var(--white);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.item.active .name {
+  color: var(--orange-light);
+}
+
+.cp {
+  color: var(--slate);
+  font-size: 12px;
+}
+
+.empty {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  right: 0;
+  background: var(--navy-light);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 14px;
+  text-align: center;
+  color: var(--slate);
+  font-size: 13px;
+  z-index: 50;
+}

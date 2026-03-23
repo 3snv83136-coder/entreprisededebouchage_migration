@@ -1,0 +1,280 @@
+/* ── Floating trigger button ── */
+.trigger {
+  position: fixed;
+  bottom: 100px;
+  right: 24px;
+  z-index: 150;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--orange);
+  color: var(--navy);
+  font-weight: 800;
+  font-size: 15px;
+  padding: 16px 24px;
+  border-radius: 60px;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  box-shadow:
+    0 4px 24px rgba(251, 117, 0, 0.4),
+    0 0 0 0 rgba(251, 117, 0, 0.4);
+  animation: triggerPulse 2.5s ease-in-out infinite;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.trigger:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 32px rgba(251, 117, 0, 0.55);
+  animation: none;
+}
+
+@keyframes triggerPulse {
+  0%, 100% { box-shadow: 0 4px 24px rgba(251, 117, 0, 0.4), 0 0 0 0 rgba(251, 117, 0, 0.3); }
+  50% { box-shadow: 0 4px 24px rgba(251, 117, 0, 0.4), 0 0 0 12px rgba(251, 117, 0, 0); }
+}
+
+.triggerPulse {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  width: 14px;
+  height: 14px;
+  background: var(--green);
+  border-radius: 50%;
+  border: 2px solid var(--navy);
+  animation: dotBlink 1.5s ease-in-out infinite;
+}
+
+@keyframes dotBlink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+.triggerIcon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.triggerLabel {
+  white-space: nowrap;
+}
+
+/* ── Panel ── */
+.panel {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 200;
+  width: 360px;
+  background: var(--navy-mid);
+  border: 1px solid rgba(251, 117, 0, 0.25);
+  border-radius: 20px;
+  padding: 28px;
+  box-shadow:
+    0 24px 64px rgba(0, 0, 0, 0.6),
+    0 0 0 1px rgba(255, 255, 255, 0.04);
+  animation: panelIn 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes panelIn {
+  from { opacity: 0; transform: translateY(16px) scale(0.96); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.close {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  background: none;
+  border: none;
+  color: var(--slate);
+  font-size: 28px;
+  cursor: pointer;
+  padding: 4px 8px;
+  line-height: 1;
+  transition: color 0.2s;
+  min-height: 44px;
+  min-width: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.close:hover {
+  color: var(--white);
+}
+
+/* ── Header ── */
+.header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.urgenceBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(34, 225, 81, 0.1);
+  border: 1px solid rgba(34, 225, 81, 0.3);
+  color: var(--green);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  padding: 5px 14px;
+  border-radius: 50px;
+  margin-bottom: 16px;
+}
+
+.dot {
+  width: 7px;
+  height: 7px;
+  background: var(--green);
+  border-radius: 50%;
+  box-shadow: 0 0 6px var(--green);
+  animation: dotBlink 1.5s ease-in-out infinite;
+}
+
+.title {
+  font-size: 26px;
+  line-height: 1.1;
+  letter-spacing: 0.03em;
+  color: var(--white);
+  margin: 0;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: var(--slate);
+  margin-top: 8px;
+}
+
+/* ── Form ── */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--slate);
+  letter-spacing: 0.02em;
+}
+
+.input {
+  width: 100%;
+  padding: 14px 16px;
+  background: var(--navy-light);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  color: var(--white);
+  font-size: 16px;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.input::placeholder {
+  color: rgba(139, 148, 158, 0.5);
+}
+
+.input:focus {
+  border-color: var(--orange);
+  box-shadow: 0 0 0 3px rgba(251, 117, 0, 0.12);
+}
+
+.submit {
+  width: 100%;
+  padding: 16px;
+  background: var(--orange);
+  color: var(--navy);
+  font-weight: 800;
+  font-size: 17px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-family: inherit;
+  letter-spacing: 0.02em;
+  transition: background 0.2s, transform 0.15s;
+  min-height: 56px;
+  box-shadow: 0 4px 20px rgba(251, 117, 0, 0.3);
+}
+
+.submit:hover {
+  background: var(--orange-light);
+  transform: translateY(-1px);
+}
+
+.submit:active {
+  transform: translateY(0);
+}
+
+.legal {
+  font-size: 11px;
+  color: rgba(139, 148, 158, 0.6);
+  text-align: center;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* ── Success ── */
+.success {
+  text-align: center;
+  padding: 20px 0;
+}
+
+.successIcon {
+  width: 56px;
+  height: 56px;
+  background: rgba(34, 225, 81, 0.12);
+  border: 2px solid rgba(34, 225, 81, 0.3);
+  color: var(--green);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0 auto 16px;
+}
+
+/* ── Mobile ── */
+@media (max-width: 480px) {
+  .trigger {
+    bottom: 96px;
+    right: 12px;
+    padding: 14px 18px;
+    font-size: 14px;
+  }
+
+  .panel {
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    border-radius: 20px 20px 0 0;
+    padding: 24px 20px;
+    max-height: 85vh;
+    overflow-y: auto;
+  }
+}
+
+@media (max-width: 360px) {
+  .triggerLabel {
+    display: none;
+  }
+
+  .trigger {
+    padding: 16px;
+    border-radius: 50%;
+  }
+}
