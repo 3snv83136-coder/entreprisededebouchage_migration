@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { getAllVilles } from '@/lib/data/villes';
 import { getAllServices } from '@/lib/data/services';
 import { getAllRealisations } from '@/lib/data/realisations';
@@ -25,6 +26,15 @@ export default async function Home() {
     <>
       <section className={styles.hero}>
         <div className={styles.heroBg} />
+        <Image
+          src="/logo-edd.png"
+          alt=""
+          width={600}
+          height={600}
+          className={styles.heroLogo}
+          aria-hidden="true"
+          priority
+        />
         <div className={styles.heroInner}>
           <div className={styles.badge}>
             <span className={styles.badgeDot} />
