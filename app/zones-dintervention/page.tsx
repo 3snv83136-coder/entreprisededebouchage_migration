@@ -49,13 +49,13 @@ export default function ZonesDinterventionPage() {
 
         {seyne && (
           <section className={styles.highlight} aria-labelledby="seyne-title">
-            <h2 id="seyne-title">Débouchage à La Seyne-sur-Mer</h2>
+            <h2 id="seyne-title">Debouchage à La Seyne-sur-Mer</h2>
             <p>
               La Seyne-sur-Mer ({seyne.code_postal}) — plus de 64&nbsp;000 habitants — fait partie de nos zones
               prioritaires. Fil d&apos;ariane : Accueil → Zones d&apos;intervention → page ville.
             </p>
             <Link href="/debouchage-la-seyne-sur-mer/">
-              Voir la page débouchage La Seyne-sur-Mer →
+              Voir la page debouchage La Seyne-sur-Mer →
             </Link>
           </section>
         )}

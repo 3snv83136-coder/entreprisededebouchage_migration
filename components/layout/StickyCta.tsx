@@ -9,7 +9,7 @@ export default function StickyCta() {
   return (
     <div className={`${styles.sticky} ${visible ? styles.visible : ''}`}>
       <div className={styles.inner}>
-        <span className={styles.text}>Urgence débouchage ? Appelez maintenant</span>
+        <span className={styles.text}>Urgence debouchage ? Appelez maintenant</span>
         <a href={`tel:${PHONE_RAW}`} className={styles.link}>
           📞 Appeler — {PHONE}
         </a>

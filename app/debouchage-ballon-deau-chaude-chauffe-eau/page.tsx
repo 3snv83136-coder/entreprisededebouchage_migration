@@ -27,10 +27,10 @@ const faqs = [
 ];
 
 const content = {
-  intro: `Le calcaire est l'ennemi principal de votre ballon d'eau chaude ou chauffe-eau. Dans le Var, l'eau est particulièrement calcaire, ce qui accélère l'entartrage. Nos techniciens interviennent pour le détartrage, le débouchage de l'évacuation et la vérification du groupe de sécurité. Un ballon entartré consomme plus d'énergie et produit moins d'eau chaude — l'intervention est vite rentabilisée.`,
+  intro: `Le calcaire est l'ennemi principal de votre ballon d'eau chaude ou chauffe-eau. Dans le Var, l'eau est particulièrement calcaire, ce qui accélère l'entartrage. Nos techniciens interviennent pour le détartrage, le debouchage de l'évacuation et la vérification du groupe de sécurité. Un ballon entartré consomme plus d'énergie et produit moins d'eau chaude — l'intervention est vite rentabilisée.`,
   problems: `Les signes d'un ballon d'eau chaude entartré ou bouché : eau moins chaude qu'avant, temps de chauffe plus long, bruit de claquement dans le ballon, goutte-à-goutte au niveau du groupe de sécurité, pression d'eau chaude faible.`,
   intervention: `Notre intervention comprend : coupure de l'alimentation, vidange du ballon, détartrage de la cuve et de la résistance, nettoyage de l'évacuation du groupe de sécurité, vérification de l'anode et remise en service. Durée : 1 à 2 heures.`,
-  tarif: `Le détartrage et débouchage de ballon d'eau chaude est une intervention intermédiaire. Le tarif dépend du type de ballon (vertical, horizontal, électrique, thermodynamique) et de son accessibilité.`,
+  tarif: `Le détartrage et debouchage de ballon d'eau chaude est une intervention intermédiaire. Le tarif dépend du type de ballon (vertical, horizontal, électrique, thermodynamique) et de son accessibilité.`,
 };
 
 export default function Page() {

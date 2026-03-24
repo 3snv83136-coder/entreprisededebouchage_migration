@@ -27,10 +27,10 @@ const faqs = [
 ];
 
 const content = {
-  intro: `La salle de bain concentre plusieurs sources de bouchons : cheveux dans la douche et la baignoire, savon et dentifrice dans le lavabo, et calcaire qui s'accumule partout. Notre service de débouchage salle de bain traite l'ensemble du réseau en une seule visite : douche, baignoire, lavabo et évacuation au sol. Nous intervenons 24h/7j dans le Var avec du matériel professionnel adapté.`,
+  intro: `La salle de bain concentre plusieurs sources de bouchons : cheveux dans la douche et la baignoire, savon et dentifrice dans le lavabo, et calcaire qui s'accumule partout. Notre service de debouchage salle de bain traite l'ensemble du réseau en une seule visite : douche, baignoire, lavabo et évacuation au sol. Nous intervenons 24h/7j dans le Var avec du matériel professionnel adapté.`,
   problems: `Les bouchons de salle de bain sont causés par l'accumulation de cheveux mélangés au savon, formant un bouchon compact et collant. Le calcaire, très présent dans l'eau du Var, aggrave le problème en réduisant le diamètre des canalisations. Si plusieurs sanitaires de la salle de bain s'écoulent mal en même temps, le bouchon est probablement dans la canalisation commune.`,
   intervention: `Nous traitons l'ensemble de la salle de bain en une seule visite. Pour chaque sanitaire, nous vérifions le siphon, passons le furet dans la canalisation et utilisons l'hydrocurage si nécessaire. Nous nettoyons également les bondes et grilles pour prévenir les prochains bouchons.`,
-  tarif: `Le débouchage de salle de bain peut concerner un seul sanitaire ou l'ensemble de la pièce. Le tarif est adapté en conséquence. Nous vous donnons un prix fixe avant toute intervention.`,
+  tarif: `Le debouchage de salle de bain peut concerner un seul sanitaire ou l'ensemble de la pièce. Le tarif est adapté en conséquence. Nous vous donnons un prix fixe avant toute intervention.`,
 };
 
 export default function Page() {

@@ -80,14 +80,14 @@ Exemples : `/debouchage-canalisation-toulon/`, `/debouchage-wc-toilettes-hyeres/
 ### 5.1 Page ville (Tier 1 & Tier 2)
 
 ```
-H1: Débouchage [Ville] [Code Postal] — Intervention rapide 24h/7j
+H1: Debouchage [Ville] [Code Postal] — Intervention rapide 24h/7j
 
 [HERO] Accroche locale + CTA téléphone + badge urgence + stats (délai, dispo, devis)
 
-H2: Nos services de débouchage à [Ville]
+H2: Nos services de debouchage à [Ville]
   → Grille des 11 services avec liens (Tier 1 : vers pages service×ville, Tier 2 : vers pages services génériques)
 
-H2: Intervention de débouchage à [Quartier 1], [Quartier 2] et dans tout [Ville]
+H2: Intervention de debouchage à [Quartier 1], [Quartier 2] et dans tout [Ville]
   → Paragraphe ultra-local : quartiers, rues, type d'habitat, problématiques spécifiques
   → Mention réseau ancien centre-ville, calcaire, etc.
 
@@ -98,7 +98,7 @@ H2: Zone d'intervention autour de [Ville]
 H2: Pourquoi faire appel à nous à [Ville] ?
   → 3 arguments : réactivité, transparence tarifs, expertise locale
 
-H2: Questions fréquentes sur le débouchage à [Ville]
+H2: Questions fréquentes sur le debouchage à [Ville]
   → 3 FAQ localisées, uniques par ville
 
 [CTA FINAL] Bandeau orange + numéro + "Devis gratuit en 5 minutes"
@@ -109,7 +109,7 @@ H2: Questions fréquentes sur le débouchage à [Ville]
 ### 5.2 Page service×ville (Tier 1 uniquement)
 
 ```
-H1: Débouchage [Service Label] à [Ville] — Technicien disponible 24h
+H1: Debouchage [Service Label] à [Ville] — Technicien disponible 24h
 
 [HERO] Accroche ciblée service + ville + CTA
 
@@ -122,7 +122,7 @@ H2: Les causes fréquentes de [problème] à [Ville]
 H2: Comment on intervient pour un [service] bouché
   → Déroulé technique : diagnostic, méthode, durée
 
-H2: Tarifs débouchage [service] à [Ville]
+H2: Tarifs debouchage [service] à [Ville]
   → Fourchette réaliste, mention devis gratuit
 
 H2: On intervient aussi dans les communes voisines
@@ -223,7 +223,7 @@ H2: Questions fréquentes
 ```json
 [
   { "@type": "Plumber", ... },
-  { "@type": "Service", "name": "Débouchage [service]", "areaServed": { "@type": "City" }, ... },
+  { "@type": "Service", "name": "Debouchage [service]", "areaServed": { "@type": "City" }, ... },
   { "@type": "FAQPage", ... },
   { "@type": "BreadcrumbList", ... }
 ]
@@ -265,7 +265,7 @@ Les communes voisines sont calculées par proximité géographique (même arrond
 
 **CTA intermédiaire (Urgence Banner) :**
 - Bandeau rouge/orange entre les sections
-- "Urgence débouchage ? Appelez maintenant"
+- "Urgence debouchage ? Appelez maintenant"
 - Pleine largeur, padding généreux
 
 **CTA final :**
@@ -325,16 +325,16 @@ Les communes voisines sont calculées par proximité géographique (même arrond
 
 ```json
 {
-  "title": "Débouchage Toulon 83000 — Intervention rapide 24h/7j",
+  "title": "Debouchage Toulon 83000 — Intervention rapide 24h/7j",
   "slug": "debouchage-toulon",
   "type": "ville",
   "ville": "Toulon",
   "code_postal": "83000",
   "status": "draft",
   "meta": {
-    "title": "Débouchage Toulon 83000 — Urgence 24h/7j",
-    "description": "Service de débouchage à Toulon. Intervention rapide dans tout le centre-ville et le Mourillon. Devis gratuit. Disponible 24h/7j.",
-    "focus_keyword": "débouchage Toulon"
+    "title": "Debouchage Toulon 83000 — Urgence 24h/7j",
+    "description": "Service de debouchage à Toulon. Intervention rapide dans tout le centre-ville et le Mourillon. Devis gratuit. Disponible 24h/7j.",
+    "focus_keyword": "debouchage Toulon"
   },
   "content": "<article>...HTML complet...</article>",
   "faq": [
@@ -342,7 +342,7 @@ Les communes voisines sont calculées par proximité géographique (même arrond
   ],
   "schema": { ... },
   "internal_links": [
-    { "slug": "debouchage-la-seyne-sur-mer", "label": "Débouchage La Seyne-sur-Mer" }
+    { "slug": "debouchage-la-seyne-sur-mer", "label": "Debouchage La Seyne-sur-Mer" }
   ],
   "word_count": 856,
   "quartiers": ["Le Mourillon", "Le Port", "La Rode", "Saint-Jean du Var", "Le Pont du Las"]

@@ -3,8 +3,8 @@ import { Ville, Service } from '@/lib/types';
 import { BASE_URL, COMPANY_NAME } from '@/lib/config';
 
 export function generateMetadataForCity(ville: Ville): Metadata {
-  const title = `Débouchage ${ville.ville} ${ville.code_postal} — Urgence 24h/7j`;
-  const description = `Débouchage à ${ville.ville} (${ville.code_postal}) : intervention rapide 24h/7j pour canalisations, WC et évier bouchés. Technicien qualifié dans le ${ville.departement}, devis gratuit.`;
+  const title = `Debouchage ${ville.ville} ${ville.code_postal} — Urgence 24h/7j`;
+  const description = `Debouchage à ${ville.ville} (${ville.code_postal}) : intervention rapide 24h/7j pour canalisations, WC et évier bouchés. Technicien qualifié dans le ${ville.departement}, devis gratuit.`;
 
   return {
     title,
@@ -63,16 +63,16 @@ export function generateMetadataForServiceCity(service: Service, ville: Ville): 
 export function generateMetadataForPage(pageType: string): Metadata {
   const meta: Record<string, { title: string; description: string }> = {
     home: {
-      title: `${COMPANY_NAME} — Débouchage dans le Var 24h/7j`,
-      description: `${COMPANY_NAME} : débouchage canalisations, WC, évier à Toulon et dans le Var. Intervention rapide 24h/7j, devis gratuit. Depuis 19 ans.`,
+      title: `${COMPANY_NAME} — Debouchage dans le Var 24h/7j`,
+      description: `${COMPANY_NAME} : debouchage canalisations, WC, évier à Toulon et dans le Var. Intervention rapide 24h/7j, devis gratuit. Depuis 19 ans.`,
     },
     tarifs: {
-      title: 'Nos tarifs — Débouchage dans le Var',
-      description: 'Tarifs transparents pour tous nos services de débouchage dans le Var. Devis gratuit, prix fixe annoncé avant intervention.',
+      title: 'Nos tarifs — Debouchage dans le Var',
+      description: 'Tarifs transparents pour tous nos services de debouchage dans le Var. Devis gratuit, prix fixe annoncé avant intervention.',
     },
     prestations: {
-      title: 'Nos prestations — Débouchage dans le Var',
-      description: 'Découvrez nos prestations de débouchage : canalisations, WC, évier, douche, égout, fosse septique. Intervention 24h/7j dans le Var.',
+      title: 'Nos prestations — Debouchage dans le Var',
+      description: 'Découvrez nos prestations de debouchage : canalisations, WC, évier, douche, égout, fosse septique. Intervention 24h/7j dans le Var.',
     },
   };
 

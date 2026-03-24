@@ -27,10 +27,10 @@ const faqs = [
 ];
 
 const content = {
-  intro: `Le débouchage et la vidange de fosse septique nécessitent un savoir-faire spécifique et un véhicule équipé d'une citerne et d'une pompe. Notre équipe intervient dans tout le Var pour le débouchage, la vidange et l'entretien de votre fosse septique ou fosse toutes eaux. Une fosse mal entretenue peut provoquer des remontées d'odeurs, un débordement ou une pollution du sol. Nous vous accompagnons avec un service complet : diagnostic, vidange, curage et conseil d'entretien.`,
+  intro: `Le debouchage et la vidange de fosse septique nécessitent un savoir-faire spécifique et un véhicule équipé d'une citerne et d'une pompe. Notre équipe intervient dans tout le Var pour le debouchage, la vidange et l'entretien de votre fosse septique ou fosse toutes eaux. Une fosse mal entretenue peut provoquer des remontées d'odeurs, un débordement ou une pollution du sol. Nous vous accompagnons avec un service complet : diagnostic, vidange, curage et conseil d'entretien.`,
   problems: `Les signes d'une fosse septique qui nécessite une intervention : mauvaises odeurs persistantes autour de la fosse, écoulement lent dans toute la maison, eau qui remonte dans les sanitaires, herbe anormalement verte au-dessus de la fosse, ou fosse qui déborde.`,
   intervention: `Notre intervention comprend : inspection visuelle de la fosse, pompage du contenu avec notre camion citerne, curage des canalisations d'entrée et de sortie, vérification du bon fonctionnement du système de prétraitement, et recommandations d'entretien.`,
-  tarif: `La vidange et le débouchage de fosse septique nécessitent un véhicule spécialisé (camion pompe). Le tarif dépend du volume de la fosse et de la distance. C'est une intervention plus conséquente mais indispensable tous les 3 à 4 ans.`,
+  tarif: `La vidange et le debouchage de fosse septique nécessitent un véhicule spécialisé (camion pompe). Le tarif dépend du volume de la fosse et de la distance. C'est une intervention plus conséquente mais indispensable tous les 3 à 4 ans.`,
 };
 
 export default function Page() {

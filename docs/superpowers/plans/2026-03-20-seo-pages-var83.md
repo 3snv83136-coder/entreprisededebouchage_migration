@@ -622,11 +622,11 @@ function getDefaultFaqs(villeName: string): FaqItem[] {
       answer: `Nos techniciens interviennent généralement en moins d'une heure sur ${villeName} et les quartiers proches. En cas d'urgence absolue, nous priorisons votre appel.`,
     },
     {
-      question: `Le débouchage est-il garanti à ${villeName} ?`,
+      question: `Le debouchage est-il garanti à ${villeName} ?`,
       answer: `Oui, chaque intervention est garantie. Si le bouchon n'est pas résolu, nous revenons sans frais supplémentaires.`,
     },
     {
-      question: `Combien coûte un débouchage à ${villeName} ?`,
+      question: `Combien coûte un debouchage à ${villeName} ?`,
       answer: `Le tarif dépend du type d'intervention. Nous donnons un devis gratuit par téléphone et confirmons le prix avant de commencer. Aucun frais caché.`,
     },
   ];
@@ -993,7 +993,7 @@ export default function StickyCta() {
   return (
     <div className={`${styles.sticky} ${visible ? styles.visible : ''}`}>
       <div className={styles.inner}>
-        <span className={styles.text}>Urgence débouchage ? Appelez maintenant</span>
+        <span className={styles.text}>Urgence debouchage ? Appelez maintenant</span>
         <a href={`tel:${PHONE_RAW}`} className={styles.link}>
           📞 Appeler — {PHONE}
         </a>
@@ -1230,7 +1230,7 @@ git commit -m "design: responsive audit fixes — touch targets, grid collapse, 
 Each agent receives this prompt template:
 
 ```
-ROLE: Tu es un rédacteur SEO spécialisé en plomberie/débouchage dans le Var (83).
+ROLE: Tu es un rédacteur SEO spécialisé en plomberie/debouchage dans le Var (83).
 TON: Pro avec touche humaine — "on" plutôt que "nous", phrases courtes, références terrain.
 PAS DE: copwriting générique, superlatifs creux, pression commerciale.
 
@@ -1241,9 +1241,9 @@ DONNÉES LOCALES PAR VILLE:
 [QUARTIERS, AXES, HABITAT, PROBLEMATIQUE, CONTEXTE]
 
 STRUCTURE DE CHAQUE PAGE (HTML dans le champ content):
-<h1>Débouchage [Ville] [Code_Postal] — Intervention rapide 24h/7j</h1>
+<h1>Debouchage [Ville] [Code_Postal] — Intervention rapide 24h/7j</h1>
 <p>[Intro 2-3 phrases ultra-locales, mentionner quartiers]</p>
-<h2>Nos services de débouchage à [Ville]</h2>
+<h2>Nos services de debouchage à [Ville]</h2>
 [Liste des 11 services avec descriptions courtes adaptées au contexte local]
 <h2>On intervient dans tout [Ville] : [Quartier1], [Quartier2]...</h2>
 [Paragraphe ultra-local : type d'habitat, problématiques spécifiques, axes]
@@ -1251,9 +1251,9 @@ STRUCTURE DE CHAQUE PAGE (HTML dans le champ content):
 [5 communes voisines avec liens <a href="/debouchage-[slug]/">]
 <h2>Pourquoi faire appel à nous à [Ville] ?</h2>
 [3 arguments : réactivité, transparence, expertise locale]
-<h2>Questions fréquentes sur le débouchage à [Ville]</h2>
+<h2>Questions fréquentes sur le debouchage à [Ville]</h2>
 [3 FAQ en <p><strong>Question ?</strong><br>Réponse</p>]
-<h2>Contactez-nous pour un débouchage à [Ville]</h2>
+<h2>Contactez-nous pour un debouchage à [Ville]</h2>
 [CTA final avec mention 24h/7j, devis gratuit]
 
 RÈGLES:
@@ -1265,16 +1265,16 @@ RÈGLES:
 
 FORMAT JSON PAR PAGE:
 {
-  "title": "Débouchage [Ville] [Code_Postal] — Urgence 24h/7j",
+  "title": "Debouchage [Ville] [Code_Postal] — Urgence 24h/7j",
   "slug": "debouchage-[ville-slug]",
   "type": "ville",
   "ville": "[Ville]",
   "code_postal": "[Code_Postal]",
   "status": "draft",
   "meta": {
-    "title": "Débouchage [Ville] [Code_Postal] — Urgence 24h/7j",
+    "title": "Debouchage [Ville] [Code_Postal] — Urgence 24h/7j",
     "description": "[150-160 chars avec ville + service principal + département]",
-    "focus_keyword": "débouchage [Ville]"
+    "focus_keyword": "debouchage [Ville]"
   },
   "content": "[HTML complet]",
   "faq": [{"question": "...", "answer": "..."}],
@@ -1314,7 +1314,7 @@ git commit -m "content: generate 12 Tier 1 city pages with ultra-local content"
 Agent prompt template for service×city:
 
 ```
-ROLE: Tu es un rédacteur SEO spécialisé en plomberie/débouchage dans le Var (83).
+ROLE: Tu es un rédacteur SEO spécialisé en plomberie/debouchage dans le Var (83).
 TON: Pro avec touche humaine.
 
 MISSION: Génère les 11 pages service×ville pour [VILLE] ([CODE_POSTAL]).
@@ -1327,17 +1327,17 @@ DONNÉES LOCALES:
 - Contexte: [DESCRIPTION]
 
 SERVICES À COUVRIR:
-1. debouchage-canalisation → "Débouchage canalisation"
-2. debouchage-wc-toilettes → "Débouchage WC"
-3. debouchage-evier-lavabo → "Débouchage évier & lavabo"
-4. debouchage-douche-baignoire → "Débouchage douche & baignoire"
-5. debouchage-salle-de-bain → "Débouchage salle de bain"
-6. debouchage-cuisine → "Débouchage cuisine"
-7. debouchage-lave-vaisselle → "Débouchage lave-vaisselle"
-8. debouchage-lave-linge → "Débouchage lave-linge"
-9. debouchage-fosse-septique → "Débouchage fosse septique"
-10. debouchage-egouts-regards → "Débouchage égout & regard"
-11. debouchage-ballon-deau-chaude-chauffe-eau → "Débouchage ballon d'eau chaude"
+1. debouchage-canalisation → "Debouchage canalisation"
+2. debouchage-wc-toilettes → "Debouchage WC"
+3. debouchage-evier-lavabo → "Debouchage évier & lavabo"
+4. debouchage-douche-baignoire → "Debouchage douche & baignoire"
+5. debouchage-salle-de-bain → "Debouchage salle de bain"
+6. debouchage-cuisine → "Debouchage cuisine"
+7. debouchage-lave-vaisselle → "Debouchage lave-vaisselle"
+8. debouchage-lave-linge → "Debouchage lave-linge"
+9. debouchage-fosse-septique → "Debouchage fosse septique"
+10. debouchage-egouts-regards → "Debouchage égout & regard"
+11. debouchage-ballon-deau-chaude-chauffe-eau → "Debouchage ballon d'eau chaude"
 
 STRUCTURE HTML PAR PAGE:
 <h1>[Service Label] à [Ville] — Technicien disponible 24h</h1>

@@ -24,10 +24,10 @@ const dmSans = DM_Sans({
 
 export const metadata: Metadata = {
   title: {
-    default: `${COMPANY_NAME} — Débouchage dans le Var 24h/7j`,
+    default: `${COMPANY_NAME} — Debouchage dans le Var 24h/7j`,
     template: `%s | ${COMPANY_NAME}`,
   },
-  description: `${COMPANY_NAME} : débouchage canalisations, WC, évier à Toulon et dans le Var. Intervention rapide 24h/7j, devis gratuit.`,
+  description: `${COMPANY_NAME} : debouchage canalisations, WC, évier à Toulon et dans le Var. Intervention rapide 24h/7j, devis gratuit.`,
   metadataBase: new URL(BASE_URL),
   alternates: {
     canonical: '/',

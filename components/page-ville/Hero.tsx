@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { Ville } from '@/lib/types';
 import { PHONE, PHONE_RAW } from '@/lib/config';
 import styles from './Hero.module.css';
@@ -10,11 +11,20 @@ export default function Hero({ ville }: Props) {
   return (
     <section className={styles.hero}>
       <div className={styles.bg} />
+      <Image
+        src="/images/hero.jpg"
+        alt="Technicien debouchage Var"
+        fill
+        className={styles.bgPhoto}
+        priority
+        sizes="100vw"
+      />
+      <div className={styles.bgOverlay} />
       <div className={styles.grid} />
       <div className={styles.inner}>
         <div className={styles.badge}>Disponible maintenant</div>
         <h1 className={styles.title}>
-          Débouchage<br />
+          Debouchage<br />
           <em>{ville.ville}</em>
           {ville.code_postal}
         </h1>

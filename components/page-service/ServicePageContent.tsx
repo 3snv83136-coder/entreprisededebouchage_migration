@@ -6,6 +6,7 @@ import Link from 'next/link';
 import Faq from '@/components/page-ville/Faq';
 import CtaFinal from '@/components/page-ville/CtaFinal';
 import VilleSearchInline from '@/components/common/VilleSearchInline';
+import GeoEvierVarClusterLinks from '@/components/geo-evier/GeoEvierVarClusterLinks';
 import styles from './ServicePageContent.module.css';
 
 interface Props {
@@ -107,6 +108,8 @@ export default function ServicePageContent({ service, faqs, content }: Props) {
           </div>
         </div>
       </section>
+
+      {service.slug === 'debouchage-evier-lavabo' && <GeoEvierVarClusterLinks />}
 
       {/* Villes */}
       <section className={styles.section}>

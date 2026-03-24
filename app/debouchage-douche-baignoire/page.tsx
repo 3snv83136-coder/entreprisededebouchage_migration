@@ -30,7 +30,7 @@ const content = {
   intro: `Les cheveux, le savon et le calcaire sont les ennemis de vos évacuations de douche et baignoire. Au fil du temps, ces résidus forment un bouchon compact qui ralentit puis bloque l'écoulement de l'eau. Nos techniciens interviennent avec le matériel adapté pour extraire le bouchon et nettoyer la canalisation en profondeur, garantissant un écoulement durable. Nous intervenons 24h/7j dans tout le Var.`,
   problems: `Les signes d'un bouchon de douche ou baignoire : eau qui stagne pendant la douche, écoulement de plus en plus lent, mauvaises odeurs, gargouillis dans la bonde. Les cheveux longs combinés au savon forment un bouchon particulièrement tenace qui ne peut pas être résolu avec une ventouse classique.`,
   intervention: `Nous intervenons en plusieurs étapes : retrait de la grille ou bonde, extraction manuelle des résidus visibles, passage du furet pour les bouchons profonds, et nettoyage de la canalisation. Pour les baignoires anciennes avec des canalisations en fonte, nous adaptons notre technique pour éviter tout dommage.`,
-  tarif: `Le débouchage de douche et baignoire est une intervention courante et accessible. Le tarif dépend de l'accessibilité de la bonde et de la profondeur du bouchon.`,
+  tarif: `Le debouchage de douche et baignoire est une intervention courante et accessible. Le tarif dépend de l'accessibilité de la bonde et de la profondeur du bouchon.`,
 };
 
 export default function Page() {

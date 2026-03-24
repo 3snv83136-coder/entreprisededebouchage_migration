@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
+
 import { getAllVilles } from '@/lib/data/villes';
 import { getAllServices } from '@/lib/data/services';
 import { getAllRealisations } from '@/lib/data/realisations';
@@ -26,6 +27,15 @@ export default async function Home() {
     <>
       <section className={styles.hero}>
         <div className={styles.heroBg} />
+        <Image
+          src="/images/hero.jpg"
+          alt="Technicien debouchage Var"
+          fill
+          className={styles.heroPhoto}
+          priority
+          sizes="100vw"
+        />
+        <div className={styles.heroOverlay} />
 <div className={styles.heroInner}>
           <div className={styles.badge}>
             <span className={styles.badgeDot} />

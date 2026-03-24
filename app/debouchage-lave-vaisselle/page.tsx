@@ -30,7 +30,7 @@ const content = {
   intro: `Votre lave-vaisselle ne vidange plus, affiche un code erreur ou laisse de l'eau stagnante au fond ? Le problème vient souvent d'un bouchon dans l'évacuation ou le siphon de raccordement. Nos techniciens interviennent pour déboucher la canalisation, nettoyer le filtre et vérifier le bon fonctionnement de la pompe de vidange. Intervention rapide dans tout le Var, 24h/7j.`,
   problems: `Les problèmes de vidange de lave-vaisselle ont plusieurs causes : filtre encrassé, bouchon dans la canalisation de raccordement, siphon colmaté par les graisses, ou pompe de vidange défaillante. Les résidus alimentaires non rincés et les graisses sont les premiers responsables.`,
   intervention: `Nous vérifions d'abord le filtre et la pompe du lave-vaisselle. Si le problème vient de la canalisation, nous démontons le raccordement, nettoyons le siphon et passons le furet dans la canalisation commune avec l'évier. L'intervention est rapide : 30 à 45 minutes en moyenne.`,
-  tarif: `Le débouchage de lave-vaisselle est une intervention simple et rapide. Le tarif est parmi les plus accessibles de nos prestations.`,
+  tarif: `Le debouchage de lave-vaisselle est une intervention simple et rapide. Le tarif est parmi les plus accessibles de nos prestations.`,
 };
 
 export default function Page() {

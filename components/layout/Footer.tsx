@@ -20,9 +20,9 @@ export default function Footer() {
       <div className={styles.inner}>
         {/* Col 1 — Marque */}
         <div className={styles.col}>
-          <div className={styles.brand}>Débouchage<span>Pro</span></div>
+          <div className={styles.brand}>Debouchage<span>Pro</span></div>
           <p className={styles.desc}>
-            Entreprise de débouchage dans le Var depuis 19 ans. Intervention rapide 24h/7j sur les 153 communes du département.
+            Entreprise de debouchage dans le Var depuis 19 ans. Intervention rapide 24h/7j sur les 153 communes du département.
           </p>
           <a href={`tel:${PHONE_RAW}`} className={styles.phone}>
             📞 {PHONE}

@@ -38,7 +38,7 @@ export function generateSchemaCity(ville: Ville) {
     '@type': 'Plumber',
     '@id': `${BASE_URL}/debouchage-${ville.slug}/#plumber`,
     name: `${COMPANY_NAME} — ${ville.ville}`,
-    description: `Service de débouchage à ${ville.ville} disponible 24h/7j`,
+    description: `Service de debouchage à ${ville.ville} disponible 24h/7j`,
     parentOrganization: { '@id': ORG_ID },
     areaServed: {
       '@type': 'City',

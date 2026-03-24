@@ -18,7 +18,7 @@ export default function MentionsLegales() {
           <h2>Éditeur du site</h2>
           <p>
             <strong>{COMPANY_NAME}</strong><br />
-            Entreprise individuelle de débouchage et plomberie<br />
+            Entreprise individuelle de debouchage et plomberie<br />
             Siège social : Toulon (83000), Var, France<br />
             Téléphone : {PHONE}<br />
             SIRET : [À compléter]<br />

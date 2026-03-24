@@ -17,6 +17,21 @@
     var(--navy);
 }
 
+.heroPhoto {
+  position: absolute;
+  inset: 0;
+  object-fit: cover;
+  object-position: center;
+  opacity: 0.18;
+  mix-blend-mode: luminosity;
+}
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(13,17,23,0.5) 0%, rgba(13,17,23,0.8) 100%);
+}
+
 .heroLogo {
   position: absolute;
   top: 30%;

@@ -30,7 +30,7 @@ const content = {
   intro: `L'évier ou le lavabo bouché est un problème fréquent dans les cuisines et salles de bain. Les dépôts de graisse, les résidus alimentaires, le savon et le calcaire s'accumulent progressivement dans le siphon et les canalisations. Nos techniciens interviennent rapidement pour nettoyer en profondeur vos évacuations et rétablir un écoulement normal. Nous utilisons des techniques adaptées à chaque situation : démontage et nettoyage du siphon, furet motorisé ou hydrocurage pour les bouchons profonds.`,
   problems: `Un évier qui s'écoule lentement est le premier signe d'un bouchon en formation. Si vous constatez de l'eau stagnante, des mauvaises odeurs ou des gargouillis, il est temps d'intervenir. Les graisses de cuisine sont la première cause de bouchon d'évier, suivies par les cheveux et le savon pour les lavabos de salle de bain.`,
   intervention: `Pour un évier bouché, nous commençons par le siphon : démontage, nettoyage et remontage. Si le bouchon est plus profond, nous utilisons un furet motorisé pour atteindre l'obstruction dans la canalisation. Pour les cas les plus tenaces, l'hydrocurage haute pression décolle les dépôts de graisse et de calcaire accumulés sur les parois.`,
-  tarif: `Le débouchage d'évier et lavabo fait partie de nos interventions les plus accessibles. Le tarif varie selon que le bouchon est dans le siphon (intervention rapide) ou plus profond dans la canalisation.`,
+  tarif: `Le debouchage d'évier et lavabo fait partie de nos interventions les plus accessibles. Le tarif varie selon que le bouchon est dans le siphon (intervention rapide) ou plus profond dans la canalisation.`,
 };
 
 export default function Page() {

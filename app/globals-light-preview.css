@@ -1,0 +1,191 @@
+/*
+  PREVIEW THÈME CLAIR — inspiré reparation-canalisation.fr
+  Pour tester : remplacer temporairement globals.css par ce fichier
+  NE PAS DÉPLOYER sans validation visuelle complète
+*/
+
+:root {
+  --orange: #F7941D;
+  --orange-dark: #d97a0a;
+  --orange-light: #f9a94a;
+  --navy: #FFFFFF;          /* fond blanc au lieu de sombre */
+  --navy-mid: #F7FAFC;      /* sections alt gris très clair */
+  --navy-light: #EDF2F7;    /* bordures / hover */
+  --slate: #718096;         /* texte secondaire */
+  --white: #2D3748;         /* texte principal (inversé) */
+  --green: #38A169;
+  --radius: 12px;
+  --shadow: 0 8px 32px rgba(0, 0, 0, 0.10);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  background: var(--navy);
+  color: var(--white);
+  line-height: 1.6;
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+.site-main {
+  display: block;
+  min-width: 0;
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.container {
+  max-width: 1160px;
+  margin: 0 auto;
+}
+
+.section-label {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-bottom: 12px;
+}
+
+.section-title {
+  font-size: clamp(36px, 6vw, 60px);
+  letter-spacing: 0.04em;
+  line-height: 1.05;
+  color: var(--white);
+  margin-bottom: 16px;
+}
+
+.section-desc {
+  font-size: 17px;
+  color: var(--slate);
+  max-width: 560px;
+  line-height: 1.7;
+}
+
+/* Bouton — orange reste, texte blanc (lisible sur orange) */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--orange);
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 18px;
+  padding: 18px 40px;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: all 0.25s;
+  box-shadow: 0 4px 20px rgba(247, 148, 29, 0.3);
+  position: relative;
+  overflow: hidden;
+  border: none;
+  cursor: pointer;
+  animation: btnPulse 3s ease-in-out infinite;
+}
+
+.btn-primary::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.btn-primary:hover {
+  background: var(--orange-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(247, 148, 29, 0.45);
+  animation: none;
+}
+
+@keyframes btnPulse {
+  0%, 100% { box-shadow: 0 4px 20px rgba(247, 148, 29, 0.3); }
+  50% { box-shadow: 0 4px 32px rgba(247, 148, 29, 0.5); }
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--slate);
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.btn-secondary:hover {
+  color: var(--white);
+}
+
+@media (max-width: 768px) {
+  body {
+    padding-bottom: 88px;
+  }
+  .container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-title {
+    font-size: clamp(28px, 8vw, 36px);
+  }
+  .btn-primary {
+    width: 100%;
+    justify-content: center;
+    font-size: 16px;
+    padding: 16px 24px;
+    min-height: 56px;
+  }
+}
+
+.linkedKeyword {
+  color: var(--orange);
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+  font-weight: 600;
+  transition: color 0.15s;
+}
+
+.linkedKeyword:hover {
+  color: var(--orange-dark);
+  text-decoration-style: solid;
+}
