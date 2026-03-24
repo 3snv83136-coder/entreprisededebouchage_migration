@@ -32,9 +32,15 @@ const nextConfig: NextConfig = {
       // /var/debouchage-* → /debouchage-*
       { source: '/var/:slug', destination: '/:slug', permanent: true },
       { source: '/var/:slug/', destination: '/:slug/', permanent: true },
+      // /zone-dintervention/ et /zones-dintervention/ → /zones-dintervention/
+      { source: '/zone-dintervention', destination: '/zones-dintervention/', permanent: true },
+      { source: '/zone-dintervention/', destination: '/zones-dintervention/', permanent: true },
       // /zones-dintervention/:slug → /:slug
       { source: '/zones-dintervention/:slug', destination: '/:slug', permanent: true },
       { source: '/zones-dintervention/:slug/', destination: '/:slug/', permanent: true },
+      // /zone-dintervention/:slug → /:slug
+      { source: '/zone-dintervention/:slug', destination: '/:slug', permanent: true },
+      { source: '/zone-dintervention/:slug/', destination: '/:slug/', permanent: true },
     ];
   },
 };
