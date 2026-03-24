@@ -36,6 +36,12 @@ export const metadata: Metadata = {
     icon: '/logo-edd.png',
     apple: '/logo-edd.png',
   },
+  other: {
+    'geo.region': 'FR-83',
+    'geo.placename': 'Var, Provence-Alpes-Côte d\'Azur, France',
+    'geo.position': '43.1242;6.0173',
+    'ICBM': '43.1242, 6.0173',
+  },
 };
 
 export default function RootLayout({
@@ -51,6 +57,26 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              "url": BASE_URL,
+              "name": COMPANY_NAME,
+              "description": "Entreprise de debouchage dans le Var (83). Intervention 24h/7j sur 153 communes.",
+              "potentialAction": {
+                "@type": "SearchAction",
+                "target": {
+                  "@type": "EntryPoint",
+                  "urlTemplate": `${BASE_URL}/debouchage-{city}/`
+                },
+                "query-input": "required name=city"
+              }
+            })
+          }}
         />
       </head>
       <body style={{ fontFamily: 'var(--font-body), sans-serif' }}>

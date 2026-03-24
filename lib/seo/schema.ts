@@ -3,6 +3,20 @@ import { PHONE, COMPANY_NAME, BASE_URL } from '@/lib/config';
 
 const ORG_ID = `${BASE_URL}/#organization`;
 
+const SERVICE_PRICES: Record<string, string> = {
+  'debouchage-canalisation': '199',
+  'debouchage-wc-toilettes': '99',
+  'debouchage-evier-lavabo': '99',
+  'debouchage-douche-baignoire': '99',
+  'debouchage-egouts-regards': '199',
+  'debouchage-cuisine': '99',
+  'debouchage-fosse-septique': '199',
+  'debouchage-salle-de-bain': '99',
+  'debouchage-lave-vaisselle': '99',
+  'debouchage-lave-linge': '99',
+  'debouchage-ballon-deau-chaude-chauffe-eau': '110',
+};
+
 export function generateSchemaOrganization() {
   return {
     '@context': 'https://schema.org',
@@ -28,6 +42,12 @@ export function generateSchemaOrganization() {
       dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
       opens: '00:00',
       closes: '23:59',
+    },
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '4.9',
+      reviewCount: '489',
+      bestRating: '5',
     },
   };
 }
@@ -73,11 +93,11 @@ export function generateSchemaService(service: Service) {
     offers: {
       '@type': 'Offer',
       priceCurrency: 'EUR',
-      price: '99',
+      price: SERVICE_PRICES[service.slug] ?? '99',
       priceSpecification: {
         '@type': 'UnitPriceSpecification',
         priceCurrency: 'EUR',
-        price: '99',
+        price: SERVICE_PRICES[service.slug] ?? '99',
         unitText: 'intervention',
       },
     },
@@ -106,11 +126,11 @@ export function generateSchemaServiceCity(service: Service, ville: Ville) {
     offers: {
       '@type': 'Offer',
       priceCurrency: 'EUR',
-      price: '99',
+      price: SERVICE_PRICES[service.slug] ?? '99',
       priceSpecification: {
         '@type': 'UnitPriceSpecification',
         priceCurrency: 'EUR',
-        price: '99',
+        price: SERVICE_PRICES[service.slug] ?? '99',
         unitText: 'intervention',
       },
     },

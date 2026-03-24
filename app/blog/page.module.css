@@ -1,0 +1,185 @@
+/* ===== HERO ===== */
+.hero {
+  padding: 100px 24px 64px;
+  background: linear-gradient(180deg, var(--navy-mid) 0%, var(--navy) 100%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.heroInner {
+  max-width: 680px;
+}
+
+.heroTitle {
+  margin-bottom: 20px;
+}
+
+.heroDesc {
+  margin-bottom: 0;
+}
+
+/* ===== LISTING ===== */
+.listing {
+  padding: 64px 24px 80px;
+}
+
+.listingInner {
+  /* uses global .container */
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+/* ===== CARD ===== */
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 24px;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  background: var(--navy-mid);
+  text-decoration: none;
+  transition: border-color 0.22s ease, background 0.22s ease, transform 0.22s ease;
+}
+
+.card:hover {
+  border-color: rgba(251, 117, 0, 0.45);
+  background: rgba(251, 117, 0, 0.05);
+  transform: translateY(-3px);
+}
+
+.cardTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.cardTag {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--orange);
+  background: rgba(251, 117, 0, 0.12);
+  padding: 3px 10px;
+  border-radius: 20px;
+}
+
+.cardTime {
+  font-size: 12px;
+  color: var(--slate);
+}
+
+.cardTitle {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1.4;
+  margin: 0;
+}
+
+.card:hover .cardTitle {
+  color: var(--orange-light);
+}
+
+.cardDesc {
+  font-size: 14px;
+  color: var(--slate);
+  line-height: 1.65;
+  flex: 1;
+}
+
+.cardFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.cardDate {
+  font-size: 12px;
+  color: var(--slate);
+}
+
+.cardLink {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--orange);
+  transition: color 0.2s;
+}
+
+.card:hover .cardLink {
+  color: var(--orange-light);
+}
+
+.cardTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.cardTagItem {
+  font-size: 11px;
+  color: var(--slate);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+/* ===== CTA ===== */
+.ctaSection {
+  padding: 64px 24px;
+  background: var(--navy-mid);
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.ctaInner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  text-align: center;
+}
+
+.ctaText {
+  font-size: 20px;
+  color: var(--white);
+  font-weight: 500;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .hero {
+    padding: 80px 20px 48px;
+  }
+
+  .listing {
+    padding: 48px 20px 64px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .card {
+    padding: 20px;
+  }
+
+  .ctaSection {
+    padding: 48px 20px;
+  }
+}

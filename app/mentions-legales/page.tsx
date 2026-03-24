@@ -3,8 +3,8 @@ import { COMPANY_NAME, PHONE } from '@/lib/config';
 import styles from './page.module.css';
 
 export const metadata: Metadata = {
-  title: 'Mentions légales',
-  description: `Mentions légales du site ${COMPANY_NAME}. Informations sur l'éditeur, l'hébergeur et les conditions d'utilisation.`,
+  title: 'Mentions légales — Entreprise de Débouchage Var',
+  description: `Mentions légales de ${COMPANY_NAME}. SIRET, activité débouchage assainissement Var (83), hébergeur Vercel, RGPD.`,
   robots: { index: false, follow: true },
 };
 
@@ -19,10 +19,22 @@ export default function MentionsLegales() {
           <p>
             <strong>{COMPANY_NAME}</strong><br />
             Entreprise individuelle de debouchage et plomberie<br />
+            Entreprise en activité depuis 2005 dans le Var (83)<br />
             Siège social : Toulon (83000), Var, France<br />
             Téléphone : {PHONE}<br />
-            SIRET : [À compléter]<br />
-            Directeur de la publication : [À compléter]
+            Email : contact@entreprisededebouchage.com<br />
+            SIRET : À renseigner avant mise en ligne<br />
+            Directeur de la publication : À renseigner avant mise en ligne
+          </p>
+        </section>
+
+        <section className={styles.section}>
+          <h2>Activité professionnelle</h2>
+          <p>
+            Activité : Débouchage et assainissement de canalisations<br />
+            Code APE / NAF : 3700Z (collecte et traitement des eaux usées)<br />
+            Zone d&apos;intervention : Département du Var (83), 153 communes<br />
+            Certification : Techniciens formés aux techniques de débouchage et d&apos;hydrocurage
           </p>
         </section>
 
@@ -63,6 +75,15 @@ export default function MentionsLegales() {
           <p>
             Ce site utilise des cookies techniques nécessaires à son fonctionnement. Aucun cookie
             publicitaire ou de tracking tiers n&apos;est utilisé sans votre consentement.
+          </p>
+        </section>
+
+        <section className={styles.section}>
+          <h2>Tarification</h2>
+          <p>
+            Les tarifs affichés sur ce site (99€, 199€, 110€) sont les prix minimum par type
+            d&apos;intervention standard. Un devis gratuit et définitif est systématiquement
+            communiqué avant toute intervention.
           </p>
         </section>
 

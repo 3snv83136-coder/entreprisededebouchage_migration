@@ -18,6 +18,10 @@ export function generateMetadataForCity(ville: Ville): Metadata {
       locale: 'fr_FR',
       type: 'website',
     },
+    other: {
+      'geo.region': 'FR-83',
+      'geo.placename': `${ville.ville}, Var, Provence-Alpes-Côte d'Azur, France`,
+    },
   };
 }
 
@@ -56,6 +60,10 @@ export function generateMetadataForServiceCity(service: Service, ville: Ville): 
       siteName: COMPANY_NAME,
       locale: 'fr_FR',
       type: 'website',
+    },
+    other: {
+      'geo.region': 'FR-83',
+      'geo.placename': `${ville.ville}, Var, Provence-Alpes-Côte d'Azur, France`,
     },
   };
 }

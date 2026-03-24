@@ -64,6 +64,8 @@ export default function Footer() {
         <p>
           © {new Date().getFullYear()} {COMPANY_NAME} — Var (83) ·{' '}
           <Link href="/">entreprisededebouchage.com</Link> ·{' '}
+          <Link href="/a-propos/">À propos</Link> ·{' '}
+          <Link href="/blog/">Blog</Link> ·{' '}
           <Link href="/mentions-legales/">Mentions légales</Link>
         </p>
       </div>
