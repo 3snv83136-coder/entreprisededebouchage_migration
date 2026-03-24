@@ -15,6 +15,9 @@ const nextConfig: NextConfig = {
       { source: '/tarifs/', destination: '/nos-tarifs/', permanent: true },
       { source: '/prix', destination: '/nos-tarifs/', permanent: true },
       { source: '/prix/', destination: '/nos-tarifs/', permanent: true },
+      // /var/debouchage-* → /debouchage-*
+      { source: '/var/:slug', destination: '/:slug', permanent: true },
+      { source: '/var/:slug/', destination: '/:slug/', permanent: true },
     ];
   },
 };
