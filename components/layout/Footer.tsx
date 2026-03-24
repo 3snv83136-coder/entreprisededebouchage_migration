@@ -66,6 +66,7 @@ export default function Footer() {
           <Link href="/">entreprisededebouchage.com</Link> ·{' '}
           <Link href="/a-propos/">À propos</Link> ·{' '}
           <Link href="/blog/">Blog</Link> ·{' '}
+          <Link href="/lexique-assainissement/">Lexique</Link> ·{' '}
           <Link href="/mentions-legales/">Mentions légales</Link>
         </p>
       </div>
