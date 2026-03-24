@@ -184,3 +184,60 @@ export async function deleteRealisation(id: string) {
   revalidatePath('/realisations');
   revalidatePath('/');
 }
+
+export async function reEnrichirRealisation(id: string) {
+  // Fetch existing realisation
+  const { data: r, error } = await supabaseAdmin
+    .from('realisations')
+    .select('*')
+    .eq('id', id)
+    .single();
+
+  if (error || !r) redirect('/admin/realisations?error=1');
+
+  const updates: Partial<Realisation> = {};
+
+  try {
+    const improved = await ameliorerTexte({
+      type: r.type,
+      ville: r.ville,
+      code_postal: r.code_postal || undefined,
+      contexte: r.contexte || undefined,
+      diagnostic: r.diagnostic || undefined,
+      intervention: r.intervention,
+      resultat: r.resultat,
+      materiels: r.materiels || undefined,
+      duree: r.duree || undefined,
+    });
+    if (r.contexte && improved.contexte_enrichi) updates.contexte_enrichi = improved.contexte_enrichi;
+    if (r.diagnostic && improved.diagnostic_enrichi) updates.diagnostic_enrichi = improved.diagnostic_enrichi;
+    updates.intervention_enrichie = improved.intervention_enrichie;
+    updates.description_generee = improved.resultat_enrichi;
+    updates.titre = improved.titre_seo;
+    updates.meta_description = improved.meta_description;
+  } catch {
+    redirect('/admin/realisations?error=1');
+  }
+
+  // Regenerate FAQ + JSON-LD with enriched content
+  const faq = generateFaq(r.type, r.ville);
+  updates.faq = faq;
+  updates.json_ld = generateJsonLd({
+    type: r.type,
+    ville: r.ville,
+    slug: r.slug,
+    mois: r.mois,
+    annee: r.annee,
+    resultat: r.resultat,
+    temoignage: r.temoignage || undefined,
+    faq,
+    description_generee: updates.description_generee,
+    meta_description: updates.meta_description || r.meta_description,
+  });
+
+  await supabaseAdmin.from('realisations').update(updates).eq('id', id);
+
+  revalidatePath(`/realisations/${r.slug}/`);
+  revalidatePath('/realisations');
+  redirect('/admin/realisations?enriched=1');
+}

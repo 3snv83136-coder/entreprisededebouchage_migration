@@ -1,11 +1,16 @@
 import Link from 'next/link';
 import { getAllRealisations } from '@/lib/data/realisations';
-import { deleteRealisation } from '../actions';
+import { deleteRealisation, reEnrichirRealisation } from '../actions';
 import styles from './page.module.css';
 
 export const dynamic = 'force-dynamic';
 
-export default async function AdminRealisationsPage() {
+interface Props {
+  searchParams: Promise<{ enriched?: string; error?: string }>;
+}
+
+export default async function AdminRealisationsPage({ searchParams }: Props) {
+  const { enriched, error } = await searchParams;
   const realisations = await getAllRealisations();
 
   return (
@@ -15,51 +20,81 @@ export default async function AdminRealisationsPage() {
         <Link href="/admin" className={styles.addBtn}>+ Nouvelle</Link>
       </div>
 
+      {enriched && (
+        <div className={styles.banner + ' ' + styles.bannerSuccess}>
+          ✓ Réalisation enrichie avec succès !
+        </div>
+      )}
+      {error && (
+        <div className={styles.banner + ' ' + styles.bannerError}>
+          Erreur lors de l&apos;enrichissement.
+        </div>
+      )}
+
       {realisations.length === 0 ? (
         <p className={styles.empty}>Aucune réalisation pour l&apos;instant.</p>
       ) : (
         <div className={styles.list}>
-          {realisations.map((r) => (
-            <div key={r.id} className={styles.card}>
-              <div className={styles.cardMain}>
-                <div className={styles.cardTitle}>{r.type}</div>
-                <div className={styles.cardMeta}>
-                  📍 {r.ville} · 📅 {r.mois} {r.annee}
-                  {r.duree && ` · ⏱ ${r.duree}`}
+          {realisations.map((r) => {
+            const hasEnrichment = !!(r.intervention_enrichie || r.description_generee);
+            return (
+              <div key={r.id} className={styles.card}>
+                <div className={styles.cardMain}>
+                  <div className={styles.cardTitle}>{r.type}</div>
+                  <div className={styles.cardMeta}>
+                    📍 {r.ville}{r.code_postal ? ` (${r.code_postal})` : ''} · 📅 {r.mois} {r.annee}
+                    {r.duree && ` · ⏱ ${r.duree}`}
+                  </div>
+                  <div className={styles.badges}>
+                    {r.publiee !== false && (
+                      <span className={`${styles.badge} ${styles.badgePublie}`}>Publié</span>
+                    )}
+                    {hasEnrichment ? (
+                      <span className={`${styles.badge} ${styles.badgeIA}`}>IA ✓</span>
+                    ) : (
+                      <span className={`${styles.badge} ${styles.badgeNoIA}`}>Sans IA</span>
+                    )}
+                    {r.email_envoye && (
+                      <span className={`${styles.badge} ${styles.badgeEmail}`}>Email ✓</span>
+                    )}
+                    {r.photo_avant_url && (
+                      <span className={`${styles.badge} ${styles.badgePhoto}`}>📷 Avant</span>
+                    )}
+                    {r.photo_apres_url && (
+                      <span className={`${styles.badge} ${styles.badgePhoto}`}>📷 Après</span>
+                    )}
+                  </div>
                 </div>
-                <div className={styles.badges}>
-                  {r.publiee !== false && (
-                    <span className={`${styles.badge} ${styles.badgePublie}`}>Publié</span>
+                <div className={styles.cardActions}>
+                  <Link
+                    href={`/realisations/${r.slug}/`}
+                    target="_blank"
+                    className={styles.viewBtn}
+                  >
+                    Voir →
+                  </Link>
+                  {!hasEnrichment && (
+                    <form action={reEnrichirRealisation.bind(null, r.id!)}>
+                      <button type="submit" className={styles.enrichBtn}>
+                        ✨ Enrichir
+                      </button>
+                    </form>
                   )}
-                  {r.email_envoye && (
-                    <span className={`${styles.badge} ${styles.badgeEmail}`}>Email ✓</span>
-                  )}
-                  {r.photo_avant_url && (
-                    <span className={`${styles.badge} ${styles.badgePhoto}`}>📷 Avant</span>
-                  )}
-                  {r.photo_apres_url && (
-                    <span className={`${styles.badge} ${styles.badgePhoto}`}>📷 Après</span>
-                  )}
+                  <form action={deleteRealisation.bind(null, r.id!)}>
+                    <button
+                      type="submit"
+                      className={styles.deleteBtn}
+                      onClick={(e) => {
+                        if (!confirm('Supprimer cette réalisation ?')) e.preventDefault();
+                      }}
+                    >
+                      Suppr.
+                    </button>
+                  </form>
                 </div>
               </div>
-              <div className={styles.cardActions}>
-                <Link
-                  href={`/realisations/${r.slug}/`}
-                  target="_blank"
-                  className={styles.viewBtn}
-                >
-                  Voir →
-                </Link>
-                <form action={deleteRealisation.bind(null, r.id!)}>
-                  <button type="submit" className={styles.deleteBtn} onClick={(e) => {
-                    if (!confirm('Supprimer cette réalisation ?')) e.preventDefault();
-                  }}>
-                    Supprimer
-                  </button>
-                </form>
-              </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       )}
     </div>
