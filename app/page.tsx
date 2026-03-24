@@ -27,12 +27,12 @@ export default function Home() {
             Disponible maintenant — Var (83)
           </div>
           <h1 className={styles.title}>
-            Débouchage<br />
+            Debouchage<br />
             <em>dans le Var</em>
             24h/7j
           </h1>
           <p className={styles.sub}>
-            Entreprise de débouchage depuis 19 ans. Intervention en moins d&apos;une
+            Entreprise de debouchage depuis 19 ans. Intervention en moins d&apos;une
             heure à Toulon et dans tout le Var. Devis gratuit, prix fixe.
           </p>
 
@@ -43,7 +43,7 @@ export default function Home() {
           {/* Tarifs */}
           <div className={styles.pricing}>
             <div className={styles.pricingCard}>
-              <h3 className={styles.pricingTitle}>Débouchage Manuel</h3>
+              <h3 className={styles.pricingTitle}>Debouchage Manuel</h3>
               <p className={styles.pricingDesc}>Évier, WC, Douche</p>
               <div className={styles.pricingPrice}>99<span>€</span></div>
             </div>
@@ -96,6 +96,15 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <div className={styles.realisationsStrip}>
+        <div className="container">
+          <Link href="/realisations/" className={styles.realisationsLink}>
+            <span>Interventions récentes dans le Var</span>
+            <span className={styles.realisationsArrow}>Voir nos réalisations →</span>
+          </Link>
+        </div>
+      </div>
 
       <section className={styles.section}>
         <div className="container">

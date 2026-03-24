@@ -280,6 +280,39 @@
   transform: translateX(0);
 }
 
+/* Réalisations strip */
+.realisationsStrip {
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 16px 24px;
+  background: rgba(22, 27, 34, 0.4);
+}
+
+.realisationsLink {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-decoration: none;
+  gap: 16px;
+}
+
+.realisationsLink span:first-child {
+  font-size: 13px;
+  color: var(--slate);
+}
+
+.realisationsArrow {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--orange);
+  white-space: nowrap;
+  transition: gap 0.2s;
+}
+
+.realisationsLink:hover .realisationsArrow {
+  text-decoration: underline;
+}
+
 /* Ville tag cloud */
 .villeTagCloud {
   display: flex;
