@@ -12,6 +12,11 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  async rewrites() {
+    return [
+      { source: '/sitemap.xml', destination: '/sitemap-index' },
+    ];
+  },
   async redirects() {
     return [
       // Variantes courantes vers /nos-prestations/
