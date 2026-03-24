@@ -1,0 +1,136 @@
+.page {
+  min-height: 100vh;
+  padding: 32px 20px 80px;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.title {
+  font-size: 24px;
+  color: var(--white);
+  margin: 0;
+}
+
+.addBtn {
+  background: var(--orange);
+  color: var(--navy);
+  font-weight: 700;
+  font-size: 14px;
+  padding: 10px 20px;
+  border-radius: 50px;
+  text-decoration: none;
+}
+
+.empty {
+  color: var(--slate);
+  text-align: center;
+  margin-top: 60px;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.card {
+  background: rgba(22, 27, 34, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 16px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.cardMain {
+  flex: 1;
+  min-width: 0;
+}
+
+.cardTitle {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 4px;
+}
+
+.cardMeta {
+  font-size: 13px;
+  color: var(--slate);
+  margin-bottom: 8px;
+}
+
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.badge {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: 20px;
+}
+
+.badgePublie {
+  background: rgba(34, 197, 94, 0.15);
+  color: #4ade80;
+  border: 1px solid rgba(34, 197, 94, 0.3);
+}
+
+.badgeEmail {
+  background: rgba(59, 130, 246, 0.15);
+  color: #93c5fd;
+  border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+.badgePhoto {
+  background: rgba(251, 117, 0, 0.15);
+  color: var(--orange-light);
+  border: 1px solid rgba(251, 117, 0, 0.3);
+}
+
+.cardActions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.viewBtn {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--orange);
+  text-decoration: none;
+  padding: 6px 12px;
+  border: 1px solid rgba(251, 117, 0, 0.3);
+  border-radius: 20px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.deleteBtn {
+  font-size: 12px;
+  font-weight: 600;
+  color: #f87171;
+  background: transparent;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  border-radius: 20px;
+  padding: 6px 12px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.deleteBtn:hover {
+  background: rgba(239, 68, 68, 0.1);
+}

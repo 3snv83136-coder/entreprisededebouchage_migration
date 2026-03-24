@@ -83,4 +83,14 @@ export interface Realisation {
   meta_title?: string;
   meta_description?: string;
   created_at?: string;
+  photo_avant_url?: string;
+  photo_apres_url?: string;
+  faq?: Array<{ question: string; reponse: string }>;
+  json_ld?: object;
+  publiee?: boolean;
+  email_envoye?: boolean;
+  code_postal?: string;
+  materiels?: string;
+  titre?: string;
+  description_generee?: string;
 }

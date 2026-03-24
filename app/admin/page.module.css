@@ -115,3 +115,46 @@
   opacity: 0.85;
   transform: scale(0.99);
 }
+
+.fileLabel {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 16px;
+  background: rgba(22, 27, 34, 0.8);
+  border: 1px dashed rgba(251, 117, 0, 0.4);
+  border-radius: 12px;
+  color: var(--slate);
+  font-size: 14px;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+
+.fileLabel:hover {
+  border-color: var(--orange);
+  color: var(--white);
+}
+
+.fileInput {
+  display: none;
+}
+
+.navLinks {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.navLink {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--orange);
+  text-decoration: none;
+  padding: 6px 14px;
+  border: 1px solid rgba(251, 117, 0, 0.3);
+  border-radius: 20px;
+}
+
+.navLink:hover {
+  background: rgba(251, 117, 0, 0.1);
+}

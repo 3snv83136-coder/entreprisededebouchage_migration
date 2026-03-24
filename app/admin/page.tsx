@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { getAllServices } from '@/lib/data/services';
 import { saveRealisation } from './actions';
 import styles from './page.module.css';
@@ -26,6 +27,12 @@ export default async function AdminPage({ searchParams }: Props) {
         <p className={styles.sub}>Remplis les champs après l&apos;intervention</p>
       </div>
 
+      <div className={styles.navLinks}>
+        <Link href="/admin/realisations" className={styles.navLink}>
+          Voir toutes les réalisations →
+        </Link>
+      </div>
+
       {success && (
         <div className={styles.banner + ' ' + styles.bannerSuccess}>
           ✓ Réalisation enregistrée !
@@ -37,7 +44,7 @@ export default async function AdminPage({ searchParams }: Props) {
         </div>
       )}
 
-      <form action={saveRealisation} className={styles.form}>
+      <form action={saveRealisation} className={styles.form} encType="multipart/form-data">
 
         {/* Service */}
         <div className={styles.field}>
@@ -49,21 +56,32 @@ export default async function AdminPage({ searchParams }: Props) {
               </option>
             ))}
           </select>
-          {/* Hidden field updated by JS */}
           <input type="hidden" name="type" id="type-hidden" value={services[0]?.label || ''} />
         </div>
 
-        {/* Ville */}
-        <div className={styles.field}>
-          <label className={styles.label}>Ville *</label>
-          <input
-            type="text"
-            name="ville"
-            className={styles.input}
-            placeholder="ex: Toulon"
-            required
-            autoCapitalize="words"
-          />
+        {/* Ville + Code postal */}
+        <div className={styles.row}>
+          <div className={styles.field}>
+            <label className={styles.label}>Ville *</label>
+            <input
+              type="text"
+              name="ville"
+              className={styles.input}
+              placeholder="ex: Toulon"
+              required
+              autoCapitalize="words"
+            />
+          </div>
+          <div className={styles.field}>
+            <label className={styles.label}>Code postal</label>
+            <input
+              type="text"
+              name="codePostal"
+              className={styles.input}
+              placeholder="83000"
+              inputMode="numeric"
+            />
+          </div>
         </div>
 
         {/* Mois + Année */}
@@ -94,6 +112,17 @@ export default async function AdminPage({ searchParams }: Props) {
               <option key={d} value={d}>{d}</option>
             ))}
           </select>
+        </div>
+
+        {/* Matériels */}
+        <div className={styles.field}>
+          <label className={styles.label}>Matériels utilisés</label>
+          <input
+            type="text"
+            name="materiels"
+            className={styles.input}
+            placeholder="ex: Hydrocureur 200 bars, caméra inspection"
+          />
         </div>
 
         {/* Contexte */}
@@ -153,18 +182,58 @@ export default async function AdminPage({ searchParams }: Props) {
           />
         </div>
 
+        {/* Photos */}
+        <div className={styles.row}>
+          <div className={styles.field}>
+            <label className={styles.label}>Photo avant</label>
+            <label className={styles.fileLabel} htmlFor="photoAvant">
+              📷 Prendre / choisir
+              <input
+                id="photoAvant"
+                className={styles.fileInput}
+                type="file"
+                name="photoAvant"
+                accept="image/*"
+                capture="environment"
+              />
+            </label>
+          </div>
+          <div className={styles.field}>
+            <label className={styles.label}>Photo après</label>
+            <label className={styles.fileLabel} htmlFor="photoApres">
+              📷 Prendre / choisir
+              <input
+                id="photoApres"
+                className={styles.fileInput}
+                type="file"
+                name="photoApres"
+                accept="image/*"
+                capture="environment"
+              />
+            </label>
+          </div>
+        </div>
+
         <button type="submit" className={styles.btn}>
           Enregistrer la réalisation
         </button>
       </form>
 
-      {/* Script pour synchroniser le label du service */}
       <script dangerouslySetInnerHTML={{ __html: `
         const sel = document.querySelector('[name="service_slug"]');
         const hidden = document.getElementById('type-hidden');
-        function sync() { hidden.value = sel.options[sel.selectedIndex].text.replace(/^[^a-zA-Z]+/, '').trim(); }
+        function sync() { hidden.value = sel.options[sel.selectedIndex].text.replace(/^[^a-zA-Z\\u00C0-\\u017E]+/, '').trim(); }
         sel.addEventListener('change', sync);
         sync();
+        // Show filename on file input change
+        document.querySelectorAll('input[type="file"]').forEach(function(input) {
+          input.addEventListener('change', function() {
+            var label = input.closest('label');
+            if (label && input.files[0]) {
+              label.textContent = '✓ ' + input.files[0].name;
+            }
+          });
+        });
       `}} />
     </div>
   );

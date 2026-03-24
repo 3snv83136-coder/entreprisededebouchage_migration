@@ -4,6 +4,10 @@ import { supabaseAdmin } from '@/lib/db/supabase';
 import { revalidatePath } from 'next/cache';
 import { redirect } from 'next/navigation';
 import type { Realisation } from '@/lib/types';
+import { generateFaq, generateJsonLd, generateTitre, generateDescription } from '@/lib/services/realisation.service';
+import { uploadPhoto } from '@/lib/services/upload.service';
+import { ameliorerTexte } from '@/lib/services/claude.service';
+import { envoyerEmailInterne } from '@/lib/services/email.service';
 
 const MOIS_SLUGS: Record<string, string> = {
   Janvier: 'janvier', Février: 'fevrier', Mars: 'mars', Avril: 'avril',
@@ -33,13 +37,19 @@ export async function saveRealisation(formData: FormData) {
   const intervention = formData.get('intervention') as string;
   const resultat = formData.get('resultat') as string;
   const temoignage = formData.get('temoignage') as string;
+  const codePostal = formData.get('codePostal') as string;
+  const materiels = formData.get('materiels') as string;
+  const photoAvant = formData.get('photoAvant') as File | null;
+  const photoApres = formData.get('photoApres') as File | null;
 
   const typeSlug = toSlug(type);
   const moisSlug = MOIS_SLUGS[mois] || toSlug(mois);
   const slug = `realisation-${typeSlug}-${ville_slug}-${moisSlug}-${annee}`;
 
-  const meta_title = `${type} à ${ville} — Réalisation ${mois} ${annee}`;
-  const meta_description = `Intervention de ${type.toLowerCase()} réalisée à ${ville} en ${mois} ${annee}. Durée : ${duree}. Résultat : ${resultat.slice(0, 80)}…`;
+  const faq = generateFaq(type, ville);
+  const titre = generateTitre(type, ville, mois, annee);
+  const meta_description = generateDescription({ type, ville, mois, annee, duree, resultat });
+  const meta_title = titre;
 
   const realisation: Realisation = {
     slug,
@@ -57,16 +67,104 @@ export async function saveRealisation(formData: FormData) {
     temoignage: temoignage || undefined,
     meta_title,
     meta_description,
+    faq,
+    titre,
+    code_postal: codePostal || undefined,
+    materiels: materiels || undefined,
+    publiee: true,
+    email_envoye: false,
   };
 
-  const { error } = await supabaseAdmin
+  // 1. Insert initial record
+  const { data: inserted, error } = await supabaseAdmin
     .from('realisations')
-    .insert(realisation);
+    .insert(realisation)
+    .select('id')
+    .single();
 
-  if (error) {
+  if (error || !inserted) {
     redirect('/admin?error=1');
   }
 
+  const realisationId = inserted.id as string;
+  const updates: Partial<Realisation> = {};
+
+  // 2. Upload photos
+  if (photoAvant && photoAvant.size > 0) {
+    try {
+      updates.photo_avant_url = await uploadPhoto(photoAvant, realisationId, 'avant');
+    } catch {
+      // Non-blocking: continue without photo
+    }
+  }
+  if (photoApres && photoApres.size > 0) {
+    try {
+      updates.photo_apres_url = await uploadPhoto(photoApres, realisationId, 'apres');
+    } catch {
+      // Non-blocking
+    }
+  }
+
+  // 3. Claude text improvement
+  const texte_brut = [contexte, diagnostic, intervention, resultat].filter(Boolean).join('\n\n');
+  try {
+    const improved = await ameliorerTexte({ type, ville, texte_brut });
+    updates.description_generee = improved.texte_corrige;
+    updates.titre = improved.titre_seo;
+    updates.meta_description = improved.meta_description;
+  } catch {
+    // Non-blocking: fallback to original
+  }
+
+  // 4. Generate JSON-LD
+  updates.json_ld = generateJsonLd({
+    type,
+    ville,
+    slug,
+    mois,
+    annee,
+    resultat,
+    temoignage: temoignage || undefined,
+    faq,
+    description_generee: updates.description_generee,
+    meta_description: updates.meta_description || meta_description,
+  });
+
+  // 5. Update record with photos + improved text + json_ld
+  if (Object.keys(updates).length > 0) {
+    await supabaseAdmin
+      .from('realisations')
+      .update(updates)
+      .eq('id', realisationId);
+  }
+
+  // 6. Send internal email
+  try {
+    await envoyerEmailInterne({
+      titre: updates.titre || titre,
+      ville,
+      type,
+      slug,
+      mois,
+      annee,
+      duree: duree || undefined,
+      resultat,
+    });
+    await supabaseAdmin
+      .from('realisations')
+      .update({ email_envoye: true })
+      .eq('id', realisationId);
+  } catch {
+    // Non-blocking
+  }
+
   revalidatePath('/realisations');
+  revalidatePath('/');
   redirect('/admin?success=1');
+}
+
+export async function deleteRealisation(id: string) {
+  await supabaseAdmin.from('realisations').delete().eq('id', id);
+  revalidatePath('/realisations');
+  revalidatePath('/');
 }

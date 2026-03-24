@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import Breadcrumbs from '@/components/common/Breadcrumbs';
@@ -17,12 +18,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const r = await getRealisationBySlug(slug);
   if (!r) return {};
   return {
-    title: r.meta_title || `${r.type} à ${r.ville} — ${r.mois} ${r.annee}`,
+    title: r.titre || r.meta_title || `${r.type} à ${r.ville} — ${r.mois} ${r.annee}`,
     description: r.meta_description,
     alternates: { canonical: `/realisations/${r.slug}/` },
     openGraph: {
-      title: r.meta_title || `${r.type} à ${r.ville}`,
+      title: r.titre || r.meta_title || `${r.type} à ${r.ville}`,
       url: `${BASE_URL}/realisations/${r.slug}/`,
+      ...(r.photo_apres_url && { images: [{ url: r.photo_apres_url }] }),
     },
   };
 }
@@ -32,7 +34,7 @@ export default async function RealisationPage({ params }: Props) {
   const r = await getRealisationBySlug(slug);
   if (!r) notFound();
 
-  const schema = {
+  const schema = r.json_ld || {
     '@context': 'https://schema.org',
     '@type': 'Article',
     headline: `${r.type} à ${r.ville} — ${r.mois} ${r.annee}`,
@@ -46,6 +48,8 @@ export default async function RealisationPage({ params }: Props) {
       },
     }),
   };
+
+  const texteIntervention = r.description_generee || r.resultat;
 
   return (
     <>
@@ -63,13 +67,43 @@ export default async function RealisationPage({ params }: Props) {
 
           <header className={styles.header}>
             <span className={styles.badge}>{r.type}</span>
-            <h1 className={styles.title}>{r.type} à {r.ville}</h1>
+            <h1 className={styles.title}>{r.titre || `${r.type} à ${r.ville}`}</h1>
             <div className={styles.meta}>
               <span>📍 {r.ville}</span>
               <span>📅 {r.mois} {r.annee}</span>
               {r.duree && <span>⏱ {r.duree}</span>}
             </div>
           </header>
+
+          {/* Photos avant/après */}
+          {(r.photo_avant_url || r.photo_apres_url) && (
+            <div className={styles.photos}>
+              {r.photo_avant_url && (
+                <div className={styles.photoWrapper}>
+                  <span className={styles.photoLabel}>Avant</span>
+                  <Image
+                    src={r.photo_avant_url}
+                    alt={`${r.type} à ${r.ville} — avant intervention`}
+                    width={600}
+                    height={400}
+                    className={styles.photo}
+                  />
+                </div>
+              )}
+              {r.photo_apres_url && (
+                <div className={styles.photoWrapper}>
+                  <span className={`${styles.photoLabel} ${styles.photoLabelApres}`}>Après</span>
+                  <Image
+                    src={r.photo_apres_url}
+                    alt={`${r.type} à ${r.ville} — après intervention`}
+                    width={600}
+                    height={400}
+                    className={styles.photo}
+                  />
+                </div>
+              )}
+            </div>
+          )}
 
           <div className={styles.sections}>
 
@@ -94,7 +128,7 @@ export default async function RealisationPage({ params }: Props) {
 
             <section className={`${styles.section} ${styles.sectionResultat}`}>
               <h2 className={styles.sectionTitle}>Résultat</h2>
-              <p className={styles.sectionText}>{r.resultat}</p>
+              <p className={styles.sectionText}>{texteIntervention}</p>
             </section>
 
             {r.temoignage && (
@@ -105,6 +139,21 @@ export default async function RealisationPage({ params }: Props) {
             )}
 
           </div>
+
+          {/* FAQ */}
+          {r.faq && r.faq.length > 0 && (
+            <section className={styles.faqSection}>
+              <h2 className={styles.faqTitle}>Questions fréquentes</h2>
+              <div className={styles.faqList}>
+                {r.faq.map((item, i) => (
+                  <details key={i} className={styles.faqItem}>
+                    <summary className={styles.faqQuestion}>{item.question}</summary>
+                    <p className={styles.faqAnswer}>{item.reponse}</p>
+                  </details>
+                ))}
+              </div>
+            </section>
+          )}
 
           <div className={styles.links}>
             <Link href={`/${r.service_slug}/`} className={styles.linkPrimary}>
