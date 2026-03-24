@@ -1,0 +1,134 @@
+.page {
+  padding: 100px 24px 80px;
+  min-height: 60vh;
+}
+
+.inner {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: clamp(32px, 5vw, 48px);
+  letter-spacing: 0.04em;
+  color: var(--white);
+  margin-bottom: 16px;
+}
+
+.lead {
+  font-size: 17px;
+  color: var(--slate);
+  line-height: 1.75;
+  margin-bottom: 40px;
+  max-width: 680px;
+}
+
+.empty {
+  font-size: 16px;
+  color: var(--slate);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 16px;
+  margin-bottom: 64px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 22px 24px;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(22, 27, 34, 0.6);
+  text-decoration: none;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.card:hover {
+  border-color: rgba(251, 117, 0, 0.4);
+  background: rgba(251, 117, 0, 0.06);
+}
+
+.cardMeta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.cardBadge {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--orange);
+  background: rgba(251, 117, 0, 0.12);
+  border-radius: 6px;
+  padding: 3px 8px;
+}
+
+.cardDate {
+  font-size: 12px;
+  color: var(--slate);
+}
+
+.cardTitle {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--white);
+  letter-spacing: 0.02em;
+  margin: 0;
+}
+
+.cardResultat {
+  font-size: 14px;
+  color: var(--slate);
+  line-height: 1.6;
+  margin: 0;
+  flex: 1;
+}
+
+.cardFooter {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 12px;
+  color: var(--slate);
+  margin-top: auto;
+}
+
+.cardLink {
+  margin-left: auto;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--orange);
+}
+
+.cta {
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  padding-top: 32px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.cta p {
+  font-size: 15px;
+  color: var(--slate);
+  margin: 0;
+}
+
+.cta a {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--orange);
+  text-decoration: none;
+}
+
+.cta a:hover {
+  text-decoration: underline;
+}

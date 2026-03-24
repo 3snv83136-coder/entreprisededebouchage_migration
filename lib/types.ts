@@ -64,3 +64,23 @@ export interface InternalLink {
   label: string;
   type: 'city' | 'service' | 'technique' | 'general';
 }
+
+export interface Realisation {
+  id?: string;
+  slug: string;
+  type: string;
+  service_slug: string;
+  ville: string;
+  ville_slug: string;
+  mois: string;
+  annee: string;
+  contexte?: string;
+  diagnostic?: string;
+  intervention: string;
+  resultat: string;
+  temoignage?: string;
+  duree?: string;
+  meta_title?: string;
+  meta_description?: string;
+  created_at?: string;
+}
