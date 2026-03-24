@@ -78,6 +78,9 @@ export interface Realisation {
   diagnostic?: string;
   intervention: string;
   resultat: string;
+  contexte_enrichi?: string;
+  diagnostic_enrichi?: string;
+  intervention_enrichie?: string;
   temoignage?: string;
   duree?: string;
   meta_title?: string;

@@ -3,6 +3,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import Breadcrumbs from '@/components/common/Breadcrumbs';
+import ProcessSchema from '@/components/realisations/ProcessSchema';
+import LinkedText from '@/components/realisations/LinkedText';
 import { BASE_URL, PHONE } from '@/lib/config';
 import { getRealisationBySlug } from '@/lib/data/realisations';
 import styles from './page.module.css';
@@ -49,7 +51,14 @@ export default async function RealisationPage({ params }: Props) {
     }),
   };
 
-  const texteIntervention = r.description_generee || r.resultat;
+  // Textes enrichis (IA) ou fallback sur brut
+  const contexteText = r.contexte_enrichi || r.contexte;
+  const diagnosticText = r.diagnostic_enrichi || r.diagnostic;
+  const interventionText = r.intervention_enrichie || r.intervention;
+  const resultatText = r.description_generee || r.resultat;
+
+  // Exclure le lien vers la page courante (éviter self-link)
+  const serviceHref = `/${r.service_slug}/`;
 
   return (
     <>
@@ -72,6 +81,7 @@ export default async function RealisationPage({ params }: Props) {
               <span>📍 {r.ville}</span>
               <span>📅 {r.mois} {r.annee}</span>
               {r.duree && <span>⏱ {r.duree}</span>}
+              {r.materiels && <span>🔧 {r.materiels}</span>}
             </div>
           </header>
 
@@ -105,30 +115,58 @@ export default async function RealisationPage({ params }: Props) {
             </div>
           )}
 
+          {/* Schéma du process */}
+          <ProcessSchema
+            type={r.type}
+            ville={r.ville}
+            duree={r.duree}
+            contexte={contexteText}
+            diagnostic={diagnosticText}
+            intervention={interventionText}
+            resultat={resultatText}
+          />
+
+          {/* Sections détaillées avec maillage */}
           <div className={styles.sections}>
 
-            {r.contexte && (
+            {contexteText && (
               <section className={styles.section}>
                 <h2 className={styles.sectionTitle}>Situation</h2>
-                <p className={styles.sectionText}>{r.contexte}</p>
+                <LinkedText
+                  text={contexteText}
+                  excludeHref={serviceHref}
+                  className={styles.sectionText}
+                />
               </section>
             )}
 
-            {r.diagnostic && (
+            {diagnosticText && (
               <section className={styles.section}>
                 <h2 className={styles.sectionTitle}>Diagnostic</h2>
-                <p className={styles.sectionText}>{r.diagnostic}</p>
+                <LinkedText
+                  text={diagnosticText}
+                  excludeHref={serviceHref}
+                  className={styles.sectionText}
+                />
               </section>
             )}
 
             <section className={styles.section}>
               <h2 className={styles.sectionTitle}>Intervention</h2>
-              <p className={styles.sectionText}>{r.intervention}</p>
+              <LinkedText
+                text={interventionText}
+                excludeHref={serviceHref}
+                className={styles.sectionText}
+              />
             </section>
 
             <section className={`${styles.section} ${styles.sectionResultat}`}>
               <h2 className={styles.sectionTitle}>Résultat</h2>
-              <p className={styles.sectionText}>{texteIntervention}</p>
+              <LinkedText
+                text={resultatText}
+                excludeHref={serviceHref}
+                className={styles.sectionText}
+              />
             </section>
 
             {r.temoignage && (
@@ -140,7 +178,7 @@ export default async function RealisationPage({ params }: Props) {
 
           </div>
 
-          {/* FAQ */}
+          {/* FAQ accordéon */}
           {r.faq && r.faq.length > 0 && (
             <section className={styles.faqSection}>
               <h2 className={styles.faqTitle}>Questions fréquentes</h2>
@@ -156,7 +194,7 @@ export default async function RealisationPage({ params }: Props) {
           )}
 
           <div className={styles.links}>
-            <Link href={`/${r.service_slug}/`} className={styles.linkPrimary}>
+            <Link href={serviceHref} className={styles.linkPrimary}>
               En savoir plus sur le {r.type.toLowerCase()} →
             </Link>
             {r.ville_slug && (

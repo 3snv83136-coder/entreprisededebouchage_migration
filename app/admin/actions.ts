@@ -105,11 +105,20 @@ export async function saveRealisation(formData: FormData) {
     }
   }
 
-  // 3. Claude text improvement
-  const texte_brut = [contexte, diagnostic, intervention, resultat].filter(Boolean).join('\n\n');
+  // 3. Claude text improvement (per section)
   try {
-    const improved = await ameliorerTexte({ type, ville, texte_brut });
-    updates.description_generee = improved.texte_corrige;
+    const improved = await ameliorerTexte({
+      type,
+      ville,
+      contexte: contexte || undefined,
+      diagnostic: diagnostic || undefined,
+      intervention,
+      resultat,
+    });
+    if (contexte && improved.contexte_enrichi) updates.contexte_enrichi = improved.contexte_enrichi;
+    if (diagnostic && improved.diagnostic_enrichi) updates.diagnostic_enrichi = improved.diagnostic_enrichi;
+    updates.intervention_enrichie = improved.intervention_enrichie;
+    updates.description_generee = improved.resultat_enrichi;
     updates.titre = improved.titre_seo;
     updates.meta_description = improved.meta_description;
   } catch {

@@ -175,3 +175,19 @@ a {
     min-height: 56px;
   }
 }
+
+/* Maillage interne — liens contextuels dans les textes */
+.linkedKeyword {
+  color: var(--orange-light);
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+  font-weight: 600;
+  transition: color 0.15s;
+}
+
+.linkedKeyword:hover {
+  color: var(--orange);
+  text-decoration-style: solid;
+}
