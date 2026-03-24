@@ -1,0 +1,168 @@
+.page {
+  padding: 100px 24px 80px;
+  min-height: 60vh;
+}
+
+.inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: clamp(32px, 5vw, 48px);
+  letter-spacing: 0.04em;
+  color: var(--white);
+  margin-bottom: 16px;
+}
+
+.lead {
+  font-size: 17px;
+  color: var(--slate);
+  line-height: 1.75;
+  margin-bottom: 16px;
+  max-width: 720px;
+}
+
+.phone {
+  font-size: 15px;
+  color: var(--slate);
+  margin-bottom: 48px;
+}
+
+.phone a {
+  color: var(--orange);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.phone a:hover {
+  text-decoration: underline;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 16px;
+  margin-bottom: 64px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 24px;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(22, 27, 34, 0.6);
+  text-decoration: none;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.card:hover {
+  border-color: rgba(251, 117, 0, 0.45);
+  background: rgba(251, 117, 0, 0.06);
+}
+
+.cardIcon {
+  font-size: 28px;
+  line-height: 1;
+}
+
+.cardTitle {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--white);
+  letter-spacing: 0.02em;
+  margin: 0;
+}
+
+.cardDesc {
+  font-size: 14px;
+  color: var(--slate);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.cardProblems {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.cardProblems li {
+  font-size: 12px;
+  color: var(--slate);
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 6px;
+  padding: 3px 8px;
+}
+
+.cardMeta {
+  display: flex;
+  gap: 12px;
+  font-size: 12px;
+  color: var(--slate);
+  margin-top: 4px;
+}
+
+.cardLink {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--orange);
+  margin-top: auto;
+}
+
+.bottom {
+  background: linear-gradient(135deg, rgba(251, 117, 0, 0.10) 0%, rgba(13, 17, 23, 0.9) 60%);
+  border: 1px solid rgba(251, 117, 0, 0.2);
+  border-radius: 16px;
+  padding: 32px 36px;
+}
+
+.bottom h2 {
+  font-size: 20px;
+  color: var(--white);
+  margin-bottom: 16px;
+  letter-spacing: 0.02em;
+}
+
+.bottom ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.bottom ul li {
+  font-size: 15px;
+  color: var(--slate);
+  padding-left: 20px;
+  position: relative;
+}
+
+.bottom ul li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--orange);
+  font-weight: 700;
+}
+
+.ctaLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--orange);
+  font-weight: 700;
+  font-size: 15px;
+  text-decoration: none;
+}
+
+.ctaLink:hover {
+  text-decoration: underline;
+}
