@@ -193,33 +193,37 @@ export async function reEnrichirRealisation(id: string) {
     .eq('id', id)
     .single();
 
-  if (error || !r) redirect('/admin/realisations?error=1');
-
-  const updates: Partial<Realisation> = {};
-
-  try {
-    const improved = await ameliorerTexte({
-      type: r.type,
-      ville: r.ville,
-      code_postal: r.code_postal || undefined,
-      contexte: r.contexte || undefined,
-      diagnostic: r.diagnostic || undefined,
-      intervention: r.intervention,
-      resultat: r.resultat,
-      materiels: r.materiels || undefined,
-      duree: r.duree || undefined,
-    });
-    if (r.contexte && improved.contexte_enrichi) updates.contexte_enrichi = improved.contexte_enrichi;
-    if (r.diagnostic && improved.diagnostic_enrichi) updates.diagnostic_enrichi = improved.diagnostic_enrichi;
-    updates.intervention_enrichie = improved.intervention_enrichie;
-    updates.description_generee = improved.resultat_enrichi;
-    updates.titre = improved.titre_seo;
-    updates.meta_description = improved.meta_description;
-  } catch {
+  if (error || !r) {
     redirect('/admin/realisations?error=1');
   }
 
-  // Regenerate FAQ + JSON-LD with enriched content
+  const updates: Partial<Realisation> = {};
+
+  // Claude enrichissement — .catch() au lieu de try/catch pour éviter d'intercepter redirect()
+  const improved = await ameliorerTexte({
+    type: r.type,
+    ville: r.ville,
+    code_postal: r.code_postal || undefined,
+    contexte: r.contexte || undefined,
+    diagnostic: r.diagnostic || undefined,
+    intervention: r.intervention,
+    resultat: r.resultat,
+    materiels: r.materiels || undefined,
+    duree: r.duree || undefined,
+  }).catch(() => null);
+
+  if (!improved) {
+    redirect('/admin/realisations?error=1');
+  }
+
+  if (r.contexte && improved.contexte_enrichi) updates.contexte_enrichi = improved.contexte_enrichi;
+  if (r.diagnostic && improved.diagnostic_enrichi) updates.diagnostic_enrichi = improved.diagnostic_enrichi;
+  updates.intervention_enrichie = improved.intervention_enrichie;
+  updates.description_generee = improved.resultat_enrichi;
+  updates.titre = improved.titre_seo;
+  updates.meta_description = improved.meta_description;
+
+  // Regenerate FAQ + JSON-LD
   const faq = generateFaq(r.type, r.ville);
   updates.faq = faq;
   updates.json_ld = generateJsonLd({
