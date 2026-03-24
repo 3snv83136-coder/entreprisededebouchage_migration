@@ -1,0 +1,31 @@
+.btn {
+  position: fixed;
+  top: 100px;
+  left: 16px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--slate, #94a3b8);
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 8px 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  z-index: 50;
+  backdrop-filter: blur(6px);
+  transition: background 0.2s, color 0.2s;
+}
+
+.btn:hover {
+  background: rgba(251, 117, 0, 0.12);
+  color: var(--orange, #fb7500);
+  border-color: rgba(251, 117, 0, 0.3);
+}
+
+@media (max-width: 768px) {
+  .btn {
+    top: 80px;
+    left: 10px;
+    font-size: 0.72rem;
+    padding: 6px 12px;
+  }
+}

@@ -5,7 +5,7 @@ import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import StickyCta from '@/components/layout/StickyCta';
 import CallbackForm from '@/components/common/CallbackForm';
-import ScrollToTop from '@/components/common/ScrollToTop';
+import BackButton from '@/components/common/BackButton';
 import { generateSchemaOrganization } from '@/lib/seo/schema';
 import { COMPANY_NAME, BASE_URL } from '@/lib/config';
 import './globals.css';
@@ -87,7 +87,7 @@ export default function RootLayout({
         <Footer />
         <StickyCta />
         <CallbackForm />
-        <ScrollToTop />
+        <BackButton />
       </body>
     </html>
   );
