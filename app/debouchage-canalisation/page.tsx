@@ -30,7 +30,7 @@ const faqs = [
   },
   {
     question: "Les racines d'arbres peuvent-elles vraiment boucher une canalisation enterrée ?",
-    answer: "Oui, c'est l'une des causes les plus fréquentes sur les maisons avec jardin. Les racines s'introduisent par les joints de dilatation ou les micro-fissures, puis forment un réseau dense qui retient les graisses et les débris. La caméra endoscopique permet de visualiser précisément l'intrusion avant d'intervenir au furet rotatif ou au hydrocureur."
+    answer: "Oui, c'est l'une des causes les plus fréquentes sur les maisons avec jardin. Les racines s'introduisent par les joints de dilatation ou les micro-fissures, puis forment un réseau dense qui retient les graisses et les débris. La caméra endoscopique permet de visualiser précisément l'intrusion avant d'intervenir au furet rotatif ou à l'hydrocureur."
   }
 ];
 

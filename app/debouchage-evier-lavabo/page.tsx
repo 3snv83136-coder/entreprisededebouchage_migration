@@ -46,7 +46,7 @@ const content = {
     },
     {
       name: "Débouchage du raccord d'évacuation",
-      text: "Si le bouchon ne se situe pas dans le siphon mais dans le raccord d'évacuation murale (à 20-50 cm de profondeur), le technicien utilise un outil spécifique pour nettoyer ce segment sans démonter la plomberie. Les dépôts de calcaire et de graisse incrustés sur les parois sont décollés."
+      text: "Si le bouchon ne se situe pas dans le siphon mais dans le raccord d'évacuation mural (à 20-50 cm de profondeur), le technicien utilise un outil spécifique pour nettoyer ce segment sans démonter la plomberie. Les dépôts de calcaire et de graisse incrustés sur les parois sont décollés."
     },
     {
       name: "Furetage ou hydrocurage si nécessaire",
