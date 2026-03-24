@@ -18,17 +18,17 @@ export const metadata: Metadata = {
 };
 
 const pricingData: Record<string, { min: string; max: string; note: string }> = {
-  'debouchage-evier-lavabo':         { min: '80 €', max: '150 €',  note: 'Siphon + canalisation' },
-  'debouchage-douche-baignoire':     { min: '80 €', max: '150 €',  note: 'Extraction + nettoyage' },
-  'debouchage-cuisine':              { min: '90 €', max: '160 €',  note: 'Graisses + résidus' },
-  'debouchage-lave-vaisselle':       { min: '80 €', max: '130 €',  note: 'Pompe + canalisation' },
-  'debouchage-lave-linge':           { min: '80 €', max: '130 €',  note: 'Filtre + évacuation' },
-  'debouchage-wc-toilettes':         { min: '90 €', max: '180 €',  note: 'Sans démontage inutile' },
-  'debouchage-salle-de-bain':        { min: '100 €', max: '200 €', note: 'Réseau complet' },
-  'debouchage-canalisation':         { min: '120 €', max: '280 €', note: 'Hydrocurage haute pression' },
-  'debouchage-ballon-deau-chaude-chauffe-eau': { min: '120 €', max: '220 €', note: 'Détartrage + évacuation' },
-  'debouchage-egouts-regards':       { min: '180 €', max: '450 €', note: 'Réseau extérieur + rapport' },
-  'debouchage-fosse-septique':       { min: '250 €', max: '600 €', note: 'Vidange + curage complet' },
+  'debouchage-evier-lavabo':         { min: '99 €', max: '149 €', note: 'Siphon + canalisation' },
+  'debouchage-douche-baignoire':     { min: '99 €', max: '149 €', note: 'Extraction + nettoyage' },
+  'debouchage-cuisine':              { min: '99 €', max: '159 €', note: 'Graisses + résidus' },
+  'debouchage-lave-vaisselle':       { min: '99 €', max: '139 €', note: 'Pompe + canalisation' },
+  'debouchage-lave-linge':           { min: '99 €', max: '139 €', note: 'Filtre + évacuation' },
+  'debouchage-wc-toilettes':         { min: '99 €', max: '169 €', note: 'Sans démontage inutile' },
+  'debouchage-salle-de-bain':        { min: '99 €', max: '199 €', note: 'Réseau complet' },
+  'debouchage-canalisation':         { min: '119 €', max: '199 €', note: 'Hydrocurage haute pression' },
+  'debouchage-ballon-deau-chaude-chauffe-eau': { min: '119 €', max: '199 €', note: 'Détartrage + évacuation' },
+  'debouchage-egouts-regards':       { min: '149 €', max: '199 €', note: 'Réseau extérieur + rapport' },
+  'debouchage-fosse-septique':       { min: '149 €', max: '199 €', note: 'Vidange + curage complet' },
 };
 
 const priceLabels: Record<string, string> = {
