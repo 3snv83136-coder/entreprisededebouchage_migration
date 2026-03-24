@@ -14,6 +14,7 @@ import ZoneCoverte from '@/components/page-ville/ZoneCoverte';
 import Arguments from '@/components/page-ville/Arguments';
 import Faq from '@/components/page-ville/Faq';
 import CtaFinal from '@/components/page-ville/CtaFinal';
+import Pricing from '@/components/page-ville/Pricing';
 import GeneratedContent from '@/components/page-ville/GeneratedContent';
 import ServiceCityContent from '@/components/page-service-city/ServiceCityContent';
 import { FaqItem } from '@/lib/types';
@@ -175,6 +176,7 @@ export default async function DynamicPage({ params }: PageProps) {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <Breadcrumbs items={breadcrumbs} />
       <Hero ville={ville} />
+      <Pricing />
       {content?.content ? (
         <GeneratedContent html={content.content} />
       ) : (
