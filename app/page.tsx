@@ -26,16 +26,7 @@ export default async function Home() {
     <>
       <section className={styles.hero}>
         <div className={styles.heroBg} />
-        <Image
-          src="/logo-edd.png"
-          alt=""
-          width={600}
-          height={600}
-          className={styles.heroLogo}
-          aria-hidden="true"
-          priority
-        />
-        <div className={styles.heroInner}>
+<div className={styles.heroInner}>
           <div className={styles.badge}>
             <span className={styles.badgeDot} />
             Disponible maintenant — Var (83)
