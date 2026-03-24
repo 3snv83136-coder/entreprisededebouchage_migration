@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { getAllRealisations } from '@/lib/data/realisations';
-import { deleteRealisation, reEnrichirRealisation } from '../actions';
+import ActionButtons from './ActionButtons';
 import styles from './page.module.css';
 
 export const dynamic = 'force-dynamic';
@@ -65,33 +65,11 @@ export default async function AdminRealisationsPage({ searchParams }: Props) {
                     )}
                   </div>
                 </div>
-                <div className={styles.cardActions}>
-                  <Link
-                    href={`/realisations/${r.slug}/`}
-                    target="_blank"
-                    className={styles.viewBtn}
-                  >
-                    Voir →
-                  </Link>
-                  {!hasEnrichment && (
-                    <form action={reEnrichirRealisation.bind(null, r.id!)}>
-                      <button type="submit" className={styles.enrichBtn}>
-                        ✨ Enrichir
-                      </button>
-                    </form>
-                  )}
-                  <form action={deleteRealisation.bind(null, r.id!)}>
-                    <button
-                      type="submit"
-                      className={styles.deleteBtn}
-                      onClick={(e) => {
-                        if (!confirm('Supprimer cette réalisation ?')) e.preventDefault();
-                      }}
-                    >
-                      Suppr.
-                    </button>
-                  </form>
-                </div>
+                <ActionButtons
+                  id={r.id!}
+                  slug={r.slug}
+                  hasEnrichment={hasEnrichment}
+                />
               </div>
             );
           })}
