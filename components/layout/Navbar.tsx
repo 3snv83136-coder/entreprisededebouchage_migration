@@ -20,7 +20,7 @@ export default function Navbar() {
       <Link href="/" className={styles.logo}>
         <Image
           src="/logo-edd.png"
-          alt="Logo Entreprise de Débouchage, ventouse rouge."
+          alt="Logo Entreprise de Debouchage, ventouse rouge."
           width={44}
           height={44}
           className={styles.logoImg}
@@ -36,6 +36,9 @@ export default function Navbar() {
             <span className={styles.logoLine}>{line1}</span>
           )}
         </span>
+      </Link>
+      <Link href="/realisations/" className={styles.navLink}>
+        Réalisations
       </Link>
       <a href={`tel:${PHONE_RAW}`} className={styles.cta}>
         📞 Appeler maintenant
