@@ -4,6 +4,15 @@ import type { NextRequest } from 'next/server';
 export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
+  // Redirect uppercase/mixed-case URLs to lowercase (301)
+  const lower = pathname.toLowerCase();
+  if (lower !== pathname) {
+    const url = request.nextUrl.clone();
+    url.pathname = lower;
+    return NextResponse.redirect(url, { status: 301 });
+  }
+
+  // Protect /admin/* routes
   if (pathname.startsWith('/admin') && !pathname.startsWith('/admin/login')) {
     const adminAuth = request.cookies.get('admin_auth');
     const adminToken = process.env.ADMIN_TOKEN;
@@ -17,5 +26,5 @@ export function proxy(request: NextRequest) {
 }
 
 export const config = {
-  matcher: '/admin/:path*',
+  matcher: '/((?!_next/static|_next/image|favicon.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp|ico|xml|txt|js|css)).*)',
 };
