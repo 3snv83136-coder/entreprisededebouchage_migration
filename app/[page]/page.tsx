@@ -1,5 +1,5 @@
 import { Metadata } from 'next';
-import { notFound } from 'next/navigation';
+import { notFound, permanentRedirect } from 'next/navigation';
 import { getAllVilles, getVilleBySlug, getTier1Villes } from '@/lib/data/villes';
 import { getAllServices, getServiceBySlug } from '@/lib/data/services';
 import { getPageContent } from '@/lib/data/content';
@@ -94,19 +94,46 @@ function getDefaultFaqs(villeName: string): FaqItem[] {
       answer: `Nos techniciens interviennent généralement en moins d'une heure sur ${villeName} et les quartiers proches. En cas d'urgence absolue, nous priorisons votre appel.`,
     },
     {
-      question: `Le débouchage est-il garanti à ${villeName} ?`,
+      question: `Le debouchage est-il garanti à ${villeName} ?`,
       answer: `Oui, chaque intervention est garantie. Si le bouchon n'est pas résolu, nous revenons sans frais supplémentaires.`,
     },
     {
-      question: `Combien coûte un débouchage à ${villeName} ?`,
+      question: `Combien coûte un debouchage à ${villeName} ?`,
       answer: `Le tarif dépend du type d'intervention. Nous donnons un devis gratuit par téléphone et confirmons le prix avant de commencer. Aucun frais caché.`,
     },
   ];
 }
 
+// Abbreviated service slugs → canonical service slug
+const SERVICE_ALIASES: Record<string, string> = {
+  'wc': 'wc-toilettes',
+  'evier': 'evier-lavabo',
+  'douche': 'douche-baignoire',
+  'fosse': 'fosse-septique',
+  'egout': 'egouts-regards',
+  'egouts': 'egouts-regards',
+  'ballon': 'ballon-deau-chaude-chauffe-eau',
+  'chauffe-eau': 'ballon-deau-chaude-chauffe-eau',
+};
+
 export default async function DynamicPage({ params }: PageProps) {
   const { page } = await params;
   const parsed = parsePageSlug(page);
+
+  if (!parsed && page.startsWith('debouchage-')) {
+    // Try alias resolution: debouchage-wc-bandol → debouchage-wc-toilettes-bandol
+    const slug = page.replace('debouchage-', '');
+    for (const [alias, canonical] of Object.entries(SERVICE_ALIASES)) {
+      if (slug.startsWith(alias + '-')) {
+        const villeSlug = slug.slice(alias.length + 1);
+        const ville = getVilleBySlug(villeSlug);
+        if (ville) {
+          permanentRedirect(`/debouchage-${canonical}-${villeSlug}/`);
+        }
+      }
+    }
+  }
+
   if (!parsed) notFound();
 
   if (parsed.type === 'service-city') {
