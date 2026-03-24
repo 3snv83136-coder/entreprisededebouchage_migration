@@ -1,13 +1,17 @@
 import Link from 'next/link';
 import { getAllVilles } from '@/lib/data/villes';
 import { getAllServices } from '@/lib/data/services';
+import { getAllRealisations } from '@/lib/data/realisations';
 import VilleSearch from '@/components/common/VilleSearch';
 import VilleSearchInline from '@/components/common/VilleSearchInline';
 import styles from './page.module.css';
 
-export default function Home() {
+export const revalidate = 3600;
+
+export default async function Home() {
   const villes = getAllVilles();
   const services = getAllServices();
+  const realisations = await getAllRealisations();
 
   // Serialize for client component
   const villesData = villes.map((v) => ({
@@ -97,14 +101,55 @@ export default function Home() {
         </div>
       </section>
 
-      <div className={styles.realisationsStrip}>
+      <section className={styles.section} style={{ background: 'var(--navy)' }}>
         <div className="container">
-          <Link href="/realisations/" className={styles.realisationsLink}>
-            <span>Interventions récentes dans le Var</span>
-            <span className={styles.realisationsArrow}>Voir nos réalisations →</span>
-          </Link>
+          <div className="section-label">Interventions réelles</div>
+          <h2 className="section-title">Nos réalisations</h2>
+          <div className={styles.pricing} style={{ marginTop: '32px' }}>
+            {realisations.slice(0, 3).length > 0 ? realisations.slice(0, 3).map((r) => (
+              <Link key={r.slug} href={`/realisations/${r.slug}/`} className={styles.pricingCard} style={{ textDecoration: 'none' }}>
+                <h3 className={styles.pricingTitle}>{r.type}</h3>
+                <p className={styles.pricingDesc}>{r.ville} — {r.mois} {r.annee}</p>
+                {r.duree && (
+                  <div className={styles.pricingPrice} style={{ fontSize: '22px', letterSpacing: 0 }}>
+                    ⏱ {r.duree}
+                  </div>
+                )}
+                <p className={styles.pricingDesc} style={{ marginTop: '8px', marginBottom: 0 }}>
+                  {r.resultat.slice(0, 70)}…
+                </p>
+              </Link>
+            )) : (
+              <>
+                <div className={styles.pricingCard}>
+                  <h3 className={styles.pricingTitle}>Débouchage canalisation</h3>
+                  <p className={styles.pricingDesc}>Toulon — Janvier 2026</p>
+                  <div className={styles.pricingPrice}>1h<span>15</span></div>
+                  <p className={styles.pricingDesc} style={{ marginBottom: 0 }}>Hydrocurage haute pression, résultat immédiat.</p>
+                </div>
+                <div className={`${styles.pricingCard} ${styles.pricingCardPopular}`}>
+                  <div className={styles.pricingBadge}>Récent</div>
+                  <h3 className={styles.pricingTitle}>Débouchage WC</h3>
+                  <p className={styles.pricingDesc}>Hyères — Février 2026</p>
+                  <div className={styles.pricingPrice}>45<span>min</span></div>
+                  <p className={styles.pricingDesc} style={{ marginBottom: 0 }}>WC débordant remis en état sans démontage.</p>
+                </div>
+                <div className={styles.pricingCard}>
+                  <h3 className={styles.pricingTitle}>Fosse septique</h3>
+                  <p className={styles.pricingDesc}>La Seyne — Mars 2026</p>
+                  <div className={styles.pricingPrice}>2h<span>30</span></div>
+                  <p className={styles.pricingDesc} style={{ marginBottom: 0 }}>Vidange complète + curage, rapport fourni.</p>
+                </div>
+              </>
+            )}
+          </div>
+          <p className={styles.pricingNote}>
+            <Link href="/realisations/" style={{ color: 'var(--orange)', fontWeight: 700, textDecoration: 'none' }}>
+              Voir toutes nos réalisations →
+            </Link>
+          </p>
         </div>
-      </div>
+      </section>
 
       <section className={styles.section}>
         <div className="container">

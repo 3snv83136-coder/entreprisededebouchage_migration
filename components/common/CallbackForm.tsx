@@ -11,9 +11,10 @@ export default function CallbackForm() {
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     if (!name.trim() || !phone.trim()) return;
-    // TODO: envoyer à une API / webhook
+    const body = encodeURIComponent(`Bonjour, je suis ${name} (${phone}). Je souhaite être rappelé pour un débouchage. Merci.`);
+    window.location.href = `sms:0627699134?body=${body}`;
     setSent(true);
-    setTimeout(() => { setSent(false); setOpen(false); setName(''); setPhone(''); }, 3000);
+    setTimeout(() => { setSent(false); setOpen(false); setName(''); setPhone(''); }, 4000);
   }
 
   useEffect(() => {

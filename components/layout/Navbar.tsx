@@ -37,9 +37,6 @@ export default function Navbar() {
           )}
         </span>
       </Link>
-      <Link href="/realisations/" className={styles.navLink}>
-        Réalisations
-      </Link>
       <a href={`tel:${PHONE_RAW}`} className={styles.cta}>
         📞 Appeler maintenant
       </a>
