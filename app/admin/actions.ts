@@ -183,6 +183,7 @@ export async function deleteRealisation(id: string) {
   await supabaseAdmin.from('realisations').delete().eq('id', id);
   revalidatePath('/realisations');
   revalidatePath('/');
+  redirect('/admin/realisations?deleted=1');
 }
 
 export async function reEnrichirRealisation(id: string) {

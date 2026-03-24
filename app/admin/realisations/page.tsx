@@ -6,11 +6,11 @@ import styles from './page.module.css';
 export const dynamic = 'force-dynamic';
 
 interface Props {
-  searchParams: Promise<{ enriched?: string; error?: string }>;
+  searchParams: Promise<{ enriched?: string; error?: string; deleted?: string }>;
 }
 
 export default async function AdminRealisationsPage({ searchParams }: Props) {
-  const { enriched, error } = await searchParams;
+  const { enriched, error, deleted } = await searchParams;
   const realisations = await getAllRealisations();
 
   return (
@@ -20,6 +20,11 @@ export default async function AdminRealisationsPage({ searchParams }: Props) {
         <Link href="/admin" className={styles.addBtn}>+ Nouvelle</Link>
       </div>
 
+      {deleted && (
+        <div className={styles.banner + ' ' + styles.bannerSuccess}>
+          ✓ Réalisation supprimée.
+        </div>
+      )}
       {enriched && (
         <div className={styles.banner + ' ' + styles.bannerSuccess}>
           ✓ Réalisation enrichie avec succès !
