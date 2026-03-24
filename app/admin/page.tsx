@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { getAllServices } from '@/lib/data/services';
+import { getAllVilles } from '@/lib/data/villes';
 import { saveRealisation } from './actions';
 import styles from './page.module.css';
 
@@ -15,6 +16,7 @@ interface Props {
 export default async function AdminPage({ searchParams }: Props) {
   const { success, error } = await searchParams;
   const services = getAllServices();
+  const villes = getAllVilles().sort((a, b) => a.ville.localeCompare(b.ville, 'fr'));
 
   const now = new Date();
   const currentMois = MOIS[now.getMonth()];
@@ -35,7 +37,7 @@ export default async function AdminPage({ searchParams }: Props) {
 
       {success && (
         <div className={styles.banner + ' ' + styles.bannerSuccess}>
-          ✓ Réalisation enregistrée !
+          ✓ Réalisation enregistrée et enrichie par IA !
         </div>
       )}
       {error && (
@@ -59,28 +61,27 @@ export default async function AdminPage({ searchParams }: Props) {
           <input type="hidden" name="type" id="type-hidden" value={services[0]?.label || ''} />
         </div>
 
-        {/* Ville + Code postal */}
-        <div className={styles.row}>
-          <div className={styles.field}>
-            <label className={styles.label}>Ville *</label>
-            <input
-              type="text"
-              name="ville"
-              className={styles.input}
-              placeholder="ex: Toulon"
-              required
-              autoCapitalize="words"
-            />
-          </div>
-          <div className={styles.field}>
-            <label className={styles.label}>Code postal</label>
-            <input
-              type="text"
-              name="codePostal"
-              className={styles.input}
-              placeholder="83000"
-              inputMode="numeric"
-            />
+        {/* Ville avec code postal */}
+        <div className={styles.field}>
+          <label className={styles.label}>Ville * <span className={styles.labelNote}>(code postal auto)</span></label>
+          <select
+            name="ville_data"
+            id="ville-select"
+            className={styles.select}
+            required
+          >
+            <option value="">— Choisir une ville —</option>
+            {villes.map((v) => (
+              <option
+                key={v.slug}
+                value={`${v.ville}|${v.code_postal}`}
+              >
+                {v.ville} ({v.code_postal})
+              </option>
+            ))}
+          </select>
+          <div className={styles.codePostalDisplay} id="cp-display">
+            Code postal : <strong id="cp-value">—</strong>
           </div>
         </div>
 
@@ -127,13 +128,14 @@ export default async function AdminPage({ searchParams }: Props) {
 
         {/* Contexte */}
         <div className={styles.field}>
-          <label className={styles.label}>Contexte (situation avant)</label>
+          <label className={styles.label}>Situation (quelques mots suffisent)</label>
           <textarea
             name="contexte"
             className={styles.textarea}
-            placeholder="ex: Client appelle pour canalisation bouchée depuis 2 jours, eau ne s'écoule plus dans la douche."
-            rows={3}
+            placeholder="ex: Canalisation bouchée depuis 2 jours, eau ne s'écoule plus."
+            rows={2}
           />
+          <span className={styles.fieldNote}>L&apos;IA développe automatiquement</span>
         </div>
 
         {/* Diagnostic */}
@@ -142,21 +144,23 @@ export default async function AdminPage({ searchParams }: Props) {
           <textarea
             name="diagnostic"
             className={styles.textarea}
-            placeholder="ex: Accumulation de cheveux et calcaire à 1m du siphon. Tuyau partiellement obstrué."
-            rows={3}
+            placeholder="ex: Accumulation de cheveux et calcaire à 1m du siphon."
+            rows={2}
           />
+          <span className={styles.fieldNote}>L&apos;IA développe automatiquement</span>
         </div>
 
         {/* Intervention */}
         <div className={styles.field}>
-          <label className={styles.label}>Intervention (ce qu&apos;on a fait) *</label>
+          <label className={styles.label}>Ce qu&apos;on a fait *</label>
           <textarea
             name="intervention"
             className={styles.textarea}
-            placeholder="ex: Hydrocurage haute pression 150 bars sur 8m. Passage furet mécanique ensuite."
-            rows={3}
+            placeholder="ex: Hydrocurage haute pression 150 bars sur 8m."
+            rows={2}
             required
           />
+          <span className={styles.fieldNote}>L&apos;IA développe automatiquement</span>
         </div>
 
         {/* Résultat */}
@@ -165,10 +169,11 @@ export default async function AdminPage({ searchParams }: Props) {
           <textarea
             name="resultat"
             className={styles.textarea}
-            placeholder="ex: Écoulement rétabli à 100%. Canalisation propre et vérifiée. Aucun retour prévu."
+            placeholder="ex: Écoulement rétabli à 100%. Aucun retour prévu."
             rows={2}
             required
           />
+          <span className={styles.fieldNote}>L&apos;IA développe automatiquement</span>
         </div>
 
         {/* Témoignage */}
@@ -215,22 +220,36 @@ export default async function AdminPage({ searchParams }: Props) {
         </div>
 
         <button type="submit" className={styles.btn}>
-          Enregistrer la réalisation
+          Enregistrer + enrichir avec IA
         </button>
       </form>
 
       <script dangerouslySetInnerHTML={{ __html: `
-        const sel = document.querySelector('[name="service_slug"]');
-        const hidden = document.getElementById('type-hidden');
-        function sync() { hidden.value = sel.options[sel.selectedIndex].text.replace(/^[^a-zA-Z\\u00C0-\\u017E]+/, '').trim(); }
-        sel.addEventListener('change', sync);
-        sync();
+        // Sync service label → hidden type field
+        var sel = document.querySelector('[name="service_slug"]');
+        var hidden = document.getElementById('type-hidden');
+        function syncType() {
+          hidden.value = sel.options[sel.selectedIndex].text.replace(/^[^a-zA-Z\\u00C0-\\u017E]+/, '').trim();
+        }
+        sel.addEventListener('change', syncType);
+        syncType();
+
+        // Sync ville → code postal display
+        var villeSelect = document.getElementById('ville-select');
+        var cpValue = document.getElementById('cp-value');
+        function syncVille() {
+          var val = villeSelect.value;
+          var parts = val.split('|');
+          cpValue.textContent = parts.length > 1 ? parts[1] : '—';
+        }
+        villeSelect.addEventListener('change', syncVille);
+
         // Show filename on file input change
         document.querySelectorAll('input[type="file"]').forEach(function(input) {
           input.addEventListener('change', function() {
-            var label = input.closest('label');
-            if (label && input.files[0]) {
-              label.textContent = '✓ ' + input.files[0].name;
+            var lbl = input.closest('label');
+            if (lbl && input.files[0]) {
+              lbl.childNodes[0].textContent = '✓ ' + input.files[0].name;
             }
           });
         });

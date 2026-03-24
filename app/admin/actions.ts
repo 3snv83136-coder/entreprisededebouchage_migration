@@ -27,7 +27,11 @@ function toSlug(str: string): string {
 export async function saveRealisation(formData: FormData) {
   const type = formData.get('type') as string;
   const service_slug = formData.get('service_slug') as string;
-  const ville = formData.get('ville') as string;
+  // ville_data = "Toulon|83000"
+  const villeData = (formData.get('ville_data') as string) || '';
+  const [ville, codePostalFromSelect] = villeData.includes('|')
+    ? villeData.split('|')
+    : [villeData, ''];
   const ville_slug = toSlug(ville);
   const mois = formData.get('mois') as string;
   const annee = formData.get('annee') as string;
@@ -37,7 +41,7 @@ export async function saveRealisation(formData: FormData) {
   const intervention = formData.get('intervention') as string;
   const resultat = formData.get('resultat') as string;
   const temoignage = formData.get('temoignage') as string;
-  const codePostal = formData.get('codePostal') as string;
+  const codePostal = codePostalFromSelect || (formData.get('codePostal') as string);
   const materiels = formData.get('materiels') as string;
   const photoAvant = formData.get('photoAvant') as File | null;
   const photoApres = formData.get('photoApres') as File | null;
@@ -110,10 +114,13 @@ export async function saveRealisation(formData: FormData) {
     const improved = await ameliorerTexte({
       type,
       ville,
+      code_postal: codePostal || undefined,
       contexte: contexte || undefined,
       diagnostic: diagnostic || undefined,
       intervention,
       resultat,
+      materiels: materiels || undefined,
+      duree: duree || undefined,
     });
     if (contexte && improved.contexte_enrichi) updates.contexte_enrichi = improved.contexte_enrichi;
     if (diagnostic && improved.diagnostic_enrichi) updates.diagnostic_enrichi = improved.diagnostic_enrichi;

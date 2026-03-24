@@ -5,10 +5,13 @@ const client = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
 interface AmeliorerTexteParams {
   type: string;
   ville: string;
+  code_postal?: string;
   contexte?: string;
   diagnostic?: string;
   intervention: string;
   resultat: string;
+  materiels?: string;
+  duree?: string;
 }
 
 interface AmeliorerTexteResult {
@@ -32,43 +35,46 @@ export async function ameliorerTexte(params: AmeliorerTexteParams): Promise<Amel
 
   if (!process.env.ANTHROPIC_API_KEY) return fallback;
 
-  const { type, ville, contexte, diagnostic, intervention, resultat } = params;
+  const { type, ville, code_postal, contexte, diagnostic, intervention, resultat, materiels, duree } = params;
 
-  const prompt = `Tu es rédacteur SEO local pour un plombier-déboucheur professionnel dans le Var (83), France.
+  const prompt = `Tu es rédacteur SEO expert pour un plombier-déboucheur professionnel installé dans le Var (83), France.
+Tu dois DÉVELOPPER et ENRICHIR chaque section d'un compte-rendu d'intervention rédigé brièvement par le technicien.
 
-Améliore chaque section de ce compte-rendu d'intervention rédigé par le technicien.
-Règles :
-- Conserve les faits et chiffres exacts (durée, pression, distance, etc.)
-- Corrige les fautes sans dénaturer le style terrain
-- Enrichis naturellement avec des termes techniques métier
-- Chaque section doit rester courte (2-4 phrases max)
-- Ton professionnel mais accessible
+MISSION : transformer des notes courtes en textes riches, détaillés, professionnels et optimisés SEO.
 
-Intervention :
-- Type : ${type}
-- Ville : ${ville}
-${contexte ? `- Situation : ${contexte}` : ''}
-${diagnostic ? `- Diagnostic : ${diagnostic}` : ''}
-- Intervention : ${intervention}
-- Résultat : ${resultat}
+RÈGLES IMPÉRATIVES :
+- Chaque section doit faire 3 à 5 phrases minimum (jamais moins)
+- Développe le contexte technique : pourquoi ça arrive, comment ça évolue, quels risques si non traité
+- Ajoute des détails concrets : matériaux, durée probable, zone de travail, pression utilisée, distance de canalisation
+- Utilise le vocabulaire métier : hydrocurage, furet hélicoïdal, inspection endoscopique, tartre calcaire, siphon, regards, collecteur, etc.
+- Intègre naturellement la ville ${ville}${code_postal ? ` (${code_postal})` : ''} dans au moins une section
+- Ton professionnel mais humain, pas robotique
+- NE PAS inventer de faits qui contredisent les notes du technicien
 
-Réponds UNIQUEMENT en JSON strict, sans commentaire :
+Données brutes du technicien :
+- Type d'intervention : ${type}
+- Ville : ${ville}${code_postal ? ` — Code postal : ${code_postal}` : ''}
+${duree ? `- Durée totale : ${duree}` : ''}
+${materiels ? `- Matériels utilisés : ${materiels}` : ''}
+${contexte ? `- Situation (notes brutes) : "${contexte}"` : '- Situation : non renseignée'}
+${diagnostic ? `- Diagnostic (notes brutes) : "${diagnostic}"` : '- Diagnostic : non renseigné'}
+- Intervention (notes brutes) : "${intervention}"
+- Résultat (notes brutes) : "${resultat}"
+
+Réponds UNIQUEMENT en JSON strict (pas de commentaire, pas de markdown) :
 {
-  "contexte_enrichi": "${contexte ? '...' : ''}",
-  "diagnostic_enrichi": "${diagnostic ? '...' : ''}",
-  "intervention_enrichie": "...",
-  "resultat_enrichi": "...",
-  "titre_seo": "...",
-  "meta_description": "..."
-}
-
-Le titre_seo doit contenir "${type}" et "${ville}" (50-65 caractères).
-La meta_description doit être incitative (140-160 caractères).`;
+  "contexte_enrichi": "3 à 5 phrases développant la situation initiale, le contexte du client, et les risques de ne pas intervenir rapidement...",
+  "diagnostic_enrichi": "3 à 5 phrases sur ce que le technicien a trouvé, comment il l'a identifié, la cause probable, la localisation précise du problème...",
+  "intervention_enrichie": "3 à 5 phrases décrivant précisément les techniques et matériels utilisés, les étapes, les difficultés rencontrées...",
+  "resultat_enrichi": "3 à 5 phrases sur le résultat final, les vérifications faites, les conseils donnés au client, la garantie...",
+  "titre_seo": "titre H1 optimisé contenant '${type}' et '${ville}' (55-65 caractères)",
+  "meta_description": "description engageante mentionnant ${ville}${code_postal ? ` ${code_postal}` : ''}, le type et le résultat (145-160 caractères)"
+}`;
 
   try {
     const message = await client.messages.create({
       model: 'claude-haiku-4-5-20251001',
-      max_tokens: 1024,
+      max_tokens: 2048,
       messages: [{ role: 'user', content: prompt }],
     });
 
