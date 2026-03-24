@@ -111,3 +111,64 @@
   border-color: rgba(251, 117, 0, 0.4);
   color: var(--orange-light);
 }
+
+/* HowTo Steps */
+.stepsList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 32px;
+  counter-reset: none;
+}
+
+.stepItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  background: var(--navy-light);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: var(--radius);
+  padding: 24px;
+  transition: border-color 0.2s;
+}
+
+.stepItem:hover {
+  border-color: rgba(251, 117, 0, 0.3);
+}
+
+.stepNum {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--orange);
+  color: var(--navy);
+  font-size: 18px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+.stepName {
+  display: block;
+  color: var(--white);
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+.stepText {
+  color: var(--slate);
+  font-size: 14px;
+  line-height: 1.65;
+  margin: 0;
+}
+
+@media (max-width: 480px) {
+  .stepItem {
+    flex-direction: column;
+    gap: 12px;
+  }
+}

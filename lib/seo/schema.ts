@@ -137,6 +137,23 @@ export function generateSchemaServiceCity(service: Service, ville: Ville) {
   };
 }
 
+export function generateSchemaHowTo(
+  name: string,
+  steps: { name: string; text: string }[]
+) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'HowTo',
+    name,
+    step: steps.map((s, i) => ({
+      '@type': 'HowToStep',
+      position: i + 1,
+      name: s.name,
+      text: s.text,
+    })),
+  };
+}
+
 export function generateSchemaFAQ(faqs: FaqItem[]) {
   return {
     '@context': 'https://schema.org',

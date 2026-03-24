@@ -1,6 +1,6 @@
 import { Service, FaqItem } from '@/lib/types';
 import { getAllVilles } from '@/lib/data/villes';
-import { generateSchemaService, generateSchemaFAQ, generateSchemaBreadcrumbs } from '@/lib/seo/schema';
+import { generateSchemaService, generateSchemaFAQ, generateSchemaBreadcrumbs, generateSchemaHowTo } from '@/lib/seo/schema';
 import { PHONE, PHONE_RAW, BASE_URL } from '@/lib/config';
 import Link from 'next/link';
 import Faq from '@/components/page-ville/Faq';
@@ -8,6 +8,11 @@ import CtaFinal from '@/components/page-ville/CtaFinal';
 import VilleSearchInline from '@/components/common/VilleSearchInline';
 import GeoEvierVarClusterLinks from '@/components/geo-evier/GeoEvierVarClusterLinks';
 import styles from './ServicePageContent.module.css';
+
+export interface HowToStep {
+  name: string;
+  text: string;
+}
 
 interface Props {
   service: Service;
@@ -17,6 +22,9 @@ interface Props {
     problems: string;
     intervention: string;
     tarif: string;
+    steps?: HowToStep[];
+    signes?: string;
+    conseils?: string;
   };
 }
 
@@ -24,6 +32,9 @@ export default function ServicePageContent({ service, faqs, content }: Props) {
   const villes = getAllVilles();
   const serviceSchema = generateSchemaService(service);
   const faqSchema = generateSchemaFAQ(faqs);
+  const howtoSchema = content.steps?.length
+    ? generateSchemaHowTo(`Comment se déroule un ${service.label.toLowerCase()} ?`, content.steps)
+    : null;
   const breadcrumbSchema = generateSchemaBreadcrumbs([
     { name: 'Accueil', href: '/' },
     { name: 'Nos prestations', href: '/nos-prestations/' },
@@ -40,6 +51,12 @@ export default function ServicePageContent({ service, faqs, content }: Props) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
+      {howtoSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(howtoSchema) }}
+        />
+      )}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
@@ -96,6 +113,53 @@ export default function ServicePageContent({ service, faqs, content }: Props) {
           </div>
         </div>
       </section>
+
+      {/* Étapes HowTo */}
+      {content.steps && content.steps.length > 0 && (
+        <section className={styles.section} style={{ background: 'var(--navy-mid)' }}>
+          <div className="container">
+            <div className="section-label">Déroulement</div>
+            <h2 className="section-title">Les étapes de l&apos;intervention</h2>
+            <ol className={styles.stepsList}>
+              {content.steps.map((step, i) => (
+                <li key={i} className={styles.stepItem}>
+                  <span className={styles.stepNum}>{i + 1}</span>
+                  <div>
+                    <strong className={styles.stepName}>{step.name}</strong>
+                    <p className={styles.stepText}>{step.text}</p>
+                  </div>
+                </li>
+              ))}
+            </ol>
+          </div>
+        </section>
+      )}
+
+      {/* Signes d'alerte */}
+      {content.signes && (
+        <section className={styles.section}>
+          <div className="container">
+            <div className="section-label">À surveiller</div>
+            <h2 className="section-title">Signes qui ne trompent pas</h2>
+            <div className={styles.textBlock}>
+              <p>{content.signes}</p>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Conseils préventifs */}
+      {content.conseils && (
+        <section className={styles.section} style={{ background: 'var(--navy-mid)' }}>
+          <div className="container">
+            <div className="section-label">Prévention</div>
+            <h2 className="section-title">Conseils pour éviter la panne</h2>
+            <div className={styles.textBlock}>
+              <p>{content.conseils}</p>
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Tarif */}
       <section className={styles.section} style={{ background: 'var(--navy-mid)' }}>
