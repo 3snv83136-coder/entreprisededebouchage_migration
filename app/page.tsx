@@ -60,7 +60,8 @@ export default async function Home() {
                 Appeler maintenant
               </a>
               <a href={`tel:${PHONE_RAW}`} className={styles.btnSecondaryHero}>
-                Devis gratuit
+                <span className={styles.desktopOnly}>Devis gratuit</span>
+                <span className={styles.mobileOnly}>Prise en charge Assurance*</span>
               </a>
             </div>
           </div>

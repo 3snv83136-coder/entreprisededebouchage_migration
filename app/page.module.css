@@ -137,6 +137,10 @@
   background: var(--navy-highest);
 }
 
+/* ── Desktop/Mobile text toggle ── */
+.desktopOnly { display: inline; }
+.mobileOnly { display: none; }
+
 /* ── BENTO GRID ── */
 .bentoGrid {
   display: grid;
@@ -606,6 +610,9 @@
   .heroCtas {
     justify-content: center;
   }
+
+  .desktopOnly { display: none; }
+  .mobileOnly { display: inline; }
 
   .bentoGrid {
     display: none;
