@@ -23,6 +23,7 @@ function toSlug(str: string): string {
 
 export async function saveRealisation(formData: FormData) {
   let realisationId: string | null = null;
+  const photoErrors: string[] = [];
 
   try {
     const type = formData.get('type') as string;
@@ -84,13 +85,19 @@ export async function saveRealisation(formData: FormData) {
       try {
         const url = await uploadPhoto(photoAvant, realisationId, 'avant');
         await supabaseAdmin.from('realisations').update({ photo_avant_url: url }).eq('id', realisationId);
-      } catch { /* skip */ }
+      } catch (photoErr) {
+        console.error('[saveRealisation] Photo avant upload failed:', photoErr);
+        photoErrors.push('avant');
+      }
     }
     if (photoApres && photoApres.size > 0) {
       try {
         const url = await uploadPhoto(photoApres, realisationId, 'apres');
         await supabaseAdmin.from('realisations').update({ photo_apres_url: url }).eq('id', realisationId);
-      } catch { /* skip */ }
+      } catch (photoErr) {
+        console.error('[saveRealisation] Photo apres upload failed:', photoErr);
+        photoErrors.push('apres');
+      }
     }
 
     revalidatePath('/realisations');
@@ -102,7 +109,8 @@ export async function saveRealisation(formData: FormData) {
   }
 
   // Redirect with id — enrichment happens client-side via /api/enrichir/[id]
-  redirect(`/admin?success=1&id=${realisationId}`);
+  const photoParam = photoErrors.length > 0 ? `&photo_error=${photoErrors.join(',')}` : '';
+  redirect(`/admin?success=1&id=${realisationId}${photoParam}`);
 }
 
 export async function deleteRealisation(id: string) {
