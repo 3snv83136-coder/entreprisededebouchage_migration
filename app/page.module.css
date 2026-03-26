@@ -76,8 +76,8 @@
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background: var(--tertiary);
-  box-shadow: 0 0 8px var(--tertiary);
+  background: #22c55e;
+  box-shadow: 0 0 8px #22c55e;
   animation: pulse 1.8s ease-in-out infinite;
   position: relative;
 }
