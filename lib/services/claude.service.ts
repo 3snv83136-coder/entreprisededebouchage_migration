@@ -56,6 +56,7 @@ interface EnrichirRecitParams {
 }
 
 interface EnrichirRecitResult {
+  expertise_complete: string;
   contexte_enrichi: string;
   diagnostic_enrichi: string;
   intervention_enrichie: string;
@@ -77,6 +78,7 @@ const MAILLAGE_KEYWORDS = [
 
 export async function enrichirRecit(params: EnrichirRecitParams): Promise<EnrichirRecitResult> {
   const fallback: EnrichirRecitResult = {
+    expertise_complete: params.recit,
     contexte_enrichi: params.recit,
     diagnostic_enrichi: '',
     intervention_enrichie: params.recit,
@@ -90,20 +92,25 @@ export async function enrichirRecit(params: EnrichirRecitParams): Promise<Enrich
 
   const { type, ville, code_postal, recit, duree } = params;
 
-  const prompt = `Tu es redacteur SEO expert pour un plombier-deboucheur professionnel installe dans le Var (83), France.
+  const prompt = `Tu es Christophe Allard, expert en assainissement dans le Var (83), France, avec 19 ans d'experience.
 
-Le technicien a raconte son intervention de maniere informelle. Tu dois transformer ce recit en contenu structure, riche et optimise SEO, tout en GARDANT LE TON HUMAIN ET AUTHENTIQUE du technicien.
+Un de tes techniciens a raconte une intervention de maniere informelle. Tu dois transformer ce recit en un TEXTE CONTINU D'EXPERTISE riche et detaille, comme si tu redigeais un rapport professionnel pour le client et pour le site web.
 
-MISSION : A partir du recit brut, generer 4 sections structurees + metadata SEO.
+MISSION : A partir du recit brut, generer un texte d'expertise complet + des sections pour le rapport PDF + metadata SEO.
 
-REGLES :
-- Garde le ton naturel et humain — on doit sentir que c'est un vrai professionnel qui parle, pas un robot
-- Chaque section : 3 a 6 phrases, detaillees et techniques
-- Integre naturellement ces mots-cles pour le maillage interne quand c'est pertinent : ${MAILLAGE_KEYWORDS.join(', ')}
-- Mentionne la ville ${ville}${code_postal ? ` (${code_postal})` : ''} dans au moins 2 sections
-- Developpe les aspects techniques : pression, distance, materiels, causes, risques
+LE TEXTE D'EXPERTISE (champ "expertise_complete") :
+- C'est le coeur du contenu : un texte continu de 300 a 500 mots
+- Raconte l'intervention comme un recit d'expert : la demande du client, ce qu'on a observe, notre analyse technique, comment on a procede, le resultat et les recommandations
+- Ajoute ton expertise : explique POURQUOI le probleme est arrive, quels risques si non traite, quelles precautions pour l'avenir
+- Ton professionnel mais accessible — le client doit comprendre et etre rassure
+- Integre naturellement ces termes quand pertinent : ${MAILLAGE_KEYWORDS.join(', ')}
+- Mentionne la ville ${ville}${code_postal ? ` (${code_postal})` : ''} naturellement
 - NE PAS inventer de faits qui contredisent le recit du technicien
-- Detecte les materiels mentionnes ou implicites dans le recit
+- Developpe les aspects techniques : type de canalisation, pression utilisee, distance, methode, cause identifiee
+
+LES SECTIONS RAPPORT PDF (champs contexte/diagnostic/intervention/resultat) :
+- Ce sont des versions courtes (2-3 phrases chacune) pour structurer le rapport PDF
+- Elles reprennent les points cles du texte d'expertise
 
 Recit brut du technicien :
 "${recit}"
@@ -114,10 +121,11 @@ ${duree ? `Duree : ${duree}` : ''}
 
 Reponds UNIQUEMENT en JSON strict :
 {
-  "contexte_enrichi": "La situation initiale du client, pourquoi il a appele, les risques si non traite...",
-  "diagnostic_enrichi": "Ce que le technicien a trouve, comment il l'a identifie, la cause du probleme...",
-  "intervention_enrichie": "Les techniques utilisees, les etapes, le materiel, les difficultes...",
-  "resultat_enrichi": "Le resultat final, les verifications, les conseils au client...",
+  "expertise_complete": "Le texte d'expertise complet, 300-500 mots, continu, riche en savoir-faire technique...",
+  "contexte_enrichi": "2-3 phrases : situation initiale, demande du client",
+  "diagnostic_enrichi": "2-3 phrases : ce qu'on a trouve, cause identifiee",
+  "intervention_enrichie": "2-3 phrases : methode, materiel, etapes cles",
+  "resultat_enrichi": "2-3 phrases : resultat, verification, conseil",
   "titre_seo": "titre H1 optimise contenant '${type}' et '${ville}' (55-65 caracteres)",
   "meta_description": "description engageante mentionnant ${ville}, le type et le resultat (145-160 caracteres)",
   "materiels_detectes": "liste des materiels utilises ou implicites, separes par des virgules"
@@ -138,6 +146,7 @@ Reponds UNIQUEMENT en JSON strict :
 
     const parsed = JSON.parse(jsonMatch[0]) as EnrichirRecitResult;
     return {
+      expertise_complete: parsed.expertise_complete || params.recit,
       contexte_enrichi: parsed.contexte_enrichi || params.recit,
       diagnostic_enrichi: parsed.diagnostic_enrichi || '',
       intervention_enrichie: parsed.intervention_enrichie || params.recit,
@@ -167,6 +176,7 @@ interface RapportParams {
   materiels?: string;
   temoignage?: string;
   intervenant?: string;
+  expertise_complete?: string;
   photo_avant_url?: string;
   photo_apres_url?: string;
 }
@@ -176,7 +186,7 @@ export function genererRapportHTML(params: RapportParams): string {
     type, ville, code_postal, mois, annee, duree,
     contexte_enrichi, diagnostic_enrichi,
     intervention_enrichie, resultat_enrichi,
-    materiels, temoignage, intervenant,
+    materiels, temoignage, intervenant, expertise_complete,
     photo_avant_url, photo_apres_url,
   } = params;
 
@@ -314,6 +324,42 @@ export function genererRapportHTML(params: RapportParams): string {
     color: #555;
   }
 
+  /* Summary grid */
+  .summary-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin: 24px 4px;
+  }
+  .summary-box {
+    background: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    padding: 14px 18px;
+  }
+  .summary-box p {
+    font-size: 10pt;
+    color: #333;
+    line-height: 1.5;
+    margin: 0;
+  }
+  .summary-title {
+    font-size: 9pt;
+    font-weight: 700;
+    color: #f4811f;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 6px;
+  }
+  .summary-result {
+    grid-column: span 2;
+    background: #f0fdf4;
+    border-color: #22c55e;
+  }
+  .summary-result .summary-title {
+    color: #16a34a;
+  }
+
   /* Photos */
   .photos {
     display: grid;
@@ -420,31 +466,29 @@ export function genererRapportHTML(params: RapportParams): string {
 
   <div class="section">
     <span class="section-num">1</span>
-    <h3>CONTEXTE ET MOTIF DE L'INTERVENTION</h3>
+    <h3>RAPPORT D'EXPERTISE</h3>
     <div class="section-content">
-      ${contexte_enrichi || 'Non renseigne.'}
+      ${expertise_complete || contexte_enrichi || 'Non renseigne.'}
     </div>
   </div>
 
-  <div class="section">
-    <span class="section-num">2</span>
-    <h3>DIAGNOSTIC</h3>
-    <div class="section-content">
-      ${diagnostic_enrichi || 'Non renseigne.'}
+  <div class="summary-grid">
+    <div class="summary-box">
+      <div class="summary-title">Contexte</div>
+      <p>${contexte_enrichi || '—'}</p>
     </div>
-  </div>
-
-  <div class="section">
-    <span class="section-num">3</span>
-    <h3>DEROULEMENT DE L'INTERVENTION</h3>
-    <div class="section-content">
-      ${intervention_enrichie || 'Non renseigne.'}
+    <div class="summary-box">
+      <div class="summary-title">Diagnostic</div>
+      <p>${diagnostic_enrichi || '—'}</p>
     </div>
-  </div>
-
-  <div class="result-box">
-    <h3>RESULTAT ET SYNTHESE</h3>
-    <p>${resultat_enrichi || 'Non renseigne.'}</p>
+    <div class="summary-box">
+      <div class="summary-title">Intervention</div>
+      <p>${intervention_enrichie || '—'}</p>
+    </div>
+    <div class="summary-box summary-result">
+      <div class="summary-title">Resultat</div>
+      <p>${resultat_enrichi || '—'}</p>
+    </div>
   </div>
 
   ${temoignage ? `

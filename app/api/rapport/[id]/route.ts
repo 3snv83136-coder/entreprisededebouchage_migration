@@ -43,6 +43,7 @@ export async function GET(
       materiels: r.materiels || undefined,
       temoignage: r.temoignage || undefined,
       intervenant: r.intervenant || undefined,
+      expertise_complete: r.description_generee || undefined,
       photo_avant_url: r.photo_avant_url || undefined,
       photo_apres_url: r.photo_apres_url || undefined,
     });

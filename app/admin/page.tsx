@@ -164,10 +164,11 @@ export default async function AdminPage({ searchParams }: Props) {
                 className={styles.fileInput}
                 type="file"
                 name="photoAvant"
-                accept="image/*"
+                accept="image/jpeg,image/png,image/webp,image/heic,image/heif"
                 capture="environment"
               />
             </label>
+            <span className={styles.fieldNote}>JPG, PNG, WebP, HEIC</span>
           </div>
           <div className={styles.field}>
             <label className={styles.label}>Photo apres</label>
@@ -178,10 +179,11 @@ export default async function AdminPage({ searchParams }: Props) {
                 className={styles.fileInput}
                 type="file"
                 name="photoApres"
-                accept="image/*"
+                accept="image/jpeg,image/png,image/webp,image/heic,image/heif"
                 capture="environment"
               />
             </label>
+            <span className={styles.fieldNote}>JPG, PNG, WebP, HEIC</span>
           </div>
         </div>
 

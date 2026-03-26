@@ -119,7 +119,7 @@ export async function saveRealisation(formData: FormData) {
       updates.contexte_enrichi = improved.contexte_enrichi;
       updates.diagnostic_enrichi = improved.diagnostic_enrichi;
       updates.intervention_enrichie = improved.intervention_enrichie;
-      updates.description_generee = improved.resultat_enrichi;
+      updates.description_generee = improved.expertise_complete || improved.resultat_enrichi;
       updates.titre = improved.titre_seo;
       updates.meta_description = improved.meta_description;
       updates.materiels = improved.materiels_detectes;
