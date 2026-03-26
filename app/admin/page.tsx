@@ -40,10 +40,13 @@ export default async function AdminPage({ searchParams }: Props) {
       </div>
 
       {success && (
-        <div className={styles.banner + ' ' + styles.bannerSuccess}>
-          Realisation enregistree et enrichie par IA !
+        <div className={styles.banner + ' ' + styles.bannerSuccess} id="success-banner">
+          Realisation enregistree ! Enrichissement IA en cours...
+          <div className={styles.progressBar} style={{ marginTop: '10px' }}>
+            <div className={styles.progressFill} id="enrich-progress" style={{ width: '20%' }} />
+          </div>
           {id && (
-            <div style={{ marginTop: '8px' }}>
+            <div style={{ marginTop: '8px', display: 'none' }} id="pdf-link-container">
               <a
                 href={`/api/rapport/${id}`}
                 target="_blank"
@@ -54,6 +57,37 @@ export default async function AdminPage({ searchParams }: Props) {
             </div>
           )}
         </div>
+      )}
+      {success && id && (
+        <script dangerouslySetInnerHTML={{ __html: `
+          (function() {
+            var progress = document.getElementById('enrich-progress');
+            var banner = document.getElementById('success-banner');
+            var pdfLink = document.getElementById('pdf-link-container');
+            progress.style.width = '40%';
+            fetch('/api/enrichir/${id}', { method: 'POST' })
+              .then(function(r) { return r.json(); })
+              .then(function(data) {
+                progress.style.width = '100%';
+                if (data.status === 'enriched' || data.status === 'already_enriched') {
+                  banner.textContent = '';
+                  banner.innerHTML = 'Realisation enrichie par IA ! <br/><small>Texte d\\'expertise genere avec succes.</small>';
+                  if (pdfLink) {
+                    pdfLink.style.display = 'block';
+                    banner.appendChild(pdfLink);
+                  }
+                } else {
+                  banner.innerHTML = 'Realisation enregistree. <br/><small>Enrichissement IA : ' + (data.error || 'non disponible') + '</small>';
+                  if (pdfLink) { pdfLink.style.display = 'block'; banner.appendChild(pdfLink); }
+                }
+              })
+              .catch(function(err) {
+                progress.style.width = '100%';
+                banner.innerHTML = 'Realisation enregistree. <br/><small>Enrichissement : ' + err.message + '</small>';
+                if (pdfLink) { pdfLink.style.display = 'block'; banner.appendChild(pdfLink); }
+              });
+          })();
+        `}} />
       )}
       {error && (
         <div className={styles.banner + ' ' + styles.bannerError}>
