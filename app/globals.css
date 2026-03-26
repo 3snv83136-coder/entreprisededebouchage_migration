@@ -1,14 +1,17 @@
 :root {
-  --orange: #fb7500;
+  --orange: #f4811f;
   --orange-dark: #d96400;
-  --orange-light: #ff9a3c;
-  --navy: #0d1117;
-  --navy-mid: #161b22;
-  --navy-light: #21262d;
-  --slate: #8b949e;
-  --white: #f0f6fc;
+  --orange-light: #ffb786;
+  --navy: #0e141c;
+  --navy-mid: #1a2028;
+  --navy-light: #242a33;
+  --navy-highest: #2f353e;
+  --slate: #ddc1b0;
+  --white: #dde3ee;
   --green: #22e151;
-  --radius: 12px;
+  --tertiary: #ffba20;
+  --outline-variant: #564336;
+  --radius: 16px;
   --shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
 }
 
@@ -80,9 +83,9 @@ a {
 }
 
 .section-title {
-  font-size: clamp(36px, 6vw, 60px);
-  letter-spacing: 0.04em;
-  line-height: 1.05;
+  font-size: clamp(36px, 6vw, 52px);
+  letter-spacing: -0.01em;
+  line-height: 1.1;
   color: var(--white);
   margin-bottom: 16px;
 }
@@ -99,40 +102,28 @@ a {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  background: var(--orange);
-  color: var(--navy);
+  background: linear-gradient(135deg, #ffb786 0%, #f4811f 100%);
+  color: #502400;
   font-weight: 700;
   font-size: 18px;
   padding: 18px 40px;
   border-radius: 50px;
   text-decoration: none;
   transition: all 0.25s;
-  box-shadow: 0 0 40px rgba(251, 117, 0, 0.35);
+  box-shadow: 0 4px 24px rgba(244, 129, 31, 0.35);
   position: relative;
   overflow: hidden;
   border: none;
   cursor: pointer;
-  animation: btnPulse 3s ease-in-out infinite;
-}
-
-.btn-primary::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, transparent 60%);
-  pointer-events: none;
 }
 
 .btn-primary:hover {
-  background: var(--orange-light);
-  transform: translateY(-2px);
-  box-shadow: 0 0 60px rgba(251, 117, 0, 0.5);
-  animation: none;
+  transform: scale(1.05);
+  box-shadow: 0 4px 32px rgba(244, 129, 31, 0.5);
 }
 
-@keyframes btnPulse {
-  0%, 100% { box-shadow: 0 0 40px rgba(251, 117, 0, 0.35); }
-  50% { box-shadow: 0 0 60px rgba(251, 117, 0, 0.55); }
+.btn-primary:active {
+  transform: scale(0.97);
 }
 
 .btn-secondary {

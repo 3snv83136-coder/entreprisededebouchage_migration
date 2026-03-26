@@ -6,6 +6,7 @@ import { getAllServices } from '@/lib/data/services';
 import { getAllRealisations } from '@/lib/data/realisations';
 import VilleSearch from '@/components/common/VilleSearch';
 import VilleSearchInline from '@/components/common/VilleSearchInline';
+import { PHONE, PHONE_RAW } from '@/lib/config';
 import styles from './page.module.css';
 
 export const revalidate = 3600;
@@ -25,6 +26,7 @@ export default async function Home() {
 
   return (
     <>
+      {/* ═══ HERO ═══ */}
       <section className={styles.hero}>
         <div className={styles.heroBg} />
         <Image
@@ -36,138 +38,201 @@ export default async function Home() {
           sizes="100vw"
         />
         <div className={styles.heroOverlay} />
-<div className={styles.heroInner}>
-          <div className={styles.badge}>
-            <span className={styles.badgeDot} />
-            Disponible maintenant — Var (83)
+
+        <div className={styles.heroGrid}>
+          {/* Left column — Text */}
+          <div className={styles.heroText}>
+            <div className={styles.badge}>
+              <span className={styles.badgeDot} />
+              Disponible immediatement — Var (83)
+            </div>
+            <h1 className={styles.title}>
+              Debouchage express<br />
+              <span className={styles.titleAccent}>dans le Var 24h/7j</span>
+            </h1>
+            <p className={styles.sub}>
+              Intervention rapide en moins d&apos;une heure. Prix fixe transparent
+              et devis gratuit avant chaque intervention. Pas de mauvaise surprise.
+            </p>
+
+            <div className={styles.heroCtas}>
+              <a href={`tel:${PHONE_RAW}`} className="btn-primary">
+                Appeler maintenant
+              </a>
+              <a href={`tel:${PHONE_RAW}`} className={styles.btnSecondaryHero}>
+                {PHONE}
+              </a>
+            </div>
           </div>
-          <h1 className={styles.title}>
-            Debouchage<br />
-            <em>dans le Var</em>
-            24h/7j
-          </h1>
-          <p className={styles.sub}>
-            Entreprise de debouchage depuis 19 ans. Intervention en moins d&apos;une
-            heure à Toulon et dans tout le Var. Devis gratuit, prix fixe.
-          </p>
 
-          <a href="tel:0627699134" className="btn-primary">
-            📞 Urgence
-          </a>
+          {/* Right column — Bento Grid */}
+          <div className={styles.bentoGrid}>
+            <div className={styles.bentoCard}>
+              <div>
+                <div className={styles.bentoValueSm}>Debouchage de Canalisation</div>
+                <div className={styles.bentoHighlight}>24h/24 et 7j/7</div>
+                <div className={styles.bentoLabel}>WC - Evier / Lavabos - Baignoire &amp; Douche</div>
+              </div>
+            </div>
+            <div className={`${styles.bentoCard} ${styles.bentoCardAccent}`}>
+              <div>
+                <div className={styles.bentoValueSm}>AGREEE</div>
+                <div className={styles.bentoHighlight}>ASSURANCE</div>
+                <div className={styles.bentoLabel}>Prix fixe sans surprise</div>
+              </div>
+            </div>
+            <div className={`${styles.bentoCard} ${styles.bentoCardWide}`}>
+              <div className={styles.bentoIcon}>&#9889;</div>
+              <div>
+                <div className={styles.bentoValue}>Intervention &lt; 1h</div>
+                <div className={styles.bentoLabel}>Partout dans le Var, de jour comme de nuit</div>
+              </div>
+            </div>
+          </div>
+        </div>
 
-          {/* Tarifs */}
+        {/* ═══ PRICING — always in first third ═══ */}
+        <div className={styles.pricingWrapper}>
           <div className={styles.pricing}>
             <div className={styles.pricingCard}>
               <h3 className={styles.pricingTitle}>Debouchage Manuel</h3>
-              <p className={styles.pricingDesc}>Évier, WC, Douche</p>
-              <div className={styles.pricingPrice}>99<span>€</span></div>
+              <p className={styles.pricingDesc}>Evier, WC, Douche</p>
+              <div className={styles.pricingPrice}>99<span>&euro;</span></div>
             </div>
             <div className={`${styles.pricingCard} ${styles.pricingCardPopular}`}>
-              <div className={styles.pricingBadge}>Le + demandé</div>
+              <div className={styles.pricingBadge}>Le + demande</div>
               <h3 className={styles.pricingTitle}>Haute Pression</h3>
               <p className={styles.pricingDesc}>Hydrocurage technique</p>
-              <div className={styles.pricingPrice}>199<span>€</span></div>
+              <div className={styles.pricingPrice}>199<span>&euro;</span></div>
             </div>
             <div className={styles.pricingCard}>
-              <h3 className={styles.pricingTitle}>Inspection Caméra</h3>
-              <p className={styles.pricingDesc}>Diagnostic vidéo complet</p>
-              <div className={styles.pricingPrice}>110<span>€</span></div>
+              <h3 className={styles.pricingTitle}>Inspection Camera</h3>
+              <p className={styles.pricingDesc}>Diagnostic video complet</p>
+              <div className={styles.pricingPrice}>110<span>&euro;</span></div>
             </div>
           </div>
-          <p className={styles.pricingNote}>Déplacement inclus &amp; Devis gratuit</p>
+          <p className={styles.pricingNote}>Deplacement inclus &amp; Devis gratuit</p>
+        </div>
 
-          <div className={styles.searchSection}>
-            <p className={styles.searchLabel}>Trouvez votre ville</p>
-            <VilleSearch villes={villesData} />
-          </div>
+        {/* Search in hero */}
+        <div className={styles.searchSection}>
+          <p className={styles.searchLabel}>Trouvez votre ville</p>
+          <VilleSearch villes={villesData} />
+        </div>
 
-          <div className={styles.stats}>
-            <div><strong>4.9/5</strong><span>489 avis</span></div>
-            <div><strong>19 ans</strong><span>d&apos;expérience</span></div>
-            <div><strong>&lt;1h</strong><span>d&apos;intervention</span></div>
-          </div>
+        {/* Mobile stats */}
+        <div className={styles.statsMobile}>
+          <div><strong>4.9/5</strong><span>Avis Google</span></div>
+          <div><strong>19 ans</strong><span>Experience</span></div>
+          <div><strong>&lt;1h</strong><span>Intervention</span></div>
         </div>
       </section>
 
+      {/* ═══ SERVICES ═══ */}
       <section className={styles.section} style={{ background: 'var(--navy-mid)' }}>
         <div className="container">
-          <div className="section-label">Nos prestations</div>
-          <h2 className="section-title">Services</h2>
+          <div className={styles.sectionHeader}>
+            <div>
+              <h2 className={styles.sectionTitle}>Nos Solutions de <span className={styles.titleAccent}>Debouchage</span></h2>
+              <p className="section-desc">Nous utilisons les dernieres technologies d&apos;hydrocurage et d&apos;inspection video pour garantir un resultat durable.</p>
+            </div>
+            <div className={styles.priceTag}>
+              A partir de 95&euro;
+            </div>
+          </div>
           <div className={styles.serviceGrid}>
-            {services.map((s, i) => (
+            {services.map((s) => (
               <Link
                 key={s.slug}
                 href={`/${s.slug}/`}
                 className={styles.serviceCard}
-                style={{ '--card-index': i } as React.CSSProperties}
               >
-                <div>
+                <div className={styles.serviceCardInner}>
                   <strong>{s.label}</strong>
-                  <p className={styles.serviceDesc}>{s.description.slice(0, 80)}…</p>
+                  <p className={styles.serviceDesc}>{s.description.slice(0, 100)}...</p>
                 </div>
-                <span className={styles.serviceArrow}>→</span>
+                <span className={styles.serviceArrow}>&rarr;</span>
               </Link>
             ))}
           </div>
         </div>
       </section>
 
+      {/* ═══ REALISATIONS ═══ */}
       <section className={styles.section} style={{ background: 'var(--navy)' }}>
         <div className="container">
-          <div className="section-label">Interventions réelles</div>
-          <h2 className="section-title">Nos réalisations</h2>
-          <div className={styles.pricing} style={{ marginTop: '32px' }}>
+          <div style={{ textAlign: 'center', marginBottom: '48px' }}>
+            <div className="section-label">Interventions reelles</div>
+            <h2 className={styles.sectionTitle}>Interventions Recentes</h2>
+            <p className="section-desc" style={{ margin: '0 auto' }}>La preuve par l&apos;image de notre savoir-faire technique quotidien.</p>
+          </div>
+          <div className={styles.realisationsGrid}>
             {realisations.slice(0, 3).length > 0 ? realisations.slice(0, 3).map((r) => (
-              <Link key={r.slug} href={`/realisations/${r.slug}/`} className={styles.pricingCard} style={{ textDecoration: 'none' }}>
-                <h3 className={styles.pricingTitle}>{r.type}</h3>
-                <p className={styles.pricingDesc}>{r.ville} — {r.mois} {r.annee}</p>
-                {r.duree && (
-                  <div className={styles.pricingPrice} style={{ fontSize: '22px', letterSpacing: 0 }}>
-                    ⏱ {r.duree}
-                  </div>
-                )}
-                <p className={styles.pricingDesc} style={{ marginTop: '8px', marginBottom: 0 }}>
-                  {r.resultat.slice(0, 70)}…
-                </p>
+              <Link key={r.slug} href={`/realisations/${r.slug}/`} className={styles.realisationCard}>
+                <div className={styles.realisationOverlay} />
+                <div className={styles.realisationContent}>
+                  <div className={styles.realisationCity}>{r.ville}</div>
+                  <div className={styles.realisationTitle}>{r.type}</div>
+                  {r.duree && <div className={styles.realisationMeta}>{r.duree}</div>}
+                </div>
               </Link>
             )) : (
               <>
-                <div className={styles.pricingCard}>
-                  <h3 className={styles.pricingTitle}>Débouchage canalisation</h3>
-                  <p className={styles.pricingDesc}>Toulon — Janvier 2026</p>
-                  <div className={styles.pricingPrice}>1h<span>15</span></div>
-                  <p className={styles.pricingDesc} style={{ marginBottom: 0 }}>Hydrocurage haute pression, résultat immédiat.</p>
+                <div className={styles.realisationCard}>
+                  <div className={styles.realisationOverlay} />
+                  <div className={styles.realisationContent}>
+                    <div className={styles.realisationCity}>Toulon</div>
+                    <div className={styles.realisationTitle}>Debouchage par hydrocurage</div>
+                  </div>
                 </div>
-                <div className={`${styles.pricingCard} ${styles.pricingCardPopular}`}>
-                  <div className={styles.pricingBadge}>Récent</div>
-                  <h3 className={styles.pricingTitle}>Débouchage WC</h3>
-                  <p className={styles.pricingDesc}>Hyères — Février 2026</p>
-                  <div className={styles.pricingPrice}>45<span>min</span></div>
-                  <p className={styles.pricingDesc} style={{ marginBottom: 0 }}>WC débordant remis en état sans démontage.</p>
+                <div className={styles.realisationCard}>
+                  <div className={styles.realisationOverlay} />
+                  <div className={styles.realisationContent}>
+                    <div className={styles.realisationCity}>Frejus</div>
+                    <div className={styles.realisationTitle}>Diagnostic camera endoscopique</div>
+                  </div>
                 </div>
-                <div className={styles.pricingCard}>
-                  <h3 className={styles.pricingTitle}>Fosse septique</h3>
-                  <p className={styles.pricingDesc}>La Seyne — Mars 2026</p>
-                  <div className={styles.pricingPrice}>2h<span>30</span></div>
-                  <p className={styles.pricingDesc} style={{ marginBottom: 0 }}>Vidange complète + curage, rapport fourni.</p>
+                <div className={styles.realisationCard}>
+                  <div className={styles.realisationOverlay} />
+                  <div className={styles.realisationContent}>
+                    <div className={styles.realisationCity}>Hyeres</div>
+                    <div className={styles.realisationTitle}>Remise en conformite reseau</div>
+                  </div>
                 </div>
               </>
             )}
           </div>
-          <p className={styles.pricingNote}>
+          <p className={styles.pricingNote} style={{ marginTop: '24px' }}>
             <Link href="/realisations/" style={{ color: 'var(--orange)', fontWeight: 700, textDecoration: 'none' }}>
-              Voir toutes nos réalisations →
+              Voir toutes nos realisations &rarr;
             </Link>
           </p>
         </div>
       </section>
 
+      {/* ═══ CTA ═══ */}
+      <section className={styles.ctaSection}>
+        <div className={styles.ctaCard}>
+          <h2 className={styles.ctaTitle}>Un probleme urgent ?<br />Ne restez pas les pieds dans l&apos;eau.</h2>
+          <p className={styles.ctaDesc}>Nos techniciens sont en route pour vous depanner. Devis gratuit immediat par telephone ou via notre formulaire.</p>
+          <div className={styles.ctaButtons}>
+            <a href={`tel:${PHONE_RAW}`} className="btn-primary" style={{ fontSize: '20px', padding: '20px 40px' }}>
+              {PHONE}
+            </a>
+            <button className={styles.btnOutline} type="button">
+              Devis en ligne gratuit
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══ VILLES ═══ */}
       <section className={styles.section}>
         <div className="container">
           <div className="section-label">153 communes couvertes</div>
-          <h2 className="section-title">Toutes les villes du Var</h2>
+          <h2 className={styles.sectionTitle}>Toutes les villes du Var</h2>
           <p className="section-desc" style={{ marginBottom: '24px' }}>
-            On intervient dans les 153 communes du département. Trouvez la vôtre :
+            On intervient dans les 153 communes du departement. Trouvez la votre :
           </p>
           <VilleSearchInline
             villes={villesData}

@@ -1,17 +1,18 @@
 .topbar {
-  background: #000000;
+  background: #090f16;
   text-align: center;
   padding: 12px 20px;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 600;
   letter-spacing: 0.03em;
-  color: var(--orange);
+  color: var(--orange-light);
   line-height: 1.45;
+  border-bottom: 1px solid rgba(86, 67, 54, 0.15);
 }
 
 @media (max-width: 480px) {
   .topbar {
-    font-size: 12px;
+    font-size: 11px;
     padding: 10px 14px;
     line-height: 1.5;
   }

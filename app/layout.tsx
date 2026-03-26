@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Bebas_Neue, DM_Sans } from 'next/font/google';
+import { Plus_Jakarta_Sans, Inter } from 'next/font/google';
 import Topbar from '@/components/layout/Topbar';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
@@ -10,14 +10,13 @@ import { generateSchemaOrganization } from '@/lib/seo/schema';
 import { COMPANY_NAME, BASE_URL } from '@/lib/config';
 import './globals.css';
 
-const bebasNeue = Bebas_Neue({
-  weight: '400',
+const plusJakarta = Plus_Jakarta_Sans({
   subsets: ['latin'],
   variable: '--font-display',
   display: 'swap',
 });
 
-const dmSans = DM_Sans({
+const inter = Inter({
   subsets: ['latin'],
   variable: '--font-body',
   display: 'swap',
@@ -53,7 +52,7 @@ export default function RootLayout({
   const orgSchema = generateSchemaOrganization();
 
   return (
-    <html lang="fr" className={`${bebasNeue.variable} ${dmSans.variable}`}>
+    <html lang="fr" className={`${plusJakarta.variable} ${inter.variable}`}>
       <head>
         <script
           type="application/ld+json"

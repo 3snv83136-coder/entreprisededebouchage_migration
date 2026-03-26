@@ -1,6 +1,6 @@
 .footer {
   background: var(--navy);
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-top: 1px solid rgba(221, 227, 238, 0.06);
   padding: 60px 24px 0;
 }
 
@@ -15,10 +15,11 @@
 
 /* Brand col */
 .brand {
-  font-size: 24px;
-  font-weight: 700;
+  font-family: var(--font-display), sans-serif;
+  font-size: 22px;
+  font-weight: 800;
   color: var(--white);
-  letter-spacing: 0.04em;
+  letter-spacing: -0.01em;
   margin-bottom: 12px;
 }
 
@@ -28,7 +29,7 @@
 
 .desc {
   font-size: 14px;
-  color: var(--slate);
+  color: rgba(221, 227, 238, 0.6);
   line-height: 1.6;
   margin-bottom: 16px;
 }
@@ -50,10 +51,9 @@
 
 /* Column titles */
 .colTitle {
-  font-size: 13px;
+  font-family: var(--font-display), sans-serif;
+  font-size: 14px;
   font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
   color: var(--white);
   margin-bottom: 16px;
 }
@@ -70,7 +70,7 @@
 }
 
 .links a {
-  color: var(--slate);
+  color: rgba(221, 227, 238, 0.5);
   font-size: 14px;
   text-decoration: none;
   transition: color 0.2s;
@@ -81,12 +81,12 @@
 }
 
 .links a:hover {
-  color: var(--orange-light);
+  color: var(--orange);
 }
 
 /* Bottom bar */
 .bottom {
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-top: 1px solid rgba(221, 227, 238, 0.06);
   padding: 20px 0;
   max-width: 1160px;
   margin: 0 auto;
@@ -94,13 +94,17 @@
 
 .bottom p {
   font-size: 13px;
-  color: var(--slate);
+  color: rgba(221, 227, 238, 0.6);
   text-align: center;
 }
 
 .bottom a {
   color: var(--orange);
   text-decoration: none;
+}
+
+.bottom a:hover {
+  color: var(--orange-light);
 }
 
 /* Responsive */
