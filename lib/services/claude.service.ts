@@ -88,9 +88,13 @@ export async function enrichirRecit(params: EnrichirRecitParams): Promise<Enrich
     materiels_detectes: '',
   };
 
-  if (!process.env.ANTHROPIC_API_KEY) return fallback;
+  if (!process.env.ANTHROPIC_API_KEY) {
+    console.log('[claude] No ANTHROPIC_API_KEY — returning fallback');
+    return fallback;
+  }
 
   const { type, ville, code_postal, recit, duree } = params;
+  console.log('[claude] Calling Claude API for', type, ville);
 
   const prompt = `Tu es Christophe Allard, expert en assainissement dans le Var (83), France, avec 19 ans d'experience.
 
@@ -134,15 +138,22 @@ Reponds UNIQUEMENT en JSON strict :
   try {
     const message = await client.messages.create({
       model: 'claude-haiku-4-5-20251001',
-      max_tokens: 2048,
+      max_tokens: 3000,
       messages: [{ role: 'user', content: prompt }],
     });
 
+    console.log('[claude] Response received, stop_reason:', message.stop_reason);
     const content = message.content[0];
-    if (content.type !== 'text') return fallback;
+    if (content.type !== 'text') {
+      console.log('[claude] Non-text content type:', content.type);
+      return fallback;
+    }
 
     const jsonMatch = content.text.match(/\{[\s\S]*\}/);
-    if (!jsonMatch) return fallback;
+    if (!jsonMatch) {
+      console.log('[claude] No JSON found in response:', content.text.slice(0, 200));
+      return fallback;
+    }
 
     const parsed = JSON.parse(jsonMatch[0]) as EnrichirRecitResult;
     return {
@@ -155,7 +166,8 @@ Reponds UNIQUEMENT en JSON strict :
       meta_description: parsed.meta_description || fallback.meta_description,
       materiels_detectes: parsed.materiels_detectes || '',
     };
-  } catch {
+  } catch (err) {
+    console.error('[claude] API error:', err instanceof Error ? err.message : err);
     return fallback;
   }
 }

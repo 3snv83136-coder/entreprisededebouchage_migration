@@ -110,20 +110,28 @@ export async function saveRealisation(formData: FormData) {
 
     // Claude enrichment
     try {
+      console.log('[enrichir] Starting enrichment for:', type, ville, 'recit length:', recit.length);
       const improved = await enrichirRecit({
         type, ville,
         code_postal: codePostal || undefined,
         recit,
         duree: duree || undefined,
       });
-      updates.contexte_enrichi = improved.contexte_enrichi;
-      updates.diagnostic_enrichi = improved.diagnostic_enrichi;
-      updates.intervention_enrichie = improved.intervention_enrichie;
-      updates.description_generee = improved.expertise_complete || improved.resultat_enrichi;
-      updates.titre = improved.titre_seo;
-      updates.meta_description = improved.meta_description;
-      updates.materiels = improved.materiels_detectes;
-    } catch { /* skip */ }
+      console.log('[enrichir] Result expertise length:', improved.expertise_complete?.length || 0);
+      if (improved.expertise_complete && improved.expertise_complete !== recit) {
+        updates.contexte_enrichi = improved.contexte_enrichi;
+        updates.diagnostic_enrichi = improved.diagnostic_enrichi;
+        updates.intervention_enrichie = improved.intervention_enrichie;
+        updates.description_generee = improved.expertise_complete;
+        updates.titre = improved.titre_seo;
+        updates.meta_description = improved.meta_description;
+        updates.materiels = improved.materiels_detectes;
+      } else {
+        console.log('[enrichir] Fallback returned — enrichment did not produce new content');
+      }
+    } catch (enrichErr) {
+      console.error('[enrichir] Error:', enrichErr);
+    }
 
     // JSON-LD
     try {
