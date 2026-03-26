@@ -87,25 +87,33 @@ export default async function Home() {
 
         {/* ═══ PRICING — always in first third ═══ */}
         <div className={styles.pricingWrapper}>
-          <div className={styles.pricing}>
-            <div className={styles.pricingCard}>
+          <div className={styles.pricing} id="pricing-cards">
+            <div className={styles.pricingCard} data-callback>
               <h3 className={styles.pricingTitle}>Debouchage Manuel</h3>
               <p className={styles.pricingDesc}>Evier, WC, Douche</p>
               <div className={styles.pricingPrice}>99<span>&euro;</span></div>
             </div>
-            <div className={`${styles.pricingCard} ${styles.pricingCardPopular}`}>
+            <div className={`${styles.pricingCard} ${styles.pricingCardPopular}`} data-callback>
               <div className={styles.pricingBadge}>Le + demande</div>
               <h3 className={styles.pricingTitle}>Haute Pression</h3>
               <p className={styles.pricingDesc}>Hydrocurage technique</p>
               <div className={styles.pricingPrice}>199<span>&euro;</span></div>
             </div>
-            <div className={styles.pricingCard}>
+            <div className={styles.pricingCard} data-callback>
               <h3 className={styles.pricingTitle}>Inspection Camera</h3>
               <p className={styles.pricingDesc}>Diagnostic video complet</p>
               <div className={styles.pricingPrice}>110<span>&euro;</span></div>
             </div>
           </div>
           <p className={styles.pricingNote}>Deplacement inclus &amp; Devis gratuit</p>
+          <script dangerouslySetInnerHTML={{ __html: `
+            document.querySelectorAll('[data-callback]').forEach(function(card) {
+              card.style.cursor = 'pointer';
+              card.addEventListener('click', function() {
+                window.dispatchEvent(new Event('edd:open-callback'));
+              });
+            });
+          `}} />
         </div>
 
         {/* Search in hero */}
