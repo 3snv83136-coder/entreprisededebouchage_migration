@@ -189,9 +189,15 @@ export default async function AdminPage({ searchParams }: Props) {
           </div>
         </div>
 
-        <button type="submit" className={styles.btn}>
+        <button type="submit" className={styles.btn} id="submit-btn">
           Enregistrer + enrichir avec IA
         </button>
+        <div id="progress-container" className={styles.progressContainer} style={{ display: 'none' }}>
+          <div className={styles.progressBar}>
+            <div className={styles.progressFill} id="progress-fill" />
+          </div>
+          <p className={styles.progressText} id="progress-text">Enregistrement en cours...</p>
+        </div>
       </form>
 
       <script dangerouslySetInnerHTML={{ __html: `
@@ -222,6 +228,39 @@ export default async function AdminPage({ searchParams }: Props) {
               lbl.childNodes[0].textContent = '✓ ' + input.files[0].name;
             }
           });
+        });
+
+        // Progress bar on submit
+        var form = document.querySelector('form');
+        var btn = document.getElementById('submit-btn');
+        var progressContainer = document.getElementById('progress-container');
+        var progressFill = document.getElementById('progress-fill');
+        var progressText = document.getElementById('progress-text');
+        var steps = [
+          { pct: 10, text: 'Enregistrement dans la base...' },
+          { pct: 25, text: 'Upload des photos...' },
+          { pct: 40, text: 'Conversion WebP...' },
+          { pct: 55, text: 'Enrichissement IA en cours...' },
+          { pct: 70, text: 'Generation du texte d\\'expertise...' },
+          { pct: 82, text: 'Maillage interne et SEO...' },
+          { pct: 90, text: 'Finalisation...' },
+          { pct: 95, text: 'Presque termine...' },
+        ];
+        form.addEventListener('submit', function() {
+          btn.disabled = true;
+          btn.textContent = 'Generation en cours...';
+          btn.style.opacity = '0.6';
+          progressContainer.style.display = 'block';
+          var i = 0;
+          function tick() {
+            if (i < steps.length) {
+              progressFill.style.width = steps[i].pct + '%';
+              progressText.textContent = steps[i].text;
+              i++;
+              setTimeout(tick, 3000 + Math.random() * 4000);
+            }
+          }
+          tick();
         });
       `}} />
     </div>
