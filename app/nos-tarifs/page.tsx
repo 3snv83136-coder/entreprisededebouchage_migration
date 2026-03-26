@@ -85,7 +85,7 @@ export default function NosTarifsPage() {
                 {groupServices.map((service) => {
                   const pricing = pricingData[service.slug];
                   return (
-                    <Link key={service.slug} href={`/${service.slug}/`} className={styles.row}>
+                    <Link key={service.slug} href={`/${service.slug}/`} className={styles.row} data-callback>
                       <span className={styles.rowIcon}>{service.icon}</span>
                       <span className={styles.rowLabel}>{service.label}</span>
                       <span className={styles.rowNote}>{pricing?.note || service.intervention}</span>

@@ -87,6 +87,20 @@ export default function RootLayout({
         <StickyCta />
         <CallbackForm />
         <BackButton />
+        <script dangerouslySetInnerHTML={{ __html: `
+          document.addEventListener('click', function(e) {
+            var el = e.target;
+            while (el && el !== document.body) {
+              if (el.hasAttribute && el.hasAttribute('data-callback')) {
+                e.preventDefault();
+                e.stopPropagation();
+                window.dispatchEvent(new Event('edd:open-callback'));
+                return;
+              }
+              el = el.parentElement;
+            }
+          });
+        `}} />
       </body>
     </html>
   );
