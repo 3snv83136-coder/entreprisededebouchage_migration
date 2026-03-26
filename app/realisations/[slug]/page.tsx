@@ -204,8 +204,13 @@ export default async function RealisationPage({ params }: Props) {
             )}
           </div>
 
+          <div className={styles.signature}>
+            <strong>Christophe Allard</strong>
+            <span>Expert en assainissement — Entreprise de Debouchage</span>
+          </div>
+
           <div className={styles.cta}>
-            <p>Même problème ? On intervient dans les 2h.</p>
+            <p>Meme probleme ? On intervient rapidement.</p>
             <a href={`tel:${PHONE.replace(/\s/g, '')}`} className={styles.ctaBtn}>
               Appeler maintenant
             </a>

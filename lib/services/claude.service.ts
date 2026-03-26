@@ -339,11 +339,39 @@ export function genererRapportHTML(params: RapportParams): string {
     margin-top: 8px;
   }
 
+  /* Signature */
+  .signature {
+    margin: 32px 4px 0;
+    padding: 24px;
+    border-top: 2px solid #e9ecef;
+    display: flex;
+    justify-content: flex-end;
+  }
+  .signature-block {
+    text-align: right;
+  }
+  .signature-name {
+    font-size: 14pt;
+    font-weight: 700;
+    color: #0e141c;
+  }
+  .signature-role {
+    font-size: 10pt;
+    color: #f4811f;
+    font-weight: 600;
+    margin-top: 2px;
+  }
+  .signature-company {
+    font-size: 9pt;
+    color: #8b949e;
+    margin-top: 4px;
+  }
+
   /* Footer */
   .footer {
     border-top: 2px solid #e9ecef;
     padding-top: 16px;
-    margin-top: 32px;
+    margin-top: 24px;
     text-align: center;
     font-size: 9pt;
     color: #8b949e;
@@ -435,6 +463,14 @@ export function genererRapportHTML(params: RapportParams): string {
       <div class="photo-label">Apres</div>
     </div>` : ''}
   </div>` : ''}
+
+  <div class="signature">
+    <div class="signature-block">
+      <div class="signature-name">Christophe Allard</div>
+      <div class="signature-role">Expert en assainissement</div>
+      <div class="signature-company">Entreprise de Debouchage — Var (83)</div>
+    </div>
+  </div>
 
   <div class="footer">
     <p>Rapport genere par <strong>Entreprise de Debouchage</strong> — ${date}</p>

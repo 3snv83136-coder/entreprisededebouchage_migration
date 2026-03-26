@@ -124,6 +124,25 @@
 
 .linkSecondary:hover { color: var(--white); }
 
+.signature {
+  margin-top: 32px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.signature strong {
+  font-size: 16px;
+  color: var(--white);
+}
+
+.signature span {
+  font-size: 13px;
+  color: var(--orange-light);
+}
+
 .cta {
   background: rgba(251, 117, 0, 0.08);
   border: 1px solid rgba(251, 117, 0, 0.2);
