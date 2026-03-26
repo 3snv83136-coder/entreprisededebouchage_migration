@@ -3,7 +3,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import Breadcrumbs from '@/components/common/Breadcrumbs';
-import ProcessSchema from '@/components/realisations/ProcessSchema';
 import LinkedText from '@/components/realisations/LinkedText';
 import { BASE_URL, PHONE } from '@/lib/config';
 import { getRealisationBySlug } from '@/lib/data/realisations';
@@ -42,22 +41,17 @@ export default async function RealisationPage({ params }: Props) {
     headline: `${r.type} à ${r.ville} — ${r.mois} ${r.annee}`,
     description: r.meta_description,
     url: `${BASE_URL}/realisations/${r.slug}/`,
-    ...(r.temoignage && {
-      review: {
-        '@type': 'Review',
-        reviewBody: r.temoignage,
-        reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
-      },
-    }),
   };
 
-  // Textes enrichis (IA) ou fallback sur brut
+  // Article continu (enrichi) ou fallback sur brut
+  const articleText = r.description_generee || r.contexte || r.resultat;
+
+  // Resume 4 sections
   const contexteText = r.contexte_enrichi || r.contexte;
   const diagnosticText = r.diagnostic_enrichi || r.diagnostic;
   const interventionText = r.intervention_enrichie || r.intervention;
-  const resultatText = r.description_generee || r.resultat;
+  const resultatText = r.resultat_enrichi || r.resultat;
 
-  // Exclure le lien vers la page courante (éviter self-link)
   const serviceHref = `/${r.service_slug}/`;
 
   return (
@@ -85,7 +79,7 @@ export default async function RealisationPage({ params }: Props) {
             </div>
           </header>
 
-          {/* Photos avant/après */}
+          {/* Photos avant/apres — remontees juste apres header */}
           {(r.photo_avant_url || r.photo_apres_url) && (
             <div className={styles.photos}>
               {r.photo_avant_url && (
@@ -115,70 +109,56 @@ export default async function RealisationPage({ params }: Props) {
             </div>
           )}
 
-          {/* Schéma du process */}
-          <ProcessSchema
-            type={r.type}
-            ville={r.ville}
-            duree={r.duree}
-            contexte={contexteText}
-            diagnostic={diagnosticText}
-            intervention={interventionText}
-            resultat={resultatText}
-          />
+          {/* Article continu — coeur de la page */}
+          <section className={styles.article}>
+            <LinkedText
+              text={articleText}
+              excludeHref={serviceHref}
+              className={styles.articleText}
+            />
+          </section>
 
-          {/* Sections détaillées avec maillage */}
-          <div className={styles.sections}>
-
+          {/* Resume 4 points */}
+          <div className={styles.resumeGrid}>
             {contexteText && (
-              <section className={styles.section}>
-                <h2 className={styles.sectionTitle}>Situation</h2>
-                <LinkedText
-                  text={contexteText}
-                  excludeHref={serviceHref}
-                  className={styles.sectionText}
-                />
-              </section>
+              <div className={styles.resumeCard}>
+                <div className={styles.resumeNum}>1</div>
+                <h3 className={styles.resumeTitle}>Situation</h3>
+                <p className={styles.resumeText}>{contexteText}</p>
+              </div>
             )}
-
             {diagnosticText && (
-              <section className={styles.section}>
-                <h2 className={styles.sectionTitle}>Diagnostic</h2>
-                <LinkedText
-                  text={diagnosticText}
-                  excludeHref={serviceHref}
-                  className={styles.sectionText}
-                />
-              </section>
+              <div className={styles.resumeCard}>
+                <div className={styles.resumeNum}>2</div>
+                <h3 className={styles.resumeTitle}>Diagnostic</h3>
+                <p className={styles.resumeText}>{diagnosticText}</p>
+              </div>
             )}
-
-            <section className={styles.section}>
-              <h2 className={styles.sectionTitle}>Intervention</h2>
-              <LinkedText
-                text={interventionText}
-                excludeHref={serviceHref}
-                className={styles.sectionText}
-              />
-            </section>
-
-            <section className={`${styles.section} ${styles.sectionResultat}`}>
-              <h2 className={styles.sectionTitle}>Résultat</h2>
-              <LinkedText
-                text={resultatText}
-                excludeHref={serviceHref}
-                className={styles.sectionText}
-              />
-            </section>
-
-            {r.temoignage && (
-              <blockquote className={styles.temoignage}>
-                <p>{r.temoignage}</p>
-                <cite>— Client à {r.ville}</cite>
-              </blockquote>
+            {interventionText && (
+              <div className={styles.resumeCard}>
+                <div className={styles.resumeNum}>3</div>
+                <h3 className={styles.resumeTitle}>Intervention</h3>
+                <p className={styles.resumeText}>{interventionText}</p>
+              </div>
             )}
-
+            {resultatText && (
+              <div className={`${styles.resumeCard} ${styles.resumeCardResultat}`}>
+                <div className={styles.resumeNum}>4</div>
+                <h3 className={styles.resumeTitle}>Résultat</h3>
+                <p className={styles.resumeText}>{resultatText}</p>
+              </div>
+            )}
           </div>
 
-          {/* FAQ accordéon */}
+          {/* Temoignage */}
+          {r.temoignage && (
+            <blockquote className={styles.temoignage}>
+              <p>{r.temoignage}</p>
+              <cite>— Client à {r.ville}</cite>
+            </blockquote>
+          )}
+
+          {/* FAQ accordeon */}
           {r.faq && r.faq.length > 0 && (
             <section className={styles.faqSection}>
               <h2 className={styles.faqTitle}>Questions fréquentes</h2>
