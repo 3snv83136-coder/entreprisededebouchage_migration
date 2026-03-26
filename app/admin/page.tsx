@@ -1,3 +1,5 @@
+export const maxDuration = 60;
+
 import Link from 'next/link';
 import { getAllServices } from '@/lib/data/services';
 import { getAllVilles } from '@/lib/data/villes';

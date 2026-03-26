@@ -3,6 +3,7 @@ import { supabaseAdmin } from '@/lib/db/supabase';
 import { genererRapportHTML } from '@/lib/services/claude.service';
 
 export const dynamic = 'force-dynamic';
+export const maxDuration = 30;
 
 export async function GET(
   _request: NextRequest,
