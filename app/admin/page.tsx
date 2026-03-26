@@ -14,11 +14,11 @@ const DUREES = ['15 min', '30 min', '45 min', '1h', '1h30', '2h', '2h30', '3h', 
 const INTERVENANTS = ['Olivier', 'Michel', 'Stephane'];
 
 interface Props {
-  searchParams: Promise<{ success?: string; error?: string; id?: string; msg?: string }>;
+  searchParams: Promise<{ success?: string; error?: string; id?: string; msg?: string; photo_error?: string }>;
 }
 
 export default async function AdminPage({ searchParams }: Props) {
-  const { success, error, id, msg } = await searchParams;
+  const { success, error, id, msg, photo_error } = await searchParams;
   const services = getAllServices();
   const villes = getAllVilles().sort((a, b) => a.ville.localeCompare(b.ville, 'fr'));
 
@@ -45,17 +45,6 @@ export default async function AdminPage({ searchParams }: Props) {
           <div className={styles.progressBar} style={{ marginTop: '10px' }}>
             <div className={styles.progressFill} id="enrich-progress" style={{ width: '20%' }} />
           </div>
-          {id && (
-            <div style={{ marginTop: '8px', display: 'none' }} id="pdf-link-container">
-              <a
-                href={`/api/rapport/${id}`}
-                target="_blank"
-                className={styles.pdfLink}
-              >
-                Telecharger le rapport PDF
-              </a>
-            </div>
-          )}
         </div>
       )}
       {success && id && (
@@ -63,7 +52,6 @@ export default async function AdminPage({ searchParams }: Props) {
           (function() {
             var progress = document.getElementById('enrich-progress');
             var banner = document.getElementById('success-banner');
-            var pdfLink = document.getElementById('pdf-link-container');
             progress.style.width = '40%';
             fetch('/api/enrichir/${id}', { method: 'POST' })
               .then(function(r) { return r.json(); })
@@ -72,22 +60,21 @@ export default async function AdminPage({ searchParams }: Props) {
                 if (data.status === 'enriched' || data.status === 'already_enriched') {
                   banner.textContent = '';
                   banner.innerHTML = 'Realisation enrichie par IA ! <br/><small>Texte d\\'expertise genere avec succes.</small>';
-                  if (pdfLink) {
-                    pdfLink.style.display = 'block';
-                    banner.appendChild(pdfLink);
-                  }
                 } else {
                   banner.innerHTML = 'Realisation enregistree. <br/><small>Enrichissement IA : ' + (data.error || 'non disponible') + '</small>';
-                  if (pdfLink) { pdfLink.style.display = 'block'; banner.appendChild(pdfLink); }
                 }
               })
               .catch(function(err) {
                 progress.style.width = '100%';
                 banner.innerHTML = 'Realisation enregistree. <br/><small>Enrichissement : ' + err.message + '</small>';
-                if (pdfLink) { pdfLink.style.display = 'block'; banner.appendChild(pdfLink); }
               });
           })();
         `}} />
+      )}
+      {success && photo_error && (
+        <div className={styles.banner + ' ' + styles.bannerWarning}>
+          Photo {photo_error === 'avant,apres' ? 'avant et apres echouees' : photo_error === 'avant' ? 'avant echouee' : 'apres echouee'} — la realisation est enregistree, tu peux re-uploader les photos depuis la liste admin.
+        </div>
       )}
       {error && (
         <div className={styles.banner + ' ' + styles.bannerError}>
