@@ -52,7 +52,8 @@ export async function saveRealisation(formData: FormData) {
 
     const typeSlug = toSlug(type);
     const moisSlug = MOIS_SLUGS[mois] || toSlug(mois);
-    const slug = `realisation-${typeSlug}-${ville_slug}-${moisSlug}-${annee}`;
+    const uid = Date.now().toString(36).slice(-4);
+    const slug = `realisation-${typeSlug}-${ville_slug}-${moisSlug}-${annee}-${uid}`;
 
     const faq = generateFaq(type, ville);
     const titre = generateTitre(type, ville, mois, annee);
