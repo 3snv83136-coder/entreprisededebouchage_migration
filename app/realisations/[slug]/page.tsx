@@ -207,7 +207,7 @@ export default async function RealisationPage({ params }: Props) {
           <div className={styles.cta}>
             <p>Même problème ? On intervient dans les 2h.</p>
             <a href={`tel:${PHONE.replace(/\s/g, '')}`} className={styles.ctaBtn}>
-              📞 {PHONE}
+              Appeler maintenant
             </a>
           </div>
         </div>

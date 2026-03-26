@@ -74,7 +74,7 @@ const STATS = [
   { value: '2005', label: 'Année de création', sub: 'Plus de 19 ans d\'expérience' },
   { value: '489', label: 'Avis clients', sub: 'Note moyenne 4.9/5' },
   { value: '153', label: 'Communes couvertes', sub: 'Tout le Var (83)' },
-  { value: '< 1h', label: 'Délai d\'intervention', sub: 'En zone principale' },
+  { value: '24/7', label: 'Disponibilite', sub: 'En zone principale' },
 ];
 
 const ENGAGEMENTS = [
@@ -216,7 +216,7 @@ export default function AProposPage() {
               Devis gratuit — prix annoncé avant intervention — disponible 24h/7j.
             </p>
             <a href={`tel:${PHONE_RAW}`} className="btn-primary">
-              Appeler le {PHONE}
+              Appeler maintenant
             </a>
           </section>
         </div>

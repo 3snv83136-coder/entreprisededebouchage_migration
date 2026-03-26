@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { COMPANY_NAME, PHONE, PHONE_RAW } from '@/lib/config';
+import { COMPANY_NAME, PHONE_RAW } from '@/lib/config';
 import { getAllVilles } from '@/lib/data/villes';
 import { getAllServices } from '@/lib/data/services';
 import FooterVilleSearch from './FooterVilleSearch';
@@ -25,7 +25,7 @@ export default function Footer() {
             Entreprise de debouchage dans le Var depuis 19 ans. Intervention rapide 24h/7j sur les 153 communes du département.
           </p>
           <a href={`tel:${PHONE_RAW}`} className={styles.phone}>
-            📞 {PHONE}
+            Appeler maintenant
           </a>
         </div>
 

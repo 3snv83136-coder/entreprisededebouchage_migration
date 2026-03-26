@@ -336,7 +336,7 @@ export default function LexiquePage() {
                 Devis gratuit avant déplacement.
               </p>
               <a href={`tel:${PHONE_RAW}`} className="btn-primary">
-                📞 {PHONE}
+                Appeler maintenant
               </a>
             </div>
           </div>

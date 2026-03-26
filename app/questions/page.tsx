@@ -82,7 +82,7 @@ export default function QuestionsPage() {
             <div className={styles.ctaBox}>
               <p className={styles.ctaTitle}>Votre question n&apos;est pas dans la liste ?</p>
               <p className={styles.ctaDesc}>Appelez-nous, un technicien vous répond directement.</p>
-              <a href={`tel:${PHONE_RAW}`} className="btn-primary">📞 {PHONE}</a>
+              <a href={`tel:${PHONE_RAW}`} className="btn-primary">Appeler maintenant</a>
             </div>
           </div>
         </section>

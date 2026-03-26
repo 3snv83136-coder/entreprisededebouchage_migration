@@ -1,4 +1,4 @@
-import { PHONE, PHONE_RAW } from '@/lib/config';
+import { PHONE_RAW } from '@/lib/config';
 import styles from './UrgenceBanner.module.css';
 
 export default function UrgenceBanner() {
@@ -7,12 +7,12 @@ export default function UrgenceBanner() {
       <div className={styles.inner}>
         <div className={styles.text}>
           <h2>
-            Canalisation bouchée ?<br />N&apos;attendez pas.
+            Canalisation bouchee ?<br />N&apos;attendez pas.
           </h2>
-          <p>Chaque heure qui passe aggrave le problème. Appelez maintenant.</p>
+          <p>Chaque heure qui passe aggrave le probleme. Appelez maintenant.</p>
         </div>
         <a href={`tel:${PHONE_RAW}`} className={styles.phone}>
-          {PHONE}
+          Appeler maintenant
         </a>
       </div>
     </div>

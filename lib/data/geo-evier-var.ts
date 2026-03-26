@@ -20,11 +20,11 @@ export const GEO_EVIER_VAR_PAGES: GeoEvierVarPageDef[] = [
   {
     slug: 'toulon-urgence',
     breadcrumbLabel: 'Urgence évier Toulon',
-    metaTitle: 'Debouchage évier Toulon urgence — intervention en moins d’1 h',
+    metaTitle: 'Debouchage évier Toulon urgence — intervention rapide',
     metaDescription:
       'Évier bouché à Toulon ? Urgence 24h/7j, déplacement rapide, devis gratuit. Siphon, graisse, canalisation cuisine. Agréé assurances.',
     h1: 'Debouchage d’évier d’urgence à Toulon',
-    intro: `Un évier qui ne se vide plus ou qui déborde est une vraie urgence sanitaire : odeurs, risque de fuite, impossibilité d’utiliser la cuisine. À Toulon (83000) et dans l’agglomération, nous priorisons ces appels et nous déplaçons en général en moins d’une heure. ${BASE}`,
+    intro: `Un évier qui ne se vide plus ou qui déborde est une vraie urgence sanitaire : odeurs, risque de fuite, impossibilité d’utiliser la cuisine. À Toulon (83000) et dans l’agglomération, nous priorisons ces appels et nous déplaçons en général rapidement. ${BASE}`,
     sections: [
       {
         title: 'Pourquoi traiter une urgence évier sans attendre',
@@ -458,7 +458,7 @@ export const GEO_EVIER_VAR_PAGES: GeoEvierVarPageDef[] = [
     faqs: [
       {
         question: 'Délai moyen depuis l’appel ?',
-        answer: 'Souvent moins d’une heure en journée selon la charge.',
+        answer: 'Souvent rapidement en journée selon la charge.',
       },
       {
         question: 'Intervenez-vous près de la zone commerciale ?',

@@ -21,7 +21,7 @@ export default function ZoneCoverte({ ville }: Props) {
             </h2>
             <p className="section-desc">
               Nous intervenons sur l&apos;ensemble de {ville.ville} et les communes
-              du secteur en moins d&apos;une heure.
+              du secteur rapidement.
             </p>
             <div className={styles.tags}>
               <span className={`${styles.tag} ${styles.active}`}>

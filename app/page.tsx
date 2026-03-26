@@ -6,7 +6,7 @@ import { getAllServices } from '@/lib/data/services';
 import { getAllRealisations } from '@/lib/data/realisations';
 import VilleSearch from '@/components/common/VilleSearch';
 import VilleSearchInline from '@/components/common/VilleSearchInline';
-import { PHONE, PHONE_RAW } from '@/lib/config';
+import { PHONE_RAW } from '@/lib/config';
 import styles from './page.module.css';
 
 export const revalidate = 3600;
@@ -51,7 +51,7 @@ export default async function Home() {
               <span className={styles.titleAccent}>dans le Var 24h/7j</span>
             </h1>
             <p className={styles.sub}>
-              Intervention rapide en moins d&apos;une heure. Prix fixe transparent
+              Intervention rapide. Prix fixe transparent
               et devis gratuit avant chaque intervention. Pas de mauvaise surprise.
             </p>
 
@@ -60,7 +60,7 @@ export default async function Home() {
                 Appeler maintenant
               </a>
               <a href={`tel:${PHONE_RAW}`} className={styles.btnSecondaryHero}>
-                {PHONE}
+                Devis gratuit
               </a>
             </div>
           </div>
@@ -84,7 +84,7 @@ export default async function Home() {
             <div className={`${styles.bentoCard} ${styles.bentoCardWide}`}>
               <div className={styles.bentoIcon}>&#9889;</div>
               <div>
-                <div className={styles.bentoValue}>Intervention &lt; 1h</div>
+                <div className={styles.bentoValue}>Intervention rapide</div>
                 <div className={styles.bentoLabel}>Partout dans le Var, de jour comme de nuit</div>
               </div>
             </div>
@@ -124,7 +124,7 @@ export default async function Home() {
         <div className={styles.statsMobile}>
           <div><strong>4.9/5</strong><span>Avis Google</span></div>
           <div><strong>19 ans</strong><span>Experience</span></div>
-          <div><strong>&lt;1h</strong><span>Intervention</span></div>
+          <div><strong>24h/7j</strong><span>Intervention rapide</span></div>
         </div>
       </section>
 
@@ -137,7 +137,7 @@ export default async function Home() {
               <p className="section-desc">Nous utilisons les dernieres technologies d&apos;hydrocurage et d&apos;inspection video pour garantir un resultat durable.</p>
             </div>
             <div className={styles.priceTag}>
-              A partir de 95&euro;
+              99&euro; &middot; 110&euro; &middot; 199&euro;
             </div>
           </div>
           <div className={styles.serviceGrid}>
@@ -217,7 +217,7 @@ export default async function Home() {
           <p className={styles.ctaDesc}>Nos techniciens sont en route pour vous depanner. Devis gratuit immediat par telephone ou via notre formulaire.</p>
           <div className={styles.ctaButtons}>
             <a href={`tel:${PHONE_RAW}`} className="btn-primary" style={{ fontSize: '20px', padding: '20px 40px' }}>
-              {PHONE}
+              Appeler maintenant
             </a>
             <button className={styles.btnOutline} type="button">
               Devis en ligne gratuit

@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Faq from '@/components/page-ville/Faq';
 import CtaFinal from '@/components/page-ville/CtaFinal';
 import UrgenceBanner from '@/components/page-ville/UrgenceBanner';
+import Pricing from '@/components/page-ville/Pricing';
 import styles from './ServiceCityContent.module.css';
 
 interface Props {
@@ -33,7 +34,7 @@ export default function ServiceCityContent({ service, ville, content, faqs }: Pr
             Intervention rapide, devis gratuit.
           </p>
           <a href={`tel:${PHONE_RAW}`} className="btn-primary">
-            📞 {PHONE}
+            Appeler maintenant
           </a>
         </div>
       </section>
@@ -74,18 +75,10 @@ export default function ServiceCityContent({ service, ville, content, faqs }: Pr
               </div>
             </div>
           </section>
-
-          <section className={styles.section}>
-            <div className="container">
-              <div className="section-label">Tarif</div>
-              <h2 className="section-title">Combien ça coûte ?</h2>
-              <div className={styles.textBlock}>
-                <p>Fourchette de prix : <strong>{service.priceRange}</strong>. Devis gratuit par téléphone avant toute intervention.</p>
-              </div>
-            </div>
-          </section>
         </>
       )}
+
+      <Pricing />
 
       <UrgenceBanner />
 

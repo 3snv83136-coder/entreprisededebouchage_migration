@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { Ville } from '@/lib/types';
-import { PHONE, PHONE_RAW } from '@/lib/config';
+import { PHONE_RAW } from '@/lib/config';
 import styles from './Hero.module.css';
 
 interface Props {
@@ -29,33 +29,29 @@ export default function Hero({ ville }: Props) {
           {ville.code_postal}
         </h1>
         <p className={styles.sub}>
-          Intervention d&apos;urgence en moins d&apos;une heure sur {ville.ville} et le Var.
-          Technicien qualifié, devis gratuit, garanti sans surprise.
+          Intervention rapide sur {ville.ville} et le Var.
+          Technicien qualifie, devis gratuit, garanti sans surprise.
         </p>
         <div className={styles.actions}>
           <a href={`tel:${PHONE_RAW}`} className="btn-primary">
-            📞 {PHONE}
+            Appeler maintenant
           </a>
           <a href="#services" className="btn-secondary">
-            Voir nos services ↓
+            Voir nos services
           </a>
         </div>
-        <a href={`tel:${PHONE_RAW}`} className={styles.phone}>
-          <span className={styles.phoneLabel}>Numéro d&apos;urgence</span>
-          {PHONE}
-        </a>
         <div className={styles.stats}>
           <div className={styles.stat}>
-            <div className={styles.statNum}>&lt;1H</div>
-            <div className={styles.statLabel}>Délai intervention</div>
-          </div>
-          <div className={styles.stat}>
             <div className={styles.statNum}>24/7</div>
-            <div className={styles.statLabel}>Disponibilité</div>
+            <div className={styles.statLabel}>Disponibilite</div>
           </div>
           <div className={styles.stat}>
-            <div className={styles.statNum}>0€</div>
-            <div className={styles.statLabel}>Devis déplacement</div>
+            <div className={styles.statNum}>0&euro;</div>
+            <div className={styles.statLabel}>Devis deplacement</div>
+          </div>
+          <div className={styles.stat}>
+            <div className={styles.statNum}>19 ans</div>
+            <div className={styles.statLabel}>Experience</div>
           </div>
         </div>
       </div>

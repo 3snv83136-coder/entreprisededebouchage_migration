@@ -105,7 +105,7 @@ export default function BlogPage() {
             Un problème urgent ? Appelez directement notre technicien.
           </p>
           <a href="tel:0627699134" className="btn-primary">
-            📞 06 27 69 91 34
+            Appeler maintenant
           </a>
         </div>
       </section>

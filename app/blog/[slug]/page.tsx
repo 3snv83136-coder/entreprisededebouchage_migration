@@ -146,7 +146,7 @@ export default async function ArticlePage({ params }: Props) {
                 Devis gratuit, intervention rapide.
               </p>
               <a href={`tel:${PHONE_RAW}`} className="btn-primary">
-                📞 {PHONE}
+                Appeler maintenant
               </a>
             </div>
           </div>

@@ -92,7 +92,7 @@ function getDefaultFaqs(villeName: string): FaqItem[] {
   return [
     {
       question: `Quel est le délai d'intervention à ${villeName} ?`,
-      answer: `Nos techniciens interviennent généralement en moins d'une heure sur ${villeName} et les quartiers proches. En cas d'urgence absolue, nous priorisons votre appel.`,
+      answer: `Nos techniciens interviennent généralement rapidement sur ${villeName} et les quartiers proches. En cas d'urgence absolue, nous priorisons votre appel.`,
     },
     {
       question: `Le debouchage est-il garanti à ${villeName} ?`,

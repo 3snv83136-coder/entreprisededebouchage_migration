@@ -7,6 +7,7 @@ import Faq from '@/components/page-ville/Faq';
 import CtaFinal from '@/components/page-ville/CtaFinal';
 import VilleSearchInline from '@/components/common/VilleSearchInline';
 import GeoEvierVarClusterLinks from '@/components/geo-evier/GeoEvierVarClusterLinks';
+import Pricing from '@/components/page-ville/Pricing';
 import styles from './ServicePageContent.module.css';
 
 export interface HowToStep {
@@ -70,7 +71,7 @@ export default function ServicePageContent({ service, faqs, content }: Props) {
           <h1 className={styles.title}>{service.label}</h1>
           <p className={styles.sub}>dans le Var — Intervention rapide 24h/7j</p>
           <a href={`tel:${PHONE_RAW}`} className="btn-primary">
-            📞 {PHONE}
+            Appeler maintenant
           </a>
         </div>
       </section>
@@ -162,10 +163,9 @@ export default function ServicePageContent({ service, faqs, content }: Props) {
       )}
 
       {/* Tarif */}
+      <Pricing />
       <section className={styles.section} style={{ background: 'var(--navy-mid)' }}>
         <div className="container">
-          <div className="section-label">Tarif</div>
-          <h2 className="section-title">Combien ça coûte ?</h2>
           <div className={styles.textBlock}>
             <p>{content.tarif}</p>
             <p>Fourchette de prix : <strong>{service.priceRange}</strong>. Devis gratuit par téléphone avant toute intervention.</p>

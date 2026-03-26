@@ -11,7 +11,7 @@ export async function GET() {
 > Entreprise de debouchage et plomberie dans le Var (83), disponible 24h/7j.
 
 ## À propos
-${COMPANY_NAME} est une entreprise spécialisée dans le debouchage de canalisations, WC, éviers, douches et égouts. Basée dans le Var, nous intervenons à Toulon et dans les communes environnantes. Depuis 19 ans, nous offrons un service rapide avec un délai d'intervention de moins d'une heure, des devis gratuits et des prix fixes annoncés avant chaque intervention. Note : 4.9/5 sur 489 avis.
+${COMPANY_NAME} est une entreprise spécialisée dans le debouchage de canalisations, WC, éviers, douches et égouts. Basée dans le Var, nous intervenons à Toulon et dans les communes environnantes. Depuis 19 ans, nous offrons un service rapide avec une intervention rapide, des devis gratuits et des prix fixes annoncés avant chaque intervention. Note : 4.9/5 sur 489 avis.
 
 ## Services
 ${services.map((s) => `- ${s.label}: ${s.description}`).join('\n')}

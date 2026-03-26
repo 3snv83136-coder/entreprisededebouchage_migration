@@ -53,7 +53,7 @@ export default function NosPrestationsPage() {
 
         <p className={styles.phone}>
           Urgence ?{' '}
-          <a href={`tel:${PHONE.replace(/\s/g, '')}`}>{PHONE}</a>{' '}
+          <a href={`tel:${PHONE.replace(/\s/g, '')}`}>Appeler maintenant</a>{' '}
           — réponse immédiate
         </p>
 
@@ -85,7 +85,7 @@ export default function NosPrestationsPage() {
         <section className={styles.bottom}>
           <h2>Pourquoi nous choisir ?</h2>
           <ul>
-            <li>Intervention en moins de 2h dans tout le Var (83)</li>
+            <li>Intervention rapide dans tout le Var (83)</li>
             <li>Devis gratuit avant toute intervention</li>
             <li>Techniciens certifiés, matériel professionnel</li>
             <li>Facturation transparente, pas de frais cachés</li>

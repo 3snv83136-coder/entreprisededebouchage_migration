@@ -22,7 +22,7 @@ const faqs = [
   },
   {
     question: `La pompe de vidange de mon lave-vaisselle est-elle réparable sur place ?`,
-    answer: `Si la pompe est simplement obstruée par un corps étranger (fragment d'os, bout de verre, noyau de fruit), nous pouvons la débloquer sur place en moins d'une heure. Si la pompe est mécaniquement défaillante, l'intervention relève de la réparation électroménager. Nous vous le signalons clairement avant toute opération.`,
+    answer: `Si la pompe est simplement obstruée par un corps étranger (fragment d'os, bout de verre, noyau de fruit), nous pouvons la débloquer sur place rapidement. Si la pompe est mécaniquement défaillante, l'intervention relève de la réparation électroménager. Nous vous le signalons clairement avant toute opération.`,
   },
   {
     question: `Quel est le tarif pour déboucher un lave-vaisselle dans le Var ?`,

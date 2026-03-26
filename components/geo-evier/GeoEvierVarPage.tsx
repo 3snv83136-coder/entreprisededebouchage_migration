@@ -42,7 +42,7 @@ export default function GeoEvierVarPage({ page }: Props) {
             dangerouslySetInnerHTML={{ __html: page.intro }}
           />
           <a href={`tel:${PHONE_RAW}`} className="btn-primary">
-            📞 Appeler
+            Appeler maintenant
           </a>
         </div>
       </section>
