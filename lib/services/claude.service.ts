@@ -166,6 +166,8 @@ interface RapportParams {
   resultat_enrichi?: string;
   materiels?: string;
   temoignage?: string;
+  photo_avant_url?: string;
+  photo_apres_url?: string;
 }
 
 export function genererRapportHTML(params: RapportParams): string {
@@ -174,6 +176,7 @@ export function genererRapportHTML(params: RapportParams): string {
     contexte_enrichi, diagnostic_enrichi,
     intervention_enrichie, resultat_enrichi,
     materiels, temoignage,
+    photo_avant_url, photo_apres_url,
   } = params;
 
   const date = `${mois} ${annee}`;
@@ -310,6 +313,32 @@ export function genererRapportHTML(params: RapportParams): string {
     color: #555;
   }
 
+  /* Photos */
+  .photos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin: 24px 4px;
+  }
+  .photo-box {
+    text-align: center;
+  }
+  .photo-box img {
+    width: 100%;
+    max-height: 280px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid #e9ecef;
+  }
+  .photo-box .photo-label {
+    font-size: 9pt;
+    font-weight: 700;
+    color: #f4811f;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-top: 8px;
+  }
+
   /* Footer */
   .footer {
     border-top: 2px solid #e9ecef;
@@ -387,6 +416,24 @@ export function genererRapportHTML(params: RapportParams): string {
   ${temoignage ? `
   <div class="testimonial">
     "${temoignage}"
+  </div>` : ''}
+
+  ${(photo_avant_url || photo_apres_url) ? `
+  <div class="section">
+    <span class="section-num">4</span>
+    <h3>PHOTOS</h3>
+  </div>
+  <div class="photos">
+    ${photo_avant_url ? `
+    <div class="photo-box">
+      <img src="${photo_avant_url}" alt="Avant intervention" />
+      <div class="photo-label">Avant</div>
+    </div>` : ''}
+    ${photo_apres_url ? `
+    <div class="photo-box">
+      <img src="${photo_apres_url}" alt="Apres intervention" />
+      <div class="photo-label">Apres</div>
+    </div>` : ''}
   </div>` : ''}
 
   <div class="footer">

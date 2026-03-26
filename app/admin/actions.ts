@@ -163,7 +163,10 @@ export async function saveRealisation(formData: FormData) {
 
   revalidatePath('/realisations');
   revalidatePath('/');
-  redirect(`/admin?success=1&id=${realisationId}`);
+
+  // redirect() throws — must be outside try/catch
+  const redirectUrl = `/admin?success=1&id=${realisationId}`;
+  redirect(redirectUrl);
 }
 
 export async function deleteRealisation(id: string) {

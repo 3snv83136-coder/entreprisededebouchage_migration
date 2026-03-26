@@ -67,19 +67,13 @@ export default async function Home() {
 
           {/* Right column — Bento Grid */}
           <div className={styles.bentoGrid}>
-            <div className={styles.bentoCard}>
-              <div>
-                <div className={styles.bentoValueSm}>Debouchage de Canalisation</div>
-                <div className={styles.bentoHighlight}>24h/24 et 7j/7</div>
-                <div className={styles.bentoLabel}>WC - Evier / Lavabos - Baignoire &amp; Douche</div>
-              </div>
+            <div className={`${styles.bentoCard} ${styles.bentoCentered}`}>
+              <div className={styles.bentoBig}>3 prix fixes</div>
+              <div className={styles.bentoLabel}>99&euro; &middot; 110&euro; &middot; 199&euro;</div>
             </div>
-            <div className={`${styles.bentoCard} ${styles.bentoCardAccent}`}>
-              <div>
-                <div className={styles.bentoValueSm}>AGREEE</div>
-                <div className={styles.bentoHighlight}>ASSURANCE</div>
-                <div className={styles.bentoLabel}>Prix fixe sans surprise</div>
-              </div>
+            <div className={`${styles.bentoCard} ${styles.bentoCardAccent} ${styles.bentoCentered}`}>
+              <div className={styles.bentoSmTitle}>Agreee Toute</div>
+              <div className={styles.bentoBig}>Assurance</div>
             </div>
             <div className={`${styles.bentoCard} ${styles.bentoCardWide}`}>
               <div className={styles.bentoIcon}>&#9889;</div>

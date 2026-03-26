@@ -1,4 +1,5 @@
 import { supabaseAdmin } from '@/lib/db/supabase';
+import sharp from 'sharp';
 
 const BUCKET = 'realisations-photos';
 
@@ -7,16 +8,21 @@ export async function uploadPhoto(
   realisationId: string,
   type: 'avant' | 'apres'
 ): Promise<string> {
-  const ext = file.name.split('.').pop()?.toLowerCase() || 'jpg';
-  const path = `${realisationId}/${type}.${ext}`;
-
   const arrayBuffer = await file.arrayBuffer();
-  const buffer = Buffer.from(arrayBuffer);
+  const inputBuffer = Buffer.from(arrayBuffer);
+
+  // Convert to WebP, resize to max 1200px wide, quality 75
+  const webpBuffer = await sharp(inputBuffer)
+    .resize({ width: 1200, withoutEnlargement: true })
+    .webp({ quality: 75 })
+    .toBuffer();
+
+  const path = `${realisationId}/${type}.webp`;
 
   const { error } = await supabaseAdmin.storage
     .from(BUCKET)
-    .upload(path, buffer, {
-      contentType: file.type,
+    .upload(path, webpBuffer, {
+      contentType: 'image/webp',
       upsert: true,
     });
 
