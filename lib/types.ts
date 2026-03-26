@@ -96,4 +96,5 @@ export interface Realisation {
   materiels?: string;
   titre?: string;
   description_generee?: string;
+  intervenant?: string;
 }

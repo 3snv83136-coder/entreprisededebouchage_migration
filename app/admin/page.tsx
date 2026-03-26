@@ -9,6 +9,8 @@ const MOIS = ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin',
 
 const DUREES = ['15 min', '30 min', '45 min', '1h', '1h30', '2h', '2h30', '3h', '3h+'];
 
+const INTERVENANTS = ['Olivier', 'Michel', 'Stephane'];
+
 interface Props {
   searchParams: Promise<{ success?: string; error?: string; id?: string }>;
 }
@@ -116,14 +118,24 @@ export default async function AdminPage({ searchParams }: Props) {
           </div>
         </div>
 
-        {/* Durée */}
-        <div className={styles.field}>
-          <label className={styles.label}>Duree</label>
-          <select name="duree" className={styles.select} defaultValue="1h">
-            {DUREES.map((d) => (
-              <option key={d} value={d}>{d}</option>
-            ))}
-          </select>
+        {/* Durée + Intervenant */}
+        <div className={styles.row}>
+          <div className={styles.field}>
+            <label className={styles.label}>Duree</label>
+            <select name="duree" className={styles.select} defaultValue="1h">
+              {DUREES.map((d) => (
+                <option key={d} value={d}>{d}</option>
+              ))}
+            </select>
+          </div>
+          <div className={styles.field}>
+            <label className={styles.label}>Intervenant *</label>
+            <select name="intervenant" className={styles.select} required>
+              {INTERVENANTS.map((i) => (
+                <option key={i} value={i}>{i}</option>
+              ))}
+            </select>
+          </div>
         </div>
 
         {/* ════ CHAMP UNIQUE — Récit de l'intervention ════ */}

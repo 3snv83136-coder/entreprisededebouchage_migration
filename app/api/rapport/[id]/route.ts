@@ -42,6 +42,7 @@ export async function GET(
       resultat_enrichi: r.description_generee || undefined,
       materiels: r.materiels || undefined,
       temoignage: r.temoignage || undefined,
+      intervenant: r.intervenant || undefined,
       photo_avant_url: r.photo_avant_url || undefined,
       photo_apres_url: r.photo_apres_url || undefined,
     });

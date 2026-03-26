@@ -205,6 +205,7 @@ export default async function RealisationPage({ params }: Props) {
           </div>
 
           <div className={styles.signature}>
+            {r.intervenant && <span className={styles.signatureIntervenant}>Intervention realisee par {r.intervenant}</span>}
             <strong>Christophe Allard</strong>
             <span>Expert en assainissement — Entreprise de Debouchage</span>
           </div>

@@ -166,6 +166,7 @@ interface RapportParams {
   resultat_enrichi?: string;
   materiels?: string;
   temoignage?: string;
+  intervenant?: string;
   photo_avant_url?: string;
   photo_apres_url?: string;
 }
@@ -175,7 +176,7 @@ export function genererRapportHTML(params: RapportParams): string {
     type, ville, code_postal, mois, annee, duree,
     contexte_enrichi, diagnostic_enrichi,
     intervention_enrichie, resultat_enrichi,
-    materiels, temoignage,
+    materiels, temoignage, intervenant,
     photo_avant_url, photo_apres_url,
   } = params;
 
@@ -405,6 +406,11 @@ export function genererRapportHTML(params: RapportParams): string {
       <div class="label">Duree</div>
       <div class="value">${duree || 'Non precisee'}</div>
     </div>
+    ${intervenant ? `
+    <div class="info-box">
+      <div class="label">Intervenant</div>
+      <div class="value">${intervenant}</div>
+    </div>` : ''}
     ${materiels ? `
     <div class="info-box" style="grid-column: span 2;">
       <div class="label">Materiels utilises</div>

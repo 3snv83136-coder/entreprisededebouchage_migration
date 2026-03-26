@@ -36,6 +36,7 @@ export async function saveRealisation(formData: FormData) {
   const annee = formData.get('annee') as string;
   const duree = formData.get('duree') as string;
   const recit = formData.get('recit') as string;
+  const intervenant = formData.get('intervenant') as string;
   const codePostal = codePostalFromSelect;
   const photoAvant = formData.get('photoAvant') as File | null;
   const photoApres = formData.get('photoApres') as File | null;
@@ -66,6 +67,7 @@ export async function saveRealisation(formData: FormData) {
     faq,
     titre,
     code_postal: codePostal || undefined,
+    intervenant: intervenant || undefined,
     publiee: true,
     email_envoye: false,
   };
