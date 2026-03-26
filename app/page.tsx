@@ -72,8 +72,8 @@ export default async function Home() {
               <div className={styles.bentoLabel}>99&euro; &middot; 110&euro; &middot; 199&euro;</div>
             </div>
             <div className={`${styles.bentoCard} ${styles.bentoCardAccent} ${styles.bentoCentered}`}>
-              <div className={styles.bentoSmTitle}>Agreee Toute</div>
-              <div className={styles.bentoBig}>Assurance</div>
+              <div className={styles.bentoSmTitle}>Prise en charge par</div>
+              <div className={styles.bentoBig}>votre assurance</div>
             </div>
             <div className={`${styles.bentoCard} ${styles.bentoCardWide}`}>
               <div className={styles.bentoIcon}>&#9889;</div>
@@ -119,6 +119,9 @@ export default async function Home() {
           <div><strong>4.9/5</strong><span>Avis Google</span></div>
           <div><strong>19 ans</strong><span>Experience</span></div>
           <div><strong>24h/7j</strong><span>Intervention rapide</span></div>
+        </div>
+        <div className={styles.assuranceBadge}>
+          Prise en charge par votre assurance
         </div>
       </section>
 

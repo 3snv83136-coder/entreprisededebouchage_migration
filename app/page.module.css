@@ -347,6 +347,11 @@
   display: none;
 }
 
+/* ── ASSURANCE BADGE (mobile) ── */
+.assuranceBadge {
+  display: none;
+}
+
 /* ── SECTIONS ── */
 .section {
   padding: clamp(60px, 10vw, 100px) 24px;
@@ -604,6 +609,24 @@
 
   .bentoGrid {
     display: none;
+  }
+
+  .assuranceBadge {
+    display: block;
+    position: relative;
+    z-index: 2;
+    margin-top: 16px;
+    padding: 10px 20px;
+    background: var(--orange);
+    color: #502400;
+    font-family: var(--font-display), sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    text-align: center;
+    border-radius: 50px;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .statsMobile {
