@@ -12,11 +12,11 @@ const DUREES = ['15 min', '30 min', '45 min', '1h', '1h30', '2h', '2h30', '3h', 
 const INTERVENANTS = ['Olivier', 'Michel', 'Stephane'];
 
 interface Props {
-  searchParams: Promise<{ success?: string; error?: string; id?: string }>;
+  searchParams: Promise<{ success?: string; error?: string; id?: string; msg?: string }>;
 }
 
 export default async function AdminPage({ searchParams }: Props) {
-  const { success, error, id } = await searchParams;
+  const { success, error, id, msg } = await searchParams;
   const services = getAllServices();
   const villes = getAllVilles().sort((a, b) => a.ville.localeCompare(b.ville, 'fr'));
 
@@ -55,7 +55,7 @@ export default async function AdminPage({ searchParams }: Props) {
       )}
       {error && (
         <div className={styles.banner + ' ' + styles.bannerError}>
-          Erreur lors de l&apos;enregistrement. Reessaie.
+          Erreur lors de l&apos;enregistrement. {msg && <><br /><small>{msg}</small></>}
         </div>
       )}
 

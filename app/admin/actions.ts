@@ -67,7 +67,6 @@ export async function saveRealisation(formData: FormData) {
     faq,
     titre,
     code_postal: codePostal || undefined,
-    intervenant: intervenant || undefined,
     publiee: true,
     email_envoye: false,
   };
@@ -80,11 +79,21 @@ export async function saveRealisation(formData: FormData) {
     .single();
 
   if (error || !inserted) {
-    redirect('/admin?error=1');
+    console.error('Insert failed:', error?.message, error?.details, error?.hint);
+    redirect(`/admin?error=1&msg=${encodeURIComponent(error?.message || 'unknown')}`);
   }
 
   const realisationId = inserted.id as string;
   const updates: Partial<Realisation> = {};
+
+  // Intervenant (colonne optionnelle)
+  if (intervenant) {
+    try {
+      await supabaseAdmin.from('realisations').update({ intervenant }).eq('id', realisationId);
+    } catch {
+      // Column may not exist yet — non-blocking
+    }
+  }
 
   // 2. Upload photos
   if (photoAvant && photoAvant.size > 0) {
