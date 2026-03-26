@@ -169,6 +169,15 @@
   color: #5a2900;
 }
 
+.bentoCardGreen {
+  background: #22c55e;
+}
+
+.bentoCardGreen .bentoBig {
+  color: #fff;
+  font-size: clamp(20px, 3vw, 26px);
+}
+
 .bentoCardWide {
   grid-column: span 2;
   aspect-ratio: auto;
@@ -630,8 +639,8 @@
     z-index: 2;
     margin-top: 16px;
     padding: 10px 20px;
-    background: var(--orange);
-    color: #502400;
+    background: #22c55e;
+    color: #fff;
     font-family: var(--font-display), sans-serif;
     font-size: 13px;
     font-weight: 700;

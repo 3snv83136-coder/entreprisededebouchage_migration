@@ -8,7 +8,7 @@
   background: rgba(14, 20, 28, 0.97);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border-top: 1px solid rgba(244, 129, 31, 0.25);
+  border-top: 1px solid rgba(34, 197, 94, 0.25);
   transform: translateY(100%);
   transition: transform 0.3s ease;
 }
@@ -38,8 +38,8 @@
   align-items: center;
   justify-content: center;
   gap: 10px;
-  background: linear-gradient(135deg, #ffb786 0%, #f4811f 100%);
-  color: #502400;
+  background: linear-gradient(135deg, #4ade80 0%, #22c55e 100%);
+  color: #052e16;
   font-weight: 700;
   font-size: 17px;
   padding: 16px 32px;
@@ -47,7 +47,7 @@
   text-decoration: none;
   min-height: 56px;
   width: 100%;
-  box-shadow: 0 4px 24px rgba(244, 129, 31, 0.3);
+  box-shadow: 0 4px 24px rgba(34, 197, 94, 0.3);
 }
 
 @media (min-width: 769px) {

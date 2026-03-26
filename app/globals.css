@@ -102,15 +102,15 @@ a {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  background: linear-gradient(135deg, #ffb786 0%, #f4811f 100%);
-  color: #502400;
+  background: linear-gradient(135deg, #4ade80 0%, #22c55e 100%);
+  color: #052e16;
   font-weight: 700;
   font-size: 18px;
   padding: 18px 40px;
   border-radius: 50px;
   text-decoration: none;
   transition: all 0.25s;
-  box-shadow: 0 4px 24px rgba(244, 129, 31, 0.35);
+  box-shadow: 0 4px 24px rgba(34, 197, 94, 0.35);
   position: relative;
   overflow: hidden;
   border: none;
@@ -119,7 +119,7 @@ a {
 
 .btn-primary:hover {
   transform: scale(1.05);
-  box-shadow: 0 4px 32px rgba(244, 129, 31, 0.5);
+  box-shadow: 0 4px 32px rgba(34, 197, 94, 0.5);
 }
 
 .btn-primary:active {

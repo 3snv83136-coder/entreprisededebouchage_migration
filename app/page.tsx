@@ -72,9 +72,8 @@ export default async function Home() {
               <div className={styles.bentoBig}>3 prix fixes</div>
               <div className={styles.bentoLabel}>99&euro; &middot; 110&euro; &middot; 199&euro;</div>
             </div>
-            <div className={`${styles.bentoCard} ${styles.bentoCardAccent} ${styles.bentoCentered}`}>
-              <div className={styles.bentoSmTitle}>Prise en charge par</div>
-              <div className={styles.bentoBig}>votre assurance</div>
+            <div className={`${styles.bentoCard} ${styles.bentoCardGreen} ${styles.bentoCentered}`}>
+              <div className={styles.bentoBig}>Prise en charge par votre assurance</div>
             </div>
             <div className={`${styles.bentoCard} ${styles.bentoCardWide}`}>
               <div className={styles.bentoIcon}>&#9889;</div>
