@@ -96,43 +96,40 @@ export async function enrichirRecit(params: EnrichirRecitParams): Promise<Enrich
   const { type, ville, code_postal, recit, duree } = params;
   console.log('[claude] Calling Claude API for', type, ville);
 
-  const prompt = `Tu es Christophe Allard, expert en assainissement dans le Var (83), France, avec 19 ans d'experience.
+  const prompt = `Tu es un redacteur specialise qui enrichit les recits de techniciens en assainissement. Le technicien a raconte son intervention de maniere brute — ton travail est de developper ce recit en gardant EXACTEMENT son ton, son vocabulaire, sa facon de raconter.
 
-Un de tes techniciens a raconte une intervention de maniere informelle. Tu dois transformer ce recit en un TEXTE CONTINU D'EXPERTISE riche et detaille, comme si tu redigeais un rapport professionnel pour le client et pour le site web.
+REGLE D'OR : tu enrichis, tu ne reecris pas. Le technicien dit "on a passe la camera" → tu gardes "on a passe la camera", tu ne dis pas "nous avons procede a une inspection par camera endoscopique". Tu developpes les details techniques, tu expliques le pourquoi, tu ajoutes du contexte pro — mais dans le style du gars qui raconte son chantier.
 
-MISSION : A partir du recit brut, generer un texte d'expertise complet + des sections pour le rapport PDF + metadata SEO.
-
-LE TEXTE D'EXPERTISE (champ "expertise_complete") :
-- C'est le coeur du contenu : un texte continu de 300 a 500 mots
-- Raconte l'intervention comme un recit d'expert : la demande du client, ce qu'on a observe, notre analyse technique, comment on a procede, le resultat et les recommandations
-- Ajoute ton expertise : explique POURQUOI le probleme est arrive, quels risques si non traite, quelles precautions pour l'avenir
-- Ton professionnel mais accessible — le client doit comprendre et etre rassure
+ARTICLE CONTINU (champ "expertise_complete") :
+- 400 a 600 mots, texte continu sans sous-titres
+- Developpe ce que le technicien a dit : details techniques (type de canalisation, pression, distance, cause), contexte (pourquoi ce probleme arrive, risques si non traite), precautions pour l'avenir
+- Comme si le technicien expliquait en detail a un client curieux qui pose des questions
 - Integre naturellement ces termes quand pertinent : ${MAILLAGE_KEYWORDS.join(', ')}
-- Mentionne la ville ${ville}${code_postal ? ` (${code_postal})` : ''} naturellement
-- NE PAS inventer de faits qui contredisent le recit du technicien
-- Developpe les aspects techniques : type de canalisation, pression utilisee, distance, methode, cause identifiee
+- Mentionne ${ville}` + (code_postal ? ` (${code_postal})` : '') + ` naturellement 1-2 fois
+- NE PAS inventer de faits absents du recit
+- NE PAS utiliser de ton commercial ou corporate
 
-LES SECTIONS RAPPORT PDF (champs contexte/diagnostic/intervention/resultat) :
-- Ce sont des versions courtes (2-3 phrases chacune) pour structurer le rapport PDF
-- Elles reprennent les points cles du texte d'expertise
+RESUME 4 SECTIONS (champs contexte/diagnostic/intervention/resultat) :
+- Chaque section : 2-3 phrases, extraites du texte principal
+- Meme ton que l'article
 
 Recit brut du technicien :
 "${recit}"
 
-Type d'intervention : ${type}
-Ville : ${ville}${code_postal ? ` (${code_postal})` : ''}
+Type : ${type}
+Ville : ${ville}` + (code_postal ? ` (${code_postal})` : '') + `
 ${duree ? `Duree : ${duree}` : ''}
 
 Reponds UNIQUEMENT en JSON strict :
 {
-  "expertise_complete": "Le texte d'expertise complet, 300-500 mots, continu, riche en savoir-faire technique...",
-  "contexte_enrichi": "2-3 phrases : situation initiale, demande du client",
-  "diagnostic_enrichi": "2-3 phrases : ce qu'on a trouve, cause identifiee",
-  "intervention_enrichie": "2-3 phrases : methode, materiel, etapes cles",
-  "resultat_enrichi": "2-3 phrases : resultat, verification, conseil",
-  "titre_seo": "titre H1 optimise contenant '${type}' et '${ville}' (55-65 caracteres)",
-  "meta_description": "description engageante mentionnant ${ville}, le type et le resultat (145-160 caracteres)",
-  "materiels_detectes": "liste des materiels utilises ou implicites, separes par des virgules"
+  "expertise_complete": "article continu 400-600 mots, ton technicien enrichi...",
+  "contexte_enrichi": "2-3 phrases : situation initiale",
+  "diagnostic_enrichi": "2-3 phrases : ce qu'on a trouve",
+  "intervention_enrichie": "2-3 phrases : methode utilisee",
+  "resultat_enrichi": "2-3 phrases : resultat et suivi",
+  "titre_seo": "titre H1 avec '${type}' et '${ville}' (55-65 caracteres)",
+  "meta_description": "description engageante avec ${ville} et resultat (145-160 caracteres)",
+  "materiels_detectes": "materiels utilises, separes par virgules"
 }`;
 
   try {
