@@ -7,7 +7,7 @@ import styles from './page.module.css';
 
 export const metadata: Metadata = {
   title: `Tarifs débouchage Var — ${COMPANY_NAME}`,
-  description: `Tarifs clairs pour tous nos services de débouchage dans le Var (83). Devis gratuit, intervention 24h/7j. Pas de frais cachés — appelez le ${PHONE}.`,
+  description: `3 tarifs fixes debouchage dans le Var (83) : 99€, 110€, 199€. Devis gratuit, intervention 24h/7j. Pas de frais caches.`,
   alternates: {
     canonical: '/nos-tarifs/',
   },
@@ -17,18 +17,20 @@ export const metadata: Metadata = {
   },
 };
 
-const pricingData: Record<string, { min: string; max: string; note: string }> = {
-  'debouchage-evier-lavabo':         { min: '99 €', max: '149 €', note: 'Siphon + canalisation' },
-  'debouchage-douche-baignoire':     { min: '99 €', max: '149 €', note: 'Extraction + nettoyage' },
-  'debouchage-cuisine':              { min: '99 €', max: '159 €', note: 'Graisses + résidus' },
-  'debouchage-lave-vaisselle':       { min: '99 €', max: '139 €', note: 'Pompe + canalisation' },
-  'debouchage-lave-linge':           { min: '99 €', max: '139 €', note: 'Filtre + évacuation' },
-  'debouchage-wc-toilettes':         { min: '99 €', max: '169 €', note: 'Sans démontage inutile' },
-  'debouchage-salle-de-bain':        { min: '99 €', max: '199 €', note: 'Réseau complet' },
-  'debouchage-canalisation':         { min: '119 €', max: '199 €', note: 'Hydrocurage haute pression' },
-  'debouchage-ballon-deau-chaude-chauffe-eau': { min: '119 €', max: '199 €', note: 'Détartrage + évacuation' },
-  'debouchage-egouts-regards':       { min: '149 €', max: '199 €', note: 'Réseau extérieur + rapport' },
-  'debouchage-fosse-septique':       { min: '149 €', max: '199 €', note: 'Vidange + curage complet' },
+const TARIFS_FIXES = { simple: '99 €', camera: '110 €', hydro: '199 €' };
+
+const pricingData: Record<string, { tarif: string; note: string }> = {
+  'debouchage-evier-lavabo':         { tarif: TARIFS_FIXES.simple, note: 'Siphon + canalisation' },
+  'debouchage-douche-baignoire':     { tarif: TARIFS_FIXES.simple, note: 'Extraction + nettoyage' },
+  'debouchage-cuisine':              { tarif: TARIFS_FIXES.simple, note: 'Graisses + résidus' },
+  'debouchage-lave-vaisselle':       { tarif: TARIFS_FIXES.simple, note: 'Pompe + canalisation' },
+  'debouchage-lave-linge':           { tarif: TARIFS_FIXES.simple, note: 'Filtre + évacuation' },
+  'debouchage-wc-toilettes':         { tarif: TARIFS_FIXES.simple, note: 'Sans démontage inutile' },
+  'debouchage-salle-de-bain':        { tarif: TARIFS_FIXES.simple, note: 'Réseau complet' },
+  'debouchage-canalisation':         { tarif: TARIFS_FIXES.hydro, note: 'Hydrocurage haute pression' },
+  'debouchage-ballon-deau-chaude-chauffe-eau': { tarif: TARIFS_FIXES.camera, note: 'Détartrage + évacuation' },
+  'debouchage-egouts-regards':       { tarif: TARIFS_FIXES.hydro, note: 'Réseau extérieur + rapport' },
+  'debouchage-fosse-septique':       { tarif: TARIFS_FIXES.hydro, note: 'Vidange + curage complet' },
 };
 
 const priceLabels: Record<string, string> = {
@@ -56,10 +58,10 @@ export default function NosTarifsPage() {
           ]}
         />
 
-        <h1 className={styles.title}>Tarifs débouchage dans le Var</h1>
+        <h1 className={styles.title}>Tarifs fixes debouchage dans le Var</h1>
         <p className={styles.lead}>
-          Des tarifs clairs, sans mauvaise surprise. Le prix final dépend de l&apos;accessibilité,
-          du type de bouchon et de la durée d&apos;intervention.{' '}
+          3 tarifs fixes, sans mauvaise surprise : <strong style={{ color: 'var(--orange)' }}>99 € · 110 € · 199 €</strong>.
+          Pas de supplement cache.{' '}
           <strong style={{ color: 'var(--white)' }}>Devis gratuit</strong> avant tout travail.
         </p>
 
@@ -88,7 +90,7 @@ export default function NosTarifsPage() {
                       <span className={styles.rowLabel}>{service.label}</span>
                       <span className={styles.rowNote}>{pricing?.note || service.intervention}</span>
                       <span className={styles.rowPrice}>
-                        {pricing ? `${pricing.min} – ${pricing.max}` : 'Sur devis'}
+                        {pricing ? pricing.tarif : 'Sur devis'}
                       </span>
                     </Link>
                   );
