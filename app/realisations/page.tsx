@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import Image from 'next/image';
 import Link from 'next/link';
 import Breadcrumbs from '@/components/common/Breadcrumbs';
 import { COMPANY_NAME, BASE_URL } from '@/lib/config';
@@ -43,20 +44,36 @@ export default async function RealisationsPage() {
           <div className={styles.grid}>
             {realisations.map((r) => (
               <Link key={r.slug} href={`/realisations/${r.slug}/`} className={styles.card}>
-                <div className={styles.cardMeta}>
-                  <span className={styles.cardBadge}>{r.type}</span>
-                  <span className={styles.cardDate}>{r.mois} {r.annee}</span>
-                </div>
-                <h2 className={styles.cardTitle}>
-                  {r.type} à {r.ville}
-                </h2>
-                <p className={styles.cardResultat}>
-                  {r.resultat.length > 120 ? r.resultat.slice(0, 120) + '…' : r.resultat}
-                </p>
-                <div className={styles.cardFooter}>
-                  {r.duree && <span>⏱ {r.duree}</span>}
-                  {r.temoignage && <span>⭐ Témoignage client</span>}
-                  <span className={styles.cardLink}>Voir →</span>
+                {r.photo_apres_url && (
+                  <div className={styles.cardImageWrapper}>
+                    <Image
+                      src={r.photo_apres_url}
+                      alt={`${r.type} à ${r.ville}`}
+                      width={400}
+                      height={225}
+                      className={styles.cardImage}
+                    />
+                  </div>
+                )}
+                <div className={styles.cardBody}>
+                  <div className={styles.cardMeta}>
+                    <span className={styles.cardBadge}>{r.type}</span>
+                    <span className={styles.cardDate}>{r.mois} {r.annee}</span>
+                  </div>
+                  <h2 className={styles.cardTitle}>
+                    {r.type} à {r.ville}
+                  </h2>
+                  <p className={styles.cardResultat}>
+                    {(() => {
+                      const text = r.description_generee || r.resultat;
+                      return text.length > 150 ? text.slice(0, 150) + '…' : text;
+                    })()}
+                  </p>
+                  <div className={styles.cardFooter}>
+                    {r.duree && <span>⏱ {r.duree}</span>}
+                    {r.temoignage && <span>Temoignage client</span>}
+                    <span className={styles.cardLink}>Voir →</span>
+                  </div>
                 </div>
               </Link>
             ))}
