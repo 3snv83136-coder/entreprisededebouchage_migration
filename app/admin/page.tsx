@@ -10,11 +10,11 @@ const MOIS = ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin',
 const DUREES = ['15 min', '30 min', '45 min', '1h', '1h30', '2h', '2h30', '3h', '3h+'];
 
 interface Props {
-  searchParams: Promise<{ success?: string; error?: string }>;
+  searchParams: Promise<{ success?: string; error?: string; id?: string }>;
 }
 
 export default async function AdminPage({ searchParams }: Props) {
-  const { success, error } = await searchParams;
+  const { success, error, id } = await searchParams;
   const services = getAllServices();
   const villes = getAllVilles().sort((a, b) => a.ville.localeCompare(b.ville, 'fr'));
 
@@ -25,24 +25,35 @@ export default async function AdminPage({ searchParams }: Props) {
   return (
     <div className={styles.page}>
       <div className={styles.header}>
-        <h1 className={styles.title}>Nouvelle réalisation</h1>
-        <p className={styles.sub}>Remplis les champs après l&apos;intervention</p>
+        <h1 className={styles.title}>Nouvelle realisation</h1>
+        <p className={styles.sub}>Remplis les champs et raconte l&apos;intervention — l&apos;IA fait le reste</p>
       </div>
 
       <div className={styles.navLinks}>
         <Link href="/admin/realisations" className={styles.navLink}>
-          Voir toutes les réalisations →
+          Voir toutes les realisations &rarr;
         </Link>
       </div>
 
       {success && (
         <div className={styles.banner + ' ' + styles.bannerSuccess}>
-          ✓ Réalisation enregistrée et enrichie par IA !
+          Realisation enregistree et enrichie par IA !
+          {id && (
+            <div style={{ marginTop: '8px' }}>
+              <a
+                href={`/api/rapport/${id}`}
+                target="_blank"
+                className={styles.pdfLink}
+              >
+                Telecharger le rapport PDF
+              </a>
+            </div>
+          )}
         </div>
       )}
       {error && (
         <div className={styles.banner + ' ' + styles.bannerError}>
-          Erreur lors de l&apos;enregistrement. Réessaie.
+          Erreur lors de l&apos;enregistrement. Reessaie.
         </div>
       )}
 
@@ -96,7 +107,7 @@ export default async function AdminPage({ searchParams }: Props) {
             </select>
           </div>
           <div className={styles.field}>
-            <label className={styles.label}>Année *</label>
+            <label className={styles.label}>Annee *</label>
             <select name="annee" className={styles.select} defaultValue={currentAnnee} required>
               {['2025', '2026', '2027'].map((a) => (
                 <option key={a} value={a}>{a}</option>
@@ -107,7 +118,7 @@ export default async function AdminPage({ searchParams }: Props) {
 
         {/* Durée */}
         <div className={styles.field}>
-          <label className={styles.label}>Durée</label>
+          <label className={styles.label}>Duree</label>
           <select name="duree" className={styles.select} defaultValue="1h">
             {DUREES.map((d) => (
               <option key={d} value={d}>{d}</option>
@@ -115,76 +126,19 @@ export default async function AdminPage({ searchParams }: Props) {
           </select>
         </div>
 
-        {/* Matériels */}
+        {/* ════ CHAMP UNIQUE — Récit de l'intervention ════ */}
         <div className={styles.field}>
-          <label className={styles.label}>Matériels utilisés</label>
-          <input
-            type="text"
-            name="materiels"
-            className={styles.input}
-            placeholder="ex: Hydrocureur 200 bars, caméra inspection"
-          />
-        </div>
-
-        {/* Contexte */}
-        <div className={styles.field}>
-          <label className={styles.label}>Situation (quelques mots suffisent)</label>
+          <label className={styles.label}>Raconte l&apos;intervention *</label>
           <textarea
-            name="contexte"
-            className={styles.textarea}
-            placeholder="ex: Canalisation bouchée depuis 2 jours, eau ne s'écoule plus."
-            rows={2}
-          />
-          <span className={styles.fieldNote}>L&apos;IA développe automatiquement</span>
-        </div>
-
-        {/* Diagnostic */}
-        <div className={styles.field}>
-          <label className={styles.label}>Diagnostic (ce qu&apos;on a trouvé)</label>
-          <textarea
-            name="diagnostic"
-            className={styles.textarea}
-            placeholder="ex: Accumulation de cheveux et calcaire à 1m du siphon."
-            rows={2}
-          />
-          <span className={styles.fieldNote}>L&apos;IA développe automatiquement</span>
-        </div>
-
-        {/* Intervention */}
-        <div className={styles.field}>
-          <label className={styles.label}>Ce qu&apos;on a fait *</label>
-          <textarea
-            name="intervention"
-            className={styles.textarea}
-            placeholder="ex: Hydrocurage haute pression 150 bars sur 8m."
-            rows={2}
+            name="recit"
+            className={styles.textareaLarge}
+            placeholder={"Ex: On est arrives chez le client, canalisation bouchee depuis 3 jours. L'eau remontait dans la douche. On a passe la camera, on a trouve un bouchon de graisse a 4m. Hydrocurage 150 bars, tout est reparti. Le client etait content, plus d'odeur."}
+            rows={8}
             required
           />
-          <span className={styles.fieldNote}>L&apos;IA développe automatiquement</span>
-        </div>
-
-        {/* Résultat */}
-        <div className={styles.field}>
-          <label className={styles.label}>Résultat *</label>
-          <textarea
-            name="resultat"
-            className={styles.textarea}
-            placeholder="ex: Écoulement rétabli à 100%. Aucun retour prévu."
-            rows={2}
-            required
-          />
-          <span className={styles.fieldNote}>L&apos;IA développe automatiquement</span>
-        </div>
-
-        {/* Témoignage */}
-        <div className={styles.field}>
-          <label className={styles.label}>Témoignage client (optionnel)</label>
-          <textarea
-            name="temoignage"
-            className={styles.textarea}
-            placeholder="ex: « Intervention rapide et efficace, merci ! »"
-            rows={2}
-          />
+          <span className={styles.fieldNote}>
+            Parle naturellement, comme si tu racontais a un collegue. L&apos;IA enrichit le texte, genere la page SEO avec maillage interne, et cree le rapport PDF.
+          </span>
         </div>
 
         {/* Photos */}
@@ -192,7 +146,7 @@ export default async function AdminPage({ searchParams }: Props) {
           <div className={styles.field}>
             <label className={styles.label}>Photo avant</label>
             <label className={styles.fileLabel} htmlFor="photoAvant">
-              📷 Prendre / choisir
+              Prendre / choisir
               <input
                 id="photoAvant"
                 className={styles.fileInput}
@@ -204,9 +158,9 @@ export default async function AdminPage({ searchParams }: Props) {
             </label>
           </div>
           <div className={styles.field}>
-            <label className={styles.label}>Photo après</label>
+            <label className={styles.label}>Photo apres</label>
             <label className={styles.fileLabel} htmlFor="photoApres">
-              📷 Prendre / choisir
+              Prendre / choisir
               <input
                 id="photoApres"
                 className={styles.fileInput}

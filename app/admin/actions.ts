@@ -6,7 +6,7 @@ import { redirect } from 'next/navigation';
 import type { Realisation } from '@/lib/types';
 import { generateFaq, generateJsonLd, generateTitre, generateDescription } from '@/lib/services/realisation.service';
 import { uploadPhoto } from '@/lib/services/upload.service';
-import { ameliorerTexte } from '@/lib/services/claude.service';
+import { enrichirRecit } from '@/lib/services/claude.service';
 import { envoyerEmailInterne } from '@/lib/services/email.service';
 
 const MOIS_SLUGS: Record<string, string> = {
@@ -27,7 +27,6 @@ function toSlug(str: string): string {
 export async function saveRealisation(formData: FormData) {
   const type = formData.get('type') as string;
   const service_slug = formData.get('service_slug') as string;
-  // ville_data = "Toulon|83000"
   const villeData = (formData.get('ville_data') as string) || '';
   const [ville, codePostalFromSelect] = villeData.includes('|')
     ? villeData.split('|')
@@ -36,13 +35,8 @@ export async function saveRealisation(formData: FormData) {
   const mois = formData.get('mois') as string;
   const annee = formData.get('annee') as string;
   const duree = formData.get('duree') as string;
-  const contexte = formData.get('contexte') as string;
-  const diagnostic = formData.get('diagnostic') as string;
-  const intervention = formData.get('intervention') as string;
-  const resultat = formData.get('resultat') as string;
-  const temoignage = formData.get('temoignage') as string;
-  const codePostal = codePostalFromSelect || (formData.get('codePostal') as string);
-  const materiels = formData.get('materiels') as string;
+  const recit = formData.get('recit') as string;
+  const codePostal = codePostalFromSelect;
   const photoAvant = formData.get('photoAvant') as File | null;
   const photoApres = formData.get('photoApres') as File | null;
 
@@ -52,7 +46,7 @@ export async function saveRealisation(formData: FormData) {
 
   const faq = generateFaq(type, ville);
   const titre = generateTitre(type, ville, mois, annee);
-  const meta_description = generateDescription({ type, ville, mois, annee, duree, resultat });
+  const meta_description = generateDescription({ type, ville, mois, annee, duree, resultat: recit.slice(0, 200) });
   const meta_title = titre;
 
   const realisation: Realisation = {
@@ -64,17 +58,14 @@ export async function saveRealisation(formData: FormData) {
     mois,
     annee,
     duree: duree || undefined,
-    contexte: contexte || undefined,
-    diagnostic: diagnostic || undefined,
-    intervention,
-    resultat,
-    temoignage: temoignage || undefined,
+    contexte: recit,
+    intervention: recit,
+    resultat: recit,
     meta_title,
     meta_description,
     faq,
     titre,
     code_postal: codePostal || undefined,
-    materiels: materiels || undefined,
     publiee: true,
     email_envoye: false,
   };
@@ -98,7 +89,7 @@ export async function saveRealisation(formData: FormData) {
     try {
       updates.photo_avant_url = await uploadPhoto(photoAvant, realisationId, 'avant');
     } catch {
-      // Non-blocking: continue without photo
+      // Non-blocking
     }
   }
   if (photoApres && photoApres.size > 0) {
@@ -109,25 +100,22 @@ export async function saveRealisation(formData: FormData) {
     }
   }
 
-  // 3. Claude text improvement (per section)
+  // 3. Claude enrichment from free-text recit
   try {
-    const improved = await ameliorerTexte({
+    const improved = await enrichirRecit({
       type,
       ville,
       code_postal: codePostal || undefined,
-      contexte: contexte || undefined,
-      diagnostic: diagnostic || undefined,
-      intervention,
-      resultat,
-      materiels: materiels || undefined,
+      recit,
       duree: duree || undefined,
     });
-    if (contexte && improved.contexte_enrichi) updates.contexte_enrichi = improved.contexte_enrichi;
-    if (diagnostic && improved.diagnostic_enrichi) updates.diagnostic_enrichi = improved.diagnostic_enrichi;
+    updates.contexte_enrichi = improved.contexte_enrichi;
+    updates.diagnostic_enrichi = improved.diagnostic_enrichi;
     updates.intervention_enrichie = improved.intervention_enrichie;
     updates.description_generee = improved.resultat_enrichi;
     updates.titre = improved.titre_seo;
     updates.meta_description = improved.meta_description;
+    updates.materiels = improved.materiels_detectes;
   } catch {
     // Non-blocking: fallback to original
   }
@@ -139,14 +127,13 @@ export async function saveRealisation(formData: FormData) {
     slug,
     mois,
     annee,
-    resultat,
-    temoignage: temoignage || undefined,
+    resultat: recit,
     faq,
     description_generee: updates.description_generee,
     meta_description: updates.meta_description || meta_description,
   });
 
-  // 5. Update record with photos + improved text + json_ld
+  // 5. Update record
   if (Object.keys(updates).length > 0) {
     await supabaseAdmin
       .from('realisations')
@@ -164,7 +151,7 @@ export async function saveRealisation(formData: FormData) {
       mois,
       annee,
       duree: duree || undefined,
-      resultat,
+      resultat: recit.slice(0, 200),
     });
     await supabaseAdmin
       .from('realisations')
@@ -176,7 +163,7 @@ export async function saveRealisation(formData: FormData) {
 
   revalidatePath('/realisations');
   revalidatePath('/');
-  redirect('/admin?success=1');
+  redirect(`/admin?success=1&id=${realisationId}`);
 }
 
 export async function deleteRealisation(id: string) {
@@ -187,7 +174,6 @@ export async function deleteRealisation(id: string) {
 }
 
 export async function reEnrichirRealisation(id: string) {
-  // Fetch existing realisation
   const { data: r, error } = await supabaseAdmin
     .from('realisations')
     .select('*')
@@ -199,17 +185,13 @@ export async function reEnrichirRealisation(id: string) {
   }
 
   const updates: Partial<Realisation> = {};
+  const recit = r.contexte || r.intervention || '';
 
-  // Claude enrichissement — .catch() au lieu de try/catch pour éviter d'intercepter redirect()
-  const improved = await ameliorerTexte({
+  const improved = await enrichirRecit({
     type: r.type,
     ville: r.ville,
     code_postal: r.code_postal || undefined,
-    contexte: r.contexte || undefined,
-    diagnostic: r.diagnostic || undefined,
-    intervention: r.intervention,
-    resultat: r.resultat,
-    materiels: r.materiels || undefined,
+    recit,
     duree: r.duree || undefined,
   }).catch(() => null);
 
@@ -217,14 +199,14 @@ export async function reEnrichirRealisation(id: string) {
     redirect('/admin/realisations?error=1');
   }
 
-  if (r.contexte && improved.contexte_enrichi) updates.contexte_enrichi = improved.contexte_enrichi;
-  if (r.diagnostic && improved.diagnostic_enrichi) updates.diagnostic_enrichi = improved.diagnostic_enrichi;
+  updates.contexte_enrichi = improved.contexte_enrichi;
+  updates.diagnostic_enrichi = improved.diagnostic_enrichi;
   updates.intervention_enrichie = improved.intervention_enrichie;
   updates.description_generee = improved.resultat_enrichi;
   updates.titre = improved.titre_seo;
   updates.meta_description = improved.meta_description;
+  updates.materiels = improved.materiels_detectes;
 
-  // Regenerate FAQ + JSON-LD
   const faq = generateFaq(r.type, r.ville);
   updates.faq = faq;
   updates.json_ld = generateJsonLd({
@@ -233,7 +215,7 @@ export async function reEnrichirRealisation(id: string) {
     slug: r.slug,
     mois: r.mois,
     annee: r.annee,
-    resultat: r.resultat,
+    resultat: recit,
     temoignage: r.temoignage || undefined,
     faq,
     description_generee: updates.description_generee,
