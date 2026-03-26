@@ -614,6 +614,12 @@
   .desktopOnly { display: none; }
   .mobileOnly { display: inline; }
 
+  .btnSecondaryHero {
+    background: #22c55e !important;
+    border-color: #22c55e !important;
+    color: #fff !important;
+  }
+
   .bentoGrid {
     display: none;
   }
