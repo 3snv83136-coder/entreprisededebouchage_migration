@@ -43,6 +43,7 @@ export async function POST(
       updates.contexte_enrichi = improved.contexte_enrichi;
       updates.diagnostic_enrichi = improved.diagnostic_enrichi;
       updates.intervention_enrichie = improved.intervention_enrichie;
+      updates.resultat_enrichi = improved.resultat_enrichi;
       updates.description_generee = improved.expertise_complete;
       updates.titre = improved.titre_seo;
       updates.meta_description = improved.meta_description;
