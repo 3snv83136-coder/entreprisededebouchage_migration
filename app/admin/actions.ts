@@ -41,6 +41,8 @@ export async function saveRealisation(formData: FormData) {
     const codePostal = codePostalFromSelect;
     const photoAvant = formData.get('photoAvant') as File | null;
     const photoApres = formData.get('photoApres') as File | null;
+    const rotationAvant = parseInt(formData.get('rotationAvant') as string || '0', 10) || 0;
+    const rotationApres = parseInt(formData.get('rotationApres') as string || '0', 10) || 0;
 
     if (!ville || !recit) {
       redirect(`/admin?error=1&msg=${encodeURIComponent('Ville et recit sont obligatoires')}`);
@@ -83,7 +85,7 @@ export async function saveRealisation(formData: FormData) {
     // Photos
     if (photoAvant && photoAvant.size > 0) {
       try {
-        const url = await uploadPhoto(photoAvant, realisationId, 'avant');
+        const url = await uploadPhoto(photoAvant, realisationId, 'avant', rotationAvant);
         await supabaseAdmin.from('realisations').update({ photo_avant_url: url }).eq('id', realisationId);
       } catch (photoErr) {
         console.error('[saveRealisation] Photo avant upload failed:', photoErr);
@@ -92,7 +94,7 @@ export async function saveRealisation(formData: FormData) {
     }
     if (photoApres && photoApres.size > 0) {
       try {
-        const url = await uploadPhoto(photoApres, realisationId, 'apres');
+        const url = await uploadPhoto(photoApres, realisationId, 'apres', rotationApres);
         await supabaseAdmin.from('realisations').update({ photo_apres_url: url }).eq('id', realisationId);
       } catch (photoErr) {
         console.error('[saveRealisation] Photo apres upload failed:', photoErr);
@@ -121,17 +123,21 @@ export async function deleteRealisation(id: string) {
 }
 
 export async function reEnrichirRealisation(id: string) {
-  // Trigger enrichment via API route (avoids timeout)
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || process.env.VERCEL_URL
-    ? `https://${process.env.VERCEL_URL}`
-    : 'http://localhost:3000';
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL
+    || (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost:3000');
 
   try {
-    await fetch(`${baseUrl}/api/enrichir/${id}`, { method: 'POST' });
-  } catch {
-    // Non-blocking
+    const res = await fetch(`${baseUrl}/api/enrichir/${id}`, { method: 'POST' });
+    const data = await res.json();
+    if (data.status === 'enriched' || data.status === 'already_enriched') {
+      revalidatePath('/realisations');
+      revalidatePath('/');
+      redirect('/admin/realisations?enriched=1');
+    }
+    revalidatePath('/realisations');
+    redirect(`/admin/realisations?error=1`);
+  } catch (err) {
+    if (err && typeof err === 'object' && 'digest' in err) throw err;
+    redirect(`/admin/realisations?error=1`);
   }
-
-  revalidatePath('/realisations');
-  redirect('/admin/realisations?enriched=1');
 }
