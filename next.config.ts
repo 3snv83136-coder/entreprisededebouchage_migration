@@ -12,7 +12,7 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: '*.supabase.co',
+        hostname: 'qqykfjukamekgbltpyrd.supabase.co',
         pathname: '/storage/v1/object/public/**',
       },
     ],
@@ -76,6 +76,13 @@ const nextConfig: NextConfig = {
       { source: '/debouchage-canalisation-la-garde', destination: '/debouchage-la-garde/', permanent: true },
       { source: '/debouchage-canalisation-belgentier', destination: '/debouchage-belgentier/', permanent: true },
       { source: '/debouchage-canalisation-entrecasteaux', destination: '/debouchage-entrecasteaux/', permanent: true },
+      // Anciennes URLs WordPress cassées
+      { source: '/debouchage-de-canalisation-var', destination: '/debouchage-canalisation/', permanent: true },
+      { source: '/debouchage-de-canalisation-var/', destination: '/debouchage-canalisation/', permanent: true },
+      { source: '/inspection-video-camera-canalisation-dans-le-var', destination: '/nos-prestations/', permanent: true },
+      { source: '/inspection-video-camera-canalisation-dans-le-var/', destination: '/nos-prestations/', permanent: true },
+      { source: '/top-5-des-bouchons-dans-le-monde', destination: '/blog/', permanent: true },
+      { source: '/top-5-des-bouchons-dans-le-monde/', destination: '/blog/', permanent: true },
     ];
   },
 };
