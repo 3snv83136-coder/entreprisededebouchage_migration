@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import { notFound, permanentRedirect } from 'next/navigation';
 import { getAllVilles, getVilleBySlug, getTier1Villes } from '@/lib/data/villes';
 import { getAllServices, getServiceBySlug } from '@/lib/data/services';
+import { OLD_VAR_SLUGS } from '@/lib/data/var-redirects';
 import { getPageContent } from '@/lib/data/content';
 import { generateMetadataForCity, generateMetadataForServiceCity } from '@/lib/seo/metadata';
 import { generateSchemaCity, generateSchemaFAQ, generateSchemaServiceCity } from '@/lib/seo/schema';
@@ -122,14 +123,32 @@ export default async function DynamicPage({ params }: PageProps) {
   const parsed = parsePageSlug(page);
 
   if (!parsed && page.startsWith('debouchage-')) {
-    // Try alias resolution: debouchage-wc-bandol → debouchage-wc-toilettes-bandol
     const slug = page.replace('debouchage-', '');
+
+    // Try alias resolution: debouchage-wc-bandol → debouchage-wc-toilettes-bandol
     for (const [alias, canonical] of Object.entries(SERVICE_ALIASES)) {
       if (slug.startsWith(alias + '-')) {
         const villeSlug = slug.slice(alias.length + 1);
         const ville = getVilleBySlug(villeSlug);
         if (ville) {
           permanentRedirect(`/debouchage-${canonical}-${villeSlug}/`);
+        }
+      }
+    }
+
+    // Redirect old Var (83) city pages → homepage
+    if (OLD_VAR_SLUGS.has(slug)) {
+      permanentRedirect('/');
+    }
+
+    // Redirect old Var (83) service+city pages → service page
+    const services = getAllServices();
+    for (const service of services) {
+      const servicePrefix = service.slug.replace('debouchage-', '');
+      if (slug.startsWith(servicePrefix + '-')) {
+        const citySlug = slug.slice(servicePrefix.length + 1);
+        if (OLD_VAR_SLUGS.has(citySlug)) {
+          permanentRedirect(`/${service.slug}/`);
         }
       }
     }
