@@ -24,10 +24,10 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: `${COMPANY_NAME} — Debouchage dans le Var 24h/7j`,
+    default: `${COMPANY_NAME} — Debouchage dans les Bouches-du-Rhône 24h/7j`,
     template: `%s | ${COMPANY_NAME}`,
   },
-  description: `${COMPANY_NAME} : debouchage canalisations, WC, évier à Toulon et dans le Var. Intervention rapide 24h/7j, devis gratuit.`,
+  description: `${COMPANY_NAME} : debouchage canalisations, WC, évier à Aubagne et dans les Bouches-du-Rhône. Intervention rapide 24h/7j, devis gratuit.`,
   metadataBase: new URL(BASE_URL),
   alternates: {
     canonical: '/',
@@ -37,10 +37,10 @@ export const metadata: Metadata = {
     apple: '/logo-edd.png',
   },
   other: {
-    'geo.region': 'FR-83',
-    'geo.placename': 'Var, Provence-Alpes-Côte d\'Azur, France',
-    'geo.position': '43.1242;6.0173',
-    'ICBM': '43.1242, 6.0173',
+    'geo.region': 'FR-13',
+    'geo.placename': 'Bouches-du-Rhône, Provence-Alpes-Côte d\'Azur, France',
+    'geo.position': '43.2927;5.5707',
+    'ICBM': '43.2927, 5.5707',
   },
 };
 
@@ -66,7 +66,7 @@ export default function RootLayout({
               "@type": "WebSite",
               "url": BASE_URL,
               "name": COMPANY_NAME,
-              "description": "Entreprise de debouchage dans le Var (83). Intervention 24h/7j sur 153 communes.",
+              "description": "Entreprise de debouchage dans les Bouches-du-Rhône (13). Intervention 24h/7j sur 119 communes.",
               "potentialAction": {
                 "@type": "SearchAction",
                 "target": {

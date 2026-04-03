@@ -4,7 +4,7 @@ import { BASE_URL, COMPANY_NAME } from '@/lib/config';
 
 export function generateMetadataForCity(ville: Ville): Metadata {
   const title = `Debouchage ${ville.ville} ${ville.code_postal} — Urgence 24h/7j`;
-  const description = `Debouchage à ${ville.ville} (${ville.code_postal}) : intervention rapide 24h/7j pour canalisations, WC et évier bouchés. Technicien qualifié dans le ${ville.departement}, devis gratuit.`;
+  const description = `Debouchage à ${ville.ville} (${ville.code_postal}) : intervention rapide 24h/7j pour canalisations, WC et évier bouchés. Technicien qualifié dans les ${ville.departement}, devis gratuit.`;
 
   return {
     title,
@@ -19,15 +19,15 @@ export function generateMetadataForCity(ville: Ville): Metadata {
       type: 'website',
     },
     other: {
-      'geo.region': 'FR-83',
-      'geo.placename': `${ville.ville}, Var, Provence-Alpes-Côte d'Azur, France`,
+      'geo.region': 'FR-13',
+      'geo.placename': `${ville.ville}, Bouches-du-Rhône, Provence-Alpes-Côte d'Azur, France`,
     },
   };
 }
 
 export function generateMetadataForService(service: Service): Metadata {
-  const title = `${service.label} dans le Var — Intervention rapide`;
-  const description = `${service.label} dans le Var. Technicien qualifié, intervention rapide 24h/7j. Devis gratuit et sans engagement.`;
+  const title = `${service.label} dans les Bouches-du-Rhône — Intervention rapide`;
+  const description = `${service.label} dans les Bouches-du-Rhône. Technicien qualifié, intervention rapide 24h/7j. Devis gratuit et sans engagement.`;
 
   return {
     title,
@@ -46,7 +46,7 @@ export function generateMetadataForService(service: Service): Metadata {
 
 export function generateMetadataForServiceCity(service: Service, ville: Ville): Metadata {
   const title = `${service.label} ${ville.ville} ${ville.code_postal} — Intervention rapide`;
-  const description = `${service.label} à ${ville.ville} (${ville.code_postal}). Technicien qualifié, intervention rapide 24h/7j dans le ${ville.departement}. Devis gratuit.`;
+  const description = `${service.label} à ${ville.ville} (${ville.code_postal}). Technicien qualifié, intervention rapide 24h/7j dans les ${ville.departement}. Devis gratuit.`;
   const slug = `${service.slug}-${ville.slug}`;
 
   return {
@@ -62,8 +62,8 @@ export function generateMetadataForServiceCity(service: Service, ville: Ville): 
       type: 'website',
     },
     other: {
-      'geo.region': 'FR-83',
-      'geo.placename': `${ville.ville}, Var, Provence-Alpes-Côte d'Azur, France`,
+      'geo.region': 'FR-13',
+      'geo.placename': `${ville.ville}, Bouches-du-Rhône, Provence-Alpes-Côte d'Azur, France`,
     },
   };
 }
@@ -71,16 +71,16 @@ export function generateMetadataForServiceCity(service: Service, ville: Ville): 
 export function generateMetadataForPage(pageType: string): Metadata {
   const meta: Record<string, { title: string; description: string }> = {
     home: {
-      title: `${COMPANY_NAME} — Debouchage dans le Var 24h/7j`,
-      description: `${COMPANY_NAME} : debouchage canalisations, WC, évier à Toulon et dans le Var. Intervention rapide 24h/7j, devis gratuit. Depuis 19 ans.`,
+      title: `${COMPANY_NAME} — Debouchage dans les Bouches-du-Rhône 24h/7j`,
+      description: `${COMPANY_NAME} : debouchage canalisations, WC, évier à Aubagne et dans les Bouches-du-Rhône. Intervention rapide 24h/7j, devis gratuit. Depuis 19 ans.`,
     },
     tarifs: {
-      title: 'Nos tarifs — Debouchage dans le Var',
-      description: 'Tarifs transparents pour tous nos services de debouchage dans le Var. Devis gratuit, prix fixe annoncé avant intervention.',
+      title: 'Nos tarifs — Debouchage dans les Bouches-du-Rhône',
+      description: 'Tarifs transparents pour tous nos services de debouchage dans les Bouches-du-Rhône. Devis gratuit, prix fixe annoncé avant intervention.',
     },
     prestations: {
-      title: 'Nos prestations — Debouchage dans le Var',
-      description: 'Découvrez nos prestations de debouchage : canalisations, WC, évier, douche, égout, fosse septique. Intervention 24h/7j dans le Var.',
+      title: 'Nos prestations — Debouchage dans les Bouches-du-Rhône',
+      description: 'Découvrez nos prestations de debouchage : canalisations, WC, évier, douche, égout, fosse septique. Intervention 24h/7j dans les Bouches-du-Rhône.',
     },
   };
 
