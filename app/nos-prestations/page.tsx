@@ -7,7 +7,7 @@ import styles from './page.module.css';
 
 export const metadata: Metadata = {
   title: `Nos prestations de débouchage — ${COMPANY_NAME}`,
-  description: `Débouchage canalisation, WC, évier, douche, fosse septique, égout… Découvrez toutes les prestations de ${COMPANY_NAME} dans le Var (83). Intervention 24h/7j.`,
+  description: `Débouchage canalisation, WC, évier, douche, fosse septique, égout… Découvrez toutes les prestations de ${COMPANY_NAME} dans les Bouches-du-Rhône (13). Intervention 24h/7j.`,
   alternates: {
     canonical: '/nos-prestations/',
   },
@@ -47,7 +47,7 @@ export default function NosPrestationsPage() {
         <h1 className={styles.title}>Nos prestations de débouchage</h1>
         <p className={styles.lead}>
           Canalisations, WC, cuisine, fosse septique… notre équipe intervient sur{' '}
-          <strong style={{ color: 'var(--white)' }}>tous types de bouchons</strong> dans le Var,{' '}
+          <strong style={{ color: 'var(--white)' }}>tous types de bouchons</strong> dans les Bouches-du-Rhône,{' '}
           7j/7 et 24h/24. Chaque prestation inclut un diagnostic gratuit et une garantie de résultat.
         </p>
 
@@ -85,7 +85,7 @@ export default function NosPrestationsPage() {
         <section className={styles.bottom}>
           <h2>Pourquoi nous choisir ?</h2>
           <ul>
-            <li>Intervention rapide dans tout le Var (83)</li>
+            <li>Intervention rapide dans toutes les Bouches-du-Rhône (13)</li>
             <li>Devis gratuit avant toute intervention</li>
             <li>Techniciens certifiés, matériel professionnel</li>
             <li>Facturation transparente, pas de frais cachés</li>

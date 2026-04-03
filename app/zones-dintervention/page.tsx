@@ -7,8 +7,8 @@ import { getAllVilles, getTier1Villes, getVilleBySlug } from '@/lib/data/villes'
 import styles from './page.module.css';
 
 export const metadata: Metadata = {
-  title: 'Zones d\'intervention dans le Var',
-  description: `${COMPANY_NAME} intervient dans les 153 communes du Var, dont La Seyne-sur-Mer, Toulon, Hyères. Trouvez votre ville et appelez le 24h/7j.`,
+  title: 'Zones d\'intervention dans les Bouches-du-Rhône',
+  description: `${COMPANY_NAME} intervient dans les 119 communes des Bouches-du-Rhône, dont Marseille, Aubagne, Aix-en-Provence. Trouvez votre ville et appelez le 24h/7j.`,
   alternates: {
     canonical: '/zones-dintervention/',
   },
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
 export default function ZonesDinterventionPage() {
   const villes = getAllVilles();
   const tier1 = getTier1Villes().sort((a, b) => b.population - a.population);
-  const seyne = getVilleBySlug('la-seyne-sur-mer');
+  const marseille = getVilleBySlug('marseille');
 
   const villesData = villes.map((v) => ({
     ville: v.ville,
@@ -40,22 +40,22 @@ export default function ZonesDinterventionPage() {
           ]}
         />
 
-        <h1 className={styles.title}>Zones d&apos;intervention dans le Var (83)</h1>
+        <h1 className={styles.title}>Zones d&apos;intervention dans les Bouches-du-Rhône (13)</h1>
         <p className={styles.lead}>
           Nous déployons des équipes sur <strong style={{ color: 'var(--white)' }}>l&apos;ensemble du département</strong> :
-          de Toulon à Draguignan, du littoral aux villages de l&apos;arrière-pays. Saisissez votre commune ci-dessous pour
+          de Marseille à Arles, du littoral aux communes de l&apos;arrière-pays. Saisissez votre commune ci-dessous pour
           accéder à la page dédiée (tarifs locaux, délais, FAQ).
         </p>
 
-        {seyne && (
-          <section className={styles.highlight} aria-labelledby="seyne-title">
-            <h2 id="seyne-title">Debouchage à La Seyne-sur-Mer</h2>
+        {marseille && (
+          <section className={styles.highlight} aria-labelledby="marseille-title">
+            <h2 id="marseille-title">Debouchage à Marseille</h2>
             <p>
-              La Seyne-sur-Mer ({seyne.code_postal}) — plus de 64&nbsp;000 habitants — fait partie de nos zones
+              Marseille ({marseille.code_postal}) — plus de 873&nbsp;000 habitants — fait partie de nos zones
               prioritaires. Fil d&apos;ariane : Accueil → Zones d&apos;intervention → page ville.
             </p>
-            <Link href="/debouchage-la-seyne-sur-mer/">
-              Voir la page debouchage La Seyne-sur-Mer →
+            <Link href="/debouchage-marseille/">
+              Voir la page debouchage Marseille →
             </Link>
           </section>
         )}
@@ -75,7 +75,7 @@ export default function ZonesDinterventionPage() {
         </div>
 
         <p className={styles.note}>
-          Toutes les communes du Var sont couvertes. Si la vôtre n&apos;apparaît pas dans la liste rapide, utilisez la
+          Toutes les communes des Bouches-du-Rhône sont couvertes. Si la vôtre n&apos;apparaît pas dans la liste rapide, utilisez la
           recherche ou consultez le{' '}
           <Link href="/sitemap.xml">plan du site</Link>.
         </p>

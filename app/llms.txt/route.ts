@@ -8,16 +8,16 @@ export async function GET() {
   const services = getAllServices();
 
   const content = `# ${COMPANY_NAME}
-> Entreprise de debouchage et plomberie dans le Var (83), disponible 24h/7j.
+> Entreprise de debouchage et plomberie dans les Bouches-du-Rhône (13), disponible 24h/7j.
 
 ## À propos
-${COMPANY_NAME} est une entreprise spécialisée dans le debouchage de canalisations, WC, éviers, douches et égouts. Basée dans le Var, nous intervenons à Toulon et dans les communes environnantes. Depuis 19 ans, nous offrons un service rapide avec une intervention rapide, des devis gratuits et des prix fixes annoncés avant chaque intervention. Note : 4.9/5 sur 489 avis.
+${COMPANY_NAME} est une entreprise spécialisée dans le debouchage de canalisations, WC, éviers, douches et égouts. Basée dans les Bouches-du-Rhône, nous intervenons à Aubagne, Marignane et dans les communes environnantes. Depuis 19 ans, nous offrons un service rapide avec une intervention rapide, des devis gratuits et des prix fixes annoncés avant chaque intervention. Note : 4.9/5 sur 489 avis.
 
 ## Services
 ${services.map((s) => `- ${s.label}: ${s.description}`).join('\n')}
 
 ## Zone d'intervention
-Département du Var (83). Principales villes desservies :
+Département des Bouches-du-Rhône (13). Principales villes desservies :
 ${villes.map((v) => `- ${v.ville} (${v.code_postal})`).join('\n')}
 
 ## Contact

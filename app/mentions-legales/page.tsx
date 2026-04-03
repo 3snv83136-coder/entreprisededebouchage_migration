@@ -3,8 +3,8 @@ import { COMPANY_NAME, PHONE } from '@/lib/config';
 import styles from './page.module.css';
 
 export const metadata: Metadata = {
-  title: 'Mentions légales — Entreprise de Débouchage Var',
-  description: `Mentions légales de ${COMPANY_NAME}. SIRET, activité débouchage assainissement Var (83), hébergeur Vercel, RGPD.`,
+  title: 'Mentions légales — Entreprise de Débouchage Bouches-du-Rhône',
+  description: `Mentions légales de ${COMPANY_NAME}. SIRET, activité débouchage assainissement Bouches-du-Rhône (13), hébergeur Vercel, RGPD.`,
   robots: { index: false, follow: true },
 };
 
@@ -19,8 +19,8 @@ export default function MentionsLegales() {
           <p>
             <strong>{COMPANY_NAME}</strong><br />
             Entreprise individuelle de debouchage et plomberie<br />
-            Entreprise en activité depuis 2005 dans le Var (83)<br />
-            Siège social : Toulon (83000), Var, France<br />
+            Entreprise en activité depuis 2005 dans les Bouches-du-Rhône (13)<br />
+            Siège social : Aubagne (13400), Bouches-du-Rhône, France<br />
             Téléphone : {PHONE}<br />
             Email : contact@entreprisededebouchage.com<br />
             SIRET : À renseigner avant mise en ligne<br />
@@ -33,7 +33,7 @@ export default function MentionsLegales() {
           <p>
             Activité : Débouchage et assainissement de canalisations<br />
             Code APE / NAF : 3700Z (collecte et traitement des eaux usées)<br />
-            Zone d&apos;intervention : Département du Var (83), 153 communes<br />
+            Zone d&apos;intervention : Département des Bouches-du-Rhône (13), 119 communes<br />
             Certification : Techniciens formés aux techniques de débouchage et d&apos;hydrocurage
           </p>
         </section>
@@ -81,7 +81,7 @@ export default function MentionsLegales() {
         <section className={styles.section}>
           <h2>Tarification</h2>
           <p>
-            Les tarifs affichés sur ce site (99€, 199€, 110€) sont les prix minimum par type
+            Les tarifs affichés sur ce site (110€, 249€, 180€) sont les prix minimum par type
             d&apos;intervention standard. Un devis gratuit et définitif est systématiquement
             communiqué avant toute intervention.
           </p>

@@ -5,9 +5,9 @@ import { PHONE, PHONE_RAW, COMPANY_NAME, BASE_URL } from '@/lib/config';
 import styles from './page.module.css';
 
 export const metadata: Metadata = {
-  title: 'À propos — Entreprise de débouchage Var depuis 2005',
+  title: 'À propos — Entreprise de débouchage Bouches-du-Rhône depuis 2005',
   description:
-    'Entreprise de débouchage dans le Var depuis 19 ans. Techniciens qualifiés, intervention 24h/7j sur 153 communes. 489 avis 4.9/5.',
+    'Entreprise de débouchage dans les Bouches-du-Rhône depuis 19 ans. Techniciens qualifiés, intervention 24h/7j sur 119 communes. 489 avis 4.9/5.',
   alternates: { canonical: `${BASE_URL}/a-propos/` },
   openGraph: {
     title: `À propos — ${COMPANY_NAME}`,
@@ -21,19 +21,19 @@ const jsonLd = {
   name: COMPANY_NAME,
   foundingDate: '2005',
   description:
-    'Entreprise de débouchage spécialisée dans le Var (83) depuis 2005. Intervention sur 153 communes, disponible 24h/7j. Canalisations, WC, fosses septiques, égouts.',
+    'Entreprise de débouchage spécialisée dans les Bouches-du-Rhône (13) depuis 2005. Intervention sur 119 communes, disponible 24h/7j. Canalisations, WC, fosses septiques, égouts.',
   url: BASE_URL,
   telephone: '0627699134',
   areaServed: {
     '@type': 'AdministrativeArea',
-    name: 'Var',
+    name: 'Bouches-du-Rhône',
     containsPlace: [
-      { '@type': 'City', name: 'Toulon' },
-      { '@type': 'City', name: 'Hyères' },
-      { '@type': 'City', name: 'La Seyne-sur-Mer' },
-      { '@type': 'City', name: 'Fréjus' },
-      { '@type': 'City', name: 'Draguignan' },
-      { '@type': 'City', name: 'Saint-Raphaël' },
+      { '@type': 'City', name: 'Marseille' },
+      { '@type': 'City', name: 'Aix-en-Provence' },
+      { '@type': 'City', name: 'Aubagne' },
+      { '@type': 'City', name: 'Marignane' },
+      { '@type': 'City', name: 'La Ciotat' },
+      { '@type': 'City', name: 'Martigues' },
     ],
   },
   aggregateRating: {
@@ -56,24 +56,24 @@ const jsonLd = {
 };
 
 const VILLES_PRINCIPALES = [
-  { nom: 'Toulon', slug: 'toulon', cp: '83000' },
-  { nom: 'Hyères', slug: 'hyeres', cp: '83400' },
-  { nom: 'La Seyne-sur-Mer', slug: 'la-seyne-sur-mer', cp: '83500' },
-  { nom: 'Fréjus', slug: 'frejus', cp: '83600' },
-  { nom: 'Draguignan', slug: 'draguignan', cp: '83300' },
-  { nom: 'Saint-Raphaël', slug: 'saint-raphael', cp: '83700' },
-  { nom: 'Six-Fours-les-Plages', slug: 'six-fours-les-plages', cp: '83140' },
-  { nom: 'La Garde', slug: 'la-garde', cp: '83130' },
-  { nom: 'Ollioules', slug: 'ollioules', cp: '83190' },
-  { nom: 'Bandol', slug: 'bandol', cp: '83150' },
-  { nom: 'Sainte-Maxime', slug: 'sainte-maxime', cp: '83120' },
-  { nom: 'Brignoles', slug: 'brignoles', cp: '83170' },
+  { nom: 'Marseille', slug: 'marseille', cp: '13000' },
+  { nom: 'Aix-en-Provence', slug: 'aix-en-provence', cp: '13100' },
+  { nom: 'Aubagne', slug: 'aubagne', cp: '13400' },
+  { nom: 'Marignane', slug: 'marignane', cp: '13700' },
+  { nom: 'La Ciotat', slug: 'la-ciotat', cp: '13600' },
+  { nom: 'Martigues', slug: 'martigues', cp: '13500' },
+  { nom: 'Salon-de-Provence', slug: 'salon-de-provence', cp: '13300' },
+  { nom: 'Istres', slug: 'istres', cp: '13800' },
+  { nom: 'Vitrolles', slug: 'vitrolles', cp: '13127' },
+  { nom: 'Arles', slug: 'arles', cp: '13200' },
+  { nom: 'Gardanne', slug: 'gardanne', cp: '13120' },
+  { nom: 'Allauch', slug: 'allauch', cp: '13190' },
 ];
 
 const STATS = [
   { value: '2005', label: 'Année de création', sub: 'Plus de 19 ans d\'expérience' },
   { value: '489', label: 'Avis clients', sub: 'Note moyenne 4.9/5' },
-  { value: '153', label: 'Communes couvertes', sub: 'Tout le Var (83)' },
+  { value: '119', label: 'Communes couvertes', sub: 'Toutes les Bouches-du-Rhône (13)' },
   { value: '24/7', label: 'Disponibilite', sub: 'En zone principale' },
 ];
 
@@ -105,13 +105,13 @@ export default function AProposPage() {
 
           {/* HERO */}
           <header className={styles.hero}>
-            <span className={styles.badge}>Depuis 2005 dans le Var</span>
+            <span className={styles.badge}>Depuis 2005 dans les Bouches-du-Rhône</span>
             <h1 className={styles.title}>
-              À propos — Votre spécialiste débouchage dans le Var depuis 19 ans
+              À propos — Votre spécialiste débouchage dans les Bouches-du-Rhône depuis 19 ans
             </h1>
             <p className={styles.lead}>
-              Fondée en 2005 à Toulon, notre entreprise intervient sur l&apos;ensemble du{' '}
-              <strong>Var (83)</strong> pour tout type de bouchon : canalisation, WC, fosse septique,
+              Fondée en 2005 à Aubagne, notre entreprise intervient sur l&apos;ensemble des{' '}
+              <strong>Bouches-du-Rhône (13)</strong> pour tout type de bouchon : canalisation, WC, fosse septique,
               égout. En 19 ans d&apos;activité, nous avons bâti notre réputation sur la réactivité,
               la transparence des prix et la qualité du travail.
             </p>
@@ -139,7 +139,7 @@ export default function AProposPage() {
               <div className={styles.colText}>
                 <p>
                   Depuis 2005, nos techniciens traitent des centaines d&apos;interventions par an
-                  dans le Var. Cette expérience concrète — pas seulement des certifications — fait
+                  dans les Bouches-du-Rhône. Cette expérience concrète — pas seulement des certifications — fait
                   la différence face aux situations complexes : canalisations vétustes, fosses
                   hors norme, racines envahissantes.
                 </p>
@@ -150,8 +150,8 @@ export default function AProposPage() {
                 </p>
                 <p>
                   Le délai moyen d&apos;intervention est inférieur à <strong>1 heure</strong> sur
-                  Toulon, Hyères, La Seyne-sur-Mer et les villes du littoral. Partout ailleurs
-                  dans le Var, nous visons moins de 2 heures.
+                  Aubagne, Marignane, Marseille et les villes de l&apos;agglomération. Partout ailleurs
+                  dans les Bouches-du-Rhône, nous visons moins de 2 heures.
                 </p>
               </div>
               <div className={styles.colHighlight}>
@@ -170,10 +170,10 @@ export default function AProposPage() {
           {/* ZONE */}
           <section className={styles.section} aria-labelledby="zone-title">
             <h2 id="zone-title" className={styles.sectionTitle}>
-              153 communes couvertes dans le Var
+              119 communes couvertes dans les Bouches-du-Rhône
             </h2>
             <p className={styles.sectionLead}>
-              De Toulon à Draguignan, du littoral varois à l&apos;arrière-pays, nous couvrons
+              De Marseille à Arles, du littoral à l&apos;arrière-pays, nous couvrons
               l&apos;intégralité du département. Voici les principales agglomérations :
             </p>
             <ul className={styles.villesList}>

@@ -6,8 +6,8 @@ import { getAllServices } from '@/lib/data/services';
 import styles from './page.module.css';
 
 export const metadata: Metadata = {
-  title: `Tarifs débouchage Var — ${COMPANY_NAME}`,
-  description: `3 tarifs fixes debouchage dans le Var (83) : 99€, 110€, 199€. Devis gratuit, intervention 24h/7j. Pas de frais caches.`,
+  title: `Tarifs débouchage Bouches-du-Rhône — ${COMPANY_NAME}`,
+  description: `3 tarifs fixes debouchage dans les Bouches-du-Rhône (13) : 110€, 180€, 249€. Devis gratuit, intervention 24h/7j. Pas de frais caches.`,
   alternates: {
     canonical: '/nos-tarifs/',
   },
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   },
 };
 
-const TARIFS_FIXES = { simple: '99 €', camera: '110 €', hydro: '199 €' };
+const TARIFS_FIXES = { simple: '110 €', camera: '180 €', hydro: '249 €' };
 
 const pricingData: Record<string, { tarif: string; note: string }> = {
   'debouchage-evier-lavabo':         { tarif: TARIFS_FIXES.simple, note: 'Siphon + canalisation' },
@@ -58,9 +58,9 @@ export default function NosTarifsPage() {
           ]}
         />
 
-        <h1 className={styles.title}>Tarifs fixes debouchage dans le Var</h1>
+        <h1 className={styles.title}>Tarifs fixes debouchage dans les Bouches-du-Rhône</h1>
         <p className={styles.lead}>
-          3 tarifs fixes, sans mauvaise surprise : <strong style={{ color: 'var(--orange)' }}>99 € · 110 € · 199 €</strong>.
+          3 tarifs fixes, sans mauvaise surprise : <strong style={{ color: 'var(--orange)' }}>110 € · 180 € · 249 €</strong>.
           Pas de supplement cache.{' '}
           <strong style={{ color: 'var(--white)' }}>Devis gratuit</strong> avant tout travail.
         </p>
@@ -103,7 +103,7 @@ export default function NosTarifsPage() {
         <section className={styles.mentions}>
           <h2>Ce qui est inclus dans chaque intervention</h2>
           <ul>
-            <li>Déplacement dans le Var (83) — inclus</li>
+            <li>Déplacement dans les Bouches-du-Rhône (13) — inclus</li>
             <li>Diagnostic initial — inclus</li>
             <li>Main d&apos;œuvre — inclus</li>
             <li>Rapport d&apos;intervention — inclus</li>

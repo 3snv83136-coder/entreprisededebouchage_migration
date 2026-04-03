@@ -31,7 +31,7 @@ export default async function Home() {
         <div className={styles.heroBg} />
         <Image
           src="/images/hero.jpg"
-          alt="Technicien debouchage Var"
+          alt="Technicien debouchage Bouches-du-Rhône"
           fill
           className={styles.heroPhoto}
           priority
@@ -44,11 +44,11 @@ export default async function Home() {
           <div className={styles.heroText}>
             <div className={styles.badge}>
               <span className={styles.badgeDot} />
-              Disponible immediatement — Var (83)
+              Disponible immediatement — Bouches-du-Rhône (13)
             </div>
             <h1 className={styles.title}>
               Debouchage express<br />
-              <span className={styles.titleAccent}>dans le Var 24h/7j</span>
+              <span className={styles.titleAccent}>dans les Bouches-du-Rhône 24h/7j</span>
             </h1>
             <p className={styles.sub}>
               Intervention rapide. Prix fixe transparent
@@ -70,7 +70,7 @@ export default async function Home() {
           <div className={styles.bentoGrid}>
             <div className={`${styles.bentoCard} ${styles.bentoCentered}`}>
               <div className={styles.bentoBig}>3 prix fixes</div>
-              <div className={styles.bentoLabel}>99&euro; &middot; 110&euro; &middot; 199&euro;</div>
+              <div className={styles.bentoLabel}>110&euro; &middot; 180&euro; &middot; 249&euro;</div>
             </div>
             <div className={`${styles.bentoCard} ${styles.bentoCardGreen} ${styles.bentoCentered}`}>
               <div className={styles.bentoBig}>Prise en charge par votre assurance</div>
@@ -79,7 +79,7 @@ export default async function Home() {
               <div className={styles.bentoIcon}>&#9889;</div>
               <div>
                 <div className={styles.bentoValue}>Intervention rapide</div>
-                <div className={styles.bentoLabel}>Partout dans le Var, de jour comme de nuit</div>
+                <div className={styles.bentoLabel}>Partout dans les Bouches-du-Rhône, de jour comme de nuit</div>
               </div>
             </div>
           </div>
@@ -91,18 +91,18 @@ export default async function Home() {
             <div className={styles.pricingCard} data-callback>
               <h3 className={styles.pricingTitle}>Debouchage Manuel</h3>
               <p className={styles.pricingDesc}>Evier, WC, Douche</p>
-              <div className={styles.pricingPrice}>99<span>&euro;</span></div>
+              <div className={styles.pricingPrice}>110<span>&euro;</span></div>
             </div>
             <div className={`${styles.pricingCard} ${styles.pricingCardPopular}`} data-callback>
               <div className={styles.pricingBadge}>Le + demande</div>
               <h3 className={styles.pricingTitle}>Haute Pression</h3>
               <p className={styles.pricingDesc}>Hydrocurage technique</p>
-              <div className={styles.pricingPrice}>199<span>&euro;</span></div>
+              <div className={styles.pricingPrice}>249<span>&euro;</span></div>
             </div>
             <div className={styles.pricingCard} data-callback>
               <h3 className={styles.pricingTitle}>Inspection Camera</h3>
               <p className={styles.pricingDesc}>Diagnostic video complet</p>
-              <div className={styles.pricingPrice}>110<span>&euro;</span></div>
+              <div className={styles.pricingPrice}>180<span>&euro;</span></div>
             </div>
           </div>
           <p className={styles.pricingNote}>Deplacement inclus &amp; Devis gratuit</p>
@@ -142,7 +142,7 @@ export default async function Home() {
               <p className="section-desc">Nous utilisons les dernieres technologies d&apos;hydrocurage et d&apos;inspection video pour garantir un resultat durable.</p>
             </div>
             <div className={styles.priceTag}>
-              99&euro; &middot; 110&euro; &middot; 199&euro;
+              110&euro; &middot; 180&euro; &middot; 249&euro;
             </div>
           </div>
           <div className={styles.serviceGrid}>
@@ -173,11 +173,11 @@ export default async function Home() {
           </div>
           <div className={styles.realisationsGrid}>
             {realisations.slice(0, 3).length > 0 ? realisations.slice(0, 3).map((r) => (
-              <Link key={r.slug} href={`/realisations/${r.slug}/`} className={styles.realisationCard}>
+              <Link key={r.slug} href={`/realisations/${r.slug}/`} className={styles.realisationCard} style={r.photo_apres_url ? { backgroundImage: `url(${r.photo_apres_url})`, backgroundSize: 'cover', backgroundPosition: 'center' } : undefined}>
                 <div className={styles.realisationOverlay} />
                 <div className={styles.realisationContent}>
                   <div className={styles.realisationCity}>{r.ville}</div>
-                  <div className={styles.realisationTitle}>{r.type}</div>
+                  <div className={styles.realisationTitle}>{r.titre || r.type}</div>
                   {r.duree && <div className={styles.realisationMeta}>{r.duree}</div>}
                 </div>
               </Link>
@@ -186,21 +186,21 @@ export default async function Home() {
                 <div className={styles.realisationCard}>
                   <div className={styles.realisationOverlay} />
                   <div className={styles.realisationContent}>
-                    <div className={styles.realisationCity}>Toulon</div>
+                    <div className={styles.realisationCity}>Aubagne</div>
                     <div className={styles.realisationTitle}>Debouchage par hydrocurage</div>
                   </div>
                 </div>
                 <div className={styles.realisationCard}>
                   <div className={styles.realisationOverlay} />
                   <div className={styles.realisationContent}>
-                    <div className={styles.realisationCity}>Frejus</div>
+                    <div className={styles.realisationCity}>Marseille</div>
                     <div className={styles.realisationTitle}>Diagnostic camera endoscopique</div>
                   </div>
                 </div>
                 <div className={styles.realisationCard}>
                   <div className={styles.realisationOverlay} />
                   <div className={styles.realisationContent}>
-                    <div className={styles.realisationCity}>Hyeres</div>
+                    <div className={styles.realisationCity}>Marignane</div>
                     <div className={styles.realisationTitle}>Remise en conformite reseau</div>
                   </div>
                 </div>
@@ -234,14 +234,14 @@ export default async function Home() {
       {/* ═══ VILLES ═══ */}
       <section className={styles.section}>
         <div className="container">
-          <div className="section-label">153 communes couvertes</div>
-          <h2 className={styles.sectionTitle}>Toutes les villes du Var</h2>
+          <div className="section-label">119 communes couvertes</div>
+          <h2 className={styles.sectionTitle}>Toutes les villes des Bouches-du-Rhône</h2>
           <p className="section-desc" style={{ marginBottom: '24px' }}>
-            On intervient dans les 153 communes du departement. Trouvez la votre :
+            On intervient dans les 119 communes du departement. Trouvez la votre :
           </p>
           <VilleSearchInline
             villes={villesData}
-            placeholder="Rechercher parmi 153 communes..."
+            placeholder="Rechercher parmi 119 communes..."
             topCount={6}
           />
         </div>
