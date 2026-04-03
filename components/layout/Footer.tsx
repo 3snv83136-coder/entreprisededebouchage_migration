@@ -20,9 +20,9 @@ export default function Footer() {
       <div className={styles.inner}>
         {/* Col 1 — Marque */}
         <div className={styles.col}>
-          <div className={styles.brand}>Debouchage<span>Pro</span></div>
+          <div className={styles.brand}>Entreprise de <span>Debouchage</span></div>
           <p className={styles.desc}>
-            Entreprise de debouchage dans le Var depuis 19 ans. Intervention rapide 24h/7j sur les 153 communes du département.
+            Entreprise de debouchage dans les Bouches-du-Rhône depuis 19 ans. Intervention rapide 24h/7j sur les 119 communes du département.
           </p>
           <a href={`tel:${PHONE_RAW}`} className={styles.phone}>
             Appeler maintenant
@@ -62,7 +62,7 @@ export default function Footer() {
 
       <div className={styles.bottom}>
         <p>
-          © {new Date().getFullYear()} {COMPANY_NAME} — Var (83) ·{' '}
+          © {new Date().getFullYear()} {COMPANY_NAME} — Bouches-du-Rhône (13) ·{' '}
           <Link href="/">entreprisededebouchage.com</Link> ·{' '}
           <Link href="/a-propos/">À propos</Link> ·{' '}
           <Link href="/blog/">Blog</Link> ·{' '}

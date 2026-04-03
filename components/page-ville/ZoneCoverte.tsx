@@ -43,7 +43,7 @@ export default function ZoneCoverte({ ville }: Props) {
               <span className={styles.mapIcon}>🗺️</span>
               <p>
                 Zone d&apos;intervention<br />
-                <strong>{ville.ville} &amp; Var</strong>
+                <strong>{ville.ville} &amp; Bouches-du-Rhône</strong>
               </p>
             </div>
             <div className={styles.pulse} />

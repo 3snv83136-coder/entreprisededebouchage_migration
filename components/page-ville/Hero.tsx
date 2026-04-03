@@ -13,7 +13,7 @@ export default function Hero({ ville }: Props) {
       <div className={styles.bg} />
       <Image
         src="/images/hero.jpg"
-        alt="Technicien debouchage Var"
+        alt="Technicien debouchage Bouches-du-Rhône"
         fill
         className={styles.bgPhoto}
         priority
@@ -29,7 +29,7 @@ export default function Hero({ ville }: Props) {
           {ville.code_postal}
         </h1>
         <p className={styles.sub}>
-          Intervention rapide sur {ville.ville} et le Var.
+          Intervention rapide sur {ville.ville} et les Bouches-du-Rhône.
           Technicien qualifie, devis gratuit, garanti sans surprise.
         </p>
         <div className={styles.actions}>

@@ -69,7 +69,7 @@ export default function ServicePageContent({ service, faqs, content }: Props) {
         <div className={styles.heroInner}>
           <div className={styles.badge}>{service.icon} Service spécialisé</div>
           <h1 className={styles.title}>{service.label}</h1>
-          <p className={styles.sub}>dans le Var — Intervention rapide 24h/7j</p>
+          <p className={styles.sub}>dans les Bouches-du-Rhône — Intervention rapide 24h/7j</p>
           <a href={`tel:${PHONE_RAW}`} className="btn-primary">
             Appeler maintenant
           </a>
@@ -80,7 +80,7 @@ export default function ServicePageContent({ service, faqs, content }: Props) {
       <section className={styles.section}>
         <div className="container">
           <div className="section-label">Présentation</div>
-          <h2 className="section-title">{service.label} dans le Var</h2>
+          <h2 className="section-title">{service.label} dans les Bouches-du-Rhône</h2>
           <div className={styles.textBlock}>
             <p>{content.intro}</p>
           </div>
@@ -181,7 +181,7 @@ export default function ServicePageContent({ service, faqs, content }: Props) {
           <div className="section-label">Nos zones</div>
           <h2 className="section-title">{service.label} — Villes desservies</h2>
           <p className="section-desc" style={{ marginBottom: '24px' }}>
-            On intervient dans les 153 communes du Var. Trouvez la vôtre :
+            On intervient dans les 119 communes des Bouches-du-Rhône. Trouvez la vôtre :
           </p>
           <VilleSearchInline
             villes={villes.map((v) => ({ ville: v.ville, slug: v.slug, code_postal: v.code_postal }))}
