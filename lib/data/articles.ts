@@ -2,25 +2,25 @@ import type { Article } from '@/lib/types/blog';
 
 const articles: Article[] = [
   {
-    slug: 'calcaire-var-canalisations',
-    titre: 'Pourquoi le calcaire du Var bouche vos canalisations',
+    slug: 'calcaire-bouches-du-rhone-canalisations',
+    titre: 'Pourquoi le calcaire des Bouches-du-Rhône bouche vos canalisations',
     description:
-      'Le Var (83) est l\'un des départements les plus calcaires de France. Découvrez pourquoi vos canalisations s\'obstruent et comment l\'éviter.',
+      'Les Bouches-du-Rhône (13) sont l\'un des départements les plus calcaires de France. Découvrez pourquoi vos canalisations s\'obstruent et comment l\'éviter.',
     date: '2026-01-15',
     auteur: 'Technicien en assainissement — 19 ans d\'expérience',
     categorieSlug: 'conseils',
     tempsLecture: 5,
-    tags: ['calcaire', 'Var', 'canalisations', 'prévention'],
+    tags: ['calcaire', 'Bouches-du-Rhône', 'canalisations', 'prévention'],
     contenu: `
-<p>Le Var est l'un des départements de France où l'eau du robinet affiche les niveaux de dureté les plus élevés. Avec un titre hydrotimétrique (TH) oscillant entre <strong>30 et 40 degrés français (°f)</strong> selon les communes, l'eau varoise est classée « très dure ». Pour comparaison, une eau douce se situe en dessous de 15°f. Cette réalité géologique a des conséquences directes sur la durée de vie de vos canalisations.</p>
+<p>Les Bouches-du-Rhône sont l'un des départements de France où l'eau du robinet affiche les niveaux de dureté les plus élevés. Avec un titre hydrotimétrique (TH) oscillant entre <strong>25 et 35 degrés français (°f)</strong> selon les communes, l'eau des Bouches-du-Rhône est classée « très dure ». Pour comparaison, une eau douce se situe en dessous de 15°f. Cette réalité géologique a des conséquences directes sur la durée de vie de vos canalisations.</p>
 
 <h2>Qu'est-ce que la dureté de l'eau et pourquoi ça pose problème ?</h2>
 <p>La dureté de l'eau est liée à sa teneur en ions calcium (Ca²⁺) et magnésium (Mg²⁺), dissous dans les nappes phréatiques au contact des roches calcaires et dolomitiques qui constituent le sous-sol provençal. Lorsque cette eau est chauffée ou circule lentement dans des tuyaux, ces sels minéraux précipitent et se déposent en couches successives sur les parois : c'est le tartre, ou entartrage.</p>
-<p>Le phénomène est progressif mais inexorable. Une canalisation de 50 mm de diamètre peut perdre jusqu'à 30 % de sa capacité de passage en seulement 5 ans si elle n'est pas entretenue dans une zone à forte dureté comme le Var. Le résultat ? Des débits qui chutent, des bouchons qui se forment plus facilement, et des odeurs qui apparaissent.</p>
+<p>Le phénomène est progressif mais inexorable. Une canalisation de 50 mm de diamètre peut perdre jusqu'à 30 % de sa capacité de passage en seulement 5 ans si elle n'est pas entretenue dans une zone à forte dureté comme les Bouches-du-Rhône. Le résultat ? Des débits qui chutent, des bouchons qui se forment plus facilement, et des odeurs qui apparaissent.</p>
 
-<h2>Les zones du Var les plus touchées</h2>
-<p>Toutes les communes du Var ne sont pas égales face au calcaire. Les zones urbaines alimentées par les réseaux collectifs de Toulon Provence Méditerranée affichent des TH autour de 35°f, ce qui est très élevé. Hyères, La Garde, La Seyne-sur-Mer et Ollioules sont régulièrement citées pour la sévérité de leur eau. Le secteur de Draguignan et le Haut-Var (Brignoles, Saint-Maximin-la-Sainte-Baume) ne sont pas épargnés non plus.</p>
-<p>À l'inverse, les zones proches des massifs granitiques des Maures ou du littoral des Îles d'Or peuvent bénéficier d'une eau légèrement plus douce, mais elles restent minoritaires dans le département.</p>
+<h2>Les zones des Bouches-du-Rhône les plus touchées</h2>
+<p>Toutes les communes des Bouches-du-Rhône ne sont pas égales face au calcaire. Les zones urbaines alimentées par les réseaux collectifs de la Métropole Aix-Marseille-Provence affichent des TH autour de 30°f, ce qui est très élevé. Aubagne, Marseille, Marignane et Vitrolles sont régulièrement citées pour la sévérité de leur eau. Le secteur d'Aix-en-Provence et le nord du département (Salon-de-Provence, Arles) ne sont pas épargnés non plus.</p>
+<p>À l'inverse, les zones proches des massifs calcaires des Calanques ou du littoral méditerranéen peuvent bénéficier d'une eau légèrement plus douce, mais elles restent minoritaires dans le département.</p>
 
 <h2>Comment le calcaire bouche concrètement vos canalisations</h2>
 <p>Le tartre ne se dépose pas uniformément. Il s'accumule préférentiellement :</p>
@@ -37,14 +37,14 @@ const articles: Article[] = [
 <p>L'utilisation mensuelle d'un détartrant acide (à base d'acide citrique ou d'acide chlorhydrique dilué) dans les éviers et lavabos aide à dissoudre les dépôts récents avant qu'ils ne durcissent. L'acide citrique est la solution la plus écologique : 3 cuillères à soupe dans 500 ml d'eau chaude, à laisser agir 30 minutes avant de rincer abondamment.</p>
 
 <h3>L'adoucisseur d'eau</h3>
-<p>C'est la solution la plus efficace sur le long terme. Un adoucisseur à résine échangeuse d'ions remplace les ions calcium et magnésium par des ions sodium, ce qui rend l'eau « douce ». Pour une maison de 4 personnes dans le Var, comptez entre 600 et 1 200 € pour l'installation, plus environ 50 à 100 € par an en sel de régénération. Le retour sur investissement est réel : appareils électroménagers protégés, moins de produits d'entretien nécessaires, et canalisations préservées.</p>
+<p>C'est la solution la plus efficace sur le long terme. Un adoucisseur à résine échangeuse d'ions remplace les ions calcium et magnésium par des ions sodium, ce qui rend l'eau « douce ». Pour une maison de 4 personnes dans les Bouches-du-Rhône, comptez entre 600 et 1 200 € pour l'installation, plus environ 50 à 100 € par an en sel de régénération. Le retour sur investissement est réel : appareils électroménagers protégés, moins de produits d'entretien nécessaires, et canalisations préservées.</p>
 
 <h3>L'entretien annuel par un professionnel</h3>
 <p>Même avec un adoucisseur, un entretien préventif tous les 1 à 2 ans reste recommandé. Un hydrocurage haute pression permet de désincruster les dépôts de tartre accumulés, d'éliminer les graisses et de restituer au réseau intérieur sa pleine capacité. C'est moins coûteux qu'une intervention d'urgence un dimanche soir.</p>
 
 <h2>Quand appeler un professionnel ?</h2>
 <p>Certains signes ne trompent pas : un évier qui évacue de plus en plus lentement, une douche où l'eau stagne, des gargouillis dans les tuyaux après utilisation. Si plusieurs équipements sont touchés simultanément, c'est que le problème se situe en aval, sur les canalisations principales. Dans ce cas, une <a href="/debouchage-canalisation/">intervention professionnelle de débouchage canalisation</a> s'impose, couplée si nécessaire à une <a href="/inspection-camera-canalisation/">inspection caméra</a> pour localiser précisément l'obstruction.</p>
-<p>Notre équipe intervient sur <a href="/debouchage-toulon/">Toulon</a>, <a href="/debouchage-hyeres/">Hyères</a> et l'ensemble du Var 24h/7j. N'attendez pas que la situation se dégrade : un entretien préventif coûte toujours moins cher qu'une urgence.</p>
+<p>Notre équipe intervient sur <a href="/debouchage-aubagne/">Aubagne</a>, <a href="/debouchage-marseille/">Marseille</a> et l'ensemble des Bouches-du-Rhône 24h/7j. N'attendez pas que la situation se dégrade : un entretien préventif coûte toujours moins cher qu'une urgence.</p>
 `,
   },
 
@@ -97,7 +97,7 @@ const articles: Article[] = [
 </ul>
 
 <h2>Appel urgence : ce qu'il faut savoir</h2>
-<p>Notre service de <a href="/debouchage-wc-toilettes/">débouchage WC</a> intervient 7j/7, week-ends et jours fériés inclus, dans tout le Var. En cas d'urgence le dimanche soir, précisez bien la situation au téléphone : présence de débordement, nombre de WC touchés, si d'autres équipements sont atteints. Ces informations permettent au technicien d'arriver avec le matériel adapté et de réduire le temps d'intervention.</p>
+<p>Notre service de <a href="/debouchage-wc-toilettes/">débouchage WC</a> intervient 7j/7, week-ends et jours fériés inclus, dans toutes les Bouches-du-Rhône. En cas d'urgence le dimanche soir, précisez bien la situation au téléphone : présence de débordement, nombre de WC touchés, si d'autres équipements sont atteints. Ces informations permettent au technicien d'arriver avec le matériel adapté et de réduire le temps d'intervention.</p>
 <p>Dans l'attente de l'intervention : laissez le robinet d'arrêt fermé, ne touchez plus à rien, et prévenez vos voisins du dessous si vous êtes en appartement — un débordement peut traverser les planchers.</p>
 `,
   },
@@ -106,18 +106,18 @@ const articles: Article[] = [
     slug: 'inspection-camera-canalisation',
     titre: 'Inspection caméra : comment ça marche et quand la demander ?',
     description:
-      'L\'inspection caméra révèle l\'état réel de vos canalisations. Découvrez le processus, les cas d\'utilisation et le tarif dans le Var.',
+      'L\'inspection caméra révèle l\'état réel de vos canalisations. Découvrez le processus, les cas d\'utilisation et le tarif dans les Bouches-du-Rhône.',
     date: '2026-02-18',
     auteur: 'Technicien en assainissement — 19 ans d\'expérience',
     categorieSlug: 'guide',
     tempsLecture: 5,
-    tags: ['inspection caméra', 'diagnostic', 'canalisations', '110€'],
+    tags: ['inspection caméra', 'diagnostic', 'canalisations', '180€'],
     contenu: `
 <p>Lorsqu'une canalisation pose problème de façon récurrente, il ne suffit plus de déboucher : il faut <strong>comprendre</strong>. L'inspection caméra est l'outil de diagnostic le plus fiable qui existe pour l'état d'un réseau d'assainissement. Voici tout ce qu'il faut savoir avant de la demander.</p>
 
 <h2>Qu'est-ce que l'inspection caméra endoscopique ?</h2>
 <p>L'inspection caméra consiste à introduire une caméra miniaturisée, montée sur un câble poussé ou motorisé (robot autoporteur), directement dans la canalisation à inspecter. La caméra transmet en temps réel des images haute définition à un écran de contrôle. Le technicien enregistre la totalité du passage et note la position kilométrique de chaque anomalie grâce à un compter de distance intégré.</p>
-<p>Les caméras professionnelles utilisées dans le Var sont généralement capables d'inspecter des canalisations de 50 à 300 mm de diamètre, sur des longueurs de 30 à 100 mètres selon le modèle. Les têtes de caméra sont auto-nivelantes et pivotantes à 360°, ce qui permet d'examiner toutes les parois, y compris les zones de raccordement et les coudes.</p>
+<p>Les caméras professionnelles utilisées dans les Bouches-du-Rhône sont généralement capables d'inspecter des canalisations de 50 à 300 mm de diamètre, sur des longueurs de 30 à 100 mètres selon le modèle. Les têtes de caméra sont auto-nivelantes et pivotantes à 360°, ce qui permet d'examiner toutes les parois, y compris les zones de raccordement et les coudes.</p>
 
 <h2>Ce que le technicien observe et analyse</h2>
 <p>Lors d'une inspection, plusieurs éléments sont systématiquement recherchés :</p>
@@ -127,12 +127,12 @@ const articles: Article[] = [
   <li><strong>Dépôts et incrustations :</strong> tartre calcaire, graisses solidifiées, sable ou terre dans les canalisations enterrées.</li>
   <li><strong>Déformations et ovalisations :</strong> la tuyauterie a été écrasée par une charge extérieure (véhicule, terrassement).</li>
   <li><strong>Inversions de pente :</strong> une section de canalisation qui descend au lieu de monter vers l'égout crée une zone de rétention permanente où les matières s'accumulent.</li>
-  <li><strong>Racines pénétrantes :</strong> particulièrement fréquentes dans le Var, où les pins parasols et les cyprès sont omniprésents.</li>
+  <li><strong>Racines pénétrantes :</strong> particulièrement fréquentes dans les Bouches-du-Rhône, où les pins parasols et les cyprès sont omniprésents.</li>
 </ul>
 
 <h2>Les cas où l'inspection caméra est indispensable</h2>
 <h3>Avant l'achat d'un bien immobilier</h3>
-<p>C'est l'usage qui connaît la plus forte croissance. L'inspection caméra pré-achat permet de détecter des pathologies cachées qui ne seraient pas visibles lors d'une visite normale : canalisation principale fissurée, fosse septique proche de la saturation, raccordement à l'égout non conforme. Le coût de l'inspection (110 €) est dérisoire comparé à une réparation de canalisation enterrée qui peut dépasser 3 000 à 8 000 € selon la profondeur et la longueur à traiter.</p>
+<p>C'est l'usage qui connaît la plus forte croissance. L'inspection caméra pré-achat permet de détecter des pathologies cachées qui ne seraient pas visibles lors d'une visite normale : canalisation principale fissurée, fosse septique proche de la saturation, raccordement à l'égout non conforme. Le coût de l'inspection (180 €) est dérisoire comparé à une réparation de canalisation enterrée qui peut dépasser 3 000 à 8 000 € selon la profondeur et la longueur à traiter.</p>
 
 <h3>Bouchons récurrents inexpliqués</h3>
 <p>Si un évier, une douche ou des WC se bouchent régulièrement malgré des débouchages répétés, c'est le signe d'un problème structurel sous-jacent. Un simple hydrocurage traite le symptôme mais pas la cause. L'inspection caméra identifie la cause réelle : déformation de la canalisation créant une zone de rétention, joint ouvert qui capte les racines, dépôt calcaire profond résistant à la pression.</p>
@@ -152,9 +152,9 @@ const articles: Article[] = [
   <li>Un avis technique avec les recommandations de réparation ou d'entretien.</li>
 </ul>
 
-<h2>Tarif dans le Var : 110 €</h2>
-<p>Notre <a href="/inspection-camera-canalisation/">prestation d'inspection caméra</a> est facturée <strong>110 € TTC</strong> pour un réseau standard (maison individuelle, une colonne principale). Ce tarif comprend le déplacement dans le Var, l'inspection, la vidéo et le rapport technique. Pour les réseaux complexes ou les immeubles collectifs, un devis sur mesure est établi après une première évaluation.</p>
-<p>Nous intervenons à <a href="/debouchage-toulon/">Toulon</a>, <a href="/debouchage-hyeres/">Hyères</a> et dans toutes les communes du Var (83).</p>
+<h2>Tarif dans les Bouches-du-Rhône : 180 €</h2>
+<p>Notre <a href="/inspection-camera-canalisation/">prestation d'inspection caméra</a> est facturée <strong>180 € TTC</strong> pour un réseau standard (maison individuelle, une colonne principale). Ce tarif comprend le déplacement dans les Bouches-du-Rhône, l'inspection, la vidéo et le rapport technique. Pour les réseaux complexes ou les immeubles collectifs, un devis sur mesure est établi après une première évaluation.</p>
+<p>Nous intervenons à <a href="/debouchage-aubagne/">Aubagne</a>, <a href="/debouchage-marseille/">Marseille</a> et dans toutes les communes des Bouches-du-Rhône (13).</p>
 `,
   },
 
@@ -187,7 +187,7 @@ const articles: Article[] = [
 <p><strong>L'hydrocurage est indiqué pour :</strong></p>
 <ul>
   <li>Les accumulations de graisses de cuisine, qui forment des bouchons compacts et collants impossible à percer au furet.</li>
-  <li>Les incrustations calcaires profondes, typiques des canalisations varioises.</li>
+  <li>Les incrustations calcaires profondes, typiques des canalisations des Bouches-du-Rhône.</li>
   <li>Les bouchons causés par des racines pénétrantes (la tête rotative les coupe).</li>
   <li>Les canalisations d'eaux usées de grand diamètre (100 mm et plus).</li>
   <li>Les interventions préventives pour entretenir un réseau avant la formation d'un bouchon.</li>
@@ -196,8 +196,8 @@ const articles: Article[] = [
 <h2>Tableau comparatif</h2>
 <p>Voici un récapitulatif des deux techniques pour vous aider à comprendre ce que votre technicien préconisera :</p>
 <ul>
-  <li><strong>Furet :</strong> bouchons cheveux/savon, canalisations 32-100mm, portée 5-30m — tarif indicatif à partir de <strong>99 €</strong></li>
-  <li><strong>Hydrocurage :</strong> bouchons graisse/calcaire/racines, toutes canalisations 50-300mm, portée jusqu'à 100m — tarif indicatif à partir de <strong>199 €</strong></li>
+  <li><strong>Furet :</strong> bouchons cheveux/savon, canalisations 32-100mm, portée 5-30m — tarif indicatif à partir de <strong>110 €</strong></li>
+  <li><strong>Hydrocurage :</strong> bouchons graisse/calcaire/racines, toutes canalisations 50-300mm, portée jusqu'à 100m — tarif indicatif à partir de <strong>249 €</strong></li>
 </ul>
 <p>En termes d'efficacité sur la durée, l'hydrocurage laisse une canalisation significativement plus propre et réduit la fréquence des interventions suivantes. Pour les bouchons persistants ou récurrents, il est toujours recommandé.</p>
 
@@ -207,26 +207,26 @@ const articles: Article[] = [
 <h2>Ce que vous pouvez faire vous-même</h2>
 <p>Pour un bouchon léger dans un lavabo ou une douche, un furet manuel du commerce (15 à 30 €) peut suffire. La technique est simple : introduire le câble dans le siphon, le pousser jusqu'au bouchon, puis le faire tourner dans les deux sens pour accrocher les matières. Tirer lentement en maintenant la rotation.</p>
 <p>Pour tout ce qui est en aval du siphon, dans les canalisations encastrées ou enterrées, le risque d'endommager la tuyauterie avec un furet inadapté est réel. Et sans le matériel professionnel, l'hydrocurage est inaccessible aux particuliers.</p>
-<p>Pour les bouchons sérieux sur votre réseau, notre <a href="/debouchage-canalisation/">service de débouchage canalisation</a> intervient dans tout le Var. Vous pouvez également consulter notre <a href="/nos-tarifs/">grille tarifaire complète</a> pour connaître les prix selon la prestation.</p>
+<p>Pour les bouchons sérieux sur votre réseau, notre <a href="/debouchage-canalisation/">service de débouchage canalisation</a> intervient dans toutes les Bouches-du-Rhône. Vous pouvez également consulter notre <a href="/nos-tarifs/">grille tarifaire complète</a> pour connaître les prix selon la prestation.</p>
 `,
   },
 
   {
-    slug: 'entretien-preventif-canalisations',
-    titre: 'Entretien préventif canalisations Var : fréquence recommandée',
+    slug: 'entretien-preventif-canalisations-bouches-du-rhone',
+    titre: 'Entretien préventif canalisations Bouches-du-Rhône : fréquence recommandée',
     description:
-      'Un entretien régulier évite 80% des urgences. Guide d\'entretien préventif adapté aux canalisations du Var, avec les fréquences recommandées.',
+      'Un entretien régulier évite 80% des urgences. Guide d\'entretien préventif adapté aux canalisations des Bouches-du-Rhône, avec les fréquences recommandées.',
     date: '2026-03-20',
     auteur: 'Technicien en assainissement — 19 ans d\'expérience',
     categorieSlug: 'conseils',
     tempsLecture: 5,
-    tags: ['entretien', 'prévention', 'canalisations', 'Var'],
+    tags: ['entretien', 'prévention', 'canalisations', 'Bouches-du-Rhône'],
     contenu: `
-<p>En 19 ans d'interventions dans le Var, j'ai pu constater une corrélation évidente : les clients qui font appel à nous en urgence sont rarement ceux qui pratiquent un entretien régulier de leurs canalisations. Un WC qui déborde un dimanche soir ou une canalisation bouchée avant les fêtes, c'est dans 80 % des cas un problème qui s'est développé sur des mois, voire des années, sans aucun signe d'alerte.</p>
-<p>Voici le guide d'entretien préventif adapté aux spécificités du réseau varois, avec les fréquences concrètes à respecter selon votre usage.</p>
+<p>En 19 ans d'interventions dans les Bouches-du-Rhône, j'ai pu constater une corrélation évidente : les clients qui font appel à nous en urgence sont rarement ceux qui pratiquent un entretien régulier de leurs canalisations. Un WC qui déborde un dimanche soir ou une canalisation bouchée avant les fêtes, c'est dans 80 % des cas un problème qui s'est développé sur des mois, voire des années, sans aucun signe d'alerte.</p>
+<p>Voici le guide d'entretien préventif adapté aux spécificités du réseau des Bouches-du-Rhône, avec les fréquences concrètes à respecter selon votre usage.</p>
 
-<h2>Pourquoi le Var nécessite un entretien plus rigoureux qu'ailleurs</h2>
-<p>Deux facteurs propres à notre territoire amplifient les risques de bouchons : la <strong>dureté de l'eau</strong> (TH 30-40°f) qui favorise le dépôt de tartre, et le <strong>climat méditerranéen</strong> qui encourage l'utilisation des huiles d'olive et de cuisson dans la cuisine provençale. Ces graisses, combinées au tartre calcaire, forment des bouchons particulièrement résistants. Le réseau de canalisations varois, souvent ancien dans les quartiers historiques de Toulon, Hyères ou Draguignan, supporte moins bien les variations de pression et les nettoyages agressifs.</p>
+<h2>Pourquoi les Bouches-du-Rhône nécessitent un entretien plus rigoureux qu'ailleurs</h2>
+<p>Deux facteurs propres à notre territoire amplifient les risques de bouchons : la <strong>dureté de l'eau</strong> (TH 25-35°f) qui favorise le dépôt de tartre, et le <strong>climat méditerranéen</strong> qui encourage l'utilisation des huiles d'olive et de cuisson dans la cuisine provençale. Ces graisses, combinées au tartre calcaire, forment des bouchons particulièrement résistants. Le réseau de canalisations des Bouches-du-Rhône, souvent ancien dans les quartiers historiques de Marseille, Aubagne ou Aix-en-Provence, supporte moins bien les variations de pression et les nettoyages agressifs.</p>
 
 <h2>Calendrier annuel recommandé</h2>
 <h3>Chaque semaine</h3>
@@ -247,7 +247,7 @@ const articles: Article[] = [
 <p>C'est aussi le moment de vérifier et nettoyer les filtres des siphons amovibles, les crépines d'évier et les bacs à cheveux dans les douches.</p>
 
 <h3>Tous les 2 ans (usage standard)</h3>
-<p>Un hydrocurage préventif professionnel est la pierre angulaire de l'entretien des canalisations dans le Var. Pour une maison individuelle avec usage standard (2 à 4 personnes), tous les 2 ans est le rythme approprié. L'hydrocurage haute pression décape les parois de toute accumulation de tartre, graisse et résidus organiques — des dépôts que les produits ménagers ne peuvent pas atteindre en profondeur.</p>
+<p>Un hydrocurage préventif professionnel est la pierre angulaire de l'entretien des canalisations dans les Bouches-du-Rhône. Pour une maison individuelle avec usage standard (2 à 4 personnes), tous les 2 ans est le rythme approprié. L'hydrocurage haute pression décape les parois de toute accumulation de tartre, graisse et résidus organiques — des dépôts que les produits ménagers ne peuvent pas atteindre en profondeur.</p>
 
 <h3>Tous les ans (usage intensif ou fosse septique)</h3>
 <p>Si vous accueillez régulièrement de nombreuses personnes (location saisonnière, gîte, résidence secondaire fréquentée), si votre maison est ancienne ou si vous êtes raccordé à une fosse septique, l'entretien annuel par un professionnel est fortement recommandé. Pour les fosses septiques, la vidange préventive tous les 3 à 4 ans est obligatoire réglementairement — mais un contrôle du réseau en amont est conseillé chaque année.</p>
@@ -262,8 +262,8 @@ const articles: Article[] = [
 </ul>
 
 <h2>Coût prévention vs urgence : le calcul est vite fait</h2>
-<p>Un entretien préventif par hydrocurage coûte entre 199 et 250 € selon la complexité. Une intervention d'urgence un week-end (déplacement majoré, matériel spécifique, durée prolongée) peut atteindre 350 à 500 €. Sans compter les dégâts éventuels : parquet gonflé, plafond du voisin du dessous, remplacement d'un appareil électroménager touché par le débordement.</p>
-<p>L'entretien préventif n'est pas une dépense, c'est une assurance. Pour programmer un entretien préventif ou obtenir un diagnostic, consultez notre <a href="/nos-prestations/">page de prestations</a> ou <a href="/nos-tarifs/">notre grille tarifaire</a>. Nous intervenons dans tout le Var, de <a href="/debouchage-toulon/">Toulon</a> à <a href="/debouchage-draguignan/">Draguignan</a>.</p>
+<p>Un entretien préventif par hydrocurage coûte entre 249 et 350 € selon la complexité. Une intervention d'urgence un week-end (déplacement majoré, matériel spécifique, durée prolongée) peut atteindre 400 à 600 €. Sans compter les dégâts éventuels : parquet gonflé, plafond du voisin du dessous, remplacement d'un appareil électroménager touché par le débordement.</p>
+<p>L'entretien préventif n'est pas une dépense, c'est une assurance. Pour programmer un entretien préventif ou obtenir un diagnostic, consultez notre <a href="/nos-prestations/">page de prestations</a> ou <a href="/nos-tarifs/">notre grille tarifaire</a>. Nous intervenons dans toutes les Bouches-du-Rhône, de <a href="/debouchage-aubagne/">Aubagne</a> à <a href="/debouchage-aix-en-provence/">Aix-en-Provence</a>.</p>
 `,
   },
 ];

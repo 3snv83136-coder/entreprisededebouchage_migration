@@ -1,7 +1,7 @@
 import { BASE_URL } from '@/lib/config';
 import { getAllVilles, getTier1Villes } from '@/lib/data/villes';
 import { getAllServices } from '@/lib/data/services';
-import { getAllGeoEvierVarSlugs } from '@/lib/data/geo-evier-var';
+import { getAllGeoEvier13Slugs } from '@/lib/data/geo-evier-13';
 
 export const revalidate = 86400;
 
@@ -18,7 +18,7 @@ export async function GET() {
   const villes = getAllVilles();
   const services = getAllServices();
   const tier1 = getTier1Villes();
-  const geoSlugs = getAllGeoEvierVarSlugs();
+  const geoSlugs = getAllGeoEvier13Slugs();
 
   const staticUrls = [
     url(`${BASE_URL}/`, '1.0', 'weekly'),
@@ -39,7 +39,7 @@ export async function GET() {
   );
 
   const geoUrls = geoSlugs.map((slug) =>
-    url(`${BASE_URL}/debouchage-evier-var/${slug}/`, '0.72')
+    url(`${BASE_URL}/debouchage-evier-13/${slug}/`, '0.72')
   );
 
   const villeUrls = villes.map((v) =>

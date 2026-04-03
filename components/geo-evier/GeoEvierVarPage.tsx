@@ -1,9 +1,9 @@
 import Link from 'next/link';
 import {
-  GeoEvierVarPageDef,
-  getGeoEvierVarPage,
-  getRelatedGeoEvierVarSlugs,
-} from '@/lib/data/geo-evier-var';
+  GeoEvier13PageDef,
+  getGeoEvier13Page,
+  getRelatedGeoEvier13Slugs,
+} from '@/lib/data/geo-evier-13';
 import { getVilleBySlug } from '@/lib/data/villes';
 import { getServiceBySlug } from '@/lib/data/services';
 import { PHONE_RAW } from '@/lib/config';
@@ -13,27 +13,27 @@ import UrgenceBanner from '@/components/page-ville/UrgenceBanner';
 import scStyles from '@/components/page-service-city/ServiceCityContent.module.css';
 
 interface Props {
-  page: GeoEvierVarPageDef;
+  page: GeoEvier13PageDef;
 }
 
 export default function GeoEvierVarPage({ page }: Props) {
   const ville = page.villeSlug ? getVilleBySlug(page.villeSlug) : null;
   const service = getServiceBySlug('debouchage-evier-lavabo');
-  const related = getRelatedGeoEvierVarSlugs(page.slug, 6);
-  const villeName = ville?.ville ?? 'Toulon et agglomération';
+  const related = getRelatedGeoEvier13Slugs(page.slug, 6);
+  const villeName = ville?.ville ?? 'Marseille et agglomération';
 
   const pillarServiceCity =
     ville && ville.tier === 1
       ? `/debouchage-evier-lavabo-${ville.slug}/`
       : null;
-  const villePage = ville ? `/debouchage-${ville.slug}/` : '/debouchage-toulon/';
+  const villePage = ville ? `/debouchage-${ville.slug}/` : '/debouchage-marseille/';
 
   return (
     <>
       <section className={scStyles.hero}>
         <div className={scStyles.heroBg} />
         <div className={scStyles.heroInner}>
-          <div className={scStyles.badge}>🍳 Debouchage évier &amp; lavabo — Var</div>
+          <div className={scStyles.badge}>🍳 Debouchage évier &amp; lavabo — Bouches-du-Rhône</div>
           <h1 className={scStyles.title}>
             {page.h1}
           </h1>
@@ -66,7 +66,7 @@ export default function GeoEvierVarPage({ page }: Props) {
       <section className={scStyles.section}>
         <div className="container">
           <div className="section-label">Maillage utile</div>
-          <h2 className="section-title">Pages liées (évier, Toulon &amp; Var)</h2>
+          <h2 className="section-title">Pages liées (évier, Marseille &amp; Bouches-du-Rhône)</h2>
           <div className={scStyles.textBlock}>
             <p>
               {service && (
@@ -75,7 +75,7 @@ export default function GeoEvierVarPage({ page }: Props) {
                   {' · '}
                 </>
               )}
-              <Link href="/debouchage-evier-lavabo-toulon/">Debouchage évier &amp; lavabo à Toulon</Link>
+              <Link href="/debouchage-evier-lavabo-marseille/">Debouchage évier &amp; lavabo à Marseille</Link>
               {' · '}
               <Link href={villePage}>Debouchage à {villeName}</Link>
               {pillarServiceCity && (
@@ -90,10 +90,10 @@ export default function GeoEvierVarPage({ page }: Props) {
           </div>
           <div className={scStyles.villeTags}>
             {related.map((slug) => {
-              const p = getGeoEvierVarPage(slug);
+              const p = getGeoEvier13Page(slug);
               if (!p) return null;
               return (
-                <Link key={slug} href={`/debouchage-evier-var/${slug}/`} className={scStyles.villeTag}>
+                <Link key={slug} href={`/debouchage-evier-13/${slug}/`} className={scStyles.villeTag}>
                   {p.breadcrumbLabel}
                 </Link>
               );

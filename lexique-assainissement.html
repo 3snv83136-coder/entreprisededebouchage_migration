@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lexique Assainissement — Terminologie Complète</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --ink: #1a1612;
+  --ink-2: #3d3630;
+  --ink-3: #7a6e65;
+  --paper: #f5f0e8;
+  --paper-2: #ede7d9;
+  --paper-3: #e0d8c8;
+  --rust: #b84a28;
+  --rust-light: #f0e0d8;
+  --teal: #1a6b5a;
+  --teal-light: #d0ebe5;
+  --amber: #c8820a;
+  --amber-light: #faecd0;
+  --slate: #3a5068;
+  --slate-light: #d8e4f0;
+  --accent: #b84a28;
+  --serif: 'DM Serif Display', Georgia, serif;
+  --mono: 'DM Mono', monospace;
+  --sans: 'DM Sans', sans-serif;
+  --radius: 3px;
+  --shadow: 0 2px 12px rgba(26,22,18,0.12);
+  --shadow-lg: 0 8px 32px rgba(26,22,18,0.16);
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--sans);
+  background: var(--paper);
+  color: var(--ink);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* ── HEADER ──────────────────────────────────────────────── */
+header {
+  background: var(--ink);
+  color: var(--paper);
+  padding: 3rem 2rem 2.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    -45deg,
+    transparent,
+    transparent 40px,
+    rgba(255,255,255,0.015) 40px,
+    rgba(255,255,255,0.015) 41px
+  );
+}
+
+.header-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.header-tag {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--rust);
+  margin-bottom: 0.75rem;
+  display: block;
+}
+
+header h1 {
+  font-family: var(--serif);
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
+  line-height: 1.1;
+  color: var(--paper);
+  margin-bottom: 0.75rem;
+}
+
+header h1 em {
+  font-style: italic;
+  color: var(--rust);
+}
+
+.header-sub {
+  font-size: 0.95rem;
+  color: var(--ink-3);
+  color: rgba(245,240,232,0.55);
+  font-weight: 300;
+  max-width: 480px;
+  line-height: 1.5;
+}
+
+.header-meta {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.meta-pill {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  background: rgba(245,240,232,0.1);
+  border: 1px solid rgba(245,240,232,0.15);
+  color: var(--paper);
+  padding: 0.3rem 0.75rem;
+  border-radius: 2px;
+  letter-spacing: 0.08em;
+}
+
+/* ── CONTROLS ────────────────────────────────────────────── */
+.controls {
+  background: var(--paper-2);
+  border-bottom: 1px solid var(--paper-3);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(26,22,18,0.08);
+}
+
+.controls-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0.9rem 2rem;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.search-wrap {
+  flex: 1;
+  min-width: 200px;
+  position: relative;
+}
+
+.search-icon {
+  position: absolute;
+  left: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--ink-3);
+  font-size: 0.85rem;
+  pointer-events: none;
+}
+
+#search {
+  width: 100%;
+  padding: 0.6rem 0.75rem 0.6rem 2.2rem;
+  border: 1.5px solid var(--paper-3);
+  border-radius: var(--radius);
+  background: var(--paper);
+  font-family: var(--sans);
+  font-size: 0.9rem;
+  color: var(--ink);
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+#search:focus { border-color: var(--rust); }
+#search::placeholder { color: var(--ink-3); }
+
+.filter-wrap {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+  padding: 0.4rem 0.8rem;
+  border: 1.5px solid var(--paper-3);
+  border-radius: 2px;
+  background: var(--paper);
+  color: var(--ink-2);
+  cursor: pointer;
+  transition: all 0.15s;
+  text-transform: uppercase;
+}
+
+.filter-btn:hover { border-color: var(--ink-3); }
+
+.filter-btn.active-cat-technique { background: var(--teal); color: white; border-color: var(--teal); }
+.filter-btn.active-cat-hydraulique { background: var(--slate); color: white; border-color: var(--slate); }
+.filter-btn.active-cat-materiau { background: var(--amber); color: white; border-color: var(--amber); }
+.filter-btn.active-cat-intervention { background: var(--rust); color: white; border-color: var(--rust); }
+.filter-btn.active-cat-reglementation { background: var(--ink); color: white; border-color: var(--ink); }
+.filter-btn.active-all { background: var(--ink); color: white; border-color: var(--ink); }
+
+.results-count {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  color: var(--ink-3);
+  white-space: nowrap;
+  letter-spacing: 0.05em;
+}
+
+/* ── ALPHA NAV ───────────────────────────────────────────── */
+.alpha-nav {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1rem 2rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+}
+
+.alpha-btn {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--paper-3);
+  border-radius: 2px;
+  background: transparent;
+  color: var(--ink-2);
+  cursor: pointer;
+  transition: all 0.12s;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.alpha-btn:hover { background: var(--rust); color: white; border-color: var(--rust); }
+.alpha-btn.has-entries { font-weight: 500; }
+.alpha-btn.no-entries { opacity: 0.3; pointer-events: none; }
+
+/* ── MAIN LAYOUT ─────────────────────────────────────────── */
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1.5rem 2rem 4rem;
+}
+
+/* ── LETTER SECTION ──────────────────────────────────────── */
+.letter-section {
+  margin-top: 2.5rem;
+}
+
+.letter-heading {
+  font-family: var(--serif);
+  font-size: 3rem;
+  color: var(--paper-3);
+  line-height: 1;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1.5px solid var(--paper-3);
+  position: relative;
+}
+
+.letter-heading::before {
+  content: attr(data-letter);
+  position: absolute;
+  font-size: 6rem;
+  color: var(--paper-2);
+  top: -1rem;
+  right: 0;
+  line-height: 1;
+  pointer-events: none;
+  font-style: italic;
+}
+
+/* ── ENTRIES GRID ────────────────────────────────────────── */
+.entries-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1rem;
+}
+
+/* ── ENTRY CARD ──────────────────────────────────────────── */
+.entry {
+  background: var(--paper);
+  border: 1px solid var(--paper-3);
+  border-radius: var(--radius);
+  padding: 1.1rem 1.2rem;
+  transition: all 0.15s;
+  position: relative;
+  cursor: default;
+}
+
+.entry:hover {
+  border-color: var(--ink-3);
+  box-shadow: var(--shadow);
+  transform: translateY(-1px);
+}
+
+.entry-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.entry-term {
+  font-family: var(--serif);
+  font-size: 1.1rem;
+  color: var(--ink);
+  line-height: 1.2;
+}
+
+.entry-badge {
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.5rem;
+  border-radius: 2px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.badge-technique { background: var(--teal-light); color: var(--teal); }
+.badge-hydraulique { background: var(--slate-light); color: var(--slate); }
+.badge-materiau { background: var(--amber-light); color: var(--amber); }
+.badge-intervention { background: var(--rust-light); color: var(--rust); }
+.badge-reglementation { background: var(--paper-3); color: var(--ink-2); }
+
+.entry-abbr {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  color: var(--ink-3);
+  margin-bottom: 0.4rem;
+  letter-spacing: 0.05em;
+}
+
+.entry-def {
+  font-size: 0.875rem;
+  color: var(--ink-2);
+  line-height: 1.55;
+}
+
+.entry-note {
+  margin-top: 0.5rem;
+  font-size: 0.78rem;
+  color: var(--ink-3);
+  font-style: italic;
+  border-left: 2px solid var(--paper-3);
+  padding-left: 0.6rem;
+  line-height: 1.4;
+}
+
+.entry-related {
+  margin-top: 0.6rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+}
+
+.related-tag {
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  background: var(--paper-2);
+  color: var(--ink-3);
+  padding: 0.15rem 0.5rem;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 0.1s;
+  border: 1px solid transparent;
+}
+
+.related-tag:hover { background: var(--rust-light); color: var(--rust); border-color: var(--rust); }
+
+/* ── NO RESULTS ──────────────────────────────────────────── */
+.no-results {
+  display: none;
+  text-align: center;
+  padding: 4rem 2rem;
+  color: var(--ink-3);
+}
+
+.no-results.visible { display: block; }
+
+.no-results h3 {
+  font-family: var(--serif);
+  font-size: 1.8rem;
+  font-style: italic;
+  margin-bottom: 0.5rem;
+}
+
+.no-results p { font-size: 0.9rem; }
+
+/* ── HIDDEN ──────────────────────────────────────────────── */
+.entry.hidden { display: none; }
+.letter-section.hidden { display: none; }
+
+/* ── FOOTER ──────────────────────────────────────────────── */
+footer {
+  background: var(--ink);
+  color: rgba(245,240,232,0.4);
+  text-align: center;
+  padding: 1.5rem;
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+}
+
+/* ── PRINT ───────────────────────────────────────────────── */
+@media print {
+  .controls, .alpha-nav, header .header-meta { display: none; }
+  .entry { break-inside: avoid; border: 1px solid #ccc; }
+}
+
+/* ── ANIMATIONS ──────────────────────────────────────────── */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.entry { animation: fadeIn 0.2s ease both; }
+
+/* ── RESPONSIVE ──────────────────────────────────────────── */
+@media (max-width: 640px) {
+  header { padding: 2rem 1.25rem 1.75rem; }
+  .controls-inner { padding: 0.75rem 1.25rem; }
+  .alpha-nav { padding: 0.75rem 1.25rem 0; }
+  main { padding: 1rem 1.25rem 3rem; }
+  .entries-grid { grid-template-columns: 1fr; }
+  .filter-wrap { display: none; }
+}
+
+/* Highlight sur recherche */
+mark {
+  background: var(--rust-light);
+  color: var(--rust);
+  border-radius: 2px;
+  padding: 0 1px;
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <span class="header-tag">Référentiel technique</span>
+    <h1>Lexique de <em>l'assainissement</em></h1>
+    <p class="header-sub">Terminologie complète des réseaux, matériaux, techniques d'intervention et réglementation en assainissement collectif et non collectif.</p>
+    <div class="header-meta">
+      <span class="meta-pill" id="total-count">— termes</span>
+      <span class="meta-pill">5 catégories</span>
+      <span class="meta-pill">ANC · AC · Hydraulique · Matériaux</span>
+    </div>
+  </div>
+</header>
+
+<div class="controls">
+  <div class="controls-inner">
+    <div class="search-wrap">
+      <span class="search-icon">⌕</span>
+      <input type="text" id="search" placeholder="Rechercher un terme…" autocomplete="off" spellcheck="false">
+    </div>
+    <div class="filter-wrap">
+      <button class="filter-btn active-all" data-cat="all">Tous</button>
+      <button class="filter-btn" data-cat="technique">Technique</button>
+      <button class="filter-btn" data-cat="hydraulique">Hydraulique</button>
+      <button class="filter-btn" data-cat="materiau">Matériaux</button>
+      <button class="filter-btn" data-cat="intervention">Intervention</button>
+      <button class="filter-btn" data-cat="reglementation">Réglementation</button>
+    </div>
+    <span class="results-count" id="results-count"></span>
+  </div>
+</div>
+
+<div class="alpha-nav" id="alpha-nav"></div>
+
+<main id="main">
+  <div class="no-results" id="no-results">
+    <h3>Aucun résultat</h3>
+    <p>Essayez un autre terme ou effacez le filtre.</p>
+  </div>
+</main>
+
+<footer>
+  Lexique assainissement — entreprisededebouchage.com · Bouches-du-Rhône (13) · Mise à jour 2026
+</footer>
+
+<script>
+const TERMS = [
+  // ── A ──────────────────────────────────────────────────────────────
+  { term: "Abattant", cat: "technique", def: "Couvercle articulé placé sur la cuvette des WC. Son maintien en bon état conditionne l'étanchéité de la fermeture.", note: "Pièce d'usure courante, remplaçable sans plombier." },
+  { term: "Affaissement", cat: "technique", def: "Déformation par tassement d'une canalisation enterrée. Crée une zone de rétention d'eau et favorise les dépôts. Détectable uniquement par inspection caméra.", related: ["Ventre de bœuf", "Caméra d'inspection"] },
+  { term: "ANC", abbr: "Assainissement Non Collectif", cat: "reglementation", def: "Système d'épuration individuel pour les habitations non raccordées au réseau public. Comprend la fosse toutes eaux, le prétraitement et l'épandage.", related: ["Fosse septique", "SPANC", "Filtre à sable"] },
+  { term: "Anneau de rehausse", cat: "technique", def: "Élément tubulaire en béton ou en PVC permettant d'exhausser un regard ou une fosse jusqu'au niveau du sol fini.", note: "Indispensable lors d'une modification de terrain ou d'une reprise de voirie." },
+  { term: "Aquifère", cat: "hydraulique", def: "Formation géologique poreuse ou fracturée contenant de l'eau souterraine exploitable. La protection des aquifères conditionne l'emplacement des systèmes ANC.", note: "Toute pollution d'un aquifère est une infraction environnementale grave." },
+  { term: "Assainissement collectif (AC)", cat: "reglementation", def: "Système public de collecte et d'épuration des eaux usées. Les communes ont l'obligation de raccorder les habitations situées à moins de 100 m d'un réseau existant.", related: ["Réseau unitaire", "Réseau séparatif"] },
+  { term: "Assainissement non collectif (ANC)", cat: "reglementation", def: "Voir ANC.", related: ["ANC"] },
+  { term: "Aspiration", cat: "intervention", def: "Technique de pompage des effluents ou des boues depuis une fosse, un regard ou un puisard. Réalisée avec un camion pompe équipé d'une citerne et d'un groupe aspiration.", related: ["Camion pompe", "Vidange"] },
+  { term: "Avaloir", cat: "technique", def: "Bouche d'égout recevant les eaux de ruissellement depuis la chaussée ou le caniveau. Équipé d'une grille et d'un siphon anti-odeurs. Synonyme : bouche d'égout.", related: ["Grille", "Siphon", "Réseau pluvial"] },
+  { term: "Azote", cat: "hydraulique", def: "Élément nutritif présent dans les eaux usées sous forme d'azote ammoniacal, nitrite et nitrate. Indicateur de pollution des cours d'eau et des nappes phréatiques.", note: "Réglementation stricte sur les rejets azotés en zone sensible." },
+
+  // ── B ──────────────────────────────────────────────────────────────
+  { term: "Bac à graisses", cat: "technique", def: "Dispositif de prétraitement interceptant les graisses avant leur entrée dans le réseau d'assainissement. Obligatoire pour les cuisines professionnelles. Doit être vidangé régulièrement (généralement tous les 3 mois pour un restaurant).", abbr: "BàG", related: ["Graisses", "Pré-traitement"] },
+  { term: "Bâche de relevage", cat: "technique", def: "Cuve enterrée équipée d'une ou plusieurs pompes de relevage, permettant de transférer les effluents d'un niveau bas vers un réseau gravitaire en hauteur.", related: ["Pompe de relevage", "Station de relevage"] },
+  { term: "Batardeau", cat: "intervention", def: "Dispositif provisoire d'obturation placé dans un regard ou une canalisation pour isoler une section lors d'une intervention. Peut être gonflable (obturateur) ou rigide.", related: ["Obturateur", "Obturation"] },
+  { term: "Bidet", cat: "technique", def: "Appareil sanitaire bas destiné à la toilette intime. Raccordé sur le réseau EU avec siphon dédié. En voie de disparition dans les constructions neuves.", note: "La plupart des bidets sont raccordés en eaux usées grises avec un siphon de 30 mm de diamètre." },
+  { term: "Boue activée", cat: "technique", def: "Procédé de traitement biologique en station d'épuration utilisant des micro-organismes en suspension pour dégrader la matière organique des eaux usées par aération.", related: ["STEP", "Boues de curage"] },
+  { term: "Boues de curage", cat: "intervention", def: "Résidus solides extraits lors d'un curage de canalisation, d'un regard ou d'une fosse. Leur traitement et leur élimination sont réglementés (transport en camion agréé, dépôt en déchetterie spécialisée ou épandage agricole sous conditions).", related: ["Curage", "Vidange"] },
+  { term: "Bonde", cat: "technique", def: "Orifice d'évacuation d'un appareil sanitaire (baignoire, douche, évier) équipé d'un bouchon ou d'un obturateur. La bonde à clic-clac est actionnée par pression.", related: ["Siphon", "Évacuation"] },
+  { term: "Bouche d'égout", cat: "technique", def: "Voir Avaloir." },
+  { term: "Bouchon de visite", cat: "technique", def: "Obturateur amovible placé sur un té de déviation ou un coude permettant l'accès à l'intérieur d'une canalisation pour le débouchage ou l'inspection.", note: "Son maintien étanche évite les fuites et les odeurs." },
+  { term: "Borne de comptage", cat: "reglementation", def: "Dispositif mesurant le débit d'effluents rejetés dans le réseau public par un établissement industriel ou commercial. Obligatoire au-delà d'un certain volume de rejet." },
+  { term: "Branchement", cat: "technique", def: "Canalisation reliant le réseau intérieur d'une propriété au réseau public d'assainissement. Le branchement est à la charge et sous la responsabilité du propriétaire jusqu'au regard de façade (ou de branchement) inclus.", related: ["Regard de façade", "Réseau public"] },
+  { term: "Buses", cat: "materiau", def: "Éléments cylindriques préfabriqués (béton, béton armé, PVC, PEHD) utilisés pour construire les canalisations enterrées de grand diamètre. Les buses béton arment les réseaux pluviaux de forte charge.", note: "Les buses béton ont une durée de vie de 50 à 80 ans si le béton est de bonne qualité." },
+
+  // ── C ──────────────────────────────────────────────────────────────
+  { term: "Calcaire", cat: "materiau", def: "Dépôt minéral (carbonate de calcium, CaCO₃) qui se forme dans les canalisations transportant de l'eau dure. Dans les Bouches-du-Rhône, le TH (titre hydrotimétrique) dépasse 25°f, générant des dépôts calcaires rapides. Réduit progressivement le diamètre utile des conduites.", note: "Un dépôt de 5 mm sur un tuyau de 40 mm réduit la section de passage de 46 %.", related: ["TH", "Détartrage", "Entartrage"] },
+  { term: "Caméra d'inspection", cat: "intervention", def: "Endoscope robotisé propulsé dans les canalisations pour visualiser l'état intérieur. La caméra HD transmet des images en temps réel. Permet de localiser précisément les obstructions, fissures, joints défaillants, intrusions racinaires et déformations. Rapport vidéo avec coordonnées GPS disponible.", abbr: "CI", related: ["Inspection télévisée", "Rapport de visite"] },
+  { term: "Canalisation", cat: "technique", def: "Conduite assurant le transport des fluides (eau potable, eaux usées, eaux pluviales, gaz). En assainissement, désigne les conduites d'évacuation des eaux usées domestiques ou des eaux pluviales.", related: ["PVC", "Fonte", "Grès", "PEHD"] },
+  { term: "Capacité de charge", cat: "hydraulique", def: "Charge maximale supportable par une canalisation ou un ouvrage (pression interne, charge de terrassement, charges roulantes). Détermine le choix du matériau et de la classe de résistance.", related: ["NF EN 476"] },
+  { term: "Capot", cat: "technique", def: "Couvercle d'un regard de visite ou d'une bouche d'accès. Peut être en béton, en fonte, en acier ou en composite. Sa classe de résistance (A15 à F900) doit correspondre à la charge susceptible de lui être appliquée.", note: "Un capot de classe D400 supporte une charge de 40 tonnes — requis en voirie urbaine." },
+  { term: "Chambre de mise en charge", cat: "hydraulique", def: "Ouvrage hydraulique où la pression de l'eau dépasse la pression atmosphérique. Présente dans les systèmes de pompage et de relevage." },
+  { term: "Chambre de visite", cat: "technique", def: "Voir Regard de visite.", related: ["Regard de visite"] },
+  { term: "Chemisage", cat: "intervention", def: "Technique de réhabilitation sans tranchée (CIPP — Cured In Place Pipe) consistant à introduire et polymériser une gaine résine flexible dans une canalisation endommagée. Permet de restaurer la résistance mécanique et l'étanchéité sans fouille.", abbr: "CIPP", note: "Économise en moyenne 60 % par rapport au remplacement classique en tranchée.", related: ["CIPP", "Réhabilitation sans tranchée", "Gainage"] },
+  { term: "Chute", cat: "technique", def: "Section verticale d'une canalisation d'évacuation reliant les étages d'un bâtiment. La chute principale (ou colonne d'évacuation) collecte toutes les eaux usées étage par étage et les conduit à la base du bâtiment.", related: ["Colonne d'évacuation", "Ventilation primaire"] },
+  { term: "Clapet anti-retour", cat: "technique", def: "Dispositif unidirectionnel empêchant le reflux d'eaux usées dans le sens inverse de l'écoulement. Indispensable pour protéger les appareils sanitaires des inondations en cas de mise en charge du réseau aval.", abbr: "CAR", related: ["Refoulement", "Anti-retour"] },
+  { term: "Collecteur", cat: "technique", def: "Canalisation de grand diamètre recevant les apports de plusieurs branchements ou de plusieurs conduites de moindre diamètre. Le collecteur principal d'une commune peut atteindre 1 200 à 2 000 mm de diamètre.", related: ["Réseau d'assainissement", "Branchement"] },
+  { term: "Colonne d'évacuation", cat: "technique", def: "Voir Chute.", related: ["Chute"] },
+  { term: "Colmatage", cat: "technique", def: "Obstruction progressive d'un filtre à sable, d'un drain ou d'un ouvrage d'assainissement par accumulation de particules fines, de boues ou de biofilm. Irréversible à terme pour les massifs filtrants.", related: ["Filtre à sable", "Drain"] },
+  { term: "Compression annulaire", cat: "materiau", def: "Mode de résistance des canalisations enterrées aux charges du remblai. Un sol bien compacté autour de la canalisation transfère la charge verticale en compression latérale, ce qui augmente significativement la capacité portante du système." },
+  { term: "Cuve de rétention", cat: "technique", def: "Ouvrage étanche collectant temporairement les eaux de pluie ou les eaux polluées pour les restituer progressivement au réseau ou pour débourbement. Obligatoire pour certaines activités industrielles.", related: ["Rétention", "Eaux pluviales"] },
+  { term: "Curage", cat: "intervention", def: "Opération de nettoyage en profondeur d'une canalisation ou d'un ouvrage par hydrocurage haute pression. Le curage peut être curatif (après détection d'un bouchon) ou préventif (maintenance planifiée). Génère des boues de curage devant être traitées réglementairement.", related: ["Hydrocurage", "Curage préventif", "Boues de curage"] },
+  { term: "Curage préventif", cat: "intervention", def: "Curage programmé à intervalles réguliers pour éviter la formation de bouchons. Recommandé annuellement pour les réseaux industriels et les collectifs, tous les 3-5 ans pour les particuliers.", related: ["Curage", "Maintenance"] },
+  { term: "Cunette", cat: "technique", def: "Partie basse arrondie du radier d'un regard ou d'une galerie visitables, formant un canal d'écoulement concentrant les eaux au centre. Facilite l'auto-curage naturel et protège le radier plat contre l'érosion." },
+
+  // ── D ──────────────────────────────────────────────────────────────
+  { term: "Débimètre", cat: "hydraulique", def: "Instrument de mesure du débit volumique d'un fluide dans une conduite. Utilisé pour le diagnostic hydraulique des réseaux, la mesure des rejets et le contrôle des stations de pompage.", note: "Peut être électromagnétique, à ultrasons ou à effet Vortex selon le type de fluide et la précision requise." },
+  { term: "Débit de pointe", cat: "hydraulique", def: "Débit maximal transitant dans une canalisation sur une courte période (quelques minutes). Le surdimensionnement des conduites par rapport au débit de pointe conditionne l'absence de mise en charge et de refoulement.", related: ["Débit de dimensionnement", "Mise en charge"] },
+  { term: "Débitmètre", cat: "hydraulique", def: "Voir Débimètre.", related: ["Débimètre"] },
+  { term: "Décantation", cat: "technique", def: "Séparation des particules en suspension par sédimentation gravitaire. Première étape du traitement dans les fosses toutes eaux et les débourbeurs. L'efficacité dépend du temps de séjour et de la densité des particules.", related: ["Fosse toutes eaux", "Débourbeur"] },
+  { term: "Débourbeur", cat: "technique", def: "Ouvrage de décantation destiné à retenir les matières en suspension lourdes (boues, sables, hydrocarbures) avant le rejet dans le réseau pluvial ou un milieu naturel. Obligatoire pour les parkings de plus de 20 places et les ateliers mécaniques.", related: ["Séparateur à hydrocarbures", "Décantation"] },
+  { term: "Déchet organique", cat: "hydraulique", def: "Matière d'origine biologique introduite dans le réseau d'assainissement (aliments, graisses, matières fécales, papier). Se décompose naturellement mais peut former des bouchons ou alimenter le développement de biofilm en excès." },
+  { term: "Déflecteur", cat: "technique", def: "Élément de déviation d'écoulement placé dans un regard ou un ouvrage hydraulique pour orienter les flux, réduire les turbulences ou protéger les parois." },
+  { term: "Dégorgement", cat: "intervention", def: "Synonyme de débouchage. Terme technique utilisé pour désigner l'opération de débouchage d'une canalisation obstruée. Parfois utilisé spécifiquement pour le débouchage des réseaux extérieurs et des collecteurs.", related: ["Débouchage"] },
+  { term: "Dépose-repose", cat: "intervention", def: "Intervention consistant à déposer un appareil sanitaire (WC, lavabo, baignoire) pour accéder à la canalisation d'évacuation, puis à le reposer après l'intervention. Génère un coût supplémentaire par rapport au débouchage standard." },
+  { term: "Détartrage", cat: "intervention", def: "Opération de dissolution ou de destruction mécanique des dépôts calcaires dans les canalisations, les ballons d'eau chaude et les appareils sanitaires. Méthodes : acide citrique, acide chlorhydrique dilué (pro uniquement), hydrocurage basse pression, jet vapeur.", related: ["Calcaire", "Entartrage"] },
+  { term: "Diamètre nominal", cat: "technique", def: "Diamètre intérieur théorique d'une canalisation, exprimé en millimètres et noté DN. Exemple : DN 100 = canalisation de 100 mm de diamètre intérieur. Le diamètre extérieur varie selon le matériau et l'épaisseur de paroi.", abbr: "DN", note: "Les diamètres normalisés les plus courants en installation intérieure : DN 32 (lavabo), DN 40 (évier, douche), DN 50 (baignoire, WC), DN 100 (chute principale).", related: ["Raccord", "PVC"] },
+  { term: "Drain", cat: "technique", def: "Tube perforé posé dans un massif filtrant (sable, gravier) pour faciliter l'infiltration ou la collecte des eaux. En ANC, les drains d'épandage diffusent les eaux pré-traitées dans le sol. En drainage agricole, ils collectent l'excès d'eau pour assainir les terrains.", related: ["Épandage", "Filtre à sable"] },
+  { term: "Drainage", cat: "technique", def: "Ensemble des techniques visant à éliminer l'excès d'eau dans un terrain. En assainissement des bâtiments, le drainage périphérique protège les fondations contre les infiltrations.", related: ["Drain"] },
+  { term: "DTA", abbr: "Dossier Technique Amiante", cat: "reglementation", def: "Dossier obligatoire pour tout immeuble construit avant juillet 1997 recensant la présence éventuelle de matériaux amiantés. Impacte les interventions sur les canalisations anciennes en fibrociment (amiante-ciment).", related: ["Amiante-ciment"] },
+
+  // ── E ──────────────────────────────────────────────────────────────
+  { term: "Eau chaude sanitaire", cat: "hydraulique", def: "Eau potable chauffée pour les usages domestiques (douche, lavabo, vaisselle). Produite par un chauffe-eau ou une chaudière. Le réseau ECS est distinct du réseau EF (eau froide). Le risque de légionellose est à contrôler dans les installations collectives.", abbr: "ECS" },
+  { term: "Eau froide sanitaire", cat: "hydraulique", def: "Eau potable distribuée à température ambiante. Alimentation de tous les appareils sanitaires et des équipements ménagers.", abbr: "EF" },
+  { term: "Eau grise", cat: "hydraulique", def: "Eau usée provenant des lavabos, douches, baignoires et éviers de cuisine (hors WC). Moins chargée en matières fécales que les eaux noires. Dans certains systèmes ANC, les eaux grises peuvent être traitées séparément.", related: ["Eau noire", "Eau usée"] },
+  { term: "Eau noire", cat: "hydraulique", def: "Eau usée provenant des WC, chargée en matières fécales et agents pathogènes. Nécessite un traitement obligatoire avant rejet. Dans les systèmes ANC modernes, eaux grises et noires peuvent être traitées séparément pour optimiser la réutilisation.", related: ["Eau grise", "Fosse toutes eaux"] },
+  { term: "Eau usée", cat: "hydraulique", def: "Eau ayant subi une dégradation de sa qualité après usage domestique, industriel ou agricole. Se divise en eaux vannes (WC), eaux ménagères (cuisine, salle de bain), eaux industrielles et eaux de ruissellement pluviales.", related: ["EU", "EP", "Eaux vannes"] },
+  { term: "Eaux de ruissellement", cat: "hydraulique", def: "Eaux de pluie qui s'écoulent en surface sans s'infiltrer. Peuvent être collectées par le réseau pluvial ou gérées à la source (noues, toitures végétalisées, chaussées réservoir). Chargées en polluants urbains (hydrocarbures, métaux lourds).", related: ["EP", "Réseau pluvial"] },
+  { term: "Eaux pluviales", cat: "hydraulique", def: "Eaux de pluie. Leur collecte peut être assurée par un réseau pluvial séparatif (EP) ou par le réseau unitaire (EU+EP). La gestion alternative à la parcelle est de plus en plus réglementée.", abbr: "EP", related: ["Réseau séparatif", "Réseau unitaire"] },
+  { term: "Eaux usées", cat: "hydraulique", def: "Voir Eau usée.", abbr: "EU" },
+  { term: "Eaux vannes", cat: "hydraulique", def: "Eaux provenant des WC et des urinoirs. Fortement chargées en agents pathogènes et en azote. Doivent systématiquement être traitées.", related: ["Eau noire", "Fosse septique"] },
+  { term: "Effluent", cat: "hydraulique", def: "Terme générique désignant toute eau rejetée dans un réseau d'assainissement ou dans le milieu naturel après usage. Peut être domestique, industriel ou pluvial." },
+  { term: "Émergence", cat: "hydraulique", def: "Point où une eau souterraine rejoint la surface naturellement (source) ou accidentellement (fuites de réseau). En assainissement, toute émergence d'eau usée en surface est un incident environnemental à traiter en urgence." },
+  { term: "Émissaire", cat: "technique", def: "Canalisation terminale rejetant les eaux épurées d'une station d'épuration dans le milieu naturel récepteur (cours d'eau, mer). Soumis à autorisation préfectorale." },
+  { term: "Entartrage", cat: "technique", def: "Dépôt progressif de calcaire sur les parois internes des canalisations, robinets et appareils ménagers, causé par la précipitation des carbonates dissous dans l'eau chaude ou sous pression.", related: ["Calcaire", "Détartrage"] },
+  { term: "Épandage", cat: "technique", def: "Zone de dispersion des eaux pré-traitées par une fosse septique dans le sol. Peut être un tranchée d'infiltration, un filtre à sable ou un tertre filtrant. Dimensionné selon la perméabilité du sol (test de percolation).", related: ["Filtre à sable", "Tertre filtrant", "ANC"] },
+  { term: "Épurateur", cat: "technique", def: "Dispositif assurant l'élimination des polluants d'un effluent avant rejet. En ANC, désigne parfois la totalité du système de traitement (fosse + massif filtrant).", related: ["STEP", "ANC"] },
+  { term: "EU", abbr: "Eaux Usées", cat: "hydraulique", def: "Voir Eaux usées." },
+  { term: "Évacuation", cat: "technique", def: "Réseau intérieur collectant les eaux usées de tous les appareils sanitaires d'un bâtiment pour les conduire vers le réseau public. Comprend les appareils (WC, éviers), les siphons, les colonnes d'évacuation et le branchement.", related: ["Siphon", "Colonne d'évacuation", "Branchement"] },
+  { term: "Exfiltration", cat: "hydraulique", def: "Fuite d'effluents hors d'une canalisation défectueuse vers le sol environnant. Provoque une pollution des sols et des nappes. Distinguer de l'infiltration (eau qui entre dans le réseau depuis l'extérieur).", related: ["Infiltration", "Fuite"] },
+
+  // ── F ──────────────────────────────────────────────────────────────
+  { term: "Faucardage", cat: "intervention", def: "Coupe des végétaux aquatiques dans les cours d'eau ou les fossés pour maintenir le débit hydraulique. Opération d'entretien préventif des exutoires naturels." },
+  { term: "Filtre à sable", cat: "technique", def: "Massif filtrant composé de sable calibré dans lequel les eaux pré-traitées s'infiltrent et subissent un traitement biologique et physique par les micro-organismes du sol. C'est le système d'épandage le plus courant dans les ANC des Bouches-du-Rhône.", note: "Un filtre à sable bien conçu a une durée de vie de 15 à 25 ans avant colmatage.", related: ["Épandage", "ANC", "Colmatage"] },
+  { term: "Filtre compact", cat: "technique", def: "Dispositif de traitement des eaux usées en ANC utilisant un matériau filtrant (zéolithe, coco, mousse) en remplacement du filtre à sable traditionnel. Surface réduite, adaptée aux petites parcelles.", related: ["Filtre à sable", "ANC"] },
+  { term: "Fissure longitudinale", cat: "technique", def: "Fêlure dans la direction de l'axe d'une canalisation. Peut être due à un tassement différentiel, une charge excessive ou un défaut de fabrication. Détectable par caméra d'inspection. Nécessite réparation par chemisage ou remplacement.", related: ["Caméra d'inspection", "Chemisage"] },
+  { term: "Fond de fouille", cat: "technique", def: "Surface horizontale du bas d'une tranchée sur laquelle reposent les tuyaux. Sa qualité (compacité, planéité, absence de pierres) conditionne la mise en œuvre correcte des canalisations et évite les tassements différentiels." },
+  { term: "Fonte", cat: "materiau", def: "Alliage fer-carbone utilisé pour fabriquer des canalisations depuis le XIXe siècle. Très résistant mécaniquement mais lourd et sensible à la corrosion et à l'entartrage. Les réseaux en fonte des centres-villes ont souvent 50 à 100 ans d'âge. La fonte ductile (FD) est la version moderne, plus résistante aux chocs.", note: "Dans le centre de Marseille, de nombreuses canalisations en fonte datent d'avant 1950.", related: ["PVC", "Grès"] },
+  { term: "Fosse de décantation", cat: "technique", def: "Voir Fosse toutes eaux." },
+  { term: "Fosse septique", cat: "technique", def: "Cuve de prétraitement anaérobie des eaux vannes. La fosse septique proprement dite ne traite que les eaux des WC. La fosse toutes eaux traite l'ensemble des eaux usées (EU grises + noires). La fosse septique simple est interdite dans les nouvelles installations depuis 1996.", related: ["Fosse toutes eaux", "ANC", "Vidange"] },
+  { term: "Fosse toutes eaux", cat: "technique", def: "Cuve étanche de prétraitement recevant l'ensemble des eaux usées d'une habitation (eaux vannes + eaux ménagères). La digestion anaérobie décompose les matières organiques. Les effluents liquides pré-traités sont ensuite envoyés vers le dispositif d'épandage.", abbr: "FTE", note: "Volume minimal réglementaire : 3 m³ pour une maison jusqu'à 5 personnes.", related: ["Fosse septique", "Épandage", "SPANC"] },
+  { term: "Fuite", cat: "technique", def: "Perte d'étanchéité d'une canalisation, d'un raccord ou d'un appareil sanitaire. En assainissement, une fuite d'eaux usées dans le sol est une pollution réglementée.", related: ["Exfiltration", "Joint", "Étanchéité"] },
+  { term: "Furet", cat: "intervention", def: "Câble hélicoïdal rigide ou souple, motorisé ou manuel, introduit dans une canalisation pour localiser ou fracturer une obstruction. Le furet électrique professionnel atteint 30 m de longueur et passe les coudes à 45° et 90°. Le furet WC (têtes spirales) est conçu pour passer le coude interne de la cuvette sans l'endommager.", note: "La vitesse de rotation du furet motorisé est ajustable selon la dureté du bouchon.", related: ["Débouchage", "Obstruction"] },
+
+  // ── G ──────────────────────────────────────────────────────────────
+  { term: "Gainage", cat: "intervention", def: "Voir Chemisage.", related: ["Chemisage"] },
+  { term: "Garde d'eau", cat: "technique", def: "Volume d'eau retenu dans un siphon créant une barrière hydraulique empêchant les odeurs et les gaz du réseau de remonter vers les pièces. La hauteur minimale de garde d'eau est de 25 mm selon les normes NF. Si un siphon est asséché, des odeurs apparaissent.", note: "Un siphon de douche asséché après une longue période d'inoccupation ne garde plus ses propriétés anti-odeurs.", related: ["Siphon"] },
+  { term: "Géotextile", cat: "materiau", def: "Tissu synthétique (polypropylène ou polyester) utilisé en drainage et en assainissement pour filtrer, séparer ou protéger les matériaux granulaires d'un colmatage par les fines du sol. Enveloppe les drains d'épandage pour éviter leur obstruction par les particules de sol.", related: ["Drain", "Filtre à sable"] },
+  { term: "Grille", cat: "technique", def: "Élément grillagé couvrant les avaloirs, siphons de sol ou bouches d'accès pour retenir les déchets solides tout en permettant l'écoulement des eaux. Sa surface libre conditionne le débit accepté.", related: ["Avaloir", "Siphon de sol"] },
+  { term: "Grès", cat: "materiau", def: "Matériau céramique traditionnellement utilisé pour les canalisations d'assainissement. Excellent pour la résistance chimique aux acides et aux alcalis. Fragile aux chocs mécaniques. Encore présent dans les réseaux anciens (XIXe-début XXe siècle) et en usage pour les réseaux gravitaires à fort débit de matières.", note: "Les conduites en grès vitrifié peuvent durer plus de 100 ans si le réseau n'est pas soumis aux tassements.", related: ["Fonte", "PVC"] },
+
+  // ── H ──────────────────────────────────────────────────────────────
+  { term: "Hauteur d'eau critique", cat: "hydraulique", def: "Profondeur d'eau dans une canalisation à partir de laquelle la vitesse d'écoulement permet le transport des matières en suspension (MES) sans dépôt. En dessous de cette vitesse d'auto-curage, les solides se déposent et forment des bouchons progressifs." },
+  { term: "Hydrocurage", cat: "intervention", def: "Technique de curage par jet d'eau haute pression (80 à 200 bars) introduit dans une canalisation via un flexible rotatif. La tête de curage rotative projette l'eau à 360° sur les parois, décollant dépôts calcaires, graisses et matières organiques. C'est la technique la plus efficace pour les obstructions sévères et les réseaux extérieurs.", note: "La pression est adaptée au matériau : 80 bars pour le PVC fragile, jusqu'à 200 bars pour le béton et la fonte.", related: ["Curage", "Haute pression"] },
+  { term: "Hydrocureur", cat: "intervention", def: "Appareil ou véhicule équipé d'une pompe haute pression et d'un dévidoir de flexible pour réaliser l'hydrocurage. Les hydrocureurs mobiles (camions) ont des cuves de 1 000 à 5 000 litres et des flexibles de 60 à 100 m.", related: ["Hydrocurage"] },
+  { term: "Hydraulique gravitaire", cat: "hydraulique", def: "Écoulement des effluents sous l'effet de la seule gravité, sans pompage. Principe de fonctionnement de tous les réseaux d'assainissement intérieurs et de la majorité des réseaux publics urbains. Nécessite des pentes minimales (1 % à 2 %) pour assurer le transport des MES.", related: ["Pente", "Vitesse d'auto-curage"] },
+
+  // ── I ──────────────────────────────────────────────────────────────
+  { term: "Infiltration", cat: "hydraulique", def: "Entrée d'eau souterraine ou de ruissellement dans un réseau d'assainissement par les défauts d'étanchéité (joints, fissures). Augmente le débit parasite et surchage les stations d'épuration.", related: ["Exfiltration", "Joint"] },
+  { term: "Inspection télévisée", cat: "intervention", def: "Voir Caméra d'inspection.", abbr: "ITV", related: ["Caméra d'inspection"] },
+  { term: "Interception", cat: "technique", def: "Dispositif ou ouvrage captant des eaux de ruissellement avant qu'elles n'atteignent une zone à protéger. Fossés intercepteurs, noues, cunettes imperméables." },
+  { term: "Intrusion racinaire", cat: "technique", def: "Pénétration de racines d'arbres dans une canalisation via les joints ou les fissures. Le réseau racinaire cherche l'humidité et les nutriments des eaux usées. Dans les Bouches-du-Rhône, les pins, figuiers et oliviers sont les principaux responsables. Traitement : fraisage rotatif + hydrocurage.", note: "Une intrusion racinaire non traitée peut bloquer complètement une canalisation en 2 à 3 ans.", related: ["Fraisage", "Hydrocurage"] },
+
+  // ── J ──────────────────────────────────────────────────────────────
+  { term: "Joint à lèvre", cat: "materiau", def: "Joint d'étanchéité souple (caoutchouc EPDM ou NBR) inséré dans l'emboîtement des canalisations. Sa dégradation est la principale cause d'infiltration et d'exfiltration dans les réseaux PVC et fonte.", related: ["Joint", "Infiltration"] },
+  { term: "Joint colmaté", cat: "technique", def: "Joint défaillant ou partiellement obstrué ne remplissant plus sa fonction d'étanchéité. Détectable par inspection caméra.", related: ["Joint à lèvre", "Caméra d'inspection"] },
+  { term: "Joint d'étanchéité", cat: "materiau", def: "Pièce souple interposée entre deux éléments d'une canalisation ou d'un appareil sanitaire pour assurer l'étanchéité. Matériaux : caoutchouc EPDM, NBR, silicone, PTFE (téflon). Durée de vie : 10 à 30 ans selon le matériau et les contraintes de service.", related: ["Joint à lèvre", "Étanchéité"] },
+
+  // ── L ──────────────────────────────────────────────────────────────
+  { term: "Lavage à haute pression", cat: "intervention", def: "Voir Hydrocurage.", related: ["Hydrocurage"] },
+  { term: "Ligne de charge hydraulique", cat: "hydraulique", def: "Ligne virtuelle représentant l'énergie totale du fluide en un point d'une canalisation. Outil de dimensionnement des réseaux sous pression et de vérification de l'absence de mise en charge dans les réseaux gravitaires." },
+  { term: "Lingettes", cat: "technique", def: "Principal objet étranger responsable des bouchons dans les réseaux d'assainissement. Contrairement à l'indication \"flushable\" portée par certaines marques, les lingettes ne se dissolvent pas et forment des amas compacts dans les canalisations et les postes de relevage.", note: "Une seule lingette peut accrocher suffisamment de matières pour créer un bouchon en quelques jours.", related: ["Corps étranger", "Bouchon"] },
+  { term: "Lit de pose", cat: "technique", def: "Couche de matériaux granulaires (sable, gravier) placée au fond d'une tranchée sur laquelle repose la canalisation. Le lit de pose assure une assise uniforme, répartit les charges et facilite l'alignement en pente." },
+  { term: "Lit filtrant", cat: "technique", def: "Voir Filtre à sable.", related: ["Filtre à sable"] },
+
+  // ── M ──────────────────────────────────────────────────────────────
+  { term: "Manchon", cat: "materiau", def: "Raccord cylindrique assemblant deux tuyaux de même diamètre. Peut être en PVC, en fonte ou en caoutchouc (manchon souple de réparation). Le manchon souple permet de raccorder des matériaux différents ou de réparer une section endommagée sans soudure.", related: ["Raccord", "PVC"] },
+  { term: "Manhole", cat: "technique", def: "Terme anglais désignant un regard de visite de grand diamètre (≥ 600 mm) accessible par une personne. Utilisé dans les normes européennes harmonisées.", related: ["Regard de visite"] },
+  { term: "Matière en suspension", cat: "hydraulique", def: "Particules solides en suspension dans les eaux usées (sables, graisses, fibres, fèces). Indicateur de pollution. Le traitement des eaux usées vise à les éliminer.", abbr: "MES" },
+  { term: "Membrane d'étanchéité", cat: "materiau", def: "Revêtement souple (polyéthylène, EPDM, bitume modifié) appliqué sur les ouvrages en béton pour les rendre étanches. Utilisée pour les fosses, les regards et les stations de pompage." },
+  { term: "MES", abbr: "Matières En Suspension", cat: "hydraulique", def: "Voir Matière en suspension." },
+  { term: "Micro-station", cat: "technique", def: "Station d'épuration miniaturisée pour 2 à 50 personnes en assainissement non collectif. Utilise un traitement biologique aérobie (boues activées, culture fixée). Agrément obligatoire du ministre chargé de l'écologie.", related: ["STEP", "ANC"] },
+  { term: "Mise en charge", cat: "hydraulique", def: "État d'une canalisation gravitaire dont le niveau d'eau dépasse la surface libre en section pleine. Se produit en cas de débit excessif ou d'obstruction aval. Provoque des refoulements aux points bas.", related: ["Refoulement", "Débit de pointe"] },
+
+  // ── N ──────────────────────────────────────────────────────────────
+  { term: "Nappe phréatique", cat: "hydraulique", def: "Première nappe d'eau souterraine contenue dans les interstices d'une roche perméable (aquifère libre). Sa protection contre les pollutions des réseaux d'assainissement est une obligation réglementaire.", related: ["Aquifère", "Exfiltration"] },
+  { term: "NF EN 476", cat: "reglementation", def: "Norme européenne définissant les prescriptions générales pour les composants utilisés dans les réseaux d'évacuation gravitaires et sous pression. Fixe notamment les classes de résistance et les critères d'étanchéité.", related: ["Norme", "Étanchéité"] },
+  { term: "Norme NF DTU 60.11", cat: "reglementation", def: "Document Technique Unifié français définissant les règles de calcul et de conception des installations d'évacuation des eaux pluviales. S'applique aux constructions neuves.", related: ["NF DTU 60.1", "Eaux pluviales"] },
+  { term: "Noue", cat: "technique", def: "Dépression linéaire aménagée en surface pour collecter et infiltrer les eaux pluviales. Alternative à la canalisation enterrée dans les aménagements de gestion à la source.", related: ["Eaux pluviales"] },
+
+  // ── O ──────────────────────────────────────────────────────────────
+  { term: "Obturateur", cat: "intervention", def: "Dispositif gonflable (ballon en caoutchouc) introduit dans une canalisation pour isoler une section lors d'une intervention (curage, réparation). Se gonfle jusqu'à bloquer l'écoulement.", related: ["Batardeau"] },
+  { term: "Obstruction", cat: "technique", def: "Réduction ou blocage du passage dans une canalisation. Peut être partielle (écoulement lent) ou totale (refoulement). Les causes sont multiples : accumulation organique, calcaire, corps étranger, intrusion racinaire, déformation de la canalisation.", related: ["Bouchon", "Furet", "Hydrocurage"] },
+  { term: "Orifice calibré", cat: "hydraulique", def: "Ouverture de dimension définie permettant de réguler un débit de fuite à une valeur fixe. Utilisé dans les ouvrages de rétention des eaux pluviales pour réguler le débit rejeté au réseau." },
+  { term: "Outillage de curage", cat: "intervention", def: "Ensemble du matériel utilisé pour le curage et le débouchage : furet motorisé, hydrocureur, tête de curage rotative, tête de fraisage pour les racines, tête déboucheuse pour les corps étrangers, caméra d'inspection." },
+
+  // ── P ──────────────────────────────────────────────────────────────
+  { term: "PEHD", abbr: "Polyéthylène Haute Densité", cat: "materiau", def: "Matériau thermoplastique utilisé pour les canalisations d'assainissement enterrées de grand diamètre, les bâches de relevage et les géomembranes. Très résistant à la corrosion et aux agents chimiques, léger, soudable.", related: ["PVC", "Polypropylène"] },
+  { term: "Pente", cat: "hydraulique", def: "Inclinaison d'une canalisation gravitaire par rapport à l'horizontale. La pente minimale (1 % soit 1 cm/m) assure la vitesse d'auto-curage (0,6 à 0,7 m/s) nécessaire au transport des MES sans dépôt. Une pente excessive (> 4 %) entraîne une séparation liquide/solide.", note: "En pratique, une pente de 1,5 à 2 % est recommandée pour les canalisations intérieures.", related: ["Vitesse d'auto-curage", "Hydraulique gravitaire"] },
+  { term: "Piège à sable", cat: "technique", def: "Regard ou chambre permettant de retenir le sable et les graviers charrés par les eaux pluviales avant leur entrée dans le réseau d'assainissement ou les ouvrages de traitement. Entretenu par curage régulier.", related: ["Débourbeur", "Regard de décantation"] },
+  { term: "Pluvial", cat: "hydraulique", def: "Relatif aux eaux de pluie. Le réseau pluvial (EP) est distinct du réseau d'eaux usées (EU) dans les systèmes séparatifs.", related: ["EP", "Réseau séparatif"] },
+  { term: "Polypropylène", cat: "materiau", def: "Thermoplastique utilisé pour les siphons, raccords et canalisations d'évacuation à hautes températures. Résiste à 95°C en service continu (vs 60°C pour le PVC). Utilisé pour les évacuations des lave-vaisselle et certains appareils industriels.", related: ["PVC", "PEHD"] },
+  { term: "Pompe de relevage", cat: "technique", def: "Pompe immergée ou en surface permettant de refouler les eaux usées d'un niveau bas vers un niveau plus haut. Utilisée quand l'écoulement gravitaire est impossible (sous-sol, cave). La redondance (2 pompes) est recommandée pour les installations critiques.", related: ["Bâche de relevage", "Station de relevage"] },
+  { term: "Précipitation", cat: "hydraulique", def: "Dépôt de sels minéraux hors solution suite à un changement de température, de pression ou de pH. La précipitation des carbonates de calcium est la cause principale de l'entartrage des canalisations.", related: ["Calcaire", "Entartrage"] },
+  { term: "Prétraitement", cat: "technique", def: "Premier niveau de traitement des eaux usées éliminant les flottants, sables, graisses et matières solides avant le traitement biologique. Comprend le dégrillage, le dessablage et le dégraissage.", related: ["Fosse toutes eaux", "Bac à graisses"] },
+  { term: "Profil en long", cat: "technique", def: "Représentation graphique de l'altitude d'une canalisation en fonction de la distance. Permet de vérifier les pentes, les points hauts et les points bas d'un réseau. Document essentiel pour la conception et la réhabilitation.", related: ["Pente"] },
+  { term: "PVC", abbr: "Polychlorure de Vinyle", cat: "materiau", def: "Matériau thermoplastique le plus utilisé pour les canalisations d'évacuation et d'assainissement depuis les années 1970. Léger, résistant à la corrosion, facile à mettre en œuvre. Gammes : PVC-U (rigide, pour canalisations gravitaires), PVC-C (chloré, résistant aux hautes températures), PVC souple (gaines). Diamètres courants en installation intérieure : 32, 40, 50, 63, 100, 125, 160 mm.", note: "Attention : le PVC se fragilise aux UV sur les installations extérieures non protégées.", related: ["Polypropylène", "PEHD", "Grès", "Fonte"] },
+
+  // ── R ──────────────────────────────────────────────────────────────
+  { term: "Raccord", cat: "materiau", def: "Pièce de jonction assurant la continuité hydraulique entre deux canalisations. Peut être un coude (changement de direction), un té (branchement), un réducteur (changement de diamètre), un manchon (jonction droite) ou une bague d'étanchéité.", related: ["PVC", "Joint"] },
+  { term: "Radier", cat: "technique", def: "Fond d'un regard, d'une chambre de visite ou d'un canal. Sa forme (en cunette pour les regards) conditionne l'écoulement des effluents et l'auto-curage naturel.", related: ["Cunette", "Regard"] },
+  { term: "Rapport de visite caméra", cat: "intervention", def: "Document technique accompagnant une inspection télévisée. Contient les images vidéo, la localisation GPS des anomalies, leur classification (selon la norme NF EN 13508), les recommandations d'intervention et le profil de la canalisation.", related: ["Caméra d'inspection"] },
+  { term: "Réception de chantier", cat: "reglementation", def: "Acte par lequel le maître d'ouvrage accepte les travaux réalisés. Pour les canalisations enterrées, elle est conditionnée à une épreuve d'étanchéité à l'eau (ou à l'air) et à une inspection télévisée de réception.", related: ["Test d'étanchéité"] },
+  { term: "Regard", cat: "technique", def: "Ouvrage de visite et d'accès sur un réseau de canalisations permettant l'inspection, le curage et le contrôle. Peut être un regard de façade (branchement), un regard de visite (collecteur) ou un regard de chute (jonction verticale).", related: ["Tampon", "Cunette"] },
+  { term: "Regard de façade", cat: "technique", def: "Premier ouvrage d'un branchement privé sur le réseau public, placé en limite de propriété ou sur le trottoir. Matérialise la limite de responsabilité entre réseau privé (à charge du propriétaire) et réseau public (à charge de la commune).", related: ["Branchement", "Regard"] },
+  { term: "Regard de visite", cat: "technique", def: "Ouvrage maçonné ou préfabriqué permettant l'accès physique à un collecteur pour l'inspection, le curage et les réparations. Diamètre minimal de 600 mm pour être pénétrable. Équipé d'échelons en acier inoxydable ou en polypropylène.", related: ["Regard", "Collecteur"] },
+  { term: "Réhabilitation sans tranchée", cat: "intervention", def: "Ensemble des techniques permettant de réparer ou de renforcer des canalisations existantes sans excavation du sol. Comprend le chemisage CIPP, l'éclatement de conduite, l'insert en spirale et le gainage.", abbr: "RST", related: ["Chemisage", "CIPP"] },
+  { term: "Remblai", cat: "technique", def: "Matériaux rapportés pour combler une tranchée après pose d'une canalisation. La qualité du remblai (granulométrie, compactage) conditionne la stabilité de la canalisation et la résistance aux charges. Se fait en couches successives de 20 à 30 cm compactées.", related: ["Tranchée", "Lit de pose"] },
+  { term: "Réseau séparatif", cat: "technique", def: "Système d'assainissement comportant deux réseaux distincts : l'un pour les eaux usées (EU), l'autre pour les eaux pluviales (EP). Permet un traitement optimisé des EU en station d'épuration sans dilution par les eaux de pluie.", related: ["Réseau unitaire", "EU", "EP"] },
+  { term: "Réseau unitaire", cat: "technique", def: "Système d'assainissement collectant eaux usées et eaux pluviales dans un seul réseau. Présent dans les centres anciens des villes. Génère des déversements d'eaux usées brutes par les déversoirs d'orage lors des épisodes pluvieux.", related: ["Réseau séparatif", "Déversoir d'orage"] },
+  { term: "Refoulement", cat: "hydraulique", def: "Remontée des eaux usées dans le sens inverse de l'écoulement normal, provoquée par une obstruction aval, une mise en charge ou une panne de pompage. Se manifeste par des débordements dans les appareils sanitaires les plus bas.", related: ["Clapet anti-retour", "Mise en charge"] },
+  { term: "Robinet de purge", cat: "technique", def: "Vanne permettant de vider une canalisation ou un équipement de son eau. Indispensable sur les portions basses d'un réseau non utilisé en période hivernale pour éviter le gel." },
+
+  // ── S ──────────────────────────────────────────────────────────────
+  { term: "Séparateur à hydrocarbures", cat: "technique", def: "Ouvrage de prétraitement retenant les hydrocarbures (huiles, graisses d'origine pétrolière) des eaux de ruissellement avant rejet dans le réseau ou en milieu naturel. Obligatoire pour les stations service, parkings couverts, ateliers mécaniques.", note: "Une alarme flottante déclenche l'alerte quand la couche d'hydrocarbures atteint une épaisseur critique.", related: ["Débourbeur", "Eaux pluviales"] },
+  { term: "Siphon", cat: "technique", def: "Coude formant une retenue d'eau qui crée une barrière hydraulique empêchant les gaz du réseau de remonter. Le siphon est présent sous chaque appareil sanitaire (WC, évier, lavabo, douche). Différents types : siphon à cloche, siphon bouteille, siphon de sol.", note: "Un siphon asséché (longue période d'inoccupation) laisse passer les gaz du réseau. Il suffit de faire couler l'eau quelques secondes pour le réamorcer.", related: ["Garde d'eau", "Siphon de sol"] },
+  { term: "Siphon de sol", cat: "technique", def: "Siphon à grille placé au niveau du carrelage dans les salles de bain, garages, caves et cuisines professionnelles pour collecter les eaux de lavage et les débordements accidentels. Diamètre courant : 50 à 100 mm.", related: ["Siphon", "Grille"] },
+  { term: "Sonde de niveau", cat: "technique", def: "Capteur mesurant le niveau d'effluents dans une fosse, un regard ou une bâche de relevage. Déclenche ou arrête les pompes de relevage aux niveaux définis." },
+  { term: "SPANC", abbr: "Service Public d'Assainissement Non Collectif", cat: "reglementation", def: "Service public communal ou intercommunal chargé du contrôle des installations d'assainissement non collectif (ANC). Réalise les diagnostics lors des ventes immobilières et les contrôles de conformité des nouvelles installations. Son accord est requis pour toute modification d'un système ANC.", related: ["ANC", "Fosse septique"] },
+  { term: "Station de pompage", cat: "technique", def: "Voir Station de relevage.", related: ["Station de relevage"] },
+  { term: "Station de relevage", cat: "technique", def: "Ouvrage équipé de pompes assurant le transfert des eaux usées d'un point bas vers un point haut. Comprend une bâche de relevage, des pompes immergées, une armoire de commande et des systèmes d'alarme et de télégestion.", related: ["Bâche de relevage", "Pompe de relevage"] },
+  { term: "STEP", abbr: "Station d'Épuration des eaux usées", cat: "reglementation", def: "Ouvrage communal ou intercommunal assurant le traitement des eaux usées avant rejet dans le milieu naturel. Le niveau de traitement (primaire, secondaire, tertiaire) dépend de la sensibilité du milieu récepteur et de la capacité en Équivalents Habitant (EH).", related: ["Émissaire", "Boues activées"] },
+
+  // ── T ──────────────────────────────────────────────────────────────
+  { term: "Tampon", cat: "technique", def: "Couvercle d'un regard de visite, amovible pour accéder à l'ouvrage. Classifié selon la charge admissible (A15 à F900 selon NF EN 124) en fonction de la localisation : A15 pour espaces verts, B125 pour trottoirs, C250 et D400 pour voirie, E600 pour zones industrielles, F900 pour quais et zones de fort chargement.", related: ["Capot", "Regard"] },
+  { term: "Tartre", cat: "materiau", def: "Voir Calcaire.", related: ["Calcaire"] },
+  { term: "Té", cat: "materiau", def: "Raccord en forme de T permettant l'embranchement d'une canalisation perpendiculaire sur une canalisation principale. Peut être en PVC, fonte, polypropylène ou acier inox selon l'application.", related: ["Raccord"] },
+  { term: "Télégestion", cat: "technique", def: "Système de surveillance et de commande à distance d'un réseau d'assainissement ou d'une station de pompage. Transmet en temps réel les données de débit, de niveau, d'alarme via des automates et des liaisons GPRS ou filaires.", related: ["Station de relevage"] },
+  { term: "Test d'étanchéité", cat: "reglementation", def: "Épreuve réalisée sur une canalisation neuve ou réhabilitée pour vérifier son étanchéité. Peut être réalisé à l'eau (remplissage du réseau sous pression légère) ou à l'air (injection d'air basse pression). Obligatoire pour la réception des travaux.", related: ["Réception de chantier", "Étanchéité"] },
+  { term: "TH", abbr: "Titre Hydrotimétrique", cat: "hydraulique", def: "Mesure de la dureté de l'eau exprimée en degrés français (°f). Un degré = 10 mg/L de CaCO₃. Eau douce : < 10°f. Eau dure : 20-30°f. Eau très dure : > 30°f. Dans les Bouches-du-Rhône, le TH est de 25 à 35°f selon les secteurs (eau très calcaire).", note: "Un TH élevé accélère l'entartrage des canalisations, des ballons et des appareils sanitaires.", related: ["Calcaire", "Entartrage"] },
+  { term: "Tillandsia", cat: "technique", def: "Terme parfois employé improprement pour désigner les amas de matières filamenteuses (lingettes, chiffons, graisses) formant des obstructions dans les réseaux. Terme correct : ragging ou amas-bouchon.", related: ["Lingettes", "Obstruction"] },
+  { term: "Tirant d'eau", cat: "hydraulique", def: "Hauteur de la lame d'eau dans une canalisation ou un canal lors d'un écoulement à surface libre. En régime normal, une canalisation gravitaire fonctionne à 50-70 % de son diamètre en tirant d'eau." },
+  { term: "Trappe de visite", cat: "technique", def: "Ouverture dans un mur ou un plancher permettant d'accéder à une canalisation, un robinet ou un équipement sanitaire dissimulé. Obligatoire pour tout équipement nécessitant un entretien régulier.", related: ["Bouchon de visite"] },
+  { term: "Tranchée", cat: "technique", def: "Fouille linéaire dans le sol permettant la pose d'une canalisation enterrée. Ses dimensions (largeur, profondeur) dépendent du diamètre de la canalisation, de la profondeur d'enfouissement et des charges en surface.", related: ["Lit de pose", "Remblai", "Fond de fouille"] },
+
+  // ── U ──────────────────────────────────────────────────────────────
+  { term: "Unité de traitement compacte", cat: "technique", def: "Système de traitement des eaux usées en ANC combinant prétraitement et traitement secondaire dans un seul équipement compact. Agréé pour les habitations jusqu'à 20 personnes.", related: ["Micro-station", "ANC"] },
+
+  // ── V ──────────────────────────────────────────────────────────────
+  { term: "Ventilation primaire", cat: "technique", def: "Mise à l'air libre du sommet des colonnes d'évacuation assurant l'équilibre de pression dans le réseau intérieur. Évite la destruction des gardes d'eau des siphons par dépression. Obligatoire sur chaque colonne principale.", note: "Absence de ventilation primaire → gardes d'eau aspirées → odeurs d'égout dans les pièces.", related: ["Siphon", "Garde d'eau", "Ventilation secondaire"] },
+  { term: "Ventilation secondaire", cat: "technique", def: "Réseau complémentaire de ventilation mettant en communication l'aval des siphons avec l'air libre. Indispensable dans les bâtiments à nombreux appareils sanitaires ou à longues colonnes d'évacuation. Peut être remplacé par des valves d'admission d'air (VAA) dans certaines configurations.", related: ["Ventilation primaire", "Valve d'admission d'air"] },
+  { term: "Ventre de bœuf", cat: "technique", def: "Déformation convexe vers le bas d'une canalisation, formant une zone de rétention d'eau permanente où les dépôts s'accumulent. Causé par un tassement différentiel du sol ou une pose en pente insuffisante. Détectable par caméra.", note: "Un ventre de bœuf non traité favorise la formation de bouchons chroniques.", related: ["Affaissement", "Caméra d'inspection"] },
+  { term: "Vidange", cat: "intervention", def: "Opération consistant à vider une fosse septique, une bâche de relevage ou un autre ouvrage de rétention par pompage. Réalisée par un prestataire agréé avec un camion pompe équipé d'une citerne. Un document de vidange (bordereau CERFA) est obligatoire.", related: ["Fosse septique", "Aspiration", "Document de vidange"] },
+  { term: "Vieillissement des réseaux", cat: "technique", def: "Dégradation progressive des canalisations et ouvrages liée à l'âge, aux cycles thermiques, à la corrosion, aux charges mécaniques et aux agressions chimiques. Les réseaux de fonte et de grès des centres anciens sont les plus exposés.", related: ["Inspection télévisée", "Réhabilitation sans tranchée"] },
+  { term: "Vitesse d'auto-curage", cat: "hydraulique", def: "Vitesse minimale d'écoulement (0,6 à 0,7 m/s) au-dessus de laquelle les matières en suspension sont maintenues en mouvement et ne se déposent pas. En dessous, les solides sédimentent et forment progressivement des bouchons.", related: ["Pente", "MES"] },
+  { term: "Vortex", cat: "hydraulique", def: "Tourbillon d'écoulement créé dans un regard ou une chute de grande hauteur pour régulariser l'écoulement, dissiper l'énergie et éviter les vibrations acoustiques et les dépôts. Certains regards de chute sont équipés de déflecteurs en vortex." },
+
+  // ── Z ──────────────────────────────────────────────────────────────
+  { term: "Zéolithe", cat: "materiau", def: "Roche minérale microporeuse utilisée comme matériau filtrant dans les filtres compacts d'ANC. Sa structure alvéolaire offre une surface de contact élevée pour les micro-organismes épurateurs. Plus légère que le sable, elle permet de réduire la surface d'épandage.", related: ["Filtre compact", "ANC"] },
+  { term: "Zone de rejet végétalisée", cat: "technique", def: "Bande végétalisée recevant l'effluent épuré d'un dispositif ANC. Le couvert végétal absorbe les polluants résiduels et régule l'infiltration. Exigée dans certaines configurations réglementaires.", abbr: "ZRV", related: ["ANC", "Épandage"] },
+];
+
+// ── INIT ──────────────────────────────────────────────────
+
+let currentCat = 'all';
+let currentSearch = '';
+
+function slugify(s) {
+  return s.normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-zA-Z0-9]/g,'-').toLowerCase();
+}
+
+function buildAlpha() {
+  const letters = [...new Set(TERMS.map(t => t.term[0].toUpperCase()))].sort();
+  const allLetters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
+  const nav = document.getElementById('alpha-nav');
+  allLetters.forEach(l => {
+    const a = document.createElement('a');
+    a.href = `#letter-${l}`;
+    a.className = `alpha-btn ${letters.includes(l) ? 'has-entries' : 'no-entries'}`;
+    a.textContent = l;
+    a.dataset.letter = l;
+    nav.appendChild(a);
+  });
+}
+
+function getCatLabel(cat) {
+  const m = { technique:'Technique', hydraulique:'Hydraulique', materiau:'Matériaux', intervention:'Intervention', reglementation:'Réglementation' };
+  return m[cat] || cat;
+}
+
+function buildLexique() {
+  const main = document.getElementById('main');
+  // Clear existing sections
+  document.querySelectorAll('.letter-section').forEach(s => s.remove());
+
+  const byLetter = {};
+  TERMS.forEach(t => {
+    const l = t.term[0].toUpperCase();
+    if (!byLetter[l]) byLetter[l] = [];
+    byLetter[l].push(t);
+  });
+
+  Object.keys(byLetter).sort().forEach(letter => {
+    const section = document.createElement('section');
+    section.className = 'letter-section';
+    section.id = `letter-${letter}`;
+    section.dataset.letter = letter;
+
+    const h = document.createElement('h2');
+    h.className = 'letter-heading';
+    h.dataset.letter = letter;
+    h.textContent = letter;
+    section.appendChild(h);
+
+    const grid = document.createElement('div');
+    grid.className = 'entries-grid';
+
+    byLetter[letter].sort((a,b) => a.term.localeCompare(b.term, 'fr')).forEach((t, i) => {
+      const card = createCard(t, i);
+      grid.appendChild(card);
+    });
+
+    section.appendChild(grid);
+    main.insertBefore(section, document.getElementById('no-results'));
+  });
+
+  document.getElementById('total-count').textContent = `${TERMS.length} termes`;
+  updateCount(TERMS.length);
+}
+
+function createCard(t, i) {
+  const card = document.createElement('article');
+  card.className = 'entry';
+  card.dataset.term = t.term.toLowerCase();
+  card.dataset.def = t.def.toLowerCase();
+  card.dataset.cat = t.cat;
+  if (t.abbr) card.dataset.abbr = t.abbr.toLowerCase();
+  card.style.animationDelay = `${i * 0.01}s`;
+
+  let html = `<div class="entry-header">
+    <span class="entry-term">${t.term}</span>
+    <span class="entry-badge badge-${t.cat}">${getCatLabel(t.cat)}</span>
+  </div>`;
+
+  if (t.abbr) html += `<div class="entry-abbr">${t.abbr}</div>`;
+  html += `<p class="entry-def">${t.def}</p>`;
+  if (t.note) html += `<p class="entry-note">${t.note}</p>`;
+  if (t.related && t.related.length) {
+    html += `<div class="entry-related">`;
+    t.related.forEach(r => {
+      html += `<span class="related-tag" onclick="searchRelated('${r.replace(/'/g,"\\'")}')">→ ${r}</span>`;
+    });
+    html += `</div>`;
+  }
+
+  card.innerHTML = html;
+  return card;
+}
+
+function searchRelated(term) {
+  document.getElementById('search').value = term;
+  currentSearch = term.toLowerCase();
+  filterEntries();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function highlight(text, query) {
+  if (!query) return text;
+  const re = new RegExp(`(${query.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')})`, 'gi');
+  return text.replace(re, '<mark>$1</mark>');
+}
+
+function filterEntries() {
+  const q = currentSearch;
+  const cat = currentCat;
+  let visible = 0;
+
+  const sections = document.querySelectorAll('.letter-section');
+  sections.forEach(section => {
+    let sectionVisible = 0;
+    const cards = section.querySelectorAll('.entry');
+    cards.forEach(card => {
+      const matchCat = cat === 'all' || card.dataset.cat === cat;
+      const matchQ = !q ||
+        card.dataset.term.includes(q) ||
+        card.dataset.def.includes(q) ||
+        (card.dataset.abbr && card.dataset.abbr.includes(q));
+
+      if (matchCat && matchQ) {
+        card.classList.remove('hidden');
+        sectionVisible++;
+        visible++;
+        // Highlight
+        if (q) {
+          const termEl = card.querySelector('.entry-term');
+          const defEl = card.querySelector('.entry-def');
+          const t = TERMS.find(t => t.term.toLowerCase() === card.dataset.term);
+          if (t) {
+            termEl.innerHTML = highlight(t.term, q);
+            defEl.innerHTML = highlight(t.def, q);
+          }
+        } else {
+          const t = TERMS.find(t => t.term.toLowerCase() === card.dataset.term);
+          if (t) {
+            card.querySelector('.entry-term').textContent = t.term;
+            card.querySelector('.entry-def').textContent = t.def;
+          }
+        }
+      } else {
+        card.classList.add('hidden');
+      }
+    });
+    section.classList.toggle('hidden', sectionVisible === 0);
+  });
+
+  document.getElementById('no-results').classList.toggle('visible', visible === 0);
+  updateCount(visible);
+}
+
+function updateCount(n) {
+  document.getElementById('results-count').textContent = `${n} terme${n > 1 ? 's' : ''}`;
+}
+
+// ── EVENTS ────────────────────────────────────────────────
+
+document.getElementById('search').addEventListener('input', e => {
+  currentSearch = e.target.value.toLowerCase().trim();
+  filterEntries();
+});
+
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filter-btn').forEach(b => {
+      b.className = 'filter-btn';
+    });
+    currentCat = btn.dataset.cat;
+    btn.className = `filter-btn active-${currentCat === 'all' ? 'all' : 'cat-' + currentCat}`;
+    filterEntries();
+  });
+});
+
+buildAlpha();
+buildLexique();
+filterEntries();
+</script>
+</body>
+</html>

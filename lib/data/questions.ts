@@ -10,7 +10,7 @@ const questions: PageQuestion[] = [
     noindex: false,
     titre: 'Débouchage : définition, techniques et quand faire appel à un pro',
     metaDesc:
-      'Débouchage : définition complète, techniques utilisées par les pros (hydrocurage, furet, caméra) et conseils pour savoir quand appeler un plombier dans le Var.',
+      'Débouchage : définition complète, techniques utilisées par les pros (hydrocurage, furet, caméra) et conseils pour savoir quand appeler un plombier dans les Bouches-du-Rhône.',
     h1: 'Débouchage — définition et guide complet',
     intro:
       'Le débouchage désigne l\'ensemble des opérations techniques visant à supprimer une obstruction dans un réseau de canalisations. Il peut s\'agir d\'une intervention manuelle, mécanique ou hydraulique selon la nature et la localisation du bouchon.',
@@ -25,7 +25,7 @@ const questions: PageQuestion[] = [
       },
       {
         heading: 'Débouchage DIY vs professionnel',
-        body: 'Les produits du commerce (Destop, vinaigre + bicarbonate) peuvent suffire pour les bouchons superficiels dans le siphon. Ils sont inefficaces sur les obstructions profondes, les racines ou les dépôts calcaires sévères. Dans le Var (83), la dureté de l\'eau accélère l\'entartrage des conduites et rend les bouchons plus tenaces qu\'ailleurs.',
+        body: 'Les produits du commerce (Destop, vinaigre + bicarbonate) peuvent suffire pour les bouchons superficiels dans le siphon. Ils sont inefficaces sur les obstructions profondes, les racines ou les dépôts calcaires sévères. Dans les Bouches-du-Rhône (13), la dureté de l\'eau accélère l\'entartrage des conduites et rend les bouchons plus tenaces qu\'ailleurs.',
       },
       {
         heading: 'Quand appeler un pro',
@@ -47,7 +47,7 @@ const questions: PageQuestion[] = [
       },
     ],
     servicesCta: ['/debouchage-canalisation/', '/debouchage-wc-toilettes/', '/debouchage-egouts-regards/'],
-    villesCta: ['/debouchage-toulon/', '/debouchage-hyeres/'],
+    villesCta: ['/debouchage-aubagne/', '/debouchage-marseille/'],
   },
 
   {
@@ -75,7 +75,7 @@ const questions: PageQuestion[] = [
         body: 'Curer, désengorger, désobstruer, hydrocurer. Ces termes recouvrent des réalités légèrement différentes mais désignent tous des opérations de rétablissement du débit.',
       },
       {
-        heading: 'Dans le Var (83)',
+        heading: 'Dans les Bouches-du-Rhône (13)',
         body: 'Le mot "débouchage" est très utilisé dans la région PACA en raison de la forte dureté de l\'eau qui génère des obstructions calcaires fréquentes dans les canalisations domestiques.',
       },
     ],
@@ -94,7 +94,7 @@ const questions: PageQuestion[] = [
       },
     ],
     servicesCta: ['/debouchage-canalisation/', '/debouchage-wc-toilettes/'],
-    villesCta: ['/debouchage-toulon/'],
+    villesCta: ['/debouchage-aubagne/'],
   },
 
   // ─── GROUPE 2 — PRIX ───────────────────────────────────────────────────────
@@ -104,20 +104,20 @@ const questions: PageQuestion[] = [
     typeQuestion: 'how_expensive',
     profondeur: 1,
     noindex: false,
-    titre: 'Prix débouchage canalisation 2026 — Tarifs fixes dans le Var',
+    titre: 'Prix débouchage canalisation 2026 — Tarifs fixes dans les Bouches-du-Rhône',
     metaDesc:
-      'Quel prix pour déboucher une canalisation ? Tarifs clairs et fixes dans le Var (83) : débouchage manuel {PRIX_MANUEL}€, haute pression {PRIX_HAUTE_PRESSION}€, inspection caméra {PRIX_CAMERA}€. Devis gratuit.',
-    h1: 'Prix débouchage canalisation — tarifs 2026 dans le Var',
+      'Quel prix pour déboucher une canalisation ? Tarifs clairs et fixes dans les Bouches-du-Rhône (13) : débouchage manuel {PRIX_MANUEL}€, haute pression {PRIX_HAUTE_PRESSION}€, inspection caméra {PRIX_CAMERA}€. Devis gratuit.',
+    h1: 'Prix débouchage canalisation — tarifs 2026 dans les Bouches-du-Rhône',
     intro:
-      'Le prix d\'un débouchage de canalisation dans le Var varie entre {PRIX_MANUEL}€ et {PRIX_HAUTE_PRESSION}€ selon la technique employée. Tous nos tarifs sont fixes, annoncés avant déplacement, déplacement inclus.',
+      'Le prix d\'un débouchage de canalisation dans les Bouches-du-Rhône varie entre {PRIX_MANUEL}€ et {PRIX_HAUTE_PRESSION}€ selon la technique employée. Tous nos tarifs sont fixes, annoncés avant déplacement, déplacement inclus.',
     sections: [
       {
         heading: 'Tableau des tarifs',
-        body: 'Débouchage manuel (furet) : {PRIX_MANUEL}€ — Hydrocurage haute pression : {PRIX_HAUTE_PRESSION}€ — Inspection caméra : {PRIX_CAMERA}€. Ces tarifs incluent le déplacement dans le Var (83) et le diagnostic.',
+        body: 'Débouchage manuel (furet) : {PRIX_MANUEL}€ — Hydrocurage haute pression : {PRIX_HAUTE_PRESSION}€ — Inspection caméra : {PRIX_CAMERA}€. Ces tarifs incluent le déplacement dans les Bouches-du-Rhône (13) et le diagnostic.',
       },
       {
         heading: 'Ce qui est inclus',
-        body: 'Déplacement dans le Var (83), diagnostic, intervention, rapport oral. Pas de frais cachés. Le devis est communiqué par téléphone avant toute venue.',
+        body: 'Déplacement dans les Bouches-du-Rhône (13), diagnostic, intervention, rapport oral. Pas de frais cachés. Le devis est communiqué par téléphone avant toute venue.',
       },
       {
         heading: 'Facteurs qui influencent le prix',
@@ -131,11 +131,11 @@ const questions: PageQuestion[] = [
     faq: [
       {
         q: 'Quel prix pour déboucher une canalisation ?',
-        r: 'Dans le Var, comptez entre {PRIX_MANUEL}€ et {PRIX_HAUTE_PRESSION}€ selon la technique. Prix fixe annoncé avant déplacement, déplacement inclus.',
+        r: 'Dans les Bouches-du-Rhône, comptez entre {PRIX_MANUEL}€ et {PRIX_HAUTE_PRESSION}€ selon la technique. Prix fixe annoncé avant déplacement, déplacement inclus.',
       },
       {
         q: 'Quel est le prix pour déboucher canalisation avec camion haute pression ?',
-        r: 'L\'hydrocurage haute pression est facturé {PRIX_HAUTE_PRESSION}€ dans le Var. Ce tarif inclut le déplacement du camion et l\'intervention.',
+        r: 'L\'hydrocurage haute pression est facturé {PRIX_HAUTE_PRESSION}€ dans les Bouches-du-Rhône. Ce tarif inclut le déplacement du camion et l\'intervention.',
       },
       {
         q: 'Le débouchage canalisation est-il remboursé par l\'assurance ?',
@@ -147,7 +147,7 @@ const questions: PageQuestion[] = [
       },
     ],
     servicesCta: ['/debouchage-canalisation/', '/debouchage-egouts-regards/'],
-    villesCta: ['/debouchage-toulon/', '/debouchage-hyeres/', '/debouchage-frejus/'],
+    villesCta: ['/debouchage-aubagne/', '/debouchage-marseille/', '/debouchage-marignane/'],
   },
 
   {
@@ -155,12 +155,12 @@ const questions: PageQuestion[] = [
     typeQuestion: 'how_expensive',
     profondeur: 1,
     noindex: false,
-    titre: 'Quel prix pour déboucher une canalisation ? Tarifs Var 2026',
+    titre: 'Quel prix pour déboucher une canalisation ? Tarifs Bouches-du-Rhône 2026',
     metaDesc:
-      'Combien coûte un débouchage de canalisation ? Tarifs détaillés 2026 dans le Var (83). Furet, haute pression, caméra. Prix fixe avant déplacement.',
+      'Combien coûte un débouchage de canalisation ? Tarifs détaillés 2026 dans les Bouches-du-Rhône (13). Furet, haute pression, caméra. Prix fixe avant déplacement.',
     h1: 'Quel prix pour déboucher une canalisation ?',
     intro:
-      'Déboucher une canalisation coûte entre {PRIX_MANUEL}€ et {PRIX_HAUTE_PRESSION}€ dans le Var (83) selon la méthode utilisée. Ce tarif est fixe et communiqué avant l\'intervention, déplacement inclus.',
+      'Déboucher une canalisation coûte entre {PRIX_MANUEL}€ et {PRIX_HAUTE_PRESSION}€ dans les Bouches-du-Rhône (13) selon la méthode utilisée. Ce tarif est fixe et communiqué avant l\'intervention, déplacement inclus.',
     sections: [
       {
         heading: 'Réponse directe',
@@ -178,7 +178,7 @@ const questions: PageQuestion[] = [
     faq: [
       {
         q: 'Quel est le prix pour déboucher une canalisation ?',
-        r: 'Entre {PRIX_MANUEL}€ (furet, bouchon simple) et {PRIX_HAUTE_PRESSION}€ (hydrocurage haute pression) dans le Var. Prix fixe avant déplacement.',
+        r: 'Entre {PRIX_MANUEL}€ (furet, bouchon simple) et {PRIX_HAUTE_PRESSION}€ (hydrocurage haute pression) dans les Bouches-du-Rhône. Prix fixe avant déplacement.',
       },
       {
         q: 'Qui doit payer le débouchage des canalisations ?',
@@ -186,7 +186,7 @@ const questions: PageQuestion[] = [
       },
     ],
     servicesCta: ['/debouchage-canalisation/'],
-    villesCta: ['/debouchage-toulon/', '/debouchage-hyeres/'],
+    villesCta: ['/debouchage-aubagne/', '/debouchage-marseille/'],
   },
 
   // ─── GROUPE 3 — HOW ────────────────────────────────────────────────────────
@@ -198,10 +198,10 @@ const questions: PageQuestion[] = [
     noindex: false,
     titre: 'Comment déboucher une canalisation très bouchée ? Guide pro 2026',
     metaDesc:
-      'Canalisation complètement bouchée ? Méthodes DIY et pro pour déboucher efficacement : furet, haute pression, bicarbonate. Quand appeler un professionnel dans le Var.',
+      'Canalisation complètement bouchée ? Méthodes DIY et pro pour déboucher efficacement : furet, haute pression, bicarbonate. Quand appeler un professionnel dans les Bouches-du-Rhône.',
     h1: 'Comment déboucher une canalisation très bouchée',
     intro:
-      'Une canalisation complètement bouchée nécessite une approche progressive : d\'abord les méthodes manuelles, puis si elles échouent, l\'hydrocurage haute pression par un professionnel. Dans le Var (83), le calcaire aggrave souvent les bouchons classiques.',
+      'Une canalisation complètement bouchée nécessite une approche progressive : d\'abord les méthodes manuelles, puis si elles échouent, l\'hydrocurage haute pression par un professionnel. Dans les Bouches-du-Rhône (13), le calcaire aggrave souvent les bouchons classiques.',
     sections: [
       {
         heading: 'Étape 1 — Identifier la nature du bouchon',
@@ -220,8 +220,8 @@ const questions: PageQuestion[] = [
         body: 'Inspection caméra pour localiser le bouchon, furet motorisé ou hydrocurage haute pression selon la nature de l\'obstruction, test de débit, rapport.',
       },
       {
-        heading: 'Spécificité Var (83)',
-        body: 'L\'eau du Var a un titre hydrotimétrique (TH) de 25 à 35°f selon les secteurs. Ce calcaire se dépose à l\'intérieur des canalisations et transforme des bouchons organiques simples en obstructions dures et tenaces.',
+        heading: 'Spécificité Bouches-du-Rhône (13)',
+        body: 'L\'eau des Bouches-du-Rhône a un titre hydrotimétrique (TH) de 25 à 35°f selon les secteurs. Ce calcaire se dépose à l\'intérieur des canalisations et transforme des bouchons organiques simples en obstructions dures et tenaces.',
       },
     ],
     faq: [
@@ -247,7 +247,7 @@ const questions: PageQuestion[] = [
       },
     ],
     servicesCta: ['/debouchage-canalisation/', '/debouchage-egouts-regards/'],
-    villesCta: ['/debouchage-toulon/', '/debouchage-hyeres/', '/debouchage-frejus/'],
+    villesCta: ['/debouchage-aubagne/', '/debouchage-marseille/', '/debouchage-marignane/'],
   },
 
   {
@@ -257,7 +257,7 @@ const questions: PageQuestion[] = [
     noindex: false,
     titre: 'Comment déboucher les canalisations d\'une maison — Guide complet',
     metaDesc:
-      'Canalisations bouchées dans votre maison ? Guide complet : identifier le bouchon, méthodes DIY, outils pros, et quand appeler un plombier-déboucheur dans le Var.',
+      'Canalisations bouchées dans votre maison ? Guide complet : identifier le bouchon, méthodes DIY, outils pros, et quand appeler un plombier-déboucheur dans les Bouches-du-Rhône.',
     h1: 'Comment déboucher les canalisations d\'une maison',
     intro:
       'Déboucher les canalisations d\'une maison demande d\'abord d\'identifier si le bouchon est localisé (un seul appareil) ou global (tous les appareils touchés). La réponse détermine la méthode.',
@@ -275,8 +275,8 @@ const questions: PageQuestion[] = [
         body: 'Évier → siphon démontable et nettoyable. WC → ventouse puis furet. Douche → bonde à dévisser et furet court. Lave-linge → filtre de vidange à nettoyer en premier.',
       },
       {
-        heading: 'Le calcaire dans le Var',
-        body: 'Les propriétaires du Var (83) font face à un problème spécifique : le tartre calcaire durcit les bouchons organiques et encrasse les siphons plus vite qu\'ailleurs. Un entretien préventif annuel est recommandé.',
+        heading: 'Le calcaire dans les Bouches-du-Rhône',
+        body: 'Les propriétaires du Bouches-du-Rhône (13) font face à un problème spécifique : le tartre calcaire durcit les bouchons organiques et encrasse les siphons plus vite qu\'ailleurs. Un entretien préventif annuel est recommandé.',
       },
     ],
     faq: [
@@ -294,7 +294,7 @@ const questions: PageQuestion[] = [
       },
     ],
     servicesCta: ['/debouchage-canalisation/', '/debouchage-evier-lavabo/', '/debouchage-wc-toilettes/'],
-    villesCta: ['/debouchage-toulon/', '/debouchage-hyeres/'],
+    villesCta: ['/debouchage-aubagne/', '/debouchage-marseille/'],
   },
 
   {
@@ -304,7 +304,7 @@ const questions: PageQuestion[] = [
     noindex: false,
     titre: 'Comment déboucher un regard extérieur — Guide et conseils',
     metaDesc:
-      'Regard extérieur bouché ou débordant ? Guide complet pour déboucher un regard d\'eaux usées ou pluviales, méthodes DIY et professionnel dans le Var.',
+      'Regard extérieur bouché ou débordant ? Guide complet pour déboucher un regard d\'eaux usées ou pluviales, méthodes DIY et professionnel dans les Bouches-du-Rhône.',
     h1: 'Comment déboucher un regard extérieur',
     intro:
       'Un regard extérieur bouché peut provoquer des inondations dans le jardin ou la cour. La méthode de débouchage dépend de la nature du bouchon (organique, calcaire, racines) et du type de réseau (EU ou EP).',
@@ -323,7 +323,7 @@ const questions: PageQuestion[] = [
       },
       {
         heading: 'Étape 4 — Hydrocurage pro',
-        body: 'Si le furet n\'atteint pas le bouchon ou si les racines sont en cause, appelez un professionnel avec hydrocureur. Le réseau extérieur des maisons du Var est particulièrement exposé aux intrusions racinaires (pins, figuiers, oliviers).',
+        body: 'Si le furet n\'atteint pas le bouchon ou si les racines sont en cause, appelez un professionnel avec hydrocureur. Le réseau extérieur des maisons des Bouches-du-Rhône est particulièrement exposé aux intrusions racinaires (pins, figuiers, oliviers).',
       },
     ],
     faq: [
@@ -341,7 +341,7 @@ const questions: PageQuestion[] = [
       },
     ],
     servicesCta: ['/debouchage-egouts-regards/'],
-    villesCta: ['/debouchage-toulon/', '/debouchage-la-seyne-sur-mer/'],
+    villesCta: ['/debouchage-aubagne/', '/debouchage-marignane/'],
   },
 
   {
@@ -370,7 +370,7 @@ const questions: PageQuestion[] = [
       },
       {
         heading: 'Méthode 4 — Hydrocurage à l\'eau chaude',
-        body: 'Pour les bouchons de graisse anciens et solidifiés, seul l\'hydrocurage à 60-80°C est efficace. C\'est la méthode que nous utilisons pour les restaurants et les collectivités dans le Var.',
+        body: 'Pour les bouchons de graisse anciens et solidifiés, seul l\'hydrocurage à 60-80°C est efficace. C\'est la méthode que nous utilisons pour les restaurants et les collectivités dans les Bouches-du-Rhône.',
       },
       {
         heading: 'Prévention',
@@ -388,7 +388,7 @@ const questions: PageQuestion[] = [
       },
     ],
     servicesCta: ['/debouchage-cuisine/', '/debouchage-evier-lavabo/'],
-    villesCta: ['/debouchage-toulon/', '/debouchage-hyeres/'],
+    villesCta: ['/debouchage-aubagne/', '/debouchage-marseille/'],
   },
 
   {
@@ -435,7 +435,7 @@ const questions: PageQuestion[] = [
       },
     ],
     servicesCta: ['/debouchage-canalisation/', '/debouchage-evier-lavabo/'],
-    villesCta: ['/debouchage-toulon/'],
+    villesCta: ['/debouchage-aubagne/'],
   },
 
   {
@@ -482,7 +482,7 @@ const questions: PageQuestion[] = [
       },
     ],
     servicesCta: ['/debouchage-canalisation/'],
-    villesCta: ['/debouchage-toulon/', '/debouchage-hyeres/', '/debouchage-frejus/'],
+    villesCta: ['/debouchage-aubagne/', '/debouchage-marseille/', '/debouchage-marignane/'],
   },
 
   // ─── GROUPE 4 — QUI ────────────────────────────────────────────────────────
@@ -494,10 +494,10 @@ const questions: PageQuestion[] = [
     noindex: false,
     titre: 'Qui appeler pour déboucher une canalisation ? Guide et tarifs',
     metaDesc:
-      'Qui appeler pour déboucher une canalisation dans le Var ? Plombier, déboucheur, artisan assainissement — différences et numéros d\'urgence.',
+      'Qui appeler pour déboucher une canalisation dans les Bouches-du-Rhône ? Plombier, déboucheur, artisan assainissement — différences et numéros d\'urgence.',
     h1: 'Qui appeler pour déboucher une canalisation ?',
     intro:
-      'Pour déboucher une canalisation dans le Var, appelez un technicien en assainissement ou un plombier-déboucheur. Évitez les plateformes intermédiaires qui facturent des frais de mise en relation au-dessus du prix réel.',
+      'Pour déboucher une canalisation dans les Bouches-du-Rhône, appelez un technicien en assainissement ou un plombier-déboucheur. Évitez les plateformes intermédiaires qui facturent des frais de mise en relation au-dessus du prix réel.',
     sections: [
       {
         heading: 'Qui peut déboucher les canalisations ?',
@@ -512,8 +512,8 @@ const questions: PageQuestion[] = [
         body: 'Les plateformes type urgence-plombier qui redirigent vers un sous-traitant avec des frais de service non affichés. Appelez directement l\'entreprise locale.',
       },
       {
-        heading: 'Dans le Var (83)',
-        body: 'Notre équipe intervient sur les 153 communes du Var. Délai d\'arrivée moyen : moins d\'une heure.',
+        heading: 'Dans les Bouches-du-Rhône (13)',
+        body: 'Notre équipe intervient sur les 119 communes des Bouches-du-Rhône. Délai d\'arrivée moyen : moins d\'une heure.',
       },
     ],
     faq: [
@@ -531,7 +531,7 @@ const questions: PageQuestion[] = [
       },
     ],
     servicesCta: ['/debouchage-canalisation/'],
-    villesCta: ['/debouchage-toulon/', '/debouchage-hyeres/', '/debouchage-frejus/', '/debouchage-draguignan/'],
+    villesCta: ['/debouchage-aubagne/', '/debouchage-marseille/', '/debouchage-marignane/', '/debouchage-aix-en-provence/'],
   },
 
   {
@@ -578,7 +578,7 @@ const questions: PageQuestion[] = [
       },
     ],
     servicesCta: ['/debouchage-canalisation/', '/debouchage-wc-toilettes/'],
-    villesCta: ['/debouchage-toulon/'],
+    villesCta: ['/debouchage-aubagne/'],
   },
 
   // ─── GROUPE 5 — WHAT ───────────────────────────────────────────────────────
@@ -627,7 +627,7 @@ const questions: PageQuestion[] = [
       },
     ],
     servicesCta: ['/debouchage-canalisation/', '/debouchage-wc-toilettes/'],
-    villesCta: ['/debouchage-toulon/'],
+    villesCta: ['/debouchage-aubagne/'],
   },
 
   {
@@ -678,7 +678,7 @@ const questions: PageQuestion[] = [
       },
     ],
     servicesCta: ['/debouchage-canalisation/'],
-    villesCta: ['/debouchage-toulon/', '/debouchage-hyeres/'],
+    villesCta: ['/debouchage-aubagne/', '/debouchage-marseille/'],
   },
 ];
 
