@@ -1,154 +1,121 @@
 ville,departement,code_postal,population,tier
-Toulon,Var,83000,169736,1
-La Seyne-sur-Mer,Var,83500,64651,1
-Hyères,Var,83400,55792,1
-Fréjus,Var,83370,53187,1
-Draguignan,Var,83300,40063,1
-Saint-Raphaël,Var,83530,35247,1
-Six-Fours-les-Plages,Var,83140,33272,1
-La Garde,Var,83130,25262,1
-La Valette-du-Var,Var,83160,23792,1
-La Crau,Var,83260,17945,1
-Brignoles,Var,83170,17509,1
-Sanary-sur-Mer,Var,83110,16745,1
-Saint-Maximin-la-Sainte-Baume,Var,83470,16389,2
-Sainte-Maxime,Var,83120,14268,2
-Roquebrune-sur-Argens,Var,83380,14066,2
-Ollioules,Var,83190,13585,2
-Cogolin,Var,83310,12045,2
-Saint-Cyr-sur-Mer,Var,83270,11759,2
-Vidauban,Var,83550,11565,2
-Cuers,Var,83390,11208,2
-Solliès-Pont,Var,83210,11063,2
-Le Luc,Var,83340,10964,2
-La Londe-les-Maures,Var,83250,10242,2
-Le Pradet,Var,83220,10037,2
-Carqueiranne,Var,83320,9852,2
-Le Beausset,Var,83330,9654,2
-Le Muy,Var,83490,9258,2
-Lorgues,Var,83510,8980,2
-La Farlède,Var,83210,8774,2
-Bandol,Var,83150,8377,2
-Bormes-les-Mimosas,Var,83230,7988,2
-Puget-sur-Argens,Var,83480,7854,2
-Cavalaire-sur-Mer,Var,83240,7277,2
-Les Arcs,Var,83460,7113,2
-Montauroux,Var,83440,6351,2
-Pierrefeu-du-Var,Var,83390,6069,2
-Trans-en-Provence,Var,83720,5781,2
-Saint-Mandrier-sur-Mer,Var,83430,5770,2
-Le Lavandou,Var,83980,5770,2
-Solliès-Toucas,Var,83210,5754,2
-Fayence,Var,83440,5743,2
-Saint-Zacharie,Var,83640,5549,2
-La Cadière-d'Azur,Var,83740,5545,2
-Garéoult,Var,83136,5358,2
-Pourrières,Var,83910,5128,2
-Tourves,Var,83170,4994,2
-Rocbaron,Var,83136,4938,2
-Nans-les-Pins,Var,83860,4459,2
-Grimaud,Var,83310,4432,2
-Le Cannet-des-Maures,Var,83340,4336,2
-Flayosc,Var,83780,4323,2
-Gonfaron,Var,83590,4319,2
-Saint-Tropez,Var,83990,4305,2
-Le Val,Var,83143,4299,2
-Rians,Var,83560,4270,2
-Puget-Ville,Var,83390,4242,2
-Vinon-sur-Verdon,Var,83560,4238,2
-Pignans,Var,83790,4013,2
-Salernes,Var,83690,3886,2
-Le Castellet,Var,83330,3881,2
-Le Revest-les-Eaux,Var,83200,3821,2
-La Croix-Valmer,Var,83420,3801,2
-Flassans-sur-Issole,Var,83340,3516,2
-Carcès,Var,83570,3494,2
-Carnoules,Var,83660,3469,2
-Callian,Var,83440,3167,2
-Besse-sur-Issole,Var,83890,3056,2
-Barjols,Var,83670,3018,2
-Tourrettes,Var,83440,2899,2
-La Motte,Var,83920,2881,2
-Forcalqueiret,Var,83136,2874,2
-Signes,Var,83870,2813,2
-Bagnols-en-Forêt,Var,83600,2754,2
-Les Adrets-de-l'Estérel,Var,83600,2754,2
-Bras,Var,83149,2737,2
-Le Plan-de-la-Tour,Var,83120,2717,2
-Néoules,Var,83136,2702,2
-Seillans,Var,83440,2636,2
-Régusse,Var,83630,2620,2
-Figanières,Var,83830,2604,2
-La Roquebrussanne,Var,83136,2579,2
-Gassin,Var,83580,2558,2
-Seillons-Source-d'Argens,Var,83470,2494,2
-Le Thoronet,Var,83340,2457,2
-Belgentier,Var,83210,2438,2
-Saint-Julien,Var,83560,2419,2
-Solliès-Ville,Var,83210,2423,2
-Évenos,Var,83330,2328,2
-Cotignac,Var,83570,2208,2
-Aups,Var,83630,2186,2
-Méounes-lès-Montrieux,Var,83136,2168,2
-Plan-d'Aups-Sainte-Baume,Var,83640,2123,2
-Ramatuelle,Var,83350,2079,2
-Cabasse,Var,83340,1934,2
-Sainte-Anastasie-sur-Issole,Var,83136,1926,2
-Collobrières,Var,83610,1931,2
-La Garde-Freinet,Var,83680,1887,2
-Callas,Var,83830,1889,2
-Camps-la-Source,Var,83170,1881,2
-Taradeau,Var,83460,1812,2
-Ginasservis,Var,83560,1787,2
-Saint-Paul-en-Forêt,Var,83440,1724,2
-Rougiers,Var,83170,1658,2
-Tanneron,Var,83440,1624,2
-La Verdière,Var,83560,1603,2
-Pourcieux,Var,83470,1569,2
-Montferrat,Var,83131,1555,2
-La Celle,Var,83170,1463,2
-Villecroze,Var,83690,1448,2
-La Môle,Var,83310,1419,2
-Tavernes,Var,83670,1406,2
-Bargemon,Var,83830,1375,2
-Brue-Auriac,Var,83119,1347,2
-Montfort-sur-Argens,Var,83570,1340,2
-Varages,Var,83670,1175,2
-Entrecasteaux,Var,83570,1126,2
-Vins-sur-Caramy,Var,83170,1009,2
-Ampus,Var,83111,945,2
-Correns,Var,83570,912,2
-Mazaugues,Var,83136,906,2
-Mons,Var,83440,841,2
-Pontevès,Var,83670,776,2
-Sillans-la-Cascade,Var,83690,762,2
-Saint-Antonin-du-Var,Var,83510,748,2
-Rayol-Canadel-sur-Mer,Var,83820,718,2
-Claviers,Var,83830,681,2
-Les Mayons,Var,83340,650,2
-Ollières,Var,83470,642,2
-Tourtour,Var,83690,591,2
-Montmeyan,Var,83670,566,2
-Châteaudouble,Var,83300,475,2
-Fox-Amphoux,Var,83670,466,2
-Comps-sur-Artuby,Var,83840,388,2
-Esparron,Var,83560,357,2
-Artignosc-sur-Verdon,Var,83630,336,2
-Bauduen,Var,83630,320,2
-Moissac-Bellevue,Var,83630,302,2
-La Roque-Esclapon,Var,83840,285,2
-Aiguines,Var,83630,283,2
-Les Salles-sur-Verdon,Var,83630,260,2
-Artigues,Var,83560,248,2
-Saint-Martin-de-Pallières,Var,83560,248,2
-Baudinard-sur-Verdon,Var,83630,225,2
-La Martre,Var,83840,218,2
-Bargème,Var,83840,215,2
-La Bastide,Var,83840,205,2
-Trigance,Var,83840,191,2
-Châteauvert,Var,83670,158,2
-Châteauvieux,Var,83840,88,2
-Riboux,Var,83136,52,2
-Le Bourguet,Var,83840,36,2
-Brenon,Var,83840,39,2
-Vérignon,Var,83630,15,2
+Marseille,Bouches-du-Rhône,13001,886040,1
+Aix-en-Provence,Bouches-du-Rhône,13080,149695,1
+Arles,Bouches-du-Rhône,13104,51811,1
+Martigues,Bouches-du-Rhône,13117,48298,1
+Aubagne,Bouches-du-Rhône,13400,47529,1
+Istres,Bouches-du-Rhône,13118,44292,1
+Salon-de-Provence,Bouches-du-Rhône,13300,44194,1
+La Ciotat,Bouches-du-Rhône,13600,38477,1
+Vitrolles,Bouches-du-Rhône,13127,36758,1
+Marignane,Bouches-du-Rhône,13700,33692,1
+Miramas,Bouches-du-Rhône,13140,26203,1
+Les Pennes-Mirabeau,Bouches-du-Rhône,13170,22537,1
+Gardanne,Bouches-du-Rhône,13120,21597,1
+Allauch,Bouches-du-Rhône,13190,21443,1
+Châteauneuf-les-Martigues,Bouches-du-Rhône,13220,18455,1
+Châteaurenard,Bouches-du-Rhône,13160,16545,2
+Fos-sur-Mer,Bouches-du-Rhône,13270,15862,2
+Port-de-Bouc,Bouches-du-Rhône,13110,15802,2
+Tarascon,Bouches-du-Rhône,13150,15396,2
+Bouc-Bel-Air,Bouches-du-Rhône,13320,15381,2
+Saint-Martin-de-Crau,Bouches-du-Rhône,13310,14145,2
+Berre-l'Étang,Bouches-du-Rhône,13130,13832,2
+Auriol,Bouches-du-Rhône,13390,13037,2
+Rognac,Bouches-du-Rhône,13340,12576,2
+Septèmes-les-Vallons,Bouches-du-Rhône,13240,11995,2
+Plan-de-Cuques,Bouches-du-Rhône,13380,11632,2
+Pélissanne,Bouches-du-Rhône,13330,11085,2
+Trets,Bouches-du-Rhône,13530,10946,2
+Gignac-la-Nerthe,Bouches-du-Rhône,13180,10343,2
+Fuveau,Bouches-du-Rhône,13710,10337,2
+Cabriès,Bouches-du-Rhône,13480,10240,2
+Lambesc,Bouches-du-Rhône,13410,10024,2
+Lançon-Provence,Bouches-du-Rhône,13680,9915,2
+Saint-Rémy-de-Provence,Bouches-du-Rhône,13210,9599,2
+La Fare-les-Oliviers,Bouches-du-Rhône,13580,9039,2
+Velaux,Bouches-du-Rhône,13880,8941,2
+Roquevaire,Bouches-du-Rhône,13360,8915,2
+Saint-Chamas,Bouches-du-Rhône,13250,8676,2
+Port-Saint-Louis-du-Rhône,Bouches-du-Rhône,13230,8573,2
+Éguilles,Bouches-du-Rhône,13510,8479,2
+Venelles,Bouches-du-Rhône,13770,8418,2
+Sausset-les-Pins,Bouches-du-Rhône,13960,7574,2
+Eyguières,Bouches-du-Rhône,13430,7119,2
+Sénas,Bouches-du-Rhône,13560,6925,2
+Carnoux-en-Provence,Bouches-du-Rhône,13470,6873,2
+Meyreuil,Bouches-du-Rhône,13590,6747,2
+Saint-Victoret,Bouches-du-Rhône,13730,6730,2
+Cassis,Bouches-du-Rhône,13260,6661,2
+La Penne-sur-Huveaune,Bouches-du-Rhône,13821,6605,2
+Gémenos,Bouches-du-Rhône,13420,6579,2
+La Bouilladisse,Bouches-du-Rhône,13720,6547,2
+Cuges-les-Pins,Bouches-du-Rhône,13780,6236,2
+Saint-Mitre-les-Remparts,Bouches-du-Rhône,13920,6175,2
+Mallemort,Bouches-du-Rhône,13370,6166,2
+Saint-Cannat,Bouches-du-Rhône,13760,6097,2
+Noves,Bouches-du-Rhône,13550,6080,2
+Le Puy-Sainte-Réparade,Bouches-du-Rhône,13610,5935,2
+Ventabren,Bouches-du-Rhône,13122,5839,2
+Roquefort-la-Bédoule,Bouches-du-Rhône,13830,5798,2
+Simiane-Collongue,Bouches-du-Rhône,13109,5780,2
+Peypin,Bouches-du-Rhône,13124,5771,2
+Ensuès-la-Redonne,Bouches-du-Rhône,13820,5757,2
+Carry-le-Rouet,Bouches-du-Rhône,13620,5702,2
+Grans,Bouches-du-Rhône,13450,5489,2
+La Roque-d'Anthéron,Bouches-du-Rhône,13640,5459,2
+Rousset,Bouches-du-Rhône,13790,5425,2
+Peyrolles-en-Provence,Bouches-du-Rhône,13860,5409,2
+Le Rove,Bouches-du-Rhône,13740,5246,2
+Ceyreste,Bouches-du-Rhône,13600,4863,2
+Graveson,Bouches-du-Rhône,13690,4698,2
+Rognes,Bouches-du-Rhône,13840,4693,2
+Cabannes,Bouches-du-Rhône,13440,4595,2
+Gréasque,Bouches-du-Rhône,13850,4554,2
+Jouques,Bouches-du-Rhône,13490,4547,2
+Eyragues,Bouches-du-Rhône,13630,4298,2
+Barbentane,Bouches-du-Rhône,13570,4266,2
+Rognonas,Bouches-du-Rhône,13870,4261,2
+Mimet,Bouches-du-Rhône,13105,4241,2
+La Destrousse,Bouches-du-Rhône,13112,4133,2
+Meyrargues,Bouches-du-Rhône,13650,3847,2
+Coudoux,Bouches-du-Rhône,13111,3825,2
+Peynier,Bouches-du-Rhône,13790,3739,2
+Plan-d'Orgon,Bouches-du-Rhône,13750,3573,2
+Fontvieille,Bouches-du-Rhône,13990,3571,2
+Mouriès,Bouches-du-Rhône,13890,3527,2
+Saint-Savournin,Bouches-du-Rhône,13119,3397,2
+Saint-Andiol,Bouches-du-Rhône,13670,3353,2
+Alleins,Bouches-du-Rhône,13980,2852,2
+Maillane,Bouches-du-Rhône,13910,2775,2
+Orgon,Bouches-du-Rhône,13660,2762,2
+Mollégès,Bouches-du-Rhône,13940,2647,2
+Charleval,Bouches-du-Rhône,13350,2640,2
+Saint-Étienne-du-Grès,Bouches-du-Rhône,13103,2489,2
+Saintes-Maries-de-la-Mer,Bouches-du-Rhône,13460,2433,2
+Le Tholonet,Bouches-du-Rhône,13100,2391,2
+Châteauneuf-le-Rouge,Bouches-du-Rhône,13790,2376,2
+Maussane-les-Alpilles,Bouches-du-Rhône,13520,2347,2
+Cadolive,Bouches-du-Rhône,13950,2236,2
+Vernègues,Bouches-du-Rhône,13116,2166,2
+Paradou,Bouches-du-Rhône,13520,2159,2
+Lamanon,Bouches-du-Rhône,13113,2097,2
+Belcodène,Bouches-du-Rhône,13720,2009,2
+Eygalières,Bouches-du-Rhône,13810,1773,2
+Puyloubier,Bouches-du-Rhône,13114,1768,2
+Cornillon-Confoux,Bouches-du-Rhône,13250,1667,2
+Boulbon,Bouches-du-Rhône,13150,1543,2
+Aureille,Bouches-du-Rhône,13930,1533,2
+Saint-Marc-Jaumegarde,Bouches-du-Rhône,13100,1273,2
+Vauvenargues,Bouches-du-Rhône,13126,1058,2
+Saint-Paul-lès-Durance,Bouches-du-Rhône,13115,885,2
+La Barben,Bouches-du-Rhône,13330,868,2
+Verquières,Bouches-du-Rhône,13670,772,2
+Beaurecueil,Bouches-du-Rhône,13100,585,2
+Mas-Blanc-des-Alpilles,Bouches-du-Rhône,13103,564,2
+Aurons,Bouches-du-Rhône,13121,555,2
+Saint-Estève-Janson,Bouches-du-Rhône,13610,357,2
+Les Baux-de-Provence,Bouches-du-Rhône,13520,264,2
+Saint-Pierre-de-Mézoargues,Bouches-du-Rhône,13150,229,2
+Saint-Antonin-sur-Bayon,Bouches-du-Rhône,13100,126,2
+

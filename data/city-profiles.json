@@ -1,0 +1,2240 @@
+[
+  {
+    "slug": "marseille",
+    "name": "Marseille",
+    "code_postal": "13001",
+    "population": 886040,
+    "code_insee": "13055",
+    "coordinates": {
+      "lat": 43.2803,
+      "lon": 5.3806
+    },
+    "quartiers": [
+      "Le Centre"
+    ],
+    "rues": [
+      "Boulevard chave",
+      "Boulevard michel",
+      "Boulevard michelet",
+      "Boulevard trupheme",
+      "Boulevard velten",
+      "Boulevard guerin",
+      "Boulevard barthelemy",
+      "Boulevard chancel",
+      "Boulevard central",
+      "Boulevard rey",
+      "Boulevard charlemagne",
+      "Boulevard bara",
+      "Boulevard gemy",
+      "Boulevard bellevue",
+      "Boulevard haguenau"
+    ],
+    "wikipedia_extract": "Marseille est une commune française située dans le département des Bouches-du-Rhône, dont elle est la ville-préfecture. Elle est le chef-lieu de la région Provence-Alpes-Côte d'Azur.",
+    "archetype": "urbain"
+  },
+  {
+    "slug": "aix-en-provence",
+    "name": "Aix-en-Provence",
+    "code_postal": "13080",
+    "population": 149695,
+    "code_insee": "13001",
+    "coordinates": {
+      "lat": 43.536,
+      "lon": 5.3879
+    },
+    "quartiers": [
+      "Le Centre"
+    ],
+    "rues": [
+      "Boulevard  Bellevue",
+      "Boulevard  Caire",
+      "Boulevard  Carnot",
+      "Boulevard de Carelle",
+      "Boulevard du Roi René",
+      "Boulevard de la République",
+      "Boulevard de la Grande Thumine",
+      "Boulevard des Camus"
+    ],
+    "wikipedia_extract": "Aix-en-Provence [ɛks ɑ̃ pʁɔvɑ̃s] est une commune française du Sud-Est de la France, dans le département des Bouches-du-Rhône, dont elle est sous-préfecture, en région Provence-Alpes-Côte d'Azur. Elle forme avec 35 autres communes le pays d'Aix au sein de la Métropole Aix-Marseille Provence.",
+    "archetype": "urbain"
+  },
+  {
+    "slug": "arles",
+    "name": "Arles",
+    "code_postal": "13104",
+    "population": 51811,
+    "code_insee": "13004",
+    "coordinates": {
+      "lat": 43.5441,
+      "lon": 4.6513
+    },
+    "quartiers": [
+      "Le Centre"
+    ],
+    "rues": [
+      "Boulevard Emile Combes",
+      "Boulevard Emile Zola",
+      "Boulevard de la Camargue",
+      "Boulevard de Craponne",
+      "Boulevard Georges Clemenceau"
+    ],
+    "wikipedia_extract": "Arles est une commune française, sous-préfecture du département des Bouches-du-Rhône, en région Provence-Alpes-Côte d'Azur en France. La ville, chef-lieu de l'arrondissement d'Arles, est la commune de France métropolitaine la plus étendue avec quelque 75 893 hectares, et la plus peuplée de la Camargue. La ville est traversée par le Rhône.",
+    "archetype": "urbain"
+  },
+  {
+    "slug": "martigues",
+    "name": "Martigues",
+    "code_postal": "13117",
+    "population": 48298,
+    "code_insee": "13056",
+    "coordinates": {
+      "lat": 43.3839,
+      "lon": 5.0451
+    },
+    "quartiers": [
+      "Le Centre"
+    ],
+    "rues": [
+      "Boulevard Louise Michel",
+      "Boulevard de Boudème",
+      "Boulevard Emile Zola",
+      "Boulevard Vincent Richaud",
+      "Boulevard Marcel Cachin",
+      "Boulevard Mongin",
+      "Boulevard Camille Pelletan",
+      "Boulevard Hélène Fournier",
+      "Boulevard des Capucins"
+    ],
+    "wikipedia_extract": "Martigues est une commune française des Bouches-du-Rhône en région Provence-Alpes-Côte d'Azur, également connue sous le surnom de « Venise provençale ». Elle s'étend sur les rives de l'étang de Berre et sur le canal de Caronte. La ville se compose de trois quartiers : Ferrières au nord, l'Île sur le canal et Jonquières au sud. Elle compte également plusieurs villages. Les habitants sont appelés Martégaux et Martégales.",
+    "archetype": "urbain"
+  },
+  {
+    "slug": "aubagne",
+    "name": "Aubagne",
+    "code_postal": "13400",
+    "population": 47529,
+    "code_insee": "13005",
+    "coordinates": {
+      "lat": 43.2904,
+      "lon": 5.5643
+    },
+    "quartiers": [
+      "Le Centre"
+    ],
+    "rues": [
+      "Boulevard Henri Saver",
+      "Boulevard Emile Combes",
+      "Boulevard de la Pinede",
+      "Boulevard des Romarins",
+      "Boulevard de la Lavande"
+    ],
+    "wikipedia_extract": "Aubagne est une commune située dans la couronne périurbaine de Marseille, dans le département des Bouches-du-Rhône en région Provence-Alpes-Côte d'Azur (PACA) dans le Sud-Est de la France.\nC'est la cinquième ville du département des Bouches-du-Rhône par sa population et la treizième de Provence.",
+    "archetype": "urbain"
+  },
+  {
+    "slug": "istres",
+    "name": "Istres",
+    "code_postal": "13118",
+    "population": 44292,
+    "code_insee": "13047",
+    "coordinates": {
+      "lat": 43.5455,
+      "lon": 4.9477
+    },
+    "quartiers": [
+      "Le Centre"
+    ],
+    "rues": [
+      "Boulevard Dethez",
+      "Boulevard de la République",
+      "Boulevard Paul Painlevé"
+    ],
+    "wikipedia_extract": "Istres est une commune française, sous-préfecture du département des Bouches-du-Rhône, dans la région Provence-Alpes-Côte d'Azur. Elle est le chef-lieu de l’arrondissement d'Istres, du canton d’Istres et commune membre de la métropole d'Aix-Marseille-Provence.",
+    "archetype": "urbain"
+  },
+  {
+    "slug": "salon-de-provence",
+    "name": "Salon-de-Provence",
+    "code_postal": "13300",
+    "population": 44194,
+    "code_insee": "13103",
+    "coordinates": {
+      "lat": 43.643,
+      "lon": 5.049
+    },
+    "quartiers": [
+      "Le Centre"
+    ],
+    "rues": [
+      "Boulevard de Sénanque",
+      "Boulevard Ledru Rollin",
+      "Boulevard Denfert- Rochereau",
+      "Boulevard de Glanum",
+      "Boulevard David",
+      "Boulevard de la République",
+      "Boulevard du Roy Rene",
+      "Boulevard de la Reine Jeanne",
+      "Boulevard des Capucins",
+      "Boulevard Winston Churchill",
+      "Boulevard Georges Clémenceau",
+      "Boulevard Léopold Coren"
+    ],
+    "wikipedia_extract": "Salon-de-Provence est une commune française située dans le département des Bouches-du-Rhône, en région Provence-Alpes-Côte d'Azur. Elle fait partie de la Métropole Aix-Marseille Provence.",
+    "archetype": "urbain"
+  },
+  {
+    "slug": "la-ciotat",
+    "name": "La Ciotat",
+    "code_postal": "13600",
+    "population": 38477,
+    "code_insee": "13028",
+    "coordinates": {
+      "lat": 43.1882,
+      "lon": 5.6175
+    },
+    "quartiers": [
+      "Le Centre"
+    ],
+    "rues": [
+      "Boulevard de Clavel",
+      "Boulevard Michelet",
+      "Boulevard Guerin",
+      "Boulevard de la Gache",
+      "Boulevard de Lavaux",
+      "Boulevard de la Republique",
+      "Boulevard Lamartine"
+    ],
+    "wikipedia_extract": "La Ciotat est une commune française située dans le département des Bouches-du-Rhône en région Provence-Alpes-Côte d'Azur, à 31 kilomètres à l'est de Marseille. Ses habitants sont appelés les Ciotadens et les Ciotadennes. Bien que faisant partie de la Métropole Aix-Marseille-Provence, la Ciotat est l'une des deux seules communes de celle-ci qui appartient à l'unité urbaine de Toulon.",
+    "archetype": "urbain"
+  },
+  {
+    "slug": "vitrolles",
+    "name": "Vitrolles",
+    "code_postal": "13127",
+    "population": 36758,
+    "code_insee": "13117",
+    "coordinates": {
+      "lat": 43.4509,
+      "lon": 5.2656
+    },
+    "quartiers": [
+      "Le Centre"
+    ],
+    "rues": [
+      "Boulevard Henri Loubet",
+      "Boulevard Marcel Hochet"
+    ],
+    "wikipedia_extract": "Vitrolles est une commune française située dans le département des Bouches-du-Rhône, en région Provence-Alpes-Côte d'Azur. Ses habitants sont appelés les Vitrollais.",
+    "archetype": "urbain"
+  },
+  {
+    "slug": "marignane",
+    "name": "Marignane",
+    "code_postal": "13700",
+    "population": 33692,
+    "code_insee": "13054",
+    "coordinates": {
+      "lat": 43.4218,
+      "lon": 5.2178
+    },
+    "quartiers": [
+      "Le Centre"
+    ],
+    "rues": [
+      "Boulevard Rene Chiari",
+      "Boulevard du Bassin",
+      "Boulevard du Raumartin"
+    ],
+    "wikipedia_extract": "Marignane est une commune française située dans le département des Bouches-du-Rhône en région Provence-Alpes-Côte d'Azur.",
+    "archetype": "urbain"
+  },
+  {
+    "slug": "miramas",
+    "name": "Miramas",
+    "code_postal": "13140",
+    "population": 26203,
+    "code_insee": "13063",
+    "coordinates": {
+      "lat": 43.5841,
+      "lon": 5.0148
+    },
+    "quartiers": [
+      "Le Centre"
+    ],
+    "rues": [
+      "Boulevard Jacques Minet",
+      "Boulevard Camille Pelletan"
+    ],
+    "wikipedia_extract": "Miramas [miʁamas] est une commune française, située dans le département des Bouches-du-Rhône en région Provence-Alpes-Côte d'Azur. Elle fait partie de la métropole d'Aix-Marseille-Provence. La ville s'étend sur 25,74 km2 et compte 26 405 habitants en 2021. Le territoire de la commune se situe au nord de l'étang de Berre, à environ 53 km au nord-ouest du centre de Marseille par la route de l'étang de Berre, une soixantaine de km par l'autoroute A54. Au croisement des quatre chemins s'érige un petit mont Miramas le Vieux où l'on peut voir l'étang de Berre, car il n'est pas visible de Miramas ville appelée aussi Miramas Gare. Située sur la plaine de la Crau, elle marque la fin de la dernière couronne périphérique marseillaise.",
+    "archetype": "urbain"
+  },
+  {
+    "slug": "les-pennes-mirabeau",
+    "name": "Les Pennes-Mirabeau",
+    "code_postal": "13170",
+    "population": 22537,
+    "code_insee": "13071",
+    "coordinates": {
+      "lat": 43.4005,
+      "lon": 5.3222
+    },
+    "quartiers": [
+      "Le Centre"
+    ],
+    "rues": [
+      "Boulevard Félix Michel",
+      "Boulevard André Chamson",
+      "Boulevard Ripert",
+      "Boulevard Génésio",
+      "Boulevard du Raumartin",
+      "Boulevard du Muguet"
+    ],
+    "wikipedia_extract": "Les Pennes-Mirabeau est une commune française située dans la banlieue nord de Marseille, dans le département des Bouches-du-Rhône, en région Provence-Alpes-Côte d'Azur.",
+    "archetype": "urbain"
+  },
+  {
+    "slug": "gardanne",
+    "name": "Gardanne",
+    "code_postal": "13120",
+    "population": 21597,
+    "code_insee": "13041",
+    "coordinates": {
+      "lat": 43.4585,
+      "lon": 5.4857
+    },
+    "quartiers": [
+      "Le Centre"
+    ],
+    "rues": [
+      "Boulevard Savio Biver",
+      "Boulevard Bontemps",
+      "Boulevard Savio",
+      "Boulevard Carnot"
+    ],
+    "wikipedia_extract": "Gardanne est une commune française située dans le département des Bouches-du-Rhône, en région Provence-Alpes-Côte d'Azur. Elle fait partie du territoire du pays d'Aix au sein de la métropole d'Aix-Marseille-Provence.",
+    "archetype": "urbain"
+  },
+  {
+    "slug": "allauch",
+    "name": "Allauch",
+    "code_postal": "13190",
+    "population": 21443,
+    "code_insee": "13002",
+    "coordinates": {
+      "lat": 43.3522,
+      "lon": 5.5103
+    },
+    "quartiers": [
+      "Le Centre"
+    ],
+    "rues": [
+      "Boulevard Gustave Rambert",
+      "Boulevard Maurin",
+      "Boulevard Ange Martin",
+      "Boulevard Henri Tasso",
+      "Boulevard Antoine Camoin",
+      "Boulevard Auguste Camoin",
+      "Boulevard Enco de Pont",
+      "Boulevard André Maurin"
+    ],
+    "wikipedia_extract": "Allauch est une commune française située dans la banlieue est de Marseille, dans le département des Bouches-du-Rhône, en Provence.",
+    "archetype": "urbain"
+  },
+  {
+    "slug": "chateauneuf-les-martigues",
+    "name": "Châteauneuf-les-Martigues",
+    "code_postal": "13220",
+    "population": 18455,
+    "code_insee": "13026",
+    "coordinates": {
+      "lat": 43.3904,
+      "lon": 5.1464
+    },
+    "quartiers": [
+      "Le Centre"
+    ],
+    "rues": [
+      "Boulevard de la Bastide Neuve"
+    ],
+    "wikipedia_extract": "Châteauneuf-les-Martigues est une commune française située dans le département des Bouches-du-Rhône, en région Provence-Alpes-Côte d'Azur.",
+    "archetype": "littoral-touristique"
+  },
+  {
+    "slug": "chateaurenard",
+    "name": "Châteaurenard",
+    "code_postal": "13160",
+    "population": 16545,
+    "code_insee": "13027",
+    "coordinates": {
+      "lat": 43.8829,
+      "lon": 4.8344
+    },
+    "quartiers": [
+      "Le Centre"
+    ],
+    "rues": [],
+    "wikipedia_extract": "Châteaurenard est une commune française située dans le département des Bouches-du-Rhône, en région Provence-Alpes-Côte d'Azur.",
+    "archetype": "littoral-touristique"
+  },
+  {
+    "slug": "fos-sur-mer",
+    "name": "Fos-sur-Mer",
+    "code_postal": "13270",
+    "population": 15862,
+    "code_insee": "13039",
+    "coordinates": {
+      "lat": 43.4545,
+      "lon": 4.8979
+    },
+    "quartiers": [
+      "Le Centre"
+    ],
+    "rues": [
+      "Boulevard de Verdun"
+    ],
+    "wikipedia_extract": "Fos-sur-Mer est une commune française, située dans le département des Bouches-du-Rhône en région Provence-Alpes-Côte d'Azur.",
+    "archetype": "littoral-touristique"
+  },
+  {
+    "slug": "port-de-bouc",
+    "name": "Port-de-Bouc",
+    "code_postal": "13110",
+    "population": 15802,
+    "code_insee": "13077",
+    "coordinates": {
+      "lat": 43.4207,
+      "lon": 4.9993
+    },
+    "quartiers": [
+      "Le Centre"
+    ],
+    "rues": [
+      "Boulevard Dominique Nicotra",
+      "Boulevard Marcel Cachin",
+      "Boulevard Frederic Chopin"
+    ],
+    "wikipedia_extract": "Port-de-Bouc est une commune française, située dans le département des Bouches-du-Rhône en région Provence-Alpes-Côte d'Azur. Ses habitants sont appelés les Port-de-Boucains.",
+    "archetype": "littoral-touristique"
+  },
+  {
+    "slug": "tarascon",
+    "name": "Tarascon",
+    "code_postal": "13150",
+    "population": 15396,
+    "code_insee": "13108",
+    "coordinates": {
+      "lat": 43.7972,
+      "lon": 4.6852
+    },
+    "quartiers": [
+      "Le Centre"
+    ],
+    "rues": [
+      "Boulevard du Chateau",
+      "Boulevard Itam",
+      "Boulevard du Roi René"
+    ],
+    "wikipedia_extract": "Tarascon ou Tarascon-sur-Rhône est une commune française située à l'extrémité ouest du département des Bouches-du-Rhône en région Provence-Alpes-Côte d'Azur.",
+    "archetype": "littoral-touristique"
+  },
+  {
+    "slug": "bouc-bel-air",
+    "name": "Bouc-Bel-Air",
+    "code_postal": "13320",
+    "population": 15381,
+    "code_insee": "13015",
+    "coordinates": {
+      "lat": 43.4442,
+      "lon": 5.4118
+    },
+    "quartiers": [
+      "Le Centre"
+    ],
+    "rues": [
+      "Boulevard Coli"
+    ],
+    "wikipedia_extract": "Bouc-Bel-Air est une commune française située dans le département des Bouches-du-Rhône, en région Provence-Alpes-Côte d'Azur. Elle fait partie du territoire du Pays d'Aix au sein de la métropole Aix-Marseille-Provence.",
+    "archetype": "littoral-touristique"
+  },
+  {
+    "slug": "saint-martin-de-crau",
+    "name": "Saint-Martin-de-Crau",
+    "code_postal": "13310",
+    "population": 14145,
+    "code_insee": "13097",
+    "coordinates": {
+      "lat": 43.6074,
+      "lon": 4.8688
+    },
+    "quartiers": [
+      "Le Centre"
+    ],
+    "rues": [
+      "Boulevard de Provence"
+    ],
+    "wikipedia_extract": "Saint-Martin-de-Crau est une commune française située dans le département des Bouches-du-Rhône, en région Provence-Alpes-Côte d'Azur. Ses habitants sont les Saint-Martinois ou les Cravens.",
+    "archetype": "littoral-touristique"
+  },
+  {
+    "slug": "berre-l-etang",
+    "name": "Berre-l'Étang",
+    "code_postal": "13130",
+    "population": 13832,
+    "code_insee": "13014",
+    "coordinates": {
+      "lat": 43.4976,
+      "lon": 5.1596
+    },
+    "quartiers": [
+      "Le Centre"
+    ],
+    "rues": [
+      "Boulevard Marcel Cachin",
+      "Boulevard Henri Barbusse",
+      "Boulevard Henri Wallon"
+    ],
+    "wikipedia_extract": "Berre-l'Étang est une commune française située dans le département des Bouches-du-Rhône, en région Provence-Alpes-Côte d'Azur. Elle fait partie de la métropole d'Aix-Marseille-Provence.",
+    "archetype": "littoral-touristique"
+  },
+  {
+    "slug": "auriol",
+    "name": "Auriol",
+    "code_postal": "13390",
+    "population": 13037,
+    "code_insee": "13007",
+    "coordinates": {
+      "lat": 43.3594,
+      "lon": 5.6559
+    },
+    "quartiers": [
+      "Le Centre"
+    ],
+    "rues": [],
+    "wikipedia_extract": "Auriol est une commune provençale située dans le département des Bouches-du-Rhône, en région Provence-Alpes-Côte d'Azur. Elle est jumelée depuis le 11 décembre 2010 avec la commune italienne de Castelnuovo Rangone.",
+    "archetype": "littoral-touristique"
+  },
+  {
+    "slug": "rognac",
+    "name": "Rognac",
+    "code_postal": "13340",
+    "population": 12576,
+    "code_insee": "13081",
+    "coordinates": {
+      "lat": 43.4995,
+      "lon": 5.233
+    },
+    "quartiers": [
+      "Le Centre"
+    ],
+    "rues": [
+      "Boulevard Renoir",
+      "Boulevard Gustave Courbet",
+      "Boulevard Auguste Renoir",
+      "Boulevard Paul Verlaine",
+      "Boulevard des Bassins",
+      "Boulevard Jean Renoir"
+    ],
+    "wikipedia_extract": "Rognac est une commune française située dans le département des Bouches-du-Rhône, en région Provence-Alpes-Côte d'Azur. Elle fait partie de la métropole d'Aix-Marseille-Provence. Ses habitants sont appelés les Rognacais.",
+    "archetype": "littoral-touristique"
+  },
+  {
+    "slug": "septemes-les-vallons",
+    "name": "Septèmes-les-Vallons",
+    "code_postal": "13240",
+    "population": 11995,
+    "code_insee": "13106",
+    "coordinates": {
+      "lat": 43.3931,
+      "lon": 5.3828
+    },
+    "quartiers": [
+      "Le Centre"
+    ],
+    "rues": [
+      "Boulevard du Centre René le Guen",
+      "Boulevard Elie Corradi",
+      "Boulevard de la Limite"
+    ],
+    "wikipedia_extract": "Septèmes-les-Vallons est une commune française située dans la banlieue nord de Marseille, dans le département des Bouches-du-Rhône en région Provence-Alpes-Côte d'Azur.",
+    "archetype": "littoral-touristique"
+  },
+  {
+    "slug": "plan-de-cuques",
+    "name": "Plan-de-Cuques",
+    "code_postal": "13380",
+    "population": 11632,
+    "code_insee": "13075",
+    "coordinates": {
+      "lat": 43.3642,
+      "lon": 5.4639
+    },
+    "quartiers": [
+      "Le Centre"
+    ],
+    "rues": [
+      "Boulevard Rene Cassin",
+      "Boulevard Barthes",
+      "Boulevard de Provence",
+      "Boulevard de Verdun",
+      "Boulevard Sainte Therese",
+      "Boulevard Giniez",
+      "Boulevard Auguste Baudin",
+      "Boulevard Bompard"
+    ],
+    "wikipedia_extract": "Plan-de-Cuques est une commune française de plus de 10 000 habitants, située dans la banlieue nord-est de Marseille, dans le département des Bouches-du-Rhône en région Provence-Alpes-Côte d'Azur. Ses habitants sont appelés les Plan-de-Cuquois. Le nom en provençal est lou Plan dei Cuco.",
+    "archetype": "littoral-touristique"
+  },
+  {
+    "slug": "pelissanne",
+    "name": "Pélissanne",
+    "code_postal": "13330",
+    "population": 11085,
+    "code_insee": "13069",
+    "coordinates": {
+      "lat": 43.63,
+      "lon": 5.1628
+    },
+    "quartiers": [
+      "Le Centre"
+    ],
+    "rues": [],
+    "wikipedia_extract": "Pélissanne est une commune française située dans le département des Bouches-du-Rhône, en région Provence-Alpes-Côte d'Azur. Elle fait partie de la Métropole d'Aix-Marseille-Provence.",
+    "archetype": "littoral-touristique"
+  },
+  {
+    "slug": "trets",
+    "name": "Trets",
+    "code_postal": "13530",
+    "population": 10946,
+    "code_insee": "13110",
+    "coordinates": {
+      "lat": 43.4452,
+      "lon": 5.7137
+    },
+    "quartiers": [
+      "Le Centre"
+    ],
+    "rues": [
+      "Boulevard Etienne Boyer",
+      "Boulevard de la République"
+    ],
+    "wikipedia_extract": "Trets est une commune française située dans le département des Bouches-du-Rhône, en région Provence-Alpes-Côte d'Azur.",
+    "archetype": "littoral-touristique"
+  },
+  {
+    "slug": "gignac-la-nerthe",
+    "name": "Gignac-la-Nerthe",
+    "code_postal": "13180",
+    "population": 10343,
+    "code_insee": "13043",
+    "coordinates": {
+      "lat": 43.3873,
+      "lon": 5.2334
+    },
+    "quartiers": [
+      "Le Centre"
+    ],
+    "rues": [
+      "Boulevard de la Provence",
+      "Boulevard Camille Pelletan"
+    ],
+    "wikipedia_extract": "Gignac-la-Nerthe est une commune française située dans le département des Bouches-du-Rhône, en région Provence-Alpes-Côte d'Azur, à environ 10 km de Marseille. Elle fait partie de l'unité urbaine de Marseille - Aix-en-Provence et de la métropole d'Aix-Marseille-Provence.",
+    "archetype": "littoral-touristique"
+  },
+  {
+    "slug": "fuveau",
+    "name": "Fuveau",
+    "code_postal": "13710",
+    "population": 10337,
+    "code_insee": "13040",
+    "coordinates": {
+      "lat": 43.4575,
+      "lon": 5.5537
+    },
+    "quartiers": [
+      "Le Centre"
+    ],
+    "rues": [],
+    "wikipedia_extract": "Fuveau est une commune française située dans le département des Bouches-du-Rhône, en région Provence-Alpes-Côte d'Azur.",
+    "archetype": "littoral-touristique"
+  },
+  {
+    "slug": "cabries",
+    "name": "Cabriès",
+    "code_postal": "13480",
+    "population": 10240,
+    "code_insee": "13019",
+    "coordinates": {
+      "lat": 43.453,
+      "lon": 5.3467
+    },
+    "quartiers": [
+      "Le Centre"
+    ],
+    "rues": [
+      "Boulevard des Chenes",
+      "Boulevard Mistrau",
+      "Boulevard Mireille"
+    ],
+    "wikipedia_extract": "Cabriès [kabʁijɛs] est une commune française, située dans le département des Bouches-du-Rhône en région Provence-Alpes-Côte d'Azur.",
+    "archetype": "littoral-touristique"
+  },
+  {
+    "slug": "lambesc",
+    "name": "Lambesc",
+    "code_postal": "13410",
+    "population": 10024,
+    "code_insee": "13050",
+    "coordinates": {
+      "lat": 43.6636,
+      "lon": 5.2493
+    },
+    "quartiers": [
+      "Le Centre"
+    ],
+    "rues": [
+      "Boulevard de la République"
+    ],
+    "wikipedia_extract": "Lambesc est une commune française, située dans le département des Bouches-du-Rhône en région Provence-Alpes-Côte d'Azur.",
+    "archetype": "littoral-touristique"
+  },
+  {
+    "slug": "lancon-provence",
+    "name": "Lançon-Provence",
+    "code_postal": "13680",
+    "population": 9915,
+    "code_insee": "13051",
+    "coordinates": {
+      "lat": 43.5728,
+      "lon": 5.1725
+    },
+    "quartiers": [
+      "Le Centre"
+    ],
+    "rues": [
+      "Boulevard des Chênes"
+    ],
+    "wikipedia_extract": "Lançon-Provence est une commune française située au centre du département des Bouches-du-Rhône en région Provence-Alpes-Côte d'Azur. Elle fait partie de la métropole d'Aix-Marseille-Provence. Conformément au gentilé, ses habitants sont appelés les Lançonnaises et les Lançonnais.",
+    "archetype": "littoral-touristique"
+  },
+  {
+    "slug": "saint-remy-de-provence",
+    "name": "Saint-Rémy-de-Provence",
+    "code_postal": "13210",
+    "population": 9599,
+    "code_insee": "13100",
+    "coordinates": {
+      "lat": 43.7815,
+      "lon": 4.8455
+    },
+    "quartiers": [
+      "Le Centre"
+    ],
+    "rues": [
+      "Boulevard Mirabeau"
+    ],
+    "wikipedia_extract": "Saint-Rémy-de-Provence est une commune française du département des Bouches-du-Rhône. Située dans la région Provence-Alpes-Côte d'Azur, Saint-Rémy-de-Provence est la petite capitale des Alpilles.",
+    "archetype": "littoral-touristique"
+  },
+  {
+    "slug": "la-fare-les-oliviers",
+    "name": "La Fare-les-Oliviers",
+    "code_postal": "13580",
+    "population": 9039,
+    "code_insee": "13037",
+    "coordinates": {
+      "lat": 43.5541,
+      "lon": 5.2051
+    },
+    "quartiers": [
+      "Le Centre"
+    ],
+    "rues": [],
+    "wikipedia_extract": "La Fare-les-Oliviers est une commune française située dans le département des Bouches-du-Rhône, en région Provence-Alpes-Côte d'Azur. Elle fait partie de la métropole Aix-Marseille-Provence. Ses habitants sont appelés soit les Farencs / Farenques, soit les Farens / Farennes. Elle possède deux écoles primaires, deux maternelles et un collège.",
+    "archetype": "littoral-touristique"
+  },
+  {
+    "slug": "velaux",
+    "name": "Velaux",
+    "code_postal": "13880",
+    "population": 8941,
+    "code_insee": "13112",
+    "coordinates": {
+      "lat": 43.5215,
+      "lon": 5.246
+    },
+    "quartiers": [
+      "Le Centre"
+    ],
+    "rues": [],
+    "wikipedia_extract": "Velaux [vəlo] est une commune française du département des Bouches-du-Rhône qui fait partie de la métropole d'Aix-Marseille-Provence.",
+    "archetype": "periurbain"
+  },
+  {
+    "slug": "roquevaire",
+    "name": "Roquevaire",
+    "code_postal": "13360",
+    "population": 8915,
+    "code_insee": "13086",
+    "coordinates": {
+      "lat": 43.3452,
+      "lon": 5.598
+    },
+    "quartiers": [
+      "Le Centre"
+    ],
+    "rues": [],
+    "wikipedia_extract": "Roquevaire est une commune française située dans le département des Bouches-du-Rhône, en région Provence-Alpes-Côte d'Azur.",
+    "archetype": "littoral-touristique"
+  },
+  {
+    "slug": "saint-chamas",
+    "name": "Saint-Chamas",
+    "code_postal": "13250",
+    "population": 8676,
+    "code_insee": "13092",
+    "coordinates": {
+      "lat": 43.5414,
+      "lon": 5.072
+    },
+    "quartiers": [
+      "Le Centre"
+    ],
+    "rues": [
+      "Boulevard Bosio"
+    ],
+    "wikipedia_extract": "Saint-Chamas [sɛ̃ ʃama] est une commune française située dans le département des Bouches-du-Rhône en région Provence-Alpes-Côte d'Azur. Elle fait partie de la métropole d'Aix-Marseille-Provence.",
+    "archetype": "littoral-touristique"
+  },
+  {
+    "slug": "port-saint-louis-du-rhone",
+    "name": "Port-Saint-Louis-du-Rhône",
+    "code_postal": "13230",
+    "population": 8573,
+    "code_insee": "13078",
+    "coordinates": {
+      "lat": 43.4066,
+      "lon": 4.826
+    },
+    "quartiers": [
+      "Le Centre"
+    ],
+    "rues": [],
+    "wikipedia_extract": "Port-Saint-Louis-du-Rhône est une commune française située dans le département des Bouches-du-Rhône en région Provence-Alpes-Côte d'Azur, créée en 1904 par nécessité d'Arles et de Lyon d'avoir un port en embouchure du Rhône.",
+    "archetype": "littoral-touristique"
+  },
+  {
+    "slug": "eguilles",
+    "name": "Éguilles",
+    "code_postal": "13510",
+    "population": 8479,
+    "code_insee": "13032",
+    "coordinates": {
+      "lat": 43.5662,
+      "lon": 5.3177
+    },
+    "quartiers": [
+      "Le Centre"
+    ],
+    "rues": [],
+    "wikipedia_extract": "Éguilles est une commune française située dans la banlieue ouest d'Aix-en-Provence, dans le département des Bouches-du-Rhône en région Provence-Alpes-Côte d'Azur. Le « u » d'« Éguilles » n'est pas muet et doit être prononcé.",
+    "archetype": "littoral-touristique"
+  },
+  {
+    "slug": "venelles",
+    "name": "Venelles",
+    "code_postal": "13770",
+    "population": 8418,
+    "code_insee": "13113",
+    "coordinates": {
+      "lat": 43.5951,
+      "lon": 5.4991
+    },
+    "quartiers": [
+      "Le Centre"
+    ],
+    "rues": [],
+    "wikipedia_extract": "Venelles est une commune française située dans la banlieue nord d’Aix-en-Provence, dans le département des Bouches-du-Rhône, en région Provence-Alpes-Côte d'Azur.",
+    "archetype": "littoral-touristique"
+  },
+  {
+    "slug": "sausset-les-pins",
+    "name": "Sausset-les-Pins",
+    "code_postal": "13960",
+    "population": 7574,
+    "code_insee": "13104",
+    "coordinates": {
+      "lat": 43.3469,
+      "lon": 5.1158
+    },
+    "quartiers": [
+      "Le Centre"
+    ],
+    "rues": [
+      "Boulevard Charles Roux"
+    ],
+    "wikipedia_extract": "Sausset-les-Pins est une commune française située dans le département des Bouches-du-Rhône, en région Provence-Alpes-Côte d'Azur, près de Carry-le-Rouet.",
+    "archetype": "littoral-touristique"
+  },
+  {
+    "slug": "eyguieres",
+    "name": "Eyguières",
+    "code_postal": "13430",
+    "population": 7119,
+    "code_insee": "13035",
+    "coordinates": {
+      "lat": 43.7005,
+      "lon": 5.0132
+    },
+    "quartiers": [
+      "Le Centre"
+    ],
+    "rues": [],
+    "wikipedia_extract": "Eyguières est une commune française, située dans le département des Bouches-du-Rhône en région Provence-Alpes-Côte d'Azur, sur le piémont sud du massif des Alpilles.",
+    "archetype": "littoral-touristique"
+  },
+  {
+    "slug": "senas",
+    "name": "Sénas",
+    "code_postal": "13560",
+    "population": 6925,
+    "code_insee": "13105",
+    "coordinates": {
+      "lat": 43.7402,
+      "lon": 5.073
+    },
+    "quartiers": [
+      "Le Centre"
+    ],
+    "rues": [
+      "Boulevard Gustave Donnat",
+      "Boulevard Mathieu Rech"
+    ],
+    "wikipedia_extract": "Sénas [senas] est une commune française, située dans le département des Bouches-du-Rhône en région Provence-Alpes-Côte d'Azur. Elle fait partie de la métropole d'Aix-Marseille-Provence et du parc naturel régional des Alpilles. Ses habitants sont appelés les Sénassais(es).",
+    "archetype": "littoral-touristique"
+  },
+  {
+    "slug": "carnoux-en-provence",
+    "name": "Carnoux-en-Provence",
+    "code_postal": "13470",
+    "population": 6873,
+    "code_insee": "13119",
+    "coordinates": {
+      "lat": 43.259,
+      "lon": 5.5655
+    },
+    "quartiers": [
+      "Le Centre"
+    ],
+    "rues": [],
+    "wikipedia_extract": "Carnoux-en-Provence est une commune française située dans la banlieue est de Marseille, dans le département des Bouches-du-Rhône, en région Provence-Alpes-Côte d'Azur.",
+    "archetype": "littoral-touristique"
+  },
+  {
+    "slug": "meyreuil",
+    "name": "Meyreuil",
+    "code_postal": "13590",
+    "population": 6747,
+    "code_insee": "13060",
+    "coordinates": {
+      "lat": 43.488,
+      "lon": 5.5002
+    },
+    "quartiers": [
+      "Le Centre"
+    ],
+    "rues": [],
+    "wikipedia_extract": "Meyreuil est une commune française située dans le département des Bouches-du-Rhône, en région sud Provence-Alpes-Côte d'Azur.",
+    "archetype": "littoral-touristique"
+  },
+  {
+    "slug": "saint-victoret",
+    "name": "Saint-Victoret",
+    "code_postal": "13730",
+    "population": 6730,
+    "code_insee": "13102",
+    "coordinates": {
+      "lat": 43.4121,
+      "lon": 5.2508
+    },
+    "quartiers": [
+      "Le Centre"
+    ],
+    "rues": [
+      "Boulevard Rene Cailloux",
+      "Boulevard Paul Raphel",
+      "Boulevard Denis Papin",
+      "Boulevard Bleriot"
+    ],
+    "wikipedia_extract": "Saint-Victoret est une commune française, située dans le département des Bouches-du-Rhône, près de Marignane, en région Provence-Alpes-Côte d'Azur. Ses habitants sont appelés les Saint-Victoriens.",
+    "archetype": "littoral-touristique"
+  },
+  {
+    "slug": "cassis",
+    "name": "Cassis",
+    "code_postal": "13260",
+    "population": 6661,
+    "code_insee": "13022",
+    "coordinates": {
+      "lat": 43.2185,
+      "lon": 5.5503
+    },
+    "quartiers": [
+      "Le Centre"
+    ],
+    "rues": [],
+    "wikipedia_extract": "Cassis [kasis] ou [kasi] est une commune située dans la banlieue sud-est de Marseille, dans le département des Bouches-du-Rhône et de la région Provence-Alpes-Côte d'Azur. Elle se caractérise par des falaises présentes sur son territoire et est connue pour ses vins de Cassis produits dans la région.",
+    "archetype": "littoral-touristique"
+  },
+  {
+    "slug": "la-penne-sur-huveaune",
+    "name": "La Penne-sur-Huveaune",
+    "code_postal": "13821",
+    "population": 6605,
+    "code_insee": "13070",
+    "coordinates": {
+      "lat": 43.2778,
+      "lon": 5.5185
+    },
+    "quartiers": [
+      "Le Centre"
+    ],
+    "rues": [
+      "Boulevard Henri Saver",
+      "Boulevard Chautard",
+      "Boulevard du Beal"
+    ],
+    "wikipedia_extract": "La Penne-sur-Huveaune est une commune française située dans la banlieue est de Marseille, dans le canton d'Aubagne, dans le département des Bouches-du-Rhône, en région Provence-Alpes-Côte d'Azur.",
+    "archetype": "littoral-touristique"
+  },
+  {
+    "slug": "gemenos",
+    "name": "Gémenos",
+    "code_postal": "13420",
+    "population": 6579,
+    "code_insee": "13042",
+    "coordinates": {
+      "lat": 43.2969,
+      "lon": 5.6518
+    },
+    "quartiers": [
+      "Le Centre"
+    ],
+    "rues": [
+      "Boulevard Michelet",
+      "Boulevard du Fer à Cheval",
+      "Boulevard Vessiot"
+    ],
+    "wikipedia_extract": "Gémenos [ʒɛm(ə)nɔs] est une commune française située dans le département des Bouches-du-Rhône, en région Provence-Alpes-Côte d'Azur. Cette ville est traversée par la route départementale 396.",
+    "archetype": "littoral-touristique"
+  },
+  {
+    "slug": "la-bouilladisse",
+    "name": "La Bouilladisse",
+    "code_postal": "13720",
+    "population": 6547,
+    "code_insee": "13016",
+    "coordinates": {
+      "lat": 43.3942,
+      "lon": 5.626
+    },
+    "quartiers": [
+      "Le Centre"
+    ],
+    "rues": [],
+    "wikipedia_extract": "La Bouilladisse est une commune française située dans le département des Bouches-du-Rhône, en région Provence-Alpes-Côte d'Azur. Ses habitants, au nombre de 6 194 en 2017, sont appelés les Bouilladissiens et Bouilladissiennes.",
+    "archetype": "littoral-touristique"
+  },
+  {
+    "slug": "cuges-les-pins",
+    "name": "Cuges-les-Pins",
+    "code_postal": "13780",
+    "population": 6236,
+    "code_insee": "13030",
+    "coordinates": {
+      "lat": 43.2822,
+      "lon": 5.7099
+    },
+    "quartiers": [
+      "Le Centre"
+    ],
+    "rues": [
+      "Boulevard Chanoine Bonifay"
+    ],
+    "wikipedia_extract": "Cuges-les-Pins est une commune française, située dans le département des Bouches-du-Rhône en région Provence-Alpes-Côte d'Azur. L’une des particularités du village est d’être implanté dans un vaste poljé, une dépression karstique au sein d’un massif calcaire.",
+    "archetype": "littoral-touristique"
+  },
+  {
+    "slug": "saint-mitre-les-remparts",
+    "name": "Saint-Mitre-les-Remparts",
+    "code_postal": "13920",
+    "population": 6175,
+    "code_insee": "13098",
+    "coordinates": {
+      "lat": 43.4565,
+      "lon": 5.0152
+    },
+    "quartiers": [
+      "Le Centre"
+    ],
+    "rues": [],
+    "wikipedia_extract": "Saint-Mitre-les-Remparts est une commune française, située dans le département des Bouches-du-Rhône en région Provence-Alpes-Côte d'Azur. Ses habitants sont appelés les Saint-Mitréens.",
+    "archetype": "littoral-touristique"
+  },
+  {
+    "slug": "mallemort",
+    "name": "Mallemort",
+    "code_postal": "13370",
+    "population": 6166,
+    "code_insee": "13053",
+    "coordinates": {
+      "lat": 43.728,
+      "lon": 5.1849
+    },
+    "quartiers": [
+      "Le Centre"
+    ],
+    "rues": [],
+    "wikipedia_extract": "Mallemort est une commune française située dans le département des Bouches-du-Rhône en région Provence-Alpes-Côte d'Azur. Elle fait partie de la métropole d'Aix-Marseille-Provence. La commune se trouve sur les bords de la Durance, rive gauche, face au Luberon, qui borde la rive droite.",
+    "archetype": "littoral-touristique"
+  },
+  {
+    "slug": "saint-cannat",
+    "name": "Saint-Cannat",
+    "code_postal": "13760",
+    "population": 6097,
+    "code_insee": "13091",
+    "coordinates": {
+      "lat": 43.6155,
+      "lon": 5.3108
+    },
+    "quartiers": [
+      "Le Centre"
+    ],
+    "rues": [],
+    "wikipedia_extract": "Saint-Cannat est une commune française située dans le département des Bouches-du-Rhône, en région Provence-Alpes-Côte d'Azur.",
+    "archetype": "littoral-touristique"
+  },
+  {
+    "slug": "noves",
+    "name": "Noves",
+    "code_postal": "13550",
+    "population": 6080,
+    "code_insee": "13066",
+    "coordinates": {
+      "lat": 43.86,
+      "lon": 4.9018
+    },
+    "quartiers": [
+      "Le Centre"
+    ],
+    "rues": [
+      "Boulevard de la République"
+    ],
+    "wikipedia_extract": "Noves est une commune française située dans le département des Bouches-du-Rhône, en région Provence-Alpes-Côte d'Azur.",
+    "archetype": "littoral-touristique"
+  },
+  {
+    "slug": "le-puy-sainte-reparade",
+    "name": "Le Puy-Sainte-Réparade",
+    "code_postal": "13610",
+    "population": 5935,
+    "code_insee": "13080",
+    "coordinates": {
+      "lat": 43.6533,
+      "lon": 5.4401
+    },
+    "quartiers": [
+      "Le Centre"
+    ],
+    "rues": [
+      "Boulevard de la Coopérative"
+    ],
+    "wikipedia_extract": "Le Puy-Sainte-Réparade est une commune française située dans le département des Bouches-du-Rhône, en région Provence-Alpes-Côte d'Azur. Ses habitants sont les Puechens ; le latin podium a abouti à puy en français et à puech en provençal.",
+    "archetype": "littoral-touristique"
+  },
+  {
+    "slug": "ventabren",
+    "name": "Ventabren",
+    "code_postal": "13122",
+    "population": 5839,
+    "code_insee": "13114",
+    "coordinates": {
+      "lat": 43.5446,
+      "lon": 5.3045
+    },
+    "quartiers": [
+      "Le Centre"
+    ],
+    "rues": [
+      "Boulevard de Provence"
+    ],
+    "wikipedia_extract": "Ventabren [vɛ̃tabʁɛ̃] est une commune française des Bouches-du-Rhône, dont les habitants s'appellent les Ventabrennais.",
+    "archetype": "periurbain"
+  },
+  {
+    "slug": "roquefort-la-bedoule",
+    "name": "Roquefort-la-Bédoule",
+    "code_postal": "13830",
+    "population": 5798,
+    "code_insee": "13085",
+    "coordinates": {
+      "lat": 43.2518,
+      "lon": 5.6297
+    },
+    "quartiers": [
+      "Le Centre"
+    ],
+    "rues": [
+      "Boulevard Emile Zola",
+      "Boulevard de Provence"
+    ],
+    "wikipedia_extract": "Roquefort-la-Bédoule est une commune française située dans le département des Bouches-du-Rhône, en région Provence-Alpes-Côte d'Azur.",
+    "archetype": "littoral-touristique"
+  },
+  {
+    "slug": "simiane-collongue",
+    "name": "Simiane-Collongue",
+    "code_postal": "13109",
+    "population": 5780,
+    "code_insee": "13107",
+    "coordinates": {
+      "lat": 43.4154,
+      "lon": 5.4359
+    },
+    "quartiers": [
+      "Le Centre"
+    ],
+    "rues": [],
+    "wikipedia_extract": "Simiane-Collongue est une ville française située dans le département des Bouches-du-Rhône, à 15 km au sud d'Aix-en-Provence et en limite de Marseille, quoique inaccessible directement de cette dernière, étant située au pied du versant nord de la chaîne de l'Étoile, séparant la plaine d'Aix de l'agglomération marseillaise, en région Provence-Alpes-Côte d'Azur.",
+    "archetype": "littoral-touristique"
+  },
+  {
+    "slug": "peypin",
+    "name": "Peypin",
+    "code_postal": "13124",
+    "population": 5771,
+    "code_insee": "13073",
+    "coordinates": {
+      "lat": 43.3834,
+      "lon": 5.57
+    },
+    "quartiers": [
+      "Le Centre"
+    ],
+    "rues": [],
+    "wikipedia_extract": "Peypin est une commune située à 26 km au nord-est de Marseille, dans le département des Bouches-du-Rhône, en région Provence-Alpes-Côte d'Azur, dans le Sud de la France.",
+    "archetype": "littoral-touristique"
+  },
+  {
+    "slug": "ensues-la-redonne",
+    "name": "Ensuès-la-Redonne",
+    "code_postal": "13820",
+    "population": 5757,
+    "code_insee": "13033",
+    "coordinates": {
+      "lat": 43.3554,
+      "lon": 5.188
+    },
+    "quartiers": [
+      "Le Centre"
+    ],
+    "rues": [
+      "Boulevard Tempête"
+    ],
+    "wikipedia_extract": "Ensuès-la-Redonne [ɑ̃sɥɛs la ʁədɔn] est une commune française située dans le département des Bouches-du-Rhône, en région Provence-Alpes-Côte d'Azur.",
+    "archetype": "littoral-touristique"
+  },
+  {
+    "slug": "carry-le-rouet",
+    "name": "Carry-le-Rouet",
+    "code_postal": "13620",
+    "population": 5702,
+    "code_insee": "13021",
+    "coordinates": {
+      "lat": 43.3462,
+      "lon": 5.1587
+    },
+    "quartiers": [
+      "Le Centre"
+    ],
+    "rues": [],
+    "wikipedia_extract": "Carry-le-Rouet est une commune française, située dans le département des Bouches-du-Rhône en région Provence-Alpes-Côte d'Azur.",
+    "archetype": "littoral-touristique"
+  },
+  {
+    "slug": "grans",
+    "name": "Grans",
+    "code_postal": "13450",
+    "population": 5489,
+    "code_insee": "13044",
+    "coordinates": {
+      "lat": 43.6172,
+      "lon": 5.0431
+    },
+    "quartiers": [
+      "Le Centre"
+    ],
+    "rues": [],
+    "wikipedia_extract": "Grans [ɡʁɑ̃s] est une commune française située dans le département des Bouches-du-Rhône, en région Provence-Alpes-Côte d'Azur.",
+    "archetype": "littoral-touristique"
+  },
+  {
+    "slug": "la-roque-d-antheron",
+    "name": "La Roque-d'Anthéron",
+    "code_postal": "13640",
+    "population": 5459,
+    "code_insee": "13084",
+    "coordinates": {
+      "lat": 43.7166,
+      "lon": 5.3165
+    },
+    "quartiers": [
+      "Le Centre"
+    ],
+    "rues": [],
+    "wikipedia_extract": "La Roque-d'Anthéron est une commune française située dans le département des Bouches-du-Rhône, en région Provence-Alpes-Côte d'Azur.",
+    "archetype": "littoral-touristique"
+  },
+  {
+    "slug": "rousset",
+    "name": "Rousset",
+    "code_postal": "13790",
+    "population": 5425,
+    "code_insee": "13087",
+    "coordinates": {
+      "lat": 43.4869,
+      "lon": 5.6202
+    },
+    "quartiers": [
+      "Le Centre"
+    ],
+    "rues": [],
+    "wikipedia_extract": "Rousset est une commune française située dans le département des Bouches-du-Rhône, en région Provence-Alpes-Côte d'Azur.",
+    "archetype": "littoral-touristique"
+  },
+  {
+    "slug": "peyrolles-en-provence",
+    "name": "Peyrolles-en-Provence",
+    "code_postal": "13860",
+    "population": 5409,
+    "code_insee": "13074",
+    "coordinates": {
+      "lat": 43.6262,
+      "lon": 5.5763
+    },
+    "quartiers": [
+      "Le Centre"
+    ],
+    "rues": [],
+    "wikipedia_extract": "Peyrolles-en-Provence est une commune française, située dans le département des Bouches-du-Rhône en région Provence-Alpes-Côte d'Azur. Ses habitants sont appelés les Peyrollais.",
+    "archetype": "littoral-touristique"
+  },
+  {
+    "slug": "le-rove",
+    "name": "Le Rove",
+    "code_postal": "13740",
+    "population": 5246,
+    "code_insee": "13088",
+    "coordinates": {
+      "lat": 43.3622,
+      "lon": 5.2498
+    },
+    "quartiers": [
+      "Le Centre"
+    ],
+    "rues": [
+      "Boulevard de la Gaité",
+      "Boulevard de la Carrairade"
+    ],
+    "wikipedia_extract": "Le Rove est une commune française du département des Bouches-du-Rhône, en région Provence-Alpes-Côte d'Azur.",
+    "archetype": "littoral-touristique"
+  },
+  {
+    "slug": "ceyreste",
+    "name": "Ceyreste",
+    "code_postal": "13600",
+    "population": 4863,
+    "code_insee": "13023",
+    "coordinates": {
+      "lat": 43.2215,
+      "lon": 5.6354
+    },
+    "quartiers": [
+      "Le Centre"
+    ],
+    "rues": [],
+    "wikipedia_extract": "",
+    "archetype": "periurbain"
+  },
+  {
+    "slug": "graveson",
+    "name": "Graveson",
+    "code_postal": "13690",
+    "population": 4698,
+    "code_insee": "13045",
+    "coordinates": {
+      "lat": 43.8532,
+      "lon": 4.7686
+    },
+    "quartiers": [
+      "Le Centre"
+    ],
+    "rues": [],
+    "wikipedia_extract": "Graveson est une commune française, située dans le département des Bouches-du-Rhône en région Provence-Alpes-Côte d'Azur.",
+    "archetype": "littoral-touristique"
+  },
+  {
+    "slug": "rognes",
+    "name": "Rognes",
+    "code_postal": "13840",
+    "population": 4693,
+    "code_insee": "13082",
+    "coordinates": {
+      "lat": 43.6672,
+      "lon": 5.3546
+    },
+    "quartiers": [
+      "Le Centre"
+    ],
+    "rues": [],
+    "wikipedia_extract": "Rognes est une commune des Bouches-du-Rhône, dans l'arrondissement d'Aix-en-Provence.",
+    "archetype": "periurbain"
+  },
+  {
+    "slug": "cabannes",
+    "name": "Cabannes",
+    "code_postal": "13440",
+    "population": 4595,
+    "code_insee": "13018",
+    "coordinates": {
+      "lat": 43.8596,
+      "lon": 4.9592
+    },
+    "quartiers": [
+      "Le Centre"
+    ],
+    "rues": [
+      "Boulevard Saint-Michel",
+      "Boulevard de Provence"
+    ],
+    "wikipedia_extract": "Cabannes est une commune française, située dans le département des Bouches-du-Rhône en région Provence-Alpes-Côte d'Azur.",
+    "archetype": "littoral-touristique"
+  },
+  {
+    "slug": "greasque",
+    "name": "Gréasque",
+    "code_postal": "13850",
+    "population": 4554,
+    "code_insee": "13046",
+    "coordinates": {
+      "lat": 43.4252,
+      "lon": 5.547
+    },
+    "quartiers": [
+      "Le Centre"
+    ],
+    "rues": [],
+    "wikipedia_extract": "Gréasque est une commune du département des Bouches-du-Rhône, en Provence, dans la région Provence-Alpes-Côte d'Azur. Ses habitants sont appelés les Gréasquéens.",
+    "archetype": "littoral-touristique"
+  },
+  {
+    "slug": "jouques",
+    "name": "Jouques",
+    "code_postal": "13490",
+    "population": 4547,
+    "code_insee": "13048",
+    "coordinates": {
+      "lat": 43.6289,
+      "lon": 5.6605
+    },
+    "quartiers": [
+      "Le Centre"
+    ],
+    "rues": [
+      "Boulevard de la République",
+      "Boulevard du Réal"
+    ],
+    "wikipedia_extract": "Jouques est une commune française située au nord-est du département des Bouches-du-Rhône et dans la région Provence-Alpes-Côte d'Azur. Ses habitants sont appelés les Jouquards.",
+    "archetype": "littoral-touristique"
+  },
+  {
+    "slug": "eyragues",
+    "name": "Eyragues",
+    "code_postal": "13630",
+    "population": 4298,
+    "code_insee": "13036",
+    "coordinates": {
+      "lat": 43.8414,
+      "lon": 4.8423
+    },
+    "quartiers": [
+      "Le Centre"
+    ],
+    "rues": [],
+    "wikipedia_extract": "",
+    "archetype": "periurbain"
+  },
+  {
+    "slug": "barbentane",
+    "name": "Barbentane",
+    "code_postal": "13570",
+    "population": 4266,
+    "code_insee": "13010",
+    "coordinates": {
+      "lat": 43.891,
+      "lon": 4.7454
+    },
+    "quartiers": [
+      "Le Centre"
+    ],
+    "rues": [],
+    "wikipedia_extract": "Barbentane est une commune française située dans le département des Bouches-du-Rhône, en région Provence-Alpes-Côte d'Azur.",
+    "archetype": "littoral-touristique"
+  },
+  {
+    "slug": "rognonas",
+    "name": "Rognonas",
+    "code_postal": "13870",
+    "population": 4261,
+    "code_insee": "13083",
+    "coordinates": {
+      "lat": 43.8992,
+      "lon": 4.7948
+    },
+    "quartiers": [
+      "Le Centre"
+    ],
+    "rues": [
+      "Boulevard de Verdun",
+      "Boulevard de l'Ancien Marché"
+    ],
+    "wikipedia_extract": "Rognonas [ʁɔɲɔna] est une commune française située dans le département des Bouches-du-Rhône en région Provence-Alpes-Côte d'Azur. Le village compte 4 261 habitants, appelés les Rognonais et Rognonaises.",
+    "archetype": "littoral-touristique"
+  },
+  {
+    "slug": "mimet",
+    "name": "Mimet",
+    "code_postal": "13105",
+    "population": 4241,
+    "code_insee": "13062",
+    "coordinates": {
+      "lat": 43.4123,
+      "lon": 5.5001
+    },
+    "quartiers": [
+      "Le Centre"
+    ],
+    "rues": [],
+    "wikipedia_extract": "Mimet [mimɛ] est une commune française située dans le département des Bouches-du-Rhône, en région Provence-Alpes-Côte d'Azur.",
+    "archetype": "littoral-touristique"
+  },
+  {
+    "slug": "la-destrousse",
+    "name": "La Destrousse",
+    "code_postal": "13112",
+    "population": 4133,
+    "code_insee": "13031",
+    "coordinates": {
+      "lat": 43.3788,
+      "lon": 5.5984
+    },
+    "quartiers": [
+      "Le Centre"
+    ],
+    "rues": [],
+    "wikipedia_extract": "La Destrousse est une commune française située dans le département des Bouches-du-Rhône, en région Provence-Alpes-Côte d'Azur.",
+    "archetype": "littoral-touristique"
+  },
+  {
+    "slug": "meyrargues",
+    "name": "Meyrargues",
+    "code_postal": "13650",
+    "population": 3847,
+    "code_insee": "13059",
+    "coordinates": {
+      "lat": 43.6229,
+      "lon": 5.5321
+    },
+    "quartiers": [
+      "Le Centre"
+    ],
+    "rues": [],
+    "wikipedia_extract": "Meyrargues est une commune française, située dans le département des Bouches-du-Rhône en région Provence-Alpes-Côte d'Azur. Elle fait partie de la métropole d'Aix-Marseille-Provence (AMP) depuis le 1er janvier 2016.",
+    "archetype": "littoral-touristique"
+  },
+  {
+    "slug": "coudoux",
+    "name": "Coudoux",
+    "code_postal": "13111",
+    "population": 3825,
+    "code_insee": "13118",
+    "coordinates": {
+      "lat": 43.5587,
+      "lon": 5.2559
+    },
+    "quartiers": [
+      "Le Centre"
+    ],
+    "rues": [
+      "Boulevard Corot"
+    ],
+    "wikipedia_extract": "Coudoux est une commune française, située dans le département des Bouches-du-Rhône et dans la région PACA. Ses habitants sont appelés Coudoucens et Coudoucennes. Coudoux est membre de la collectivité du pays d'Aix et de la métropole d'Aix-Marseille-Provence, dont elle est l'une des plus petites communes. La commune se trouve à mi-chemin entre Aix-en-Provence et Salon-de-Provence.",
+    "archetype": "periurbain"
+  },
+  {
+    "slug": "peynier",
+    "name": "Peynier",
+    "code_postal": "13790",
+    "population": 3739,
+    "code_insee": "13072",
+    "coordinates": {
+      "lat": 43.4375,
+      "lon": 5.6204
+    },
+    "quartiers": [
+      "Le Centre"
+    ],
+    "rues": [],
+    "wikipedia_extract": "Peynier est une commune française située dans le département des Bouches-du-Rhône en région Provence-Alpes-Côte d'Azur.",
+    "archetype": "littoral-touristique"
+  },
+  {
+    "slug": "plan-d-orgon",
+    "name": "Plan-d'Orgon",
+    "code_postal": "13750",
+    "population": 3573,
+    "code_insee": "13076",
+    "coordinates": {
+      "lat": 43.818,
+      "lon": 5.0011
+    },
+    "quartiers": [
+      "Le Centre"
+    ],
+    "rues": [],
+    "wikipedia_extract": "Plan-d'Orgon est une commune française, située dans le département des Bouches-du-Rhône en région Provence-Alpes-Côte d'Azur. Ses habitants sont appelés les Planais.",
+    "archetype": "littoral-touristique"
+  },
+  {
+    "slug": "fontvieille",
+    "name": "Fontvieille",
+    "code_postal": "13990",
+    "population": 3571,
+    "code_insee": "13038",
+    "coordinates": {
+      "lat": 43.7278,
+      "lon": 4.7128
+    },
+    "quartiers": [
+      "Le Centre"
+    ],
+    "rues": [],
+    "wikipedia_extract": "Fontvieille est une commune française située dans le département des Bouches-du-Rhône en région Provence-Alpes-Côte d'Azur.",
+    "archetype": "littoral-touristique"
+  },
+  {
+    "slug": "mouries",
+    "name": "Mouriès",
+    "code_postal": "13890",
+    "population": 3527,
+    "code_insee": "13065",
+    "coordinates": {
+      "lat": 43.7053,
+      "lon": 4.8781
+    },
+    "quartiers": [
+      "Le Centre"
+    ],
+    "rues": [],
+    "wikipedia_extract": "Mouriès [mu:ʁjɛs] est une commune française située dans le département des Bouches-du-Rhône en région Provence-Alpes-Côte d'Azur. Elle est connue comme la première commune oléicole de France.",
+    "archetype": "littoral-touristique"
+  },
+  {
+    "slug": "saint-savournin",
+    "name": "Saint-Savournin",
+    "code_postal": "13119",
+    "population": 3397,
+    "code_insee": "13101",
+    "coordinates": {
+      "lat": 43.4025,
+      "lon": 5.5321
+    },
+    "quartiers": [
+      "Le Centre"
+    ],
+    "rues": [],
+    "wikipedia_extract": "Saint-Savournin est une commune française de 3 393 habitants (2016), située dans le département des Bouches-du-Rhône en région Provence-Alpes-Côte d'Azur. Elle se situe à l'extrémité orientale du massif de l'Étoile entre Cadolive",
+    "archetype": "littoral-touristique"
+  },
+  {
+    "slug": "saint-andiol",
+    "name": "Saint-Andiol",
+    "code_postal": "13670",
+    "population": 3353,
+    "code_insee": "13089",
+    "coordinates": {
+      "lat": 43.8327,
+      "lon": 4.9498
+    },
+    "quartiers": [
+      "Le Centre"
+    ],
+    "rues": [],
+    "wikipedia_extract": "Saint-Andiol est une commune française, située dans le département des Bouches-du-Rhône en région Provence-Alpes-Côte d'Azur. Ses habitants sont appelés les Saint-Andiolais. C’est un village historiquement connu pour avoir accueilli le célèbre Jean-Moulin durant la résistance.",
+    "archetype": "littoral-touristique"
+  },
+  {
+    "slug": "alleins",
+    "name": "Alleins",
+    "code_postal": "13980",
+    "population": 2852,
+    "code_insee": "13003",
+    "coordinates": {
+      "lat": 43.7098,
+      "lon": 5.1558
+    },
+    "quartiers": [
+      "Le Centre"
+    ],
+    "rues": [],
+    "wikipedia_extract": "Alleins est une commune française située dans le département des Bouches-du-Rhône, en région Provence-Alpes-Côte d'Azur. Elle fait partie de la métropole d'Aix-Marseille-Provence.",
+    "archetype": "littoral-touristique"
+  },
+  {
+    "slug": "maillane",
+    "name": "Maillane",
+    "code_postal": "13910",
+    "population": 2775,
+    "code_insee": "13052",
+    "coordinates": {
+      "lat": 43.8231,
+      "lon": 4.7832
+    },
+    "quartiers": [
+      "Le Centre"
+    ],
+    "rues": [],
+    "wikipedia_extract": "Maillane est une commune française située dans le département des Bouches-du-Rhône, en région Provence-Alpes-Côte d'Azur. Le nom français de Maillane provient du provençal Malhana ou Maiano. À noter que l'on retrouve les mêmes écritures en latin qu'en écriture classique ou en ancien provençal selon le dictionnaire de Frédéric Mistral au mot \"Maiano\".",
+    "archetype": "littoral-touristique"
+  },
+  {
+    "slug": "orgon",
+    "name": "Orgon",
+    "code_postal": "13660",
+    "population": 2762,
+    "code_insee": "13067",
+    "coordinates": {
+      "lat": 43.7844,
+      "lon": 5.0294
+    },
+    "quartiers": [
+      "Le Centre"
+    ],
+    "rues": [],
+    "wikipedia_extract": "Orgon est une commune française située dans le département des Bouches-du-Rhône en région Provence-Alpes-Côte d'Azur. Ses habitants sont appelés les Orgonnais(es).",
+    "archetype": "littoral-touristique"
+  },
+  {
+    "slug": "molleges",
+    "name": "Mollégès",
+    "code_postal": "13940",
+    "population": 2647,
+    "code_insee": "13064",
+    "coordinates": {
+      "lat": 43.8034,
+      "lon": 4.9466
+    },
+    "quartiers": [
+      "Le Centre"
+    ],
+    "rues": [],
+    "wikipedia_extract": "Mollégès [mɔleʒɛs] est une commune française, située dans le département des Bouches-du-Rhône en région Provence-Alpes-Côte d'Azur.",
+    "archetype": "littoral-touristique"
+  },
+  {
+    "slug": "charleval",
+    "name": "Charleval",
+    "code_postal": "13350",
+    "population": 2640,
+    "code_insee": "13024",
+    "coordinates": {
+      "lat": 43.7205,
+      "lon": 5.2461
+    },
+    "quartiers": [
+      "Le Centre"
+    ],
+    "rues": [],
+    "wikipedia_extract": "Charleval est une commune française, située dans le département des Bouches-du-Rhône en région Provence-Alpes-Côte d'Azur. Elle fait partie de la métropole d'Aix-Marseille-Provence. Ses habitants sont appelés les Charlevalois. La commune utilise fréquemment l'appellation non officielle Charleval-en-Provence.",
+    "archetype": "littoral-touristique"
+  },
+  {
+    "slug": "saint-etienne-du-gres",
+    "name": "Saint-Étienne-du-Grès",
+    "code_postal": "13103",
+    "population": 2489,
+    "code_insee": "13094",
+    "coordinates": {
+      "lat": 43.787,
+      "lon": 4.7352
+    },
+    "quartiers": [
+      "Le Centre"
+    ],
+    "rues": [],
+    "wikipedia_extract": "Saint-Étienne-du-Grès [sɛ̃t‿etjɛn dy ɡʁɛs] est une commune française, située dans le département des Bouches-du-Rhône en région Provence-Alpes-Côte d'Azur. Principale agglomération rurale du territoire de Tarascon depuis 1820, elle devient commune à part entière en 1935.",
+    "archetype": "littoral-touristique"
+  },
+  {
+    "slug": "saintes-maries-de-la-mer",
+    "name": "Saintes-Maries-de-la-Mer",
+    "code_postal": "13460",
+    "population": 2433,
+    "code_insee": "13096",
+    "coordinates": {
+      "lat": 43.4958,
+      "lon": 4.4374
+    },
+    "quartiers": [
+      "Le Centre"
+    ],
+    "rues": [],
+    "wikipedia_extract": "Saintes-Maries-de-la-Mer ou Les Saintes-Maries-de-la-Mer, en abrégé Les Saintes-Maries ou Les Saintes, est une commune française située dans le département des Bouches-du-Rhône en région Provence-Alpes-Côte d'Azur.",
+    "archetype": "littoral-touristique"
+  },
+  {
+    "slug": "le-tholonet",
+    "name": "Le Tholonet",
+    "code_postal": "13100",
+    "population": 2391,
+    "code_insee": "13109",
+    "coordinates": {
+      "lat": 43.5218,
+      "lon": 5.5053
+    },
+    "quartiers": [
+      "Le Centre"
+    ],
+    "rues": [],
+    "wikipedia_extract": "Le Tholonet est une commune française, située dans la banlieue est d'Aix-en-Provence, dans le département des Bouches-du-Rhône en région Provence-Alpes-Côte d'Azur. Ses habitants sont appelés les Tholonétiens.",
+    "archetype": "littoral-touristique"
+  },
+  {
+    "slug": "chateauneuf-le-rouge",
+    "name": "Châteauneuf-le-Rouge",
+    "code_postal": "13790",
+    "population": 2376,
+    "code_insee": "13025",
+    "coordinates": {
+      "lat": 43.4892,
+      "lon": 5.5691
+    },
+    "quartiers": [
+      "Le Centre"
+    ],
+    "rues": [],
+    "wikipedia_extract": "Châteauneuf-le-Rouge est une commune française située dans le département des Bouches-du-Rhône, en région Provence-Alpes-Côte d'Azur.",
+    "archetype": "littoral-touristique"
+  },
+  {
+    "slug": "maussane-les-alpilles",
+    "name": "Maussane-les-Alpilles",
+    "code_postal": "13520",
+    "population": 2347,
+    "code_insee": "13058",
+    "coordinates": {
+      "lat": 43.7158,
+      "lon": 4.838
+    },
+    "quartiers": [
+      "Le Centre"
+    ],
+    "rues": [],
+    "wikipedia_extract": "Maussane-les-Alpilles est une commune française située dans le département des Bouches-du-Rhône en région Provence-Alpes-Côte d'Azur. Elle se situe sur le piémont sud du massif des Alpilles.",
+    "archetype": "littoral-touristique"
+  },
+  {
+    "slug": "cadolive",
+    "name": "Cadolive",
+    "code_postal": "13950",
+    "population": 2236,
+    "code_insee": "13020",
+    "coordinates": {
+      "lat": 43.3943,
+      "lon": 5.5303
+    },
+    "quartiers": [
+      "Le Centre"
+    ],
+    "rues": [],
+    "wikipedia_extract": "Cadolive est une commune française de 2 219 habitants (2022) située dans le département des Bouches-du-Rhône, en région Provence-Alpes-Côte d'Azur. Elle se situe à l'extrémité orientale du massif de l'Étoile, entre Peypin et Saint-Savournin.",
+    "archetype": "littoral-touristique"
+  },
+  {
+    "slug": "vernegues",
+    "name": "Vernègues",
+    "code_postal": "13116",
+    "population": 2166,
+    "code_insee": "13115",
+    "coordinates": {
+      "lat": 43.6841,
+      "lon": 5.1892
+    },
+    "quartiers": [
+      "Le Centre"
+    ],
+    "rues": [],
+    "wikipedia_extract": "Vernègues est une commune française, située dans le département des Bouches-du-Rhône en région Provence-Alpes-Côte d'Azur. Elle fait partie de la métropole d'Aix-Marseille-Provence. Ses habitants sont appelés les Vernegais. La commune est composée de deux villages : Vernègues et Cazan.",
+    "archetype": "littoral-touristique"
+  },
+  {
+    "slug": "paradou",
+    "name": "Paradou",
+    "code_postal": "13520",
+    "population": 2159,
+    "code_insee": "13068",
+    "coordinates": {
+      "lat": 43.7071,
+      "lon": 4.7756
+    },
+    "quartiers": [
+      "Le Centre"
+    ],
+    "rues": [],
+    "wikipedia_extract": "Paradou, parfois nommée localement Le Paradou, est une commune française, située dans le département des Bouches-du-Rhône en région Provence-Alpes-Côte d'Azur.",
+    "archetype": "littoral-touristique"
+  },
+  {
+    "slug": "lamanon",
+    "name": "Lamanon",
+    "code_postal": "13113",
+    "population": 2097,
+    "code_insee": "13049",
+    "coordinates": {
+      "lat": 43.7073,
+      "lon": 5.0898
+    },
+    "quartiers": [
+      "Le Centre"
+    ],
+    "rues": [],
+    "wikipedia_extract": "Lamanon est une commune française située dans le département des Bouches-du-Rhône, en région Provence-Alpes-Côte d'Azur. Elle fait partie de la métropole d'Aix-Marseille-Provence.",
+    "archetype": "littoral-touristique"
+  },
+  {
+    "slug": "belcodene",
+    "name": "Belcodène",
+    "code_postal": "13720",
+    "population": 2009,
+    "code_insee": "13013",
+    "coordinates": {
+      "lat": 43.4231,
+      "lon": 5.5846
+    },
+    "quartiers": [
+      "Le Centre"
+    ],
+    "rues": [],
+    "wikipedia_extract": "Belcodène est une commune française située dans le département des Bouches-du-Rhône, en région Provence-Alpes-Côte d'Azur.",
+    "archetype": "littoral-touristique"
+  },
+  {
+    "slug": "eygalieres",
+    "name": "Eygalières",
+    "code_postal": "13810",
+    "population": 1773,
+    "code_insee": "13034",
+    "coordinates": {
+      "lat": 43.7638,
+      "lon": 4.9554
+    },
+    "quartiers": [
+      "Le Centre"
+    ],
+    "rues": [
+      "Avenue Charles de Gaulle"
+    ],
+    "wikipedia_extract": "Eygalières est une commune française, située dans le département des Bouches-du-Rhône en région Provence-Alpes-Côte d'Azur. Elle est située sur le versant Nord-Est de la chaîne des Alpilles.",
+    "archetype": "littoral-touristique"
+  },
+  {
+    "slug": "puyloubier",
+    "name": "Puyloubier",
+    "code_postal": "13114",
+    "population": 1768,
+    "code_insee": "13079",
+    "coordinates": {
+      "lat": 43.5192,
+      "lon": 5.6718
+    },
+    "quartiers": [
+      "Le Centre"
+    ],
+    "rues": [
+      "Avenue du Chemin Neuf"
+    ],
+    "wikipedia_extract": "Puyloubier est une commune française située dans le département des Bouches-du-Rhône, en région Provence-Alpes-Côte d'Azur.",
+    "archetype": "littoral-touristique"
+  },
+  {
+    "slug": "cornillon-confoux",
+    "name": "Cornillon-Confoux",
+    "code_postal": "13250",
+    "population": 1667,
+    "code_insee": "13029",
+    "coordinates": {
+      "lat": 43.5762,
+      "lon": 5.0753
+    },
+    "quartiers": [
+      "Le Centre"
+    ],
+    "rues": [],
+    "wikipedia_extract": "",
+    "archetype": "periurbain"
+  },
+  {
+    "slug": "boulbon",
+    "name": "Boulbon",
+    "code_postal": "13150",
+    "population": 1543,
+    "code_insee": "13017",
+    "coordinates": {
+      "lat": 43.8721,
+      "lon": 4.6962
+    },
+    "quartiers": [
+      "Le Centre"
+    ],
+    "rues": [
+      "Avenue Charles de Gaulle",
+      "Chemin de la Cantarelle",
+      "Rue Grand Rue",
+      "Chemin de Barbentane"
+    ],
+    "wikipedia_extract": "Boulbon est une commune française, située dans le département des Bouches-du-Rhône en région Provence-Alpes-Côte d'Azur. Ancienne place forte, ce village provençal existe depuis mille ans. Aujourd'hui il est réputé grâce à son côté pittoresque et rustique. Ses habitants sont appelés les Boulbonnais. Le village est dominé par l'imposant fort bâti sur un rocher ; en ruine depuis la Révolution, il est à partir de 2014 patiemment restauré par son nouveau propriétaire.",
+    "archetype": "littoral-touristique"
+  },
+  {
+    "slug": "aureille",
+    "name": "Aureille",
+    "code_postal": "13930",
+    "population": 1533,
+    "code_insee": "13006",
+    "coordinates": {
+      "lat": 43.6983,
+      "lon": 4.942
+    },
+    "quartiers": [
+      "Le Centre"
+    ],
+    "rues": [],
+    "wikipedia_extract": "Aureille est une commune française, située dans le département des Bouches-du-Rhône en région Provence-Alpes-Côte d'Azur.",
+    "archetype": "littoral-touristique"
+  },
+  {
+    "slug": "saint-marc-jaumegarde",
+    "name": "Saint-Marc-Jaumegarde",
+    "code_postal": "13100",
+    "population": 1273,
+    "code_insee": "13095",
+    "coordinates": {
+      "lat": 43.5567,
+      "lon": 5.5202
+    },
+    "quartiers": [
+      "Le Centre"
+    ],
+    "rues": [],
+    "wikipedia_extract": "Saint-Marc-Jaumegarde est une commune française située dans la banlieue est d'Aix-en-Provence, dans le département des Bouches-du-Rhône, en région Provence-Alpes-Côte d'Azur. Ses habitants sont appelés les Saint-Marcais.",
+    "archetype": "littoral-touristique"
+  },
+  {
+    "slug": "vauvenargues",
+    "name": "Vauvenargues",
+    "code_postal": "13126",
+    "population": 1058,
+    "code_insee": "13111",
+    "coordinates": {
+      "lat": 43.5619,
+      "lon": 5.6207
+    },
+    "quartiers": [
+      "Le Centre"
+    ],
+    "rues": [],
+    "wikipedia_extract": "Vauvenargues est une commune française, située dans le département des Bouches-du-Rhône en région Provence-Alpes-Côte d'Azur.",
+    "archetype": "littoral-touristique"
+  },
+  {
+    "slug": "saint-paul-les-durance",
+    "name": "Saint-Paul-lès-Durance",
+    "code_postal": "13115",
+    "population": 885,
+    "code_insee": "13099",
+    "coordinates": {
+      "lat": 43.6869,
+      "lon": 5.748
+    },
+    "quartiers": [
+      "Le Centre"
+    ],
+    "rues": [],
+    "wikipedia_extract": "Saint-Paul-lès-Durance ou Saint-Paul-lez-Durance est une commune française, située dans le département des Bouches-du-Rhône en région Provence-Alpes-Côte d'Azur.",
+    "archetype": "littoral-touristique"
+  },
+  {
+    "slug": "la-barben",
+    "name": "La Barben",
+    "code_postal": "13330",
+    "population": 868,
+    "code_insee": "13009",
+    "coordinates": {
+      "lat": 43.6189,
+      "lon": 5.2123
+    },
+    "quartiers": [
+      "Le Centre"
+    ],
+    "rues": [],
+    "wikipedia_extract": "La Barben [la baʁbɛ̃] est une commune française, située dans le département des Bouches-du-Rhône en région Provence-Alpes-Côte d'Azur.",
+    "archetype": "littoral-touristique"
+  },
+  {
+    "slug": "verquieres",
+    "name": "Verquières",
+    "code_postal": "13670",
+    "population": 772,
+    "code_insee": "13116",
+    "coordinates": {
+      "lat": 43.8377,
+      "lon": 4.9192
+    },
+    "quartiers": [
+      "Le Centre"
+    ],
+    "rues": [],
+    "wikipedia_extract": "Verquières est une commune française, située dans le département des Bouches-du-Rhône en région Provence-Alpes-Côte d'Azur. Ses habitants sont appelés les Verquiérois.",
+    "archetype": "littoral-touristique"
+  },
+  {
+    "slug": "beaurecueil",
+    "name": "Beaurecueil",
+    "code_postal": "13100",
+    "population": 585,
+    "code_insee": "13012",
+    "coordinates": {
+      "lat": 43.5197,
+      "lon": 5.5481
+    },
+    "quartiers": [
+      "Le Centre"
+    ],
+    "rues": [],
+    "wikipedia_extract": "Beaurecueil est une commune française, située dans le département des Bouches-du-Rhône en région Provence-Alpes-Côte d'Azur. Ses habitants sont appelés les Beaurecueins.",
+    "archetype": "littoral-touristique"
+  },
+  {
+    "slug": "mas-blanc-des-alpilles",
+    "name": "Mas-Blanc-des-Alpilles",
+    "code_postal": "13103",
+    "population": 564,
+    "code_insee": "13057",
+    "coordinates": {
+      "lat": 43.7887,
+      "lon": 4.7637
+    },
+    "quartiers": [
+      "Le Centre"
+    ],
+    "rues": [],
+    "wikipedia_extract": "Mas-Blanc-des-Alpilles est une commune française, située dans le département des Bouches-du-Rhône en région Provence-Alpes-Côte d'Azur.\nSes habitants sont appelés les Masblancais.",
+    "archetype": "littoral-touristique"
+  },
+  {
+    "slug": "aurons",
+    "name": "Aurons",
+    "code_postal": "13121",
+    "population": 555,
+    "code_insee": "13008",
+    "coordinates": {
+      "lat": 43.6722,
+      "lon": 5.149
+    },
+    "quartiers": [
+      "Le Centre"
+    ],
+    "rues": [],
+    "wikipedia_extract": "Aurons [oʁɔ̃] est une commune française située dans le département des Bouches-du-Rhône, en région Provence-Alpes-Côte d'Azur. Elle fait partie de la métropole d'Aix-Marseille-Provence.",
+    "archetype": "littoral-touristique"
+  },
+  {
+    "slug": "saint-esteve-janson",
+    "name": "Saint-Estève-Janson",
+    "code_postal": "13610",
+    "population": 357,
+    "code_insee": "13093",
+    "coordinates": {
+      "lat": 43.6926,
+      "lon": 5.3891
+    },
+    "quartiers": [
+      "Le Centre"
+    ],
+    "rues": [],
+    "wikipedia_extract": "Saint-Estève-Janson est une commune française, située dans le département des Bouches-du-Rhône en région Provence-Alpes-Côte d'Azur. Ses habitants sont appelés les Saint-Estevens.",
+    "archetype": "littoral-touristique"
+  },
+  {
+    "slug": "les-baux-de-provence",
+    "name": "Les Baux-de-Provence",
+    "code_postal": "13520",
+    "population": 264,
+    "code_insee": "13011",
+    "coordinates": {
+      "lat": 43.7491,
+      "lon": 4.805
+    },
+    "quartiers": [
+      "Le Centre"
+    ],
+    "rues": [],
+    "wikipedia_extract": "Les Baux-de-Provence sont une commune française située dans le département des Bouches-du-Rhône, en région Provence-Alpes-Côte d'Azur.",
+    "archetype": "littoral-touristique"
+  },
+  {
+    "slug": "saint-pierre-de-mezoargues",
+    "name": "Saint-Pierre-de-Mézoargues",
+    "code_postal": "13150",
+    "population": 229,
+    "code_insee": "13061",
+    "coordinates": {
+      "lat": 43.8616,
+      "lon": 4.6578
+    },
+    "quartiers": [
+      "Le Centre"
+    ],
+    "rues": [],
+    "wikipedia_extract": "Saint-Pierre-de-Mézoargues est une commune française, située dans le département des Bouches-du-Rhône en région Provence-Alpes-Côte d'Azur. Ses habitants sont appelés les Saint-Pierrois.",
+    "archetype": "littoral-touristique"
+  },
+  {
+    "slug": "saint-antonin-sur-bayon",
+    "name": "Saint-Antonin-sur-Bayon",
+    "code_postal": "13100",
+    "population": 126,
+    "code_insee": "13090",
+    "coordinates": {
+      "lat": 43.5191,
+      "lon": 5.5972
+    },
+    "quartiers": [
+      "Le Centre"
+    ],
+    "rues": [],
+    "wikipedia_extract": "Saint-Antonin-sur-Bayon est une commune française, située dans le département des Bouches-du-Rhône en région Provence-Alpes-Côte d'Azur.",
+    "archetype": "littoral-touristique"
+  }
+]
