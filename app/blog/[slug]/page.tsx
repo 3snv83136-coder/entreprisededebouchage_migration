@@ -140,9 +140,9 @@ export default async function ArticlePage({ params }: Props) {
           {/* CTA final */}
           <div className={styles.ctaBox}>
             <div className={styles.ctaContent}>
-              <p className={styles.ctaTitle}>Un problème de canalisation dans le Var ?</p>
+              <p className={styles.ctaTitle}>Un problème de canalisation dans les Bouches-du-Rhône ?</p>
               <p className={styles.ctaDesc}>
-                Notre technicien intervient 24h/7j sur Toulon, Hyères et tout le département du Var (83).
+                Notre technicien intervient 24h/7j sur Marseille, Aubagne et tout le département des Bouches-du-Rhône (13).
                 Devis gratuit, intervention rapide.
               </p>
               <a href={`tel:${PHONE_RAW}`} className="btn-primary">

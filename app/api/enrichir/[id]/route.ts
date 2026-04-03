@@ -20,16 +20,21 @@ export async function POST(
       .single();
 
     if (error || !r) {
-      return NextResponse.json({ error: 'Not found' }, { status: 404 });
+      return NextResponse.json({ status: 'error', error: 'Realisation introuvable' }, { status: 404 });
     }
 
-    // Already enriched?
-    if (r.description_generee && r.description_generee !== r.contexte) {
-      return NextResponse.json({ status: 'already_enriched' });
+    // Already enriched? (description_generee exists AND is different from raw contexte)
+    if (r.description_generee && r.description_generee.length > 200 && r.description_generee !== r.contexte) {
+      const wordCount = r.description_generee.split(/\s+/).length;
+      return NextResponse.json({ status: 'already_enriched', word_count: wordCount });
     }
 
     const recit = r.contexte || r.intervention || '';
-    const improved = await enrichirRecit({
+    if (!recit || recit.trim().length < 10) {
+      return NextResponse.json({ status: 'error', error: 'Recit trop court pour enrichissement' });
+    }
+
+    const result = await enrichirRecit({
       type: r.type,
       ville: r.ville,
       code_postal: r.code_postal || undefined,
@@ -37,46 +42,55 @@ export async function POST(
       duree: r.duree || undefined,
     });
 
+    // Always update FAQ + JSON-LD
     const updates: Record<string, unknown> = {};
-
-    if (improved.expertise_complete && improved.expertise_complete !== recit) {
-      updates.contexte_enrichi = improved.contexte_enrichi;
-      updates.diagnostic_enrichi = improved.diagnostic_enrichi;
-      updates.intervention_enrichie = improved.intervention_enrichie;
-      updates.resultat_enrichi = improved.resultat_enrichi;
-      updates.description_generee = improved.expertise_complete;
-      updates.titre = improved.titre_seo;
-      updates.meta_description = improved.meta_description;
-      updates.materiels = improved.materiels_detectes;
-    }
-
-    // FAQ + JSON-LD
     const faq = generateFaq(r.type, r.ville);
     updates.faq = faq;
-    updates.json_ld = generateJsonLd({
-      type: r.type,
-      ville: r.ville,
-      slug: r.slug,
-      mois: r.mois,
-      annee: r.annee,
-      resultat: recit,
-      faq,
-      description_generee: updates.description_generee as string | undefined,
-      meta_description: (updates.meta_description as string) || r.meta_description,
-    });
 
-    if (Object.keys(updates).length > 0) {
+    if (!result.success) {
+      // Save FAQ/JSON-LD even on AI failure
+      updates.json_ld = generateJsonLd({
+        type: r.type, ville: r.ville, slug: r.slug,
+        mois: r.mois, annee: r.annee, resultat: recit, faq,
+        meta_description: r.meta_description,
+      });
       await supabaseAdmin.from('realisations').update(updates).eq('id', id);
+
+      return NextResponse.json({
+        status: 'error',
+        error: result.error || 'Enrichissement IA echoue',
+      });
     }
 
+    // Success — save enriched data in existing DB columns
+    const d = result.data;
+    updates.description_generee = d.expertise_complete;
+    updates.contexte = d.contexte_enrichi || recit;
+    updates.diagnostic = d.diagnostic_enrichi || null;
+    updates.intervention = d.intervention_enrichie || recit;
+    updates.resultat = d.resultat_enrichi || recit;
+    updates.titre = d.titre_seo || r.titre;
+    updates.meta_description = d.meta_description || r.meta_description;
+    updates.materiels = d.materiels_detectes || r.materiels;
+    updates.json_ld = generateJsonLd({
+      type: r.type, ville: r.ville, slug: r.slug,
+      mois: r.mois, annee: r.annee, resultat: recit, faq,
+      description_generee: d.expertise_complete,
+      meta_description: d.meta_description || r.meta_description,
+    });
+
+    await supabaseAdmin.from('realisations').update(updates).eq('id', id);
+
+    const wordCount = d.expertise_complete.split(/\s+/).length;
     return NextResponse.json({
       status: 'enriched',
-      expertise_length: (updates.description_generee as string)?.length || 0,
+      word_count: wordCount,
+      expertise_length: d.expertise_complete.length,
     });
   } catch (err) {
     console.error('[enrichir API] Error:', err);
     return NextResponse.json(
-      { error: err instanceof Error ? err.message : String(err) },
+      { status: 'error', error: err instanceof Error ? err.message : String(err) },
       { status: 500 }
     );
   }

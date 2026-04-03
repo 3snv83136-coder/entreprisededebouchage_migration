@@ -14,15 +14,15 @@ export async function generateMetadata(): Promise<Metadata> {
 const faqs = [
   {
     question: `Les graisses de cuisine sont-elles vraiment si dangereuses pour les canalisations ?`,
-    answer: `Oui, c'est la première cause de bouchon en cuisine. Les graisses chaudes semblent liquides au moment du rinçage, mais elles se solidifient en refroidissant et tapissent progressivement les parois internes. En hiver, ce phénomène est encore plus rapide dans le Var où les canalisations encastrées subissent les écarts de température. Un dépôt graisseux réduit le diamètre utile de la canalisation jusqu'à l'obturation complète.`,
+    answer: `Oui, c'est la première cause de bouchon en cuisine. Les graisses chaudes semblent liquides au moment du rinçage, mais elles se solidifient en refroidissant et tapissent progressivement les parois internes. En hiver, ce phénomène est encore plus rapide dans les Bouches-du-Rhône où les canalisations encastrées subissent les écarts de température. Un dépôt graisseux réduit le diamètre utile de la canalisation jusqu'à l'obturation complète.`,
   },
   {
     question: `Quel est le coût d'un débouchage cuisine ?`,
-    answer: `Nous intervenons à partir de 99 € pour un débouchage cuisine dans le Var. Ce tarif couvre le déplacement, le diagnostic, le débouchage par furetage ou hydrocurage selon l'importance du bouchon, et le test d'écoulement final. Résultat garanti ou nouvelle intervention sans supplément.`,
+    answer: `Nous intervenons à partir de 110 € pour un débouchage cuisine dans les Bouches-du-Rhône. Ce tarif couvre le déplacement, le diagnostic, le débouchage par furetage ou hydrocurage selon l'importance du bouchon, et le test d'écoulement final. Résultat garanti ou nouvelle intervention sans supplément.`,
   },
   {
     question: `Sous quel délai intervenez-vous pour un évier de cuisine bouché ?`,
-    answer: `Nous intervenons en urgence le jour même dans tout le Var, 7j/7 et 24h/24. Pour un bouchon d'évier cuisine, le délai est généralement de 1 à 3 heures après votre appel selon votre localisation.`,
+    answer: `Nous intervenons en urgence le jour même dans tout les Bouches-du-Rhône, 7j/7 et 24h/24. Pour un bouchon d'évier cuisine, le délai est généralement de 1 à 3 heures après votre appel selon votre localisation.`,
   },
   {
     question: `Mon lave-vaisselle est raccordé à l'évier — faut-il déboucher les deux en même temps ?`,
@@ -35,10 +35,10 @@ const faqs = [
 ];
 
 const content = {
-  intro: `La cuisine est la principale source de bouchons dans un logement. Graisses de cuisson, huiles alimentaires, résidus organiques et calcaire s'accumulent progressivement dans les canalisations, surtout en hiver lorsque les graisses se solidifient plus vite. Dans le Var, la dureté de l'eau aggrave l'encrassement : le calcaire se mêle aux dépôts graisseux et forme des bouchons très tenaces. L'évier, le lave-vaisselle et leur évacuation commune sont les zones les plus touchées. Mondor Débouchage intervient dans tout le Var à partir de 99 €, résultat garanti. Nos techniciens maîtrisent les techniques spécifiques aux bouchons graisseux — hydrocurage haute pression et produits professionnels de dissolution — là où les produits du commerce échouent.`,
+  intro: `La cuisine est la principale source de bouchons dans un logement. Graisses de cuisson, huiles alimentaires, résidus organiques et calcaire s'accumulent progressivement dans les canalisations, surtout en hiver lorsque les graisses se solidifient plus vite. Dans les Bouches-du-Rhône, la dureté de l'eau aggrave l'encrassement : le calcaire se mêle aux dépôts graisseux et forme des bouchons très tenaces. L'évier, le lave-vaisselle et leur évacuation commune sont les zones les plus touchées. Entreprise de Débouchage intervient dans tout les Bouches-du-Rhône à partir de 110 €, résultat garanti. Nos techniciens maîtrisent les techniques spécifiques aux bouchons graisseux — hydrocurage haute pression et produits professionnels de dissolution — là où les produits du commerce échouent.`,
   problems: `Un bouchon de cuisine s'installe rarement d'un coup. Le signal d'alerte est un écoulement de plus en plus lent sous l'évier, puis une eau qui stagne plusieurs minutes avant de disparaître. Vient ensuite l'odeur caractéristique de graisse rance ou de brûlé qui remonte des canalisations. Si votre lave-vaisselle partage la même évacuation et commence à ne plus se vider complètement, le bouchon est déjà bien installé dans la canalisation commune. Plus on attend, plus le bouchon est dur et profond.`,
   intervention: `Pour les bouchons graisseux, l'hydrocurage est la méthode de référence : le jet haute pression à 150 bars décolle les dépôts sur toute la circonférence interne de la canalisation et rétablit le plein diamètre. Pour les bouchons moins avancés, le furetage motorisé suffit. Nous traitons systématiquement le siphon, l'évacuation de l'évier, le raccordement du lave-vaisselle et la canalisation commune jusqu'au regard pour éviter toute récidive rapide.`,
-  tarif: `Débouchage cuisine à partir de 99 € dans le Var. Tarif fixe, sans surprise, comprenant le déplacement, le diagnostic, l'intervention et le test final. Résultat garanti — si l'écoulement n'est pas rétabli, nous revenons sans supplément.`,
+  tarif: `Débouchage cuisine à partir de 110 € dans les Bouches-du-Rhône. Tarif fixe, sans surprise, comprenant le déplacement, le diagnostic, l'intervention et le test final. Résultat garanti — si l'écoulement n'est pas rétabli, nous revenons sans supplément.`,
   steps: [
     {
       name: `Nettoyage et démontage du siphon cuisine`,

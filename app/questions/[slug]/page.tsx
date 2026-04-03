@@ -20,8 +20,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: q.titre,
     description: q.metaDesc
-      .replace(/\{PRIX_MANUEL\}/g, process.env.NEXT_PUBLIC_PRIX_MANUEL ?? '99')
-      .replace(/\{PRIX_HAUTE_PRESSION\}/g, process.env.NEXT_PUBLIC_PRIX_HAUTE_PRESSION ?? '199')
+      .replace(/\{PRIX_MANUEL\}/g, process.env.NEXT_PUBLIC_PRIX_MANUEL ?? '110')
+      .replace(/\{PRIX_HAUTE_PRESSION\}/g, process.env.NEXT_PUBLIC_PRIX_HAUTE_PRESSION ?? '249')
       .replace(/\{PRIX_CAMERA\}/g, process.env.NEXT_PUBLIC_PRIX_CAMERA ?? '110'),
     alternates: { canonical: `/questions/${q.slug}/` },
     robots: q.noindex ? { index: false, follow: true } : { index: true, follow: true },
@@ -42,8 +42,8 @@ export default async function QuestionPage({ params }: Props) {
   const q = getQuestionBySlug(slug);
   if (!q) notFound();
 
-  const prixManuel = process.env.NEXT_PUBLIC_PRIX_MANUEL ?? '99';
-  const prixHautePression = process.env.NEXT_PUBLIC_PRIX_HAUTE_PRESSION ?? '199';
+  const prixManuel = process.env.NEXT_PUBLIC_PRIX_MANUEL ?? '110';
+  const prixHautePression = process.env.NEXT_PUBLIC_PRIX_HAUTE_PRESSION ?? '249';
   const prixCamera = process.env.NEXT_PUBLIC_PRIX_CAMERA ?? '110';
 
   const rv = (text: string) =>
@@ -205,9 +205,9 @@ export default async function QuestionPage({ params }: Props) {
 
           {/* CTA */}
           <div className={styles.ctaBox}>
-            <p className={styles.ctaTitle}>Un problème de canalisation dans le Var ?</p>
+            <p className={styles.ctaTitle}>Un problème de canalisation dans les Bouches-du-Rhône ?</p>
             <p className={styles.ctaDesc}>
-              Notre technicien intervient 24h/7j sur Toulon, Hyères et tout le département du Var (83).
+              Notre technicien intervient 24h/7j sur Marseille, Aubagne et tout le département des Bouches-du-Rhône (13).
               Devis gratuit, intervention rapide.
             </p>
             <a href={`tel:${PHONE_RAW}`} className="btn-primary">

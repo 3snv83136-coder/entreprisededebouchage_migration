@@ -25,24 +25,24 @@ interface AmeliorerTexteResult {
 }
 
 export async function ameliorerTexte(params: AmeliorerTexteParams): Promise<AmeliorerTexteResult> {
-  // Delegate to enrichirRecit with combined text
   const recit = [params.contexte, params.diagnostic, params.intervention, params.resultat]
     .filter(Boolean)
     .join('. ');
-  const result = await enrichirRecit({
+  const response = await enrichirRecit({
     type: params.type,
     ville: params.ville,
     code_postal: params.code_postal,
     recit,
     duree: params.duree,
   });
+  const d = response.data;
   return {
-    contexte_enrichi: result.contexte_enrichi,
-    diagnostic_enrichi: result.diagnostic_enrichi,
-    intervention_enrichie: result.intervention_enrichie,
-    resultat_enrichi: result.resultat_enrichi,
-    titre_seo: result.titre_seo,
-    meta_description: result.meta_description,
+    contexte_enrichi: d.contexte_enrichi,
+    diagnostic_enrichi: d.diagnostic_enrichi,
+    intervention_enrichie: d.intervention_enrichie,
+    resultat_enrichi: d.resultat_enrichi,
+    titre_seo: d.titre_seo,
+    meta_description: d.meta_description,
   };
 }
 
@@ -76,32 +76,39 @@ const MAILLAGE_KEYWORDS = [
   'debouchage', 'curage', 'vidange',
 ];
 
-export async function enrichirRecit(params: EnrichirRecitParams): Promise<EnrichirRecitResult> {
-  const fallback: EnrichirRecitResult = {
-    expertise_complete: params.recit,
-    contexte_enrichi: params.recit,
+export interface EnrichirRecitResponse {
+  success: boolean;
+  error?: string;
+  data: EnrichirRecitResult;
+}
+
+export async function enrichirRecit(params: EnrichirRecitParams): Promise<EnrichirRecitResponse> {
+  const fallbackData: EnrichirRecitResult = {
+    expertise_complete: '',
+    contexte_enrichi: '',
     diagnostic_enrichi: '',
-    intervention_enrichie: params.recit,
-    resultat_enrichi: params.recit,
+    intervention_enrichie: '',
+    resultat_enrichi: '',
     titre_seo: `${params.type} a ${params.ville}`,
     meta_description: params.recit.slice(0, 155),
     materiels_detectes: '',
   };
 
   if (!process.env.ANTHROPIC_API_KEY) {
-    console.log('[claude] No ANTHROPIC_API_KEY — returning fallback');
-    return fallback;
+    console.error('[claude] ANTHROPIC_API_KEY manquante');
+    return { success: false, error: 'Cle API Anthropic non configuree', data: fallbackData };
   }
 
   const { type, ville, code_postal, recit, duree } = params;
-  console.log('[claude] Calling Claude API for', type, ville);
+  console.log('[claude] Calling Claude API for', type, ville, '— recit length:', recit.length);
 
   const prompt = `Tu es un redacteur specialise qui enrichit les recits de techniciens en assainissement. Le technicien a raconte son intervention de maniere brute — ton travail est de developper ce recit en gardant EXACTEMENT son ton, son vocabulaire, sa facon de raconter.
 
 REGLE D'OR : tu enrichis, tu ne reecris pas. Le technicien dit "on a passe la camera" → tu gardes "on a passe la camera", tu ne dis pas "nous avons procede a une inspection par camera endoscopique". Tu developpes les details techniques, tu expliques le pourquoi, tu ajoutes du contexte pro — mais dans le style du gars qui raconte son chantier.
 
 ARTICLE CONTINU (champ "expertise_complete") :
-- 400 a 600 mots, texte continu sans sous-titres
+- MINIMUM 400 mots, MAXIMUM 600 mots — c'est OBLIGATOIRE
+- Texte continu sans sous-titres, sans bullet points
 - Developpe ce que le technicien a dit : details techniques (type de canalisation, pression, distance, cause), contexte (pourquoi ce probleme arrive, risques si non traite), precautions pour l'avenir
 - Comme si le technicien expliquait en detail a un client curieux qui pose des questions
 - Integre naturellement ces termes quand pertinent : ${MAILLAGE_KEYWORDS.join(', ')}
@@ -120,9 +127,9 @@ Type : ${type}
 Ville : ${ville}` + (code_postal ? ` (${code_postal})` : '') + `
 ${duree ? `Duree : ${duree}` : ''}
 
-Reponds UNIQUEMENT en JSON strict :
+IMPORTANT : Reponds UNIQUEMENT avec un objet JSON valide, sans markdown, sans backticks, sans texte avant ou apres :
 {
-  "expertise_complete": "article continu 400-600 mots, ton technicien enrichi...",
+  "expertise_complete": "article continu 400-600 mots...",
   "contexte_enrichi": "2-3 phrases : situation initiale",
   "diagnostic_enrichi": "2-3 phrases : ce qu'on a trouve",
   "intervention_enrichie": "2-3 phrases : methode utilisee",
@@ -135,37 +142,68 @@ Reponds UNIQUEMENT en JSON strict :
   try {
     const message = await client.messages.create({
       model: 'claude-haiku-4-5-20251001',
-      max_tokens: 3000,
+      max_tokens: 4096,
       messages: [{ role: 'user', content: prompt }],
     });
 
     console.log('[claude] Response received, stop_reason:', message.stop_reason);
+
+    if (message.stop_reason === 'max_tokens') {
+      console.error('[claude] Response tronquee (max_tokens atteint)');
+      return { success: false, error: 'Reponse IA tronquee — texte trop long', data: fallbackData };
+    }
+
     const content = message.content[0];
     if (content.type !== 'text') {
-      console.log('[claude] Non-text content type:', content.type);
-      return fallback;
+      console.error('[claude] Non-text content type:', content.type);
+      return { success: false, error: 'Reponse IA invalide (pas de texte)', data: fallbackData };
     }
+
+    console.log('[claude] Raw response length:', content.text.length);
 
     const jsonMatch = content.text.match(/\{[\s\S]*\}/);
     if (!jsonMatch) {
-      console.log('[claude] No JSON found in response:', content.text.slice(0, 200));
-      return fallback;
+      console.error('[claude] No JSON found in response:', content.text.slice(0, 500));
+      return { success: false, error: 'Reponse IA sans JSON valide', data: fallbackData };
     }
 
-    const parsed = JSON.parse(jsonMatch[0]) as EnrichirRecitResult;
+    let parsed: EnrichirRecitResult;
+    try {
+      parsed = JSON.parse(jsonMatch[0]) as EnrichirRecitResult;
+    } catch (parseErr) {
+      console.error('[claude] JSON parse error:', parseErr, '— raw:', jsonMatch[0].slice(0, 500));
+      return { success: false, error: 'JSON invalide dans la reponse IA', data: fallbackData };
+    }
+
+    if (!parsed.expertise_complete || parsed.expertise_complete.length < 200) {
+      console.error('[claude] expertise_complete trop court:', parsed.expertise_complete?.length || 0);
+      return {
+        success: false,
+        error: `Texte genere trop court (${parsed.expertise_complete?.length || 0} car.)`,
+        data: fallbackData,
+      };
+    }
+
+    const wordCount = parsed.expertise_complete.split(/\s+/).length;
+    console.log('[claude] expertise_complete:', wordCount, 'mots,', parsed.expertise_complete.length, 'caracteres');
+
     return {
-      expertise_complete: parsed.expertise_complete || params.recit,
-      contexte_enrichi: parsed.contexte_enrichi || params.recit,
-      diagnostic_enrichi: parsed.diagnostic_enrichi || '',
-      intervention_enrichie: parsed.intervention_enrichie || params.recit,
-      resultat_enrichi: parsed.resultat_enrichi || params.recit,
-      titre_seo: parsed.titre_seo || fallback.titre_seo,
-      meta_description: parsed.meta_description || fallback.meta_description,
-      materiels_detectes: parsed.materiels_detectes || '',
+      success: true,
+      data: {
+        expertise_complete: parsed.expertise_complete,
+        contexte_enrichi: parsed.contexte_enrichi || '',
+        diagnostic_enrichi: parsed.diagnostic_enrichi || '',
+        intervention_enrichie: parsed.intervention_enrichie || '',
+        resultat_enrichi: parsed.resultat_enrichi || '',
+        titre_seo: parsed.titre_seo || fallbackData.titre_seo,
+        meta_description: parsed.meta_description || fallbackData.meta_description,
+        materiels_detectes: parsed.materiels_detectes || '',
+      },
     };
   } catch (err) {
-    console.error('[claude] API error:', err instanceof Error ? err.message : err);
-    return fallback;
+    const errMsg = err instanceof Error ? err.message : String(err);
+    console.error('[claude] API error:', errMsg);
+    return { success: false, error: `Erreur API Claude : ${errMsg}`, data: fallbackData };
   }
 }
 
@@ -441,7 +479,7 @@ export function genererRapportHTML(params: RapportParams): string {
   <div class="header">
     <h1>RAPPORT D'INTERVENTION &amp; DIAGNOSTIC</h1>
     <h2>${type} — ${ville}${code_postal ? ` (${code_postal})` : ''}</h2>
-    <div class="company">Entreprise de Debouchage — Specialiste assainissement Var (83)</div>
+    <div class="company">Entreprise de Debouchage — Specialiste assainissement Bouches-du-Rhone (13)</div>
   </div>
 
   <div class="info-grid">
@@ -527,13 +565,13 @@ export function genererRapportHTML(params: RapportParams): string {
     <div class="signature-block">
       <div class="signature-name">Christophe Allard</div>
       <div class="signature-role">Expert en assainissement</div>
-      <div class="signature-company">Entreprise de Debouchage — Var (83)</div>
+      <div class="signature-company">Entreprise de Debouchage — Bouches-du-Rhone (13)</div>
     </div>
   </div>
 
   <div class="footer">
     <p>Rapport genere par <strong>Entreprise de Debouchage</strong> — ${date}</p>
-    <p>Intervention 24h/7j dans tout le Var (83) — entreprisededebouchage.com</p>
+    <p>Intervention 24h/7j dans tout les Bouches-du-Rhone (13) — entreprisededebouchage.com</p>
   </div>
 
 </div>

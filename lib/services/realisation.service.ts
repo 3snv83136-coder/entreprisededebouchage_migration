@@ -5,7 +5,7 @@ export function generateFaq(type: string, ville: string): Array<{ question: stri
   return [
     {
       question: `Quel est le prix d'un ${typeMin} à ${ville} ?`,
-      reponse: `Le tarif pour un ${typeMin} à ${ville} débute à 99 € pour une intervention simple. Le prix définitif dépend de l'accessibilité et de la complexité. Devis gratuit par téléphone.`,
+      reponse: `Le tarif pour un ${typeMin} à ${ville} débute à 110 € pour une intervention simple. Le prix définitif dépend de l'accessibilité et de la complexité. Devis gratuit par téléphone.`,
     },
     {
       question: `Combien de temps dure un ${typeMin} ?`,
@@ -13,7 +13,7 @@ export function generateFaq(type: string, ville: string): Array<{ question: stri
     },
     {
       question: `Êtes-vous disponibles le week-end à ${ville} ?`,
-      reponse: `Oui, nous intervenons 24h/24 et 7j/7 à ${ville} et dans tout le Var, y compris les jours fériés et week-ends.`,
+      reponse: `Oui, nous intervenons 24h/24 et 7j/7 à ${ville} et dans tout les Bouches-du-Rhône, y compris les jours fériés et week-ends.`,
     },
     {
       question: `Garantissez-vous votre intervention de ${typeMin} ?`,

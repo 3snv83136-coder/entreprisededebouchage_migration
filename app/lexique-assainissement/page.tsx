@@ -4,12 +4,12 @@ import { BASE_URL, PHONE, PHONE_RAW, COMPANY_NAME } from '@/lib/config';
 import styles from './page.module.css';
 
 export const metadata: Metadata = {
-  title: 'Lexique Assainissement — Glossaire technique débouchage Var',
+  title: 'Lexique Assainissement — Glossaire technique débouchage Bouches-du-Rhône',
   description:
-    'Lexique complet des termes techniques en assainissement et débouchage : hydrocurage, furet, fosse septique, SPANC, siphon, regard… Définitions claires par un pro du Var.',
+    'Lexique complet des termes techniques en assainissement et débouchage : hydrocurage, furet, fosse septique, SPANC, siphon, regard… Définitions claires par un pro des Bouches-du-Rhône.',
   alternates: { canonical: `${BASE_URL}/lexique-assainissement/` },
   openGraph: {
-    title: 'Lexique Assainissement — Glossaire technique débouchage Var',
+    title: 'Lexique Assainissement — Glossaire technique débouchage Bouches-du-Rhône',
     url: `${BASE_URL}/lexique-assainissement/`,
     type: 'website',
   },
@@ -27,7 +27,7 @@ const TERMES: Term[] = [
   {
     terme: 'Assainissement',
     definition:
-      'Ensemble des opérations techniques visant à collecter, transporter, traiter et éliminer les eaux usées domestiques ou industrielles. L\'assainissement peut être collectif (raccordé au réseau public) ou non collectif (fosse septique, micro-station). Dans le Var (83), environ 20 % des habitations sont en assainissement non collectif, sous contrôle du SPANC.',
+      'Ensemble des opérations techniques visant à collecter, transporter, traiter et éliminer les eaux usées domestiques ou industrielles. L\'assainissement peut être collectif (raccordé au réseau public) ou non collectif (fosse septique, micro-station). Dans les Bouches-du-Rhône (13), environ 20 % des habitations sont en assainissement non collectif, sous contrôle du SPANC.',
     lienService: '/debouchage-egouts-regards/',
     lienLabel: 'Débouchage égouts et regards',
   },
@@ -35,7 +35,7 @@ const TERMES: Term[] = [
   {
     terme: 'Bouchon',
     definition:
-      'Obstruction partielle ou totale dans une canalisation qui empêche ou ralentit l\'écoulement des effluents. Un bouchon peut être organique (cheveux, graisses, résidus alimentaires), calcaire (dépôts minéraux), mécanique (corps étranger) ou racinaire (intrusion de racines d\'arbres). Dans le Var, les bouchons calcaires sont particulièrement fréquents en raison de la dureté élevée de l\'eau (TH 25-35°f).',
+      'Obstruction partielle ou totale dans une canalisation qui empêche ou ralentit l\'écoulement des effluents. Un bouchon peut être organique (cheveux, graisses, résidus alimentaires), calcaire (dépôts minéraux), mécanique (corps étranger) ou racinaire (intrusion de racines d\'arbres). Dans les Bouches-du-Rhône, les bouchons calcaires sont particulièrement fréquents en raison de la dureté élevée de l\'eau (TH 25-35°f).',
   },
   {
     terme: 'Bac à graisses',
@@ -87,7 +87,7 @@ const TERMES: Term[] = [
   {
     terme: 'Dépôt calcaire',
     definition:
-      'Accumulation de carbonate de calcium (CaCO₃) sur les parois intérieures d\'une canalisation, consécutive à la précipitation des sels minéraux contenus dans l\'eau dure. Dans le Var (83), l\'eau affiche un TH de 25 à 35°f, parmi les plus élevés de France. Les dépôts calcaires réduisent progressivement le diamètre intérieur des conduites jusqu\'à les obstruer.',
+      'Accumulation de carbonate de calcium (CaCO₃) sur les parois intérieures d\'une canalisation, consécutive à la précipitation des sels minéraux contenus dans l\'eau dure. Dans les Bouches-du-Rhône (13), l\'eau affiche un TH de 25 à 35°f, parmi les plus élevés de France. Les dépôts calcaires réduisent progressivement le diamètre intérieur des conduites jusqu\'à les obstruer.',
   },
   {
     terme: 'Désobstruer',
@@ -98,7 +98,7 @@ const TERMES: Term[] = [
   {
     terme: 'Eaux pluviales (EP)',
     definition:
-      'Eaux provenant des précipitations (pluie, neige fondue) collectées sur les toitures, terrasses et surfaces imperméabilisées. Elles circulent dans un réseau distinct du réseau d\'eaux usées (système séparatif). Certaines communes du Var ont un réseau unitaire où EU et EP se mélangent.',
+      'Eaux provenant des précipitations (pluie, neige fondue) collectées sur les toitures, terrasses et surfaces imperméabilisées. Elles circulent dans un réseau distinct du réseau d\'eaux usées (système séparatif). Certaines communes des Bouches-du-Rhône ont un réseau unitaire où EU et EP se mélangent.',
   },
   {
     terme: 'Eaux usées (EU)',
@@ -180,7 +180,7 @@ const TERMES: Term[] = [
   {
     terme: 'Réseau séparatif',
     definition:
-      'Organisation du réseau d\'assainissement public en deux canalisations distinctes : une pour les eaux usées (EU) et une pour les eaux pluviales (EP). Contrairement au réseau unitaire (EU+EP mélangés), le réseau séparatif limite les risques de surcharge et de pollution en cas de forte pluie. La plupart des communes du Var ont un réseau séparatif.',
+      'Organisation du réseau d\'assainissement public en deux canalisations distinctes : une pour les eaux usées (EU) et une pour les eaux pluviales (EP). Contrairement au réseau unitaire (EU+EP mélangés), le réseau séparatif limite les risques de surcharge et de pollution en cas de forte pluie. La plupart des communes des Bouches-du-Rhône ont un réseau séparatif.',
   },
   // S
   {
@@ -193,18 +193,18 @@ const TERMES: Term[] = [
   {
     terme: 'SPANC',
     definition:
-      'Service Public d\'Assainissement Non Collectif. Organisme communal ou intercommunal chargé du contrôle des installations d\'assainissement autonome (fosses septiques, micro-stations). Le SPANC effectue des diagnostics périodiques (tous les 10 ans en général) et peut ordonner des travaux de mise en conformité. Dans le Var, la compétence SPANC est assurée par les communautés de communes ou la métropole TPM.',
+      'Service Public d\'Assainissement Non Collectif. Organisme communal ou intercommunal chargé du contrôle des installations d\'assainissement autonome (fosses septiques, micro-stations). Le SPANC effectue des diagnostics périodiques (tous les 10 ans en général) et peut ordonner des travaux de mise en conformité. Dans les Bouches-du-Rhône, la compétence SPANC est assurée par les communautés de communes ou la Métropole Aix-Marseille-Provence.',
   },
   // T
   {
     terme: 'Tartre',
     definition:
-      'Dépôt minéral dur (principalement carbonate de calcium) qui se forme sur les parois intérieures des canalisations, des chauffe-eau et des appareils électroménagers. Voir "Dépôt calcaire". L\'entartrage est particulièrement sévère dans le Var (83) en raison de la dureté naturelle de l\'eau.',
+      'Dépôt minéral dur (principalement carbonate de calcium) qui se forme sur les parois intérieures des canalisations, des chauffe-eau et des appareils électroménagers. Voir "Dépôt calcaire". L\'entartrage est particulièrement sévère dans les Bouches-du-Rhône (13) en raison de la dureté naturelle de l\'eau.',
   },
   {
     terme: 'Titre hydrotimétrique (TH)',
     definition:
-      'Mesure de la dureté de l\'eau, exprimée en degrés français (°f). Une eau douce est inférieure à 15°f, une eau dure dépasse 25°f. L\'eau du Var affiche un TH de 25 à 35°f selon les secteurs, ce qui en fait l\'une des plus dures de France. Cette dureté accélère l\'entartrage et durcit les bouchons organiques.',
+      'Mesure de la dureté de l\'eau, exprimée en degrés français (°f). Une eau douce est inférieure à 15°f, une eau dure dépasse 25°f. L\'eau des Bouches-du-Rhône affiche un TH de 25 à 35°f selon les secteurs, ce qui en fait l\'une des plus dures de France. Cette dureté accélère l\'entartrage et durcit les bouchons organiques.',
   },
   // V
   {
@@ -236,7 +236,7 @@ const jsonLd = {
   '@type': 'DefinedTermSet',
   name: 'Lexique Assainissement — Glossaire technique',
   description:
-    'Glossaire complet des termes techniques en assainissement, débouchage et plomberie, rédigé par des professionnels du Var (83).',
+    'Glossaire complet des termes techniques en assainissement, débouchage et plomberie, rédigé par des professionnels des Bouches-du-Rhône (13).',
   url: `${BASE_URL}/lexique-assainissement/`,
   publisher: {
     '@type': 'Plumber',
@@ -330,9 +330,9 @@ export default function LexiquePage() {
         <section className={styles.cta}>
           <div className="container">
             <div className={styles.ctaBox}>
-              <p className={styles.ctaTitle}>Un problème de canalisation dans le Var ?</p>
+              <p className={styles.ctaTitle}>Un problème de canalisation dans les Bouches-du-Rhône ?</p>
               <p className={styles.ctaDesc}>
-                Notre technicien intervient 24h/7j sur Toulon, Hyères et tout le département du Var (83).
+                Notre technicien intervient 24h/7j sur Marseille, Aubagne et tout le département des Bouches-du-Rhône (13).
                 Devis gratuit avant déplacement.
               </p>
               <a href={`tel:${PHONE_RAW}`} className="btn-primary">

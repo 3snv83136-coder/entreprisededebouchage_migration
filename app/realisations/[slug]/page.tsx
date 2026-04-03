@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import Breadcrumbs from '@/components/common/Breadcrumbs';
 import LinkedText from '@/components/realisations/LinkedText';
+import InterventionMap from '@/components/realisations/InterventionMap';
 import { BASE_URL, PHONE } from '@/lib/config';
 import { getRealisationBySlug } from '@/lib/data/realisations';
 import styles from './page.module.css';
@@ -46,11 +47,15 @@ export default async function RealisationPage({ params }: Props) {
   // Article continu (enrichi) ou fallback sur brut
   const articleText = r.description_generee || r.contexte || r.resultat;
 
-  // Resume 4 sections
-  const contexteText = r.contexte_enrichi || r.contexte;
-  const diagnosticText = r.diagnostic_enrichi || r.diagnostic;
-  const interventionText = r.intervention_enrichie || r.intervention;
-  const resultatText = r.resultat_enrichi || r.resultat;
+  // Resume 4 sections (stored directly in base columns after enrichment)
+  const contexteText = r.contexte;
+  const diagnosticText = r.diagnostic;
+  const interventionText = r.intervention;
+  const resultatText = r.resultat;
+
+  // Don't show resume cards if all sections contain the same text (not enriched)
+  const allSame = contexteText === interventionText && interventionText === resultatText;
+  const showResume = !allSame && (contexteText || diagnosticText || interventionText || resultatText);
 
   const serviceHref = `/${r.service_slug}/`;
 
@@ -79,7 +84,53 @@ export default async function RealisationPage({ params }: Props) {
             </div>
           </header>
 
-          {/* Photos avant/apres — remontees juste apres header */}
+          {/* Map d'intervention */}
+          {r.latitude && r.longitude && (
+            <div style={{ margin: '32px 0' }}>
+              <InterventionMap
+                latitude={r.latitude}
+                longitude={r.longitude}
+                adresse={r.adresse}
+                ville={r.ville}
+              />
+            </div>
+          )}
+
+          {/* Resume 4 points — only if sections are distinct (enriched) */}
+          {showResume && (
+          <div className={styles.resumeGrid}>
+            {contexteText && (
+              <div className={styles.resumeCard}>
+                <div className={styles.resumeNum}>1</div>
+                <h3 className={styles.resumeTitle}>Situation</h3>
+                <p className={styles.resumeText}>{contexteText}</p>
+              </div>
+            )}
+            {diagnosticText && (
+              <div className={styles.resumeCard}>
+                <div className={styles.resumeNum}>2</div>
+                <h3 className={styles.resumeTitle}>Diagnostic</h3>
+                <p className={styles.resumeText}>{diagnosticText}</p>
+              </div>
+            )}
+            {interventionText && (
+              <div className={styles.resumeCard}>
+                <div className={styles.resumeNum}>3</div>
+                <h3 className={styles.resumeTitle}>Intervention</h3>
+                <p className={styles.resumeText}>{interventionText}</p>
+              </div>
+            )}
+            {resultatText && (
+              <div className={`${styles.resumeCard} ${styles.resumeCardResultat}`}>
+                <div className={styles.resumeNum}>4</div>
+                <h3 className={styles.resumeTitle}>Résultat</h3>
+                <p className={styles.resumeText}>{resultatText}</p>
+              </div>
+            )}
+          </div>
+          )}
+
+          {/* Photos avant/apres */}
           {(r.photo_avant_url || r.photo_apres_url) && (
             <div className={styles.photos}>
               {r.photo_avant_url && (
@@ -117,38 +168,6 @@ export default async function RealisationPage({ params }: Props) {
               className={styles.articleText}
             />
           </section>
-
-          {/* Resume 4 points */}
-          <div className={styles.resumeGrid}>
-            {contexteText && (
-              <div className={styles.resumeCard}>
-                <div className={styles.resumeNum}>1</div>
-                <h3 className={styles.resumeTitle}>Situation</h3>
-                <p className={styles.resumeText}>{contexteText}</p>
-              </div>
-            )}
-            {diagnosticText && (
-              <div className={styles.resumeCard}>
-                <div className={styles.resumeNum}>2</div>
-                <h3 className={styles.resumeTitle}>Diagnostic</h3>
-                <p className={styles.resumeText}>{diagnosticText}</p>
-              </div>
-            )}
-            {interventionText && (
-              <div className={styles.resumeCard}>
-                <div className={styles.resumeNum}>3</div>
-                <h3 className={styles.resumeTitle}>Intervention</h3>
-                <p className={styles.resumeText}>{interventionText}</p>
-              </div>
-            )}
-            {resultatText && (
-              <div className={`${styles.resumeCard} ${styles.resumeCardResultat}`}>
-                <div className={styles.resumeNum}>4</div>
-                <h3 className={styles.resumeTitle}>Résultat</h3>
-                <p className={styles.resumeText}>{resultatText}</p>
-              </div>
-            )}
-          </div>
 
           {/* Temoignage */}
           {r.temoignage && (

@@ -9,18 +9,18 @@ export default function Pricing() {
           <div className={styles.card} data-callback>
             <h3 className={styles.cardTitle}>Debouchage Manuel</h3>
             <p className={styles.cardDesc}>Evier, WC, Douche</p>
-            <div className={styles.price}>99<span>&euro;</span></div>
+            <div className={styles.price}>110<span>&euro;</span></div>
           </div>
           <div className={`${styles.card} ${styles.cardPopular}`} data-callback>
             <div className={styles.badge}>Le + demande</div>
             <h3 className={styles.cardTitle}>Haute Pression</h3>
             <p className={styles.cardDesc}>Hydrocurage technique</p>
-            <div className={styles.price}>199<span>&euro;</span></div>
+            <div className={styles.price}>249<span>&euro;</span></div>
           </div>
           <div className={styles.card} data-callback>
             <h3 className={styles.cardTitle}>Inspection Camera</h3>
             <p className={styles.cardDesc}>Diagnostic video complet</p>
-            <div className={styles.price}>110<span>&euro;</span></div>
+            <div className={styles.price}>180<span>&euro;</span></div>
           </div>
         </div>
         <p className={styles.note}>Deplacement inclus &amp; Devis gratuit</p>

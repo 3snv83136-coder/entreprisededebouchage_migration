@@ -1,5 +1,3 @@
-export const maxDuration = 60;
-
 import Link from 'next/link';
 import { getAllServices } from '@/lib/data/services';
 import { getAllVilles } from '@/lib/data/villes';
@@ -45,6 +43,7 @@ export default async function AdminPage({ searchParams }: Props) {
           <div className={styles.progressBar} style={{ marginTop: '10px' }}>
             <div className={styles.progressFill} id="enrich-progress" style={{ width: '20%' }} />
           </div>
+          <div id="enrich-actions" style={{ display: 'none', marginTop: '10px' }}></div>
         </div>
       )}
       {success && id && (
@@ -52,22 +51,43 @@ export default async function AdminPage({ searchParams }: Props) {
           (function() {
             var progress = document.getElementById('enrich-progress');
             var banner = document.getElementById('success-banner');
-            progress.style.width = '40%';
-            fetch('/api/enrichir/${id}', { method: 'POST' })
-              .then(function(r) { return r.json(); })
-              .then(function(data) {
-                progress.style.width = '100%';
-                if (data.status === 'enriched' || data.status === 'already_enriched') {
-                  banner.textContent = '';
-                  banner.innerHTML = 'Realisation enrichie par IA ! <br/><small>Texte d\\'expertise genere avec succes.</small>';
-                } else {
-                  banner.innerHTML = 'Realisation enregistree. <br/><small>Enrichissement IA : ' + (data.error || 'non disponible') + '</small>';
-                }
-              })
-              .catch(function(err) {
-                progress.style.width = '100%';
-                banner.innerHTML = 'Realisation enregistree. <br/><small>Enrichissement : ' + err.message + '</small>';
-              });
+            var actions = document.getElementById('enrich-actions');
+            var realId = '${id}';
+
+            function doEnrich() {
+              progress.style.width = '40%';
+              banner.className = banner.className.replace('bannerError', '').replace('bannerWarning', '');
+              if (!banner.className.includes('bannerSuccess')) banner.className += ' ${styles.bannerSuccess}';
+              banner.childNodes[0].textContent = 'Enrichissement IA en cours...';
+              actions.style.display = 'none';
+
+              fetch('/api/enrichir/' + realId, { method: 'POST' })
+                .then(function(r) { return r.json(); })
+                .then(function(data) {
+                  progress.style.width = '100%';
+                  if (data.status === 'enriched') {
+                    banner.childNodes[0].textContent = '';
+                    banner.innerHTML = '<div>Realisation enrichie par IA !</div><small>' + data.word_count + ' mots generes.</small><div class="${styles.progressBar}" style="margin-top:10px"><div class="${styles.progressFill}" style="width:100%"></div></div><div id="enrich-actions" style="margin-top:10px"><a href="/admin/realisations" style="color:#4ade80;text-decoration:underline;font-size:13px">Voir les realisations</a></div>';
+                  } else if (data.status === 'already_enriched') {
+                    banner.childNodes[0].textContent = '';
+                    banner.innerHTML = '<div>Deja enrichie (' + data.word_count + ' mots).</div><div class="${styles.progressBar}" style="margin-top:10px"><div class="${styles.progressFill}" style="width:100%"></div></div><div style="margin-top:10px"><a href="/admin/realisations" style="color:#4ade80;text-decoration:underline;font-size:13px">Voir les realisations</a></div>';
+                  } else {
+                    showError(data.error || 'Erreur inconnue');
+                  }
+                })
+                .catch(function(err) {
+                  progress.style.width = '100%';
+                  showError(err.message || 'Erreur reseau');
+                });
+            }
+
+            function showError(msg) {
+              banner.className = banner.className.replace('${styles.bannerSuccess}', '${styles.bannerError}');
+              banner.innerHTML = '<div>Enrichissement echoue</div><small>' + msg + '</small><div class="${styles.progressBar}" style="margin-top:10px"><div class="${styles.progressFill}" style="width:100%;background:linear-gradient(90deg,#ef4444,#f87171)"></div></div><div id="enrich-actions" style="margin-top:12px"><button onclick="window.__retryEnrich()" style="background:#f4811f;color:#fff;border:none;padding:10px 20px;border-radius:8px;font-weight:700;cursor:pointer;font-size:14px">Reessayer l\\\'enrichissement</button></div>';
+            }
+
+            window.__retryEnrich = doEnrich;
+            doEnrich();
           })();
         `}} />
       )}
@@ -82,7 +102,7 @@ export default async function AdminPage({ searchParams }: Props) {
         </div>
       )}
 
-      <form action={saveRealisation} className={styles.form} encType="multipart/form-data">
+      <form action={saveRealisation} className={styles.form}>
 
         {/* Service */}
         <div className={styles.field}>
@@ -161,6 +181,20 @@ export default async function AdminPage({ searchParams }: Props) {
           </div>
         </div>
 
+        {/* Adresse de l'intervention */}
+        <div className={styles.field}>
+          <label className={styles.label}>Adresse de l&apos;intervention</label>
+          <input
+            type="text"
+            name="adresse"
+            className={styles.input}
+            placeholder="Ex: 12 rue de la Republique, 13100 Aix-en-Provence"
+          />
+          <span className={styles.fieldNote}>
+            Optionnel — affiche une carte sur la page de la realisation
+          </span>
+        </div>
+
         {/* ════ CHAMP UNIQUE — Récit de l'intervention ════ */}
         <div className={styles.field}>
           <label className={styles.label}>Raconte l&apos;intervention *</label>
@@ -176,7 +210,7 @@ export default async function AdminPage({ searchParams }: Props) {
           </span>
         </div>
 
-        {/* Photos */}
+        {/* Photos avec preview + rotation */}
         <div className={styles.row}>
           <div className={styles.field}>
             <label className={styles.label}>Photo avant</label>
@@ -188,9 +222,16 @@ export default async function AdminPage({ searchParams }: Props) {
                 type="file"
                 name="photoAvant"
                 accept="image/jpeg,image/png,image/webp,image/heic,image/heif"
-                capture="environment"
               />
             </label>
+            <input type="hidden" name="rotationAvant" id="rotationAvant" value="0" />
+            <div id="preview-avant" className={styles.photoPreview} style={{ display: 'none' }}>
+              <img id="preview-avant-img" className={styles.photoPreviewImg} alt="Preview avant" />
+              <div className={styles.photoControls}>
+                <button type="button" className={styles.rotateBtn} data-target="avant" data-dir="-90">&#8634;</button>
+                <button type="button" className={styles.rotateBtn} data-target="avant" data-dir="90">&#8635;</button>
+              </div>
+            </div>
             <span className={styles.fieldNote}>JPG, PNG, WebP, HEIC</span>
           </div>
           <div className={styles.field}>
@@ -203,9 +244,16 @@ export default async function AdminPage({ searchParams }: Props) {
                 type="file"
                 name="photoApres"
                 accept="image/jpeg,image/png,image/webp,image/heic,image/heif"
-                capture="environment"
               />
             </label>
+            <input type="hidden" name="rotationApres" id="rotationApres" value="0" />
+            <div id="preview-apres" className={styles.photoPreview} style={{ display: 'none' }}>
+              <img id="preview-apres-img" className={styles.photoPreviewImg} alt="Preview apres" />
+              <div className={styles.photoControls}>
+                <button type="button" className={styles.rotateBtn} data-target="apres" data-dir="-90">&#8634;</button>
+                <button type="button" className={styles.rotateBtn} data-target="apres" data-dir="90">&#8635;</button>
+              </div>
+            </div>
             <span className={styles.fieldNote}>JPG, PNG, WebP, HEIC</span>
           </div>
         </div>
@@ -241,13 +289,45 @@ export default async function AdminPage({ searchParams }: Props) {
         }
         villeSelect.addEventListener('change', syncVille);
 
-        // Show filename on file input change
-        document.querySelectorAll('input[type="file"]').forEach(function(input) {
+        // Photo preview + rotation
+        var rotations = { avant: 0, apres: 0 };
+
+        function setupPhotoPreview(type) {
+          var input = document.getElementById('photo' + type.charAt(0).toUpperCase() + type.slice(1));
+          var previewDiv = document.getElementById('preview-' + type);
+          var previewImg = document.getElementById('preview-' + type + '-img');
+          var rotInput = document.getElementById('rotation' + type.charAt(0).toUpperCase() + type.slice(1));
+
           input.addEventListener('change', function() {
             var lbl = input.closest('label');
-            if (lbl && input.files[0]) {
-              lbl.childNodes[0].textContent = '✓ ' + input.files[0].name;
+            if (input.files && input.files[0]) {
+              if (lbl) lbl.childNodes[0].textContent = input.files[0].name;
+              var url = URL.createObjectURL(input.files[0]);
+              previewImg.src = url;
+              previewDiv.style.display = 'block';
+              rotations[type] = 0;
+              rotInput.value = '0';
+              previewImg.style.transform = 'rotate(0deg)';
+            } else {
+              previewDiv.style.display = 'none';
             }
+          });
+        }
+
+        setupPhotoPreview('avant');
+        setupPhotoPreview('apres');
+
+        // Rotation buttons
+        document.querySelectorAll('[data-target]').forEach(function(btn) {
+          btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            var type = btn.getAttribute('data-target');
+            var dir = parseInt(btn.getAttribute('data-dir'));
+            rotations[type] = (rotations[type] + dir + 360) % 360;
+            var img = document.getElementById('preview-' + type + '-img');
+            img.style.transform = 'rotate(' + rotations[type] + 'deg)';
+            var rotInput = document.getElementById('rotation' + type.charAt(0).toUpperCase() + type.slice(1));
+            rotInput.value = rotations[type].toString();
           });
         });
 

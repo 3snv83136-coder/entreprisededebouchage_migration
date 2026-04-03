@@ -39,6 +39,7 @@ export async function saveRealisation(formData: FormData) {
     const recit = formData.get('recit') as string;
     const intervenant = formData.get('intervenant') as string;
     const codePostal = codePostalFromSelect;
+    const adresse = (formData.get('adresse') as string || '').trim();
     const photoAvant = formData.get('photoAvant') as File | null;
     const photoApres = formData.get('photoApres') as File | null;
     const rotationAvant = parseInt(formData.get('rotationAvant') as string || '0', 10) || 0;
@@ -57,6 +58,23 @@ export async function saveRealisation(formData: FormData) {
     const titre = generateTitre(type, ville, mois, annee);
     const meta_description = generateDescription({ type, ville, mois, annee, duree, resultat: recit.slice(0, 200) });
 
+    // Geocode address if provided
+    let latitude: number | null = null;
+    let longitude: number | null = null;
+    if (adresse) {
+      try {
+        const geoQuery = encodeURIComponent(`${adresse}, ${ville}, ${codePostal}, France`);
+        const geoRes = await fetch(`https://nominatim.openstreetmap.org/search?q=${geoQuery}&format=json&limit=1`, {
+          headers: { 'User-Agent': 'EntrepriseDeDebouchage/1.0' },
+        });
+        const geoData = await geoRes.json();
+        if (geoData.length > 0) {
+          latitude = parseFloat(geoData[0].lat);
+          longitude = parseFloat(geoData[0].lon);
+        }
+      } catch { /* geocoding failure is non-blocking */ }
+    }
+
     // Insert record (fast — no Claude call)
     const { data: inserted, error: insertError } = await supabaseAdmin
       .from('realisations')
@@ -67,6 +85,8 @@ export async function saveRealisation(formData: FormData) {
         meta_title: titre, meta_description, faq, titre,
         code_postal: codePostal || null,
         publiee: true, email_envoye: false,
+        adresse: adresse || null,
+        latitude, longitude,
       })
       .select('id')
       .single();

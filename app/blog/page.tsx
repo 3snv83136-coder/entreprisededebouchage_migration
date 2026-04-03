@@ -5,9 +5,9 @@ import { COMPANY_NAME, BASE_URL } from '@/lib/config';
 import styles from './page.module.css';
 
 export const metadata: Metadata = {
-  title: 'Blog débouchage Var — Conseils et guides',
+  title: 'Blog débouchage Bouches-du-Rhône — Conseils et guides',
   description:
-    'Conseils d\'expert pour vos canalisations dans le Var (83). Guides, comparatifs et astuces de techniciens en débouchage depuis 19 ans.',
+    'Conseils d\'expert pour vos canalisations dans les Bouches-du-Rhône (13). Guides, comparatifs et astuces de techniciens en débouchage depuis 19 ans.',
   alternates: { canonical: '/blog/' },
   openGraph: {
     title: 'Blog débouchage Var — Conseils et guides',
@@ -30,7 +30,7 @@ export default function BlogPage() {
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
-    name: 'Blog débouchage Var — Conseils et guides',
+    name: 'Blog débouchage Bouches-du-Rhône — Conseils et guides',
     url: `${BASE_URL}/blog/`,
     numberOfItems: articles.length,
     itemListElement: articles.map((article, index) => ({
@@ -52,11 +52,11 @@ export default function BlogPage() {
         <div className={`container ${styles.heroInner}`}>
           <p className="section-label">Blog &amp; Conseils</p>
           <h1 className={`section-title ${styles.heroTitle}`}>
-            Guides et conseils<br />débouchage Var
+            Guides et conseils<br />débouchage Bouches-du-Rhône
           </h1>
           <p className={`section-desc ${styles.heroDesc}`}>
             Des articles techniques rédigés par nos techniciens avec 19 ans d&apos;expérience
-            dans le Var (83). Guides pratiques, comparatifs et conseils préventifs.
+            dans les Bouches-du-Rhône (13). Guides pratiques, comparatifs et conseils préventifs.
           </p>
         </div>
       </section>

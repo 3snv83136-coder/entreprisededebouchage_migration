@@ -1,7 +1,7 @@
 import styles from './Arguments.module.css';
 
 const args = [
-  { num: '01', icon: '⚡', title: 'Moins d\'1 heure', text: 'Nos techniciens sont positionnés dans le Var pour garantir le délai d\'intervention minimal, même aux heures de pointe.' },
+  { num: '01', icon: '⚡', title: 'Moins d\'1 heure', text: 'Nos techniciens sont positionnés dans les Bouches-du-Rhône pour garantir le délai d\'intervention minimal, même aux heures de pointe.' },
   { num: '02', icon: '🕐', title: 'Disponible 24h/7j', text: 'Week-ends, jours fériés, nuits — nous répondons à toute heure. Une urgence n\'attend pas, notre équipe non plus.' },
   { num: '03', icon: '💶', title: 'Prix fixe annoncé', text: 'Le tarif est confirmé par téléphone avant toute intervention. Aucune surprise sur la facture finale. Devis gratuit.' },
 ];

@@ -5,9 +5,9 @@ import { BASE_URL, PHONE, PHONE_RAW } from '@/lib/config';
 import styles from './page.module.css';
 
 export const metadata: Metadata = {
-  title: 'Questions fréquentes — Débouchage canalisation Var',
+  title: 'Questions fréquentes — Débouchage canalisation Bouches-du-Rhône',
   description:
-    'Réponses aux questions les plus posées sur le débouchage de canalisations dans le Var : prix, méthodes, qui appeler, produits efficaces. Par un pro depuis 2005.',
+    'Réponses aux questions les plus posées sur le débouchage de canalisations dans les Bouches-du-Rhône : prix, méthodes, qui appeler, produits efficaces. Par un pro depuis 2005.',
   alternates: { canonical: `${BASE_URL}/questions/` },
 };
 
@@ -55,7 +55,7 @@ export default function QuestionsPage() {
             </nav>
             <h1 className={styles.title}>Questions fréquentes</h1>
             <p className={styles.sub}>
-              Tout ce qu&apos;il faut savoir sur le débouchage de canalisations dans le Var — prix, méthodes, responsabilités, produits.
+              Tout ce qu&apos;il faut savoir sur le débouchage de canalisations dans les Bouches-du-Rhône — prix, méthodes, responsabilités, produits.
             </p>
           </div>
         </section>

@@ -98,4 +98,7 @@ export interface Realisation {
   titre?: string;
   description_generee?: string;
   intervenant?: string;
+  adresse?: string;
+  latitude?: number;
+  longitude?: number;
 }

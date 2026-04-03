@@ -76,7 +76,7 @@ export default function VilleSearch({ villes }: Props) {
           ref={inputRef}
           type="text"
           className={styles.input}
-          placeholder="Votre ville dans le Var..."
+          placeholder="Votre ville dans les Bouches-du-Rhône..."
           value={query}
           onChange={(e) => { setQuery(e.target.value); setOpen(true); }}
           onFocus={() => setOpen(true)}

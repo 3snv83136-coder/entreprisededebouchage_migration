@@ -41,7 +41,7 @@ export default async function AdminRealisationsPage({ searchParams }: Props) {
       ) : (
         <div className={styles.list}>
           {realisations.map((r) => {
-            const hasEnrichment = !!(r.intervention_enrichie || r.description_generee);
+            const hasEnrichment = !!(r.description_generee && r.description_generee !== r.contexte);
             return (
               <div key={r.id} className={styles.card}>
                 <div className={styles.cardMain}>

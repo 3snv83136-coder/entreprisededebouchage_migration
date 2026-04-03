@@ -10,7 +10,7 @@ export const revalidate = 3600;
 
 export const metadata: Metadata = {
   title: `Nos réalisations — ${COMPANY_NAME}`,
-  description: `Découvrez les interventions réalisées par ${COMPANY_NAME} dans le Var (83). Débouchages, fosses septiques, canalisations — des cas concrets avec résultats.`,
+  description: `Découvrez les interventions réalisées par ${COMPANY_NAME} dans les Bouches-du-Rhône (13). Débouchages, fosses septiques, canalisations — des cas concrets avec résultats.`,
   alternates: { canonical: '/realisations/' },
   openGraph: {
     title: `Nos réalisations — ${COMPANY_NAME}`,
@@ -33,7 +33,7 @@ export default async function RealisationsPage() {
 
         <h1 className={styles.title}>Nos réalisations</h1>
         <p className={styles.lead}>
-          Des interventions réelles, dans le Var.{' '}
+          Des interventions réelles, dans les Bouches-du-Rhône.{' '}
           <strong style={{ color: 'var(--white)' }}>{realisations.length} réalisation{realisations.length > 1 ? 's' : ''}</strong>{' '}
           documentées avec contexte, méthode et résultat.
         </p>

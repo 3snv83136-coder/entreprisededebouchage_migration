@@ -4,17 +4,17 @@ import { PHONE, COMPANY_NAME, BASE_URL } from '@/lib/config';
 const ORG_ID = `${BASE_URL}/#organization`;
 
 const SERVICE_PRICES: Record<string, string> = {
-  'debouchage-canalisation': '199',
-  'debouchage-wc-toilettes': '99',
-  'debouchage-evier-lavabo': '99',
-  'debouchage-douche-baignoire': '99',
-  'debouchage-egouts-regards': '199',
-  'debouchage-cuisine': '99',
-  'debouchage-fosse-septique': '199',
-  'debouchage-salle-de-bain': '99',
-  'debouchage-lave-vaisselle': '99',
-  'debouchage-lave-linge': '99',
-  'debouchage-ballon-deau-chaude-chauffe-eau': '110',
+  'debouchage-canalisation': '249',
+  'debouchage-wc-toilettes': '110',
+  'debouchage-evier-lavabo': '110',
+  'debouchage-douche-baignoire': '110',
+  'debouchage-egouts-regards': '249',
+  'debouchage-cuisine': '110',
+  'debouchage-fosse-septique': '249',
+  'debouchage-salle-de-bain': '110',
+  'debouchage-lave-vaisselle': '110',
+  'debouchage-lave-linge': '110',
+  'debouchage-ballon-deau-chaude-chauffe-eau': '180',
 };
 
 export function generateSchemaOrganization() {
@@ -25,17 +25,17 @@ export function generateSchemaOrganization() {
     name: COMPANY_NAME,
     url: BASE_URL,
     telephone: PHONE,
-    priceRange: '99€ - 350€',
+    priceRange: '110€ - 249€',
     address: {
       '@type': 'PostalAddress',
-      addressLocality: 'Toulon',
-      postalCode: '83000',
-      addressRegion: 'Var',
+      addressLocality: 'Aubagne',
+      postalCode: '13400',
+      addressRegion: 'Bouches-du-Rhône',
       addressCountry: 'FR',
     },
     areaServed: {
       '@type': 'AdministrativeArea',
-      name: 'Var (83)',
+      name: 'Bouches-du-Rhône (13)',
     },
     openingHoursSpecification: {
       '@type': 'OpeningHoursSpecification',
@@ -66,7 +66,7 @@ export function generateSchemaCity(ville: Ville) {
       postalCode: ville.code_postal,
     },
     telephone: PHONE,
-    priceRange: '99€ - 350€',
+    priceRange: '110€ - 249€',
     openingHours: 'Mo-Su 00:00-23:59',
     url: `${BASE_URL}/debouchage-${ville.slug}/`,
   };
@@ -88,16 +88,16 @@ export function generateSchemaService(service: Service) {
     },
     areaServed: {
       '@type': 'AdministrativeArea',
-      name: 'Var',
+      name: 'Bouches-du-Rhône',
     },
     offers: {
       '@type': 'Offer',
       priceCurrency: 'EUR',
-      price: SERVICE_PRICES[service.slug] ?? '99',
+      price: SERVICE_PRICES[service.slug] ?? '110',
       priceSpecification: {
         '@type': 'UnitPriceSpecification',
         priceCurrency: 'EUR',
-        price: SERVICE_PRICES[service.slug] ?? '99',
+        price: SERVICE_PRICES[service.slug] ?? '110',
         unitText: 'intervention',
       },
     },
@@ -126,11 +126,11 @@ export function generateSchemaServiceCity(service: Service, ville: Ville) {
     offers: {
       '@type': 'Offer',
       priceCurrency: 'EUR',
-      price: SERVICE_PRICES[service.slug] ?? '99',
+      price: SERVICE_PRICES[service.slug] ?? '110',
       priceSpecification: {
         '@type': 'UnitPriceSpecification',
         priceCurrency: 'EUR',
-        price: SERVICE_PRICES[service.slug] ?? '99',
+        price: SERVICE_PRICES[service.slug] ?? '110',
         unitText: 'intervention',
       },
     },

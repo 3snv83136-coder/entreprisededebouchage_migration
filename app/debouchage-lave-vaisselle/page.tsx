@@ -25,20 +25,20 @@ const faqs = [
     answer: `Si la pompe est simplement obstruée par un corps étranger (fragment d'os, bout de verre, noyau de fruit), nous pouvons la débloquer sur place rapidement. Si la pompe est mécaniquement défaillante, l'intervention relève de la réparation électroménager. Nous vous le signalons clairement avant toute opération.`,
   },
   {
-    question: `Quel est le tarif pour déboucher un lave-vaisselle dans le Var ?`,
-    answer: `Le débouchage du circuit de vidange d'un lave-vaisselle est facturé à partir de 99 € dans le Var. Ce tarif couvre le déplacement, la vérification du filtre et de la pompe, le débouchage du flexible et de la canalisation de raccordement, et le test de cycle complet avant départ.`,
+    question: `Quel est le tarif pour déboucher un lave-vaisselle dans les Bouches-du-Rhône ?`,
+    answer: `Le débouchage du circuit de vidange d'un lave-vaisselle est facturé à partir de 110 € dans les Bouches-du-Rhône. Ce tarif couvre le déplacement, la vérification du filtre et de la pompe, le débouchage du flexible et de la canalisation de raccordement, et le test de cycle complet avant départ.`,
   },
   {
     question: `Intervenez-vous le jour même pour un lave-vaisselle en panne de vidange ?`,
-    answer: `Oui, nous intervenons le jour même dans tout le Var, 7j/7. Pour un lave-vaisselle qui ne vidange pas, le délai est généralement de 1 à 3 heures après votre appel. Le problème est résolu en une seule visite dans la très grande majorité des cas.`,
+    answer: `Oui, nous intervenons le jour même dans tout les Bouches-du-Rhône, 7j/7. Pour un lave-vaisselle qui ne vidange pas, le délai est généralement de 1 à 3 heures après votre appel. Le problème est résolu en une seule visite dans la très grande majorité des cas.`,
   },
 ];
 
 const content = {
-  intro: `Un lave-vaisselle qui ne vidange plus est souvent signalé par un code erreur E24 ou E20 sur les appareils modernes. Derrière ce code, il y a presque toujours le même mécanisme : des résidus alimentaires et des graisses ont progressivement encrassé le filtre de fond de cuve, puis la pompe de vidange, et enfin le flexible d'évacuation. Dans le Var, le calcaire aggrave le phénomène en réduisant le diamètre interne du flexible. Mondor Débouchage intervient dans tout le Var à partir de 99 € pour rétablir la vidange complète de votre lave-vaisselle — filtre, pompe et canalisation de raccordement — et réalise un test de cycle complet avant de partir pour vous garantir un résultat durable.`,
+  intro: `Un lave-vaisselle qui ne vidange plus est souvent signalé par un code erreur E24 ou E20 sur les appareils modernes. Derrière ce code, il y a presque toujours le même mécanisme : des résidus alimentaires et des graisses ont progressivement encrassé le filtre de fond de cuve, puis la pompe de vidange, et enfin le flexible d'évacuation. Dans les Bouches-du-Rhône, le calcaire aggrave le phénomène en réduisant le diamètre interne du flexible. Entreprise de Débouchage intervient dans tout les Bouches-du-Rhône à partir de 110 € pour rétablir la vidange complète de votre lave-vaisselle — filtre, pompe et canalisation de raccordement — et réalise un test de cycle complet avant de partir pour vous garantir un résultat durable.`,
   problems: `Le problème de vidange d'un lave-vaisselle a presque toujours une origine mécanique ou hydraulique identifiable : filtre de fond de cuve saturé de résidus alimentaires, pompe de vidange partiellement bloquée par un corps étranger (fragment d'os, bout d'étiquette plastique), flexible d'évacuation coudé ou colmaté par des dépôts graisseux et calcaires, ou bouchon dans la canalisation commune partagée avec l'évier. Le code erreur vidange est le premier signal ; l'eau stagnante en fond de cuve et les mauvaises odeurs à l'ouverture confirment que le problème est installé.`,
   intervention: `Le technicien commence par retirer et nettoyer manuellement le filtre de fond de cuve, puis inspecte et dégage la pompe de vidange. Si le problème persiste, le flexible d'évacuation est déconnecté, inspecté et débouché. La canalisation de raccordement (souvent partagée avec le siphon de l'évier) est furetée si nécessaire. Un test de cycle de vidange complet valide le résultat avant la fin de l'intervention.`,
-  tarif: `Débouchage lave-vaisselle à partir de 99 € dans le Var, déplacement inclus. Tarif fixe communiqué avant intervention, sans frais cachés. Test de cycle complet effectué sur place avant départ.`,
+  tarif: `Débouchage lave-vaisselle à partir de 110 € dans les Bouches-du-Rhône, déplacement inclus. Tarif fixe communiqué avant intervention, sans frais cachés. Test de cycle complet effectué sur place avant départ.`,
   steps: [
     {
       name: `Vérification et nettoyage du filtre fond de cuve`,
